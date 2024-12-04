@@ -2,7 +2,8 @@
 #
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
-# Last modified: 2024-12-04 17:07:42 UTC
+#
+# Last modified: 2024-12-04 18:22:58 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -13,6 +14,8 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 humbleromecontroversial.com
+0.0.0.0 zippercontinual.com
 0.0.0.0 op3xdork.xyz
 0.0.0.0 qrifhajtabcy.com
 0.0.0.0 joogruphezefaul.net
@@ -1939,6 +1942,7 @@
 0.0.0.0 80055404.vtt
 0.0.0.0 81438456aa.com
 0.0.0.0 817dae10e1.com
+0.0.0.0 81c875a340.com
 0.0.0.0 828af6b8ce.com
 0.0.0.0 831xmyp1fr4i.shop
 0.0.0.0 845d6bbf60.com
@@ -2765,6 +2769,7 @@
 0.0.0.0 adtrue.com
 0.0.0.0 adtrue24.com
 0.0.0.0 adtscriptduck.com
+0.0.0.0 adttmsvcxeri.com
 0.0.0.0 aduld.click
 0.0.0.0 adultadvertising.net
 0.0.0.0 adultcamchatfree.com
@@ -3761,6 +3766,7 @@
 0.0.0.0 aqptziligoqn.com
 0.0.0.0 aqspcbz.com
 0.0.0.0 aquentlytujim.com
+0.0.0.0 aqxme-eorex.site
 0.0.0.0 arabicpostboy.shop
 0.0.0.0 araifourabsa.net
 0.0.0.0 aralego.com
@@ -5018,6 +5024,7 @@
 0.0.0.0 bhlph.com
 0.0.0.0 bhohazozps.com
 0.0.0.0 bhotiyadiascia.com
+0.0.0.0 bhqbirsac.site
 0.0.0.0 bhqfnuq.com
 0.0.0.0 bhqvi.com
 0.0.0.0 bhwfvfevnqg.com
@@ -5877,6 +5884,7 @@
 0.0.0.0 byyanmaor.com
 0.0.0.0 bzamusfalofn.com
 0.0.0.0 bzniungh.com
+0.0.0.0 bzoodfalqge.online
 0.0.0.0 bzwo2lmwioxa.com
 0.0.0.0 bzydilasq.com
 0.0.0.0 c019154d29.com
@@ -9616,6 +9624,7 @@
 0.0.0.0 eonsmedia.com
 0.0.0.0 eontappetito.com
 0.0.0.0 eopleshouldthink.info
+0.0.0.0 eoqmbnaelaxrg.com
 0.0.0.0 eoredi.com
 0.0.0.0 eosads.com
 0.0.0.0 eoveukrnme.info
@@ -9773,6 +9782,7 @@
 0.0.0.0 etxahpe.com
 0.0.0.0 etymonsibycter.com
 0.0.0.0 etypicthawier.shop
+0.0.0.0 eu-soaxtatl.life
 0.0.0.0 eu5qwt3o.beauty
 0.0.0.0 euauosx.xyz
 0.0.0.0 euchresgryllus.com
@@ -10496,6 +10506,7 @@
 0.0.0.0 flaminglamesuitable.com
 0.0.0.0 flamtyr.com
 0.0.0.0 flannelbeforehand.com
+0.0.0.0 flanneldatedly.com
 0.0.0.0 flannellegendary.com
 0.0.0.0 flapsoonerpester.com
 0.0.0.0 flarby.com
@@ -14031,6 +14042,7 @@
 0.0.0.0 jelllearnedhungry.com
 0.0.0.0 jellyhelpless.com
 0.0.0.0 jellyprehistoricpersevere.com
+0.0.0.0 jelokeryevbyy.top
 0.0.0.0 jelokeryevrmz.top
 0.0.0.0 jeniz.xyz
 0.0.0.0 jenkincraved.com
@@ -14984,6 +14996,7 @@
 0.0.0.0 ldrendreaming.info
 0.0.0.0 ldthinkhimun.com
 0.0.0.0 lduhtrp.net
+0.0.0.0 leachysubarch.shop
 0.0.0.0 lead1.pl
 0.0.0.0 leadadvert.info
 0.0.0.0 leadbolt.net
@@ -16332,6 +16345,7 @@
 0.0.0.0 midpopedge.com
 0.0.0.0 midstconductcanned.com
 0.0.0.0 midstrelate.com
+0.0.0.0 midstsquonset.com
 0.0.0.0 midstwillow.com
 0.0.0.0 midtermbuildsrobot.com
 0.0.0.0 midwifelangurs.com
@@ -19743,6 +19757,7 @@
 0.0.0.0 pompreflected.com
 0.0.0.0 pon-prairie.com
 0.0.0.0 pondov.cfd
+0.0.0.0 ponieqldeos.com
 0.0.0.0 ponk.pro
 0.0.0.0 ponyresentment.com
 0.0.0.0 poodledopas.cam
@@ -22841,6 +22856,7 @@
 0.0.0.0 sftapi.com
 0.0.0.0 sfwehgedquq.com
 0.0.0.0 sgad.site
+0.0.0.0 sgfinery.com
 0.0.0.0 sgfsdvc.com
 0.0.0.0 sgihava.com
 0.0.0.0 sgnetwork.co
@@ -22932,6 +22948,7 @@
 0.0.0.0 shegraptekry.com
 0.0.0.0 shehikj.com
 0.0.0.0 shelfoka.com
+0.0.0.0 shelourdoals.net
 0.0.0.0 sheltermilligrammillions.com
 0.0.0.0 shelveflang.click
 0.0.0.0 shemalesofhentai.com
@@ -23137,6 +23154,7 @@
 0.0.0.0 simplistic-king.pro
 0.0.0.0 simplyscepticaltoad.com
 0.0.0.0 simpunok.com
+0.0.0.0 simurgmugged.com
 0.0.0.0 sincalled.com
 0.0.0.0 sincenturypro.org
 0.0.0.0 sincerelyseverelyminimum.com
@@ -24047,6 +24065,7 @@
 0.0.0.0 stootsee.xyz
 0.0.0.0 stootsou.net
 0.0.0.0 stopaggregation.com
+0.0.0.0 stopapaumari.com
 0.0.0.0 stopformal.com
 0.0.0.0 stophurtfulunconscious.com
 0.0.0.0 stoppageeverydayseeing.com
@@ -25135,6 +25154,7 @@
 0.0.0.0 tigipurcyw.com
 0.0.0.0 tiglonhominy.top
 0.0.0.0 tignuget.net
+0.0.0.0 tigroulseedsipt.net
 0.0.0.0 tiktakz.xyz
 0.0.0.0 tilesmuzarab.com
 0.0.0.0 tillinextricable.com
@@ -27763,6 +27783,7 @@
 0.0.0.0 woneguess.click
 0.0.0.0 wonfigfig.com
 0.0.0.0 wongahmalta.com
+0.0.0.0 wonigiwurtounsu.xyz
 0.0.0.0 wonnauseouswheel.com
 0.0.0.0 wooballast.com
 0.0.0.0 woodbeesdainty.com
@@ -27974,6 +27995,7 @@
 0.0.0.0 wyeczfx.com
 0.0.0.0 wyglyvaso.com
 0.0.0.0 wyhifdpatl.com
+0.0.0.0 wyjjqoqlfjtbbr.com
 0.0.0.0 wyjkqvtgwmjqb.xyz
 0.0.0.0 wymymep.com
 0.0.0.0 wynather.com
@@ -28601,7 +28623,6 @@
 0.0.0.0 zipheeda.xyz
 0.0.0.0 ziphoumt.net
 0.0.0.0 zipinaccurateoffering.com
-0.0.0.0 zippercontinual.com
 0.0.0.0 zipradarindifferent.com
 0.0.0.0 zirdough.net
 0.0.0.0 zirdrax.com
@@ -30365,6 +30386,7 @@
 0.0.0.0 1736253261.rsc.cdn77.org
 0.0.0.0 1777452258.rsc.cdn77.org
 0.0.0.0 1841793143.rsc.cdn77.org
+0.0.0.0 1932195014.rsc.cdn77.org
 0.0.0.0 1wnurc.com
 0.0.0.0 360playvid.com
 0.0.0.0 360playvid.info
@@ -36225,6 +36247,8 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 tralut.chatpdf.com
+0.0.0.0 tracking.leadspark.io
 0.0.0.0 femetrics.grammarly.io
 0.0.0.0 media-stat.mail.ru
 0.0.0.0 telemetry.tradingview.com
@@ -38697,6 +38721,7 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 logs-ingress.svc.vinted.com
 0.0.0.0 analytics.baliusuperapp.xyz
 0.0.0.0 log-va-us-looki.capcutapi.com
 0.0.0.0 analytics.hardlightgames.com
@@ -40983,6 +41008,7 @@
 0.0.0.0 templates.buscape.com
 0.0.0.0 yestorrents.org
 0.0.0.0 oecistbenton.com
+0.0.0.0 octo25.me
 0.0.0.0 bmmwa.info
 0.0.0.0 iwrcoct.info
 0.0.0.0 hfnuqljjnt.com
@@ -43575,6 +43601,9 @@
 0.0.0.0 azol.de
 0.0.0.0 twiago.com
 0.0.0.0 bauernative.com
+0.0.0.0 ig65.vip
+0.0.0.0 ig66.vip
+0.0.0.0 ig67.vip
 0.0.0.0 avspda.xyz
 0.0.0.0 666hh999gg.com
 0.0.0.0 776.jstatic.xyz
@@ -50780,6 +50809,11 @@
 0.0.0.0 fo0.icu
 0.0.0.0 nuvaioqds.com
 0.0.0.0 olqead.com
+0.0.0.0 1yj.icu
+0.0.0.0 burniecrepes.com
+0.0.0.0 infantilecombination.com
+0.0.0.0 yrhxttwa.xyz
+0.0.0.0 bdamcsv.top
 0.0.0.0 sconat.com
 0.0.0.0 cidhmxxb.icu
 0.0.0.0 ig69.vip
@@ -56881,7 +56915,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56867 rules from this source
+# Converted 56900 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -63313,7 +63347,6 @@
 0.0.0.0 burkhahemoid.com
 0.0.0.0 burlywhistle.com
 0.0.0.0 burnbubble.com
-0.0.0.0 burniecrepes.com
 0.0.0.0 burnshipfail.live
 0.0.0.0 buroorgi.com
 0.0.0.0 burpcollaborator.net
@@ -84746,7 +84779,6 @@
 0.0.0.0 t.sgc.io
 0.0.0.0 track.sgdmobile.com
 0.0.0.0 sgeiruehou.cfd
-0.0.0.0 sgfinery.com
 0.0.0.0 analytics.sgg.fi
 0.0.0.0 analytics.empires.sgg.fi
 0.0.0.0 sgirls.net
@@ -86406,7 +86438,6 @@
 0.0.0.0 analytics.stonkstutors.com
 0.0.0.0 posthog.stonly.com
 0.0.0.0 stopadzblock.net
-0.0.0.0 stopapaumari.com
 0.0.0.0 stopblockads.com
 0.0.0.0 stopdigitalamnesia.com
 0.0.0.0 stopstomach.com
@@ -89697,7 +89728,6 @@
 0.0.0.0 vinguiden.com
 0.0.0.0 analytics.viniq.io
 0.0.0.0 analytics.vinmanager.com
-0.0.0.0 logs-ingress.svc.vinted.com
 0.0.0.0 metric.vinted-securite.info
 0.0.0.0 analytics.vinylmeplease.com
 0.0.0.0 track.vio-media.com
@@ -92144,7 +92174,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 35257 rules from this source
+# Converted 35253 rules from this source
 
 
-# Total unique domains: 92124
+# Total unique domains: 92153
