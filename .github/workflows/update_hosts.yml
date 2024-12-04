@@ -1,0 +1,48 @@
+name: Update Converted Hosts
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: 0 */6 * * *  # Runs every 6 hours
+  workflow_dispatch:      # Allows for manual run of the workflow
+
+jobs:
+  update-hosts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+        # Alternatively: run: pip install ... if requirements.txt is not used
+
+      - name: Run conversion script
+        run: python convert_to_hosts.py
+
+      - name: Check for changes
+        id: check-for-changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add hosts.txt
+            git commit -m "Update hosts.txt"
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit."
+          fi
+
+      - name: Push changes
+        if: steps.check-for-changes.outputs.changed == 'true'
+        run: git push
