@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-05 01:17:23 UTC
+# Last modified: 2024-12-05 06:23:27 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -50802,6 +50802,9 @@
 0.0.0.0 cnzz.trafficmanager.net
 0.0.0.0 eatnontf.icu
 0.0.0.0 khesuts.com
+0.0.0.0 mdamcsx.top
+0.0.0.0 m6d.icu
+0.0.0.0 4i1.icu
 0.0.0.0 vokzqgjp.icu
 0.0.0.0 sokars.com
 0.0.0.0 grerzieds.com
@@ -56924,7 +56927,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56909 rules from this source
+# Converted 56912 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -56955,7 +56958,6 @@
 0.0.0.0 047e541483.com
 0.0.0.0 0497496f94.com
 0.0.0.0 04tips.com
-0.0.0.0 0512s.com
 0.0.0.0 05454674.xyz
 0.0.0.0 0755rc.com
 0.0.0.0 07aa269c0e76550c929640c170af557c7371753ba1b580236d7fa0a4.com
@@ -58902,7 +58904,6 @@
 0.0.0.0 adshrink.it
 0.0.0.0 adside.com
 0.0.0.0 adsimilate.com
-0.0.0.0 adsimilis.com
 0.0.0.0 adskkkkk.com
 0.0.0.0 adsloboclick.com
 0.0.0.0 adsmart.com
@@ -58940,6 +58941,7 @@
 0.0.0.0 adstxtmarket.com
 0.0.0.0 analytics.adsum.io
 0.0.0.0 adsupplyads.net
+0.0.0.0 adsux.com
 0.0.0.0 adswip.com
 0.0.0.0 181fm.adswizz.com
 0.0.0.0 attribution.adswizz.com
@@ -60935,7 +60937,6 @@
 0.0.0.0 apypxl.com
 0.0.0.0 apzdfakiso.com
 0.0.0.0 aq2e.com
-0.0.0.0 aqaaheceb.com
 0.0.0.0 aqdjimadsb.com
 0.0.0.0 aqphfgh.cc
 0.0.0.0 aqpnuqrcib.com
@@ -61479,14 +61480,12 @@
 0.0.0.0 away.com
 0.0.0.0 analytics.awayx.com
 0.0.0.0 awgutqp.cc
-0.0.0.0 awhilediplomagloss.com
 0.0.0.0 awifi.cn
 0.0.0.0 a1.awin1.com
 0.0.0.0 awkwardemergency.com
 0.0.0.0 awmads.com
 0.0.0.0 essential.awmcash.com
 0.0.0.0 awmonitor.com
-0.0.0.0 awmoydgfsfnim.com
 0.0.0.0 tracker.awr.im
 0.0.0.0 telemetry.alameda.aws.dev
 0.0.0.0 analytics.console-mobile.aws.dev
@@ -74500,7 +74499,6 @@
 0.0.0.0 analytics.hyundaiusa.com
 0.0.0.0 metrics.hyundaiusa.com
 0.0.0.0 smetrics.hyundaiusa.com
-0.0.0.0 hyygsqsqmn.com
 0.0.0.0 ads.i-bidder.com
 0.0.0.0 smetrics.i-law.com
 0.0.0.0 fsx.i-run.fr
@@ -75549,7 +75547,6 @@
 0.0.0.0 ishieldu.com
 0.0.0.0 analytics.ishopchangi.com
 0.0.0.0 video.ishotube.xyz
-0.0.0.0 ishoutu.net
 0.0.0.0 iskyworker.com
 0.0.0.0 analytics.islamapp.ru
 0.0.0.0 connect-lb.islay.tech
@@ -79473,7 +79470,6 @@
 0.0.0.0 analytics.myschoolbucks.com
 0.0.0.0 myscreen.com
 0.0.0.0 mysearch.com
-0.0.0.0 mysearchweb.net
 0.0.0.0 mysecurify.com
 0.0.0.0 mysecuritycenter.com
 0.0.0.0 matomo.myshakespeare.com
@@ -81993,7 +81989,6 @@
 0.0.0.0 matomo.pointnemo.com
 0.0.0.0 analytics.lxc.points.com
 0.0.0.0 poisom.com
-0.0.0.0 pojfcgertyqp.com
 0.0.0.0 poke10ve.com
 0.0.0.0 analytics.pokemon-zone.com
 0.0.0.0 poker-unique.com
@@ -84068,6 +84063,7 @@
 0.0.0.0 analytics.rvezy.com
 0.0.0.0 rvmessage.online
 0.0.0.0 rvzlobj.cn
+0.0.0.0 errors.rw.rw
 0.0.0.0 rwadx.com
 0.0.0.0 ssl.o.rxlist.com
 0.0.0.0 cpm.rxnetwork.net
@@ -85394,7 +85390,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw1.smartadserver.com
+0.0.0.0 euw2.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -92182,7 +92178,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 35252 rules from this source
+# Converted 35245 rules from this source
 
 
-# Total unique domains: 92161
+# Total unique domains: 92157
