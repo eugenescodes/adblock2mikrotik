@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-06 06:23:22 UTC
+# Last modified: 2024-12-06 12:32:11 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -37170,7 +37170,6 @@
 0.0.0.0 stats.rustica.fr
 0.0.0.0 analytics.e1.ru
 0.0.0.0 ipcc.vnpt.com.vn
-0.0.0.0 stats.ucheba.ru
 0.0.0.0 inspector-collector.m.naver.com
 0.0.0.0 cdn.stat-track.com
 0.0.0.0 t.zhipin.com
@@ -43639,6 +43638,7 @@
 0.0.0.0 azol.de
 0.0.0.0 twiago.com
 0.0.0.0 bauernative.com
+0.0.0.0 ouiokaq.top
 0.0.0.0 ig65.vip
 0.0.0.0 ig66.vip
 0.0.0.0 ig67.vip
@@ -50835,6 +50835,7 @@
 0.0.0.0 hjimtyu.top
 0.0.0.0 u6u.icu
 0.0.0.0 ii3.icu
+0.0.0.0 inzut.com
 0.0.0.0 eatnontf.icu
 0.0.0.0 khesuts.com
 0.0.0.0 mdamcsx.top
@@ -56966,7 +56967,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56951 rules from this source
+# Converted 56952 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -88736,6 +88737,7 @@
 0.0.0.0 ucfunnel.com
 0.0.0.0 uchat6.com
 0.0.0.0 api.ucheba.ru
+0.0.0.0 stats.ucheba.ru
 0.0.0.0 uciservice.com
 0.0.0.0 t.uclabruins.com
 0.0.0.0 elqview.uclahealth.org
@@ -92227,7 +92229,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 35255 rules from this source
+# Converted 35256 rules from this source
 
 
-# Total unique domains: 92206
+# Total unique domains: 92208
