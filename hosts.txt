@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-08 12:29:56 UTC
+# Last modified: 2024-12-08 18:19:53 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -50928,7 +50928,9 @@
 0.0.0.0 sjimtyb.top
 0.0.0.0 guqoinly.com
 0.0.0.0 wcdfxj.xyz
+0.0.0.0 7hb.icu
 0.0.0.0 nmhbmfxh.icu
+0.0.0.0 ejimtyw.top
 0.0.0.0 bhukkeks.com
 0.0.0.0 f7j.icu
 0.0.0.0 jjimtya.top
@@ -57081,7 +57083,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57066 rules from this source
+# Converted 57068 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -59880,7 +59882,6 @@
 0.0.0.0 alnuinvisayan.com
 0.0.0.0 b1.alo.bg
 0.0.0.0 alogationa.co
-0.0.0.0 alone-here.online
 0.0.0.0 aloofmetal.com
 0.0.0.0 aloofvest.com
 0.0.0.0 ats.alot.com
@@ -61775,7 +61776,6 @@
 0.0.0.0 pnq.babcoxmediainc.com
 0.0.0.0 analytics.babelnovel.com
 0.0.0.0 analytics.babelway.net
-0.0.0.0 babesroulette.com
 0.0.0.0 sl.babistmucuses.com
 0.0.0.0 click.baburnadir.com
 0.0.0.0 affiliates.babylon.com
@@ -65226,6 +65226,7 @@
 0.0.0.0 rack.bauermedia.co.uk
 0.0.0.0 metrics.bax-shop.co.uk
 0.0.0.0 gn-flagpoles.api.bbci.co.uk
+0.0.0.0 ati-a1.946d001b783803c1.xhst.bbci.co.uk
 0.0.0.0 smetrics.beefeater.co.uk
 0.0.0.0 ads.bhol.co.il
 0.0.0.0 ads.bidspotter.co.uk
@@ -70646,6 +70647,7 @@
 0.0.0.0 entertainskin.com
 0.0.0.0 enthusiastgaming.net
 0.0.0.0 enthusiasticdad.com
+0.0.0.0 enthusiasticring.com
 0.0.0.0 admarket.entireweb.com
 0.0.0.0 affiliate.entireweb.com
 0.0.0.0 entk.net
@@ -71428,7 +71430,6 @@
 0.0.0.0 mercadeo.promerica.fi.cr
 0.0.0.0 smetrics.ficohsa.hn
 0.0.0.0 tr.fidal.pro
-0.0.0.0 a.fidar.site
 0.0.0.0 click-v4.fiddirexol.com
 0.0.0.0 activate1.fidelity.com
 0.0.0.0 fctms.fidelity.com
@@ -75455,7 +75456,6 @@
 0.0.0.0 investments.com
 0.0.0.0 investopedia.today
 0.0.0.0 sstats.investors.com
-0.0.0.0 investxai.pro
 0.0.0.0 metrics.invictastores.com
 0.0.0.0 telemetry.invicti.com
 0.0.0.0 analytics.invisalign.com
@@ -79652,7 +79652,6 @@
 0.0.0.0 analytics.myschoolbucks.com
 0.0.0.0 myscreen.com
 0.0.0.0 mysearch.com
-0.0.0.0 mysearchweb.net
 0.0.0.0 mysecurify.com
 0.0.0.0 mysecuritycenter.com
 0.0.0.0 matomo.myshakespeare.com
@@ -81471,7 +81470,6 @@
 0.0.0.0 pahtuz.tech
 0.0.0.0 pahtvs.tech
 0.0.0.0 pahtzc.tech
-0.0.0.0 pahujanayan.tech
 0.0.0.0 paibauwho.com
 0.0.0.0 paidsnows.click
 0.0.0.0 a8cv.paidy.com
@@ -82944,7 +82942,6 @@
 0.0.0.0 matomo.qgiv.com
 0.0.0.0 cdn.qgr.ph
 0.0.0.0 qhaarkie.com
-0.0.0.0 qhfjamsmjyn.com
 0.0.0.0 qhigh.com
 0.0.0.0 jspassport.ssl.qhimg.com
 0.0.0.0 qhip.com
@@ -85586,7 +85583,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw1.smartadserver.com
+0.0.0.0 euw2.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -89551,8 +89548,6 @@
 0.0.0.0 webstats.uzh.ch
 0.0.0.0 uzzf.com
 0.0.0.0 v-56.com
-0.0.0.0 xapi.apk.v-mate.mobi
-0.0.0.0 yapi.apk.v-mate.mobi
 0.0.0.0 analytics.v1.ru
 0.0.0.0 v1adserver.com
 0.0.0.0 ads.v3exchange.com
@@ -92006,7 +92001,6 @@
 0.0.0.0 analytics.yoxo.ro
 0.0.0.0 yoyausones.com
 0.0.0.0 yoyi.tv
-0.0.0.0 ad.yoyo.pl
 0.0.0.0 adsolutions.yp.com
 0.0.0.0 logger.yp.ca
 0.0.0.0 ypdr.org
@@ -92413,7 +92407,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 35326 rules from this source
+# Converted 35318 rules from this source
 
 
-# Total unique domains: 92392
+# Total unique domains: 92386
