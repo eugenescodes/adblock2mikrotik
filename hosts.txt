@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-10 12:33:20 UTC
+# Last modified: 2024-12-10 18:22:55 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -36433,6 +36433,9 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 event.newsbreak.com
+0.0.0.0 pixel-static.spotify.com
+0.0.0.0 pixel-config.reddit.com
 0.0.0.0 tracker.curama.jp
 0.0.0.0 beacons.digital.disneyadvertising.com
 0.0.0.0 telegraph.prd.api.discomax.com
@@ -50984,6 +50987,8 @@
 0.0.0.0 wt6.icu
 0.0.0.0 tjimtyi.top
 0.0.0.0 riemutmh.com
+0.0.0.0 xu6.icu
+0.0.0.0 ujimtyt.top
 0.0.0.0 attelaoe.com
 0.0.0.0 dsoxgdjv.icu
 0.0.0.0 3ts.icu
@@ -57145,7 +57150,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57130 rules from this source
+# Converted 57135 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -86190,7 +86195,6 @@
 0.0.0.0 partner-service.spotify.com
 0.0.0.0 payment-callback.spotify.com
 0.0.0.0 pixel.spotify.com
-0.0.0.0 pixel-static.spotify.com
 0.0.0.0 surveys.spotify.com
 0.0.0.0 metric.spotify-change.com
 0.0.0.0 spotify-desktop.com
@@ -92369,7 +92373,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 35218 rules from this source
+# Converted 35217 rules from this source
 
 
-# Total unique domains: 92348
+# Total unique domains: 92352
