@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-11 12:33:00 UTC
+# Last modified: 2024-12-11 18:22:46 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -1854,6 +1854,7 @@
 0.0.0.0 6179b859b8.com
 0.0.0.0 61t2ll6yy.com
 0.0.0.0 61zdn1c9.skin
+0.0.0.0 62a77005fb.com
 0.0.0.0 62ca04e27a.com
 0.0.0.0 63912b9175.com
 0.0.0.0 639c909d45.com
@@ -14990,6 +14991,7 @@
 0.0.0.0 lamplynx.com
 0.0.0.0 lamppostharmoniousunaware.com
 0.0.0.0 lampshademirror.com
+0.0.0.0 lamrissmyol.com
 0.0.0.0 lanceforthwith.com
 0.0.0.0 landelcut.com
 0.0.0.0 landitmounttheworld.com
@@ -36681,26 +36683,6 @@
 0.0.0.0 topspin.npo.nl
 0.0.0.0 collect.stepstone.co.uk
 0.0.0.0 analytics.poferries.com
-0.0.0.0 v225.ksbw.com
-0.0.0.0 k030.koco.com
-0.0.0.0 u082.wapt.com
-0.0.0.0 f361.wvtm13.com
-0.0.0.0 t733.wjcl.com
-0.0.0.0 r255.wmtw.com
-0.0.0.0 j178.wmur.com
-0.0.0.0 p769.wgal.com
-0.0.0.0 v066.wxii12.com
-0.0.0.0 s811.ketv.com
-0.0.0.0 m886.kmbc.com
-0.0.0.0 w110.kcra.com
-0.0.0.0 u999.wcvb.com
-0.0.0.0 e459.kcci.com
-0.0.0.0 h019.wtae.com
-0.0.0.0 y000.wyff4.com
-0.0.0.0 q511.wpbf.com
-0.0.0.0 c677.wisn.com
-0.0.0.0 u578.wlwt.com
-0.0.0.0 e993.wlky.com
 0.0.0.0 collect.biomedcentral.com
 0.0.0.0 eproof.drudgereport.com
 0.0.0.0 doppler-beacon.cbsivideo.com
@@ -38802,41 +38784,66 @@
 0.0.0.0 log.musical.ly
 0.0.0.0 log2.musical.ly
 0.0.0.0 xlog-va.musical.ly
-0.0.0.0 c993.westport-news.com
+0.0.0.0 v225.ksbw.com
+0.0.0.0 k030.koco.com
+0.0.0.0 u082.wapt.com
+0.0.0.0 f361.wvtm13.com
+0.0.0.0 t733.wjcl.com
+0.0.0.0 r255.wmtw.com
+0.0.0.0 j178.wmur.com
+0.0.0.0 p769.wgal.com
+0.0.0.0 v066.wxii12.com
+0.0.0.0 s811.ketv.com
+0.0.0.0 m886.kmbc.com
+0.0.0.0 w110.kcra.com
+0.0.0.0 u999.wcvb.com
+0.0.0.0 e459.kcci.com
+0.0.0.0 h019.wtae.com
+0.0.0.0 y000.wyff4.com
+0.0.0.0 q511.wpbf.com
+0.0.0.0 c677.wisn.com
+0.0.0.0 u578.wlwt.com
+0.0.0.0 e993.wlky.com
+0.0.0.0 v063.4029tv.com
+0.0.0.0 y494.wdsu.com
+0.0.0.0 b932.wesh.com
 0.0.0.0 d276.ourmidland.com
 0.0.0.0 d810.mysanantonio.com
 0.0.0.0 f164.sheltonherald.com
 0.0.0.0 f775.thehour.com
-0.0.0.0 f857.hearstmediatx.com
 0.0.0.0 h353.ncadvertiser.com
 0.0.0.0 h559.stamfordadvocate.com
-0.0.0.0 j158.hearstmediact.com
 0.0.0.0 j198.registercitizen.com
+0.0.0.0 l029.recordpatriot.com
 0.0.0.0 l936.expressnews.com
 0.0.0.0 l997.lmtonline.com
+0.0.0.0 m367.michigansthumb.com
+0.0.0.0 m700.bigrapidsnews.com
 0.0.0.0 n730.timesunion.com
 0.0.0.0 o398.trumbulltimes.com
 0.0.0.0 p593.seattlepi.com
 0.0.0.0 q777.sfchronicle.com
 0.0.0.0 r541.houstonchronicle.com
 0.0.0.0 s232.theintelligencer.com
+0.0.0.0 t002.myjournalcourier.com
 0.0.0.0 t570.wiltonbulletin.com
 0.0.0.0 t810.ctpost.com
 0.0.0.0 u566.chron.com
 0.0.0.0 u652.myplainview.com
+0.0.0.0 u660.theheraldreview.com
+0.0.0.0 u896.weekand.com
 0.0.0.0 u927.sfgate.com
-0.0.0.0 w020.newmilfordspectrum.com
+0.0.0.0 v812.lakecountystar.com
 0.0.0.0 w740.newstimes.com
 0.0.0.0 w982.middletownpress.com
 0.0.0.0 x822.mrt.com
-0.0.0.0 y653.theridgefieldpress.com
 0.0.0.0 y738.nhregister.com
 0.0.0.0 y752.milfordmirror.com
 0.0.0.0 y820.darientimes.com
 0.0.0.0 y900.greenwichtime.com
+0.0.0.0 z210.manisteenews.com
 0.0.0.0 z211.yourconroenews.com
 0.0.0.0 z492.ctinsider.com
-0.0.0.0 z590.fairfieldcitizenonline.com
 0.0.0.0 z680.beaumontenterprise.com
 0.0.0.0 z929.fuelfix.com
 0.0.0.0 ben.crxmouse.com
@@ -38931,6 +38938,9 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 mon-boot.capcutapi.com
+0.0.0.0 mon-va-us-looki.capcutapi.com
+0.0.0.0 metrics-prod.suno.com
 0.0.0.0 logs-ingress.svc.vinted.com
 0.0.0.0 analytics.baliusuperapp.xyz
 0.0.0.0 log-va-us-looki.capcutapi.com
@@ -51013,6 +51023,8 @@
 0.0.0.0 ojimtyk.top
 0.0.0.0 tteferty33.fun
 0.0.0.0 suzalsln.com
+0.0.0.0 a7c.icu
+0.0.0.0 ljimtyl.top
 0.0.0.0 wyvpkmbj.icu
 0.0.0.0 thunnqyo.com
 0.0.0.0 wjimtye.top
@@ -57188,7 +57200,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57173 rules from this source
+# Converted 57185 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -74030,6 +74042,8 @@
 0.0.0.0 ads.hearstmags.com
 0.0.0.0 services.hearstmags.com
 0.0.0.0 subscribe.hearstmags.com
+0.0.0.0 j158.hearstmediact.com
+0.0.0.0 f857.hearstmediatx.com
 0.0.0.0 aps.hearstnp.com
 0.0.0.0 heartbreakingmind.com
 0.0.0.0 heartchakracheckup.com
@@ -87651,6 +87665,7 @@
 0.0.0.0 piwik.therapie.de
 0.0.0.0 analytics.thereformation.com
 0.0.0.0 thereviewhub.co
+0.0.0.0 y653.theridgefieldpress.com
 0.0.0.0 matomo.therightmove.be
 0.0.0.0 analytics.theritzlondon.com
 0.0.0.0 diagnostics.thermo.com
@@ -92356,7 +92371,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 35162 rules from this source
+# Converted 35165 rules from this source
 
 
-# Total unique domains: 92335
+# Total unique domains: 92350
