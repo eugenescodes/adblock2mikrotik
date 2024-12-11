@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-11 06:23:29 UTC
+# Last modified: 2024-12-11 12:33:00 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -32877,6 +32877,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 gw-dv.vip
 0.0.0.0 trk.svr-algorix.com
 0.0.0.0 tpi-app.herokuapp.com
 0.0.0.0 api.rvere.com
@@ -36445,6 +36446,9 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 f793.inc.com
+0.0.0.0 mytop.live.vkvideo.ru
+0.0.0.0 f703.twincities.com
 0.0.0.0 event.newsbreak.com
 0.0.0.0 pixel-static.spotify.com
 0.0.0.0 pixel-config.reddit.com
@@ -41214,6 +41218,9 @@
 0.0.0.0 templates.buscape.com
 0.0.0.0 yestorrents.org
 0.0.0.0 oecistbenton.com
+0.0.0.0 dosawes.com
+0.0.0.0 lusupodum.com
+0.0.0.0 clairpixum.com
 0.0.0.0 octo25.me
 0.0.0.0 bmmwa.info
 0.0.0.0 iwrcoct.info
@@ -46909,7 +46916,19 @@
 0.0.0.0 congthongtinvidientu.com
 0.0.0.0 congtykiman.org
 0.0.0.0 congtytaichinhlotte.com
+0.0.0.0 continue.dasboard154-account.com
+0.0.0.0 continue.dasboard174-account.com
 0.0.0.0 continue.dasboard184-account.com
+0.0.0.0 continue.dasboard563-account.com
+0.0.0.0 continue.dasboard593-account.com
+0.0.0.0 continue.dasboard597-account.com
+0.0.0.0 continue.dasboard914-account.com
+0.0.0.0 continue.dasboard934-account.com
+0.0.0.0 continue.dasboard935-account.com
+0.0.0.0 continue.dasboard945-account.com
+0.0.0.0 continue.dasboard965-account.com
+0.0.0.0 continue.dasboard966-account.com
+0.0.0.0 continue.dasboard974-account.com
 0.0.0.0 coonnfirrmm-bankingg247njf.weebly.com
 0.0.0.0 coronappzz.com
 0.0.0.0 cpa-tc.com
@@ -48676,6 +48695,7 @@
 0.0.0.0 pkkti888.com
 0.0.0.0 platinum-ruttientindung247.com
 0.0.0.0 play.appgoogle.cc
+0.0.0.0 playgooglevn.vip
 0.0.0.0 playtogethernapthe.com
 0.0.0.0 playtogetherquabaotri.online
 0.0.0.0 playtogethershop.com
@@ -50992,6 +51012,7 @@
 0.0.0.0 x4d.icu
 0.0.0.0 ojimtyk.top
 0.0.0.0 tteferty33.fun
+0.0.0.0 suzalsln.com
 0.0.0.0 wyvpkmbj.icu
 0.0.0.0 thunnqyo.com
 0.0.0.0 wjimtye.top
@@ -57167,7 +57188,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57152 rules from this source
+# Converted 57173 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -73738,7 +73759,6 @@
 0.0.0.0 gvcaffiliates.com
 0.0.0.0 gvjjcjlqra.com
 0.0.0.0 gvt2-cn.com
-0.0.0.0 gw-dv.vip
 0.0.0.0 matomo.gwdg.de
 0.0.0.0 piwik.gwdg.de
 0.0.0.0 gweluwaggoc.com
@@ -92336,7 +92356,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 35163 rules from this source
+# Converted 35162 rules from this source
 
 
-# Total unique domains: 92315
+# Total unique domains: 92335
