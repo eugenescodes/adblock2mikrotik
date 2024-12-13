@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-13 12:32:18 UTC
+# Last modified: 2024-12-13 18:22:04 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 cpngiubbcnq.love
 0.0.0.0 ads.twdcgrid.com
 0.0.0.0 myaudioads.com
 0.0.0.0 rixengine.com
@@ -1758,6 +1759,7 @@
 0.0.0.0 49b6b77e56.com
 0.0.0.0 49d4db4864.com
 0.0.0.0 4a9517991d.com
+0.0.0.0 4armn.com
 0.0.0.0 4b6994dfa47cee4.com
 0.0.0.0 4b7140e260.com
 0.0.0.0 4bad5cdf48.com
@@ -2993,6 +2995,7 @@
 0.0.0.0 afgwsgl.com
 0.0.0.0 afgzipohma.com
 0.0.0.0 afiliapub.click
+0.0.0.0 afilliatetraff.com
 0.0.0.0 afkearupl.com
 0.0.0.0 afloatroyalty.com
 0.0.0.0 afm01.com
@@ -10949,6 +10952,7 @@
 0.0.0.0 frettedmalta.top
 0.0.0.0 frezahkthnz.com
 0.0.0.0 frfetchme.com
+0.0.0.0 frfsjjtis.com
 0.0.0.0 fri4esianewheywr90itrage.com
 0.0.0.0 frictionliteral.com
 0.0.0.0 frictionterritoryvacancy.com
@@ -14766,6 +14770,7 @@
 0.0.0.0 knownwarn.com
 0.0.0.0 knpfx.life
 0.0.0.0 kntodvofiyjjl.xyz
+0.0.0.0 knubletupgrow.shop
 0.0.0.0 knutenegros.pro
 0.0.0.0 koabapeed.com
 0.0.0.0 koafaimoor.net
@@ -18434,6 +18439,7 @@
 0.0.0.0 oometermerkhet.click
 0.0.0.0 oomsijahail.com
 0.0.0.0 oomsoapt.net
+0.0.0.0 oomsurtour.net
 0.0.0.0 oongouha.xyz
 0.0.0.0 oonsouque.com
 0.0.0.0 oopatet.com
@@ -20246,6 +20252,7 @@
 0.0.0.0 printerswear.com
 0.0.0.0 printgrownuphail.com
 0.0.0.0 printsmull.com
+0.0.0.0 prioraslop.com
 0.0.0.0 priorityblockinghopped.com
 0.0.0.0 priselapse.com
 0.0.0.0 prisonfirmlyswallow.com
@@ -27045,6 +27052,7 @@
 0.0.0.0 villagerreporter.com
 0.0.0.0 vilmgins.com
 0.0.0.0 vilpujzmyhu.com
+0.0.0.0 vimaxckc.com
 0.0.0.0 vincentagrafes.top
 0.0.0.0 vindicosuite.com
 0.0.0.0 vindictivegrabnautical.com
@@ -36483,6 +36491,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 afl.rozetka.com.ua
 0.0.0.0 c783.fastcompany.com
 0.0.0.0 event.northghost.com
 0.0.0.0 profile-api.amplitude.com
@@ -39036,6 +39045,7 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 stats.samsungpass.com
 0.0.0.0 log.pdfviewerscannerstore.live
 0.0.0.0 mon-boot.capcutapi.com
 0.0.0.0 mon-va-us-looki.capcutapi.com
@@ -39061,7 +39071,6 @@
 0.0.0.0 caerulus.io
 0.0.0.0 log.heartratepros.com
 0.0.0.0 tatrack.thinkyeah.com
-0.0.0.0 sdk-04.moengage.com
 0.0.0.0 vcs.zijieapi.com
 0.0.0.0 monsetting.toutiao.com
 0.0.0.0 atsod.launch.liveramp.com
@@ -39495,7 +39504,7 @@
 0.0.0.0 analytics-tracker.thescore.com
 0.0.0.0 d.applvn.com
 0.0.0.0 rt.applvn.com
-0.0.0.0 apiv2.moengage.com
+0.0.0.0 moengage.com
 0.0.0.0 track.uc.cn
 0.0.0.0 uc.ucweb.com
 0.0.0.0 puds.ucweb.com
@@ -43932,6 +43941,7 @@
 0.0.0.0 azol.de
 0.0.0.0 twiago.com
 0.0.0.0 bauernative.com
+0.0.0.0 b10.justacdn.net
 0.0.0.0 wkzw.me
 0.0.0.0 dhkqqe.top
 0.0.0.0 yruadj.top
@@ -51135,6 +51145,8 @@
 0.0.0.0 ctimiyf.top
 0.0.0.0 8et.icu
 0.0.0.0 treimphens.com
+0.0.0.0 zr3.icu
+0.0.0.0 htimiyu.top
 0.0.0.0 neldatsy.com
 0.0.0.0 yqlzccxn.icu
 0.0.0.0 bjimtyv.top
@@ -57325,7 +57337,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57310 rules from this source
+# Converted 57322 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -79821,9 +79833,11 @@
 0.0.0.0 modularmental.com
 0.0.0.0 moelove.jp
 0.0.0.0 api.moengage.com
+0.0.0.0 apiv2.moengage.com
 0.0.0.0 apiv2eu.moengage.com
 0.0.0.0 app.moengage.com
 0.0.0.0 sdk-03.moengage.com
+0.0.0.0 sdk-04.moengage.com
 0.0.0.0 sdk-100.moengage.com
 0.0.0.0 websdk.moengage.com
 0.0.0.0 matomo.moetiknaardedokter.nl
@@ -93455,7 +93469,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 36124 rules from this source
+# Converted 36126 rules from this source
 
 
-# Total unique domains: 93434
+# Total unique domains: 93448
