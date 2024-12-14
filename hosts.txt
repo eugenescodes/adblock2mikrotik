@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-14 12:29:20 UTC
+# Last modified: 2024-12-14 18:20:03 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -43625,6 +43625,7 @@
 0.0.0.0 caraneoutraze.uno
 0.0.0.0 adserve.lasentinelle.mu
 0.0.0.0 adserver.icimedias.ca
+0.0.0.0 jp1media.com
 0.0.0.0 bra.almado.jp
 0.0.0.0 adsby.2bet.co.jp
 0.0.0.0 indexad.net
@@ -51152,6 +51153,8 @@
 0.0.0.0 qm2.icu
 0.0.0.0 itimiyo.top
 0.0.0.0 vegaingi.com
+0.0.0.0 3lo.icu
+0.0.0.0 jtimiya.top
 0.0.0.0 owsrgljb.icu
 0.0.0.0 ziqniduy.com
 0.0.0.0 dddstew6cw8.fun
@@ -57350,7 +57353,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57335 rules from this source
+# Converted 57338 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -64659,8 +64662,8 @@
 0.0.0.0 ark.cp21.ott.cibntv.net
 0.0.0.0 valf.atm.cp31.ott.cibntv.net
 0.0.0.0 pl.cp31.ott.cibntv.net
+0.0.0.0 ad.advst.cp33.ott.cibntv.net
 0.0.0.0 de.as.cp61.ott.cibntv.net
-0.0.0.0 andrbugly.play.cp81.ott.cibntv.net
 0.0.0.0 mtrace.play.cp81.ott.cibntv.net
 0.0.0.0 cicdserver.com
 0.0.0.0 connect.ciena.com
@@ -67638,7 +67641,6 @@
 0.0.0.0 stats.davidickedelivery.com
 0.0.0.0 beneficios.davivienda.sv
 0.0.0.0 dawn3host.com
-0.0.0.0 dawsapp.icu
 0.0.0.0 track.daycomics.com
 0.0.0.0 daylighteel.com
 0.0.0.0 images.dayoo.com
@@ -67754,7 +67756,6 @@
 0.0.0.0 ddns.name
 0.0.0.0 profield.ddns.net
 0.0.0.0 ddush.xyz
-0.0.0.0 ddwsapp.icu
 0.0.0.0 deadhomersociety.com
 0.0.0.0 deaimatch.jp
 0.0.0.0 pc.deainobasyo.jp
@@ -69527,21 +69528,18 @@
 0.0.0.0 event.dfinery.io
 0.0.0.0 dfnb-ads.com
 0.0.0.0 dftoutiao.com
-0.0.0.0 dfwsapp.icu
 0.0.0.0 dfxwdc.com
 0.0.0.0 dgddipgtebuy.com
 0.0.0.0 dghehu.com
 0.0.0.0 dgit.com
 0.0.0.0 dgm2.com
 0.0.0.0 dgqlwqedzowhqb.com
-0.0.0.0 dgwsapp.icu
 0.0.0.0 d1.dhgate.com
 0.0.0.0 ltecrf.dhgate.com
 0.0.0.0 dhlsupplychain.dhl.com
 0.0.0.0 smetrics.dhl.de
 0.0.0.0 dhobeynandi.com
 0.0.0.0 dhux7ijh.click
-0.0.0.0 dhwsapp.icu
 0.0.0.0 di-ana.jp
 0.0.0.0 di02.biz
 0.0.0.0 matomo.dia-vorsorge.de
@@ -69731,14 +69729,12 @@
 0.0.0.0 news.djcoregon.com
 0.0.0.0 djliker.com
 0.0.0.0 somni.djoglobal.com
-0.0.0.0 djwsapp.icu
 0.0.0.0 dk4ywix.com
 0.0.0.0 ads.dkelseymedia.com
 0.0.0.0 dkgmjvktmowcbtj.xyz
 0.0.0.0 dkmadsnetwork.com
 0.0.0.0 dkuim.de
 0.0.0.0 analytics.dkv.global
-0.0.0.0 dkwsapp.icu
 0.0.0.0 dlads.cn
 0.0.0.0 matomo.dli.dk
 0.0.0.0 dlikohbdcxqs.xyz
@@ -69747,7 +69743,6 @@
 0.0.0.0 matomo.dlservices.eu
 0.0.0.0 b.dlsite.net
 0.0.0.0 telemetry.dlubal.com
-0.0.0.0 dlwsapp.icu
 0.0.0.0 dlxpix.net
 0.0.0.0 dlyazdorovia.ru
 0.0.0.0 dm.gg
@@ -70050,7 +70045,6 @@
 0.0.0.0 dpw202504.com
 0.0.0.0 dq95d35.com
 0.0.0.0 dialog.dqs.de
-0.0.0.0 dqwsapp.icu
 0.0.0.0 sadobemetrics.dr.dk
 0.0.0.0 draajctabjum.com
 0.0.0.0 drabsize.com
@@ -70129,7 +70123,6 @@
 0.0.0.0 matomo.druide.com
 0.0.0.0 drumcorpsplanet.com
 0.0.0.0 matomo.drutch.nl
-0.0.0.0 drwsapp.icu
 0.0.0.0 drydrum.com
 0.0.0.0 dryum.ru
 0.0.0.0 matomo.ds-ultimate.de
@@ -70160,7 +70153,6 @@
 0.0.0.0 affiliate.dtiserv.com
 0.0.0.0 rss.dtiserv.com
 0.0.0.0 piwik.dtnr.nl
-0.0.0.0 dtwsapp.icu
 0.0.0.0 dtxngr.com
 0.0.0.0 filter.dtxplatform.net
 0.0.0.0 xml.dtxplatform.net
@@ -70275,7 +70267,6 @@
 0.0.0.0 saa.dyson.pt
 0.0.0.0 aa.dysoncanada.ca
 0.0.0.0 saa.dysoncanada.ca
-0.0.0.0 dywsapp.icu
 0.0.0.0 clck.dzen.ru
 0.0.0.0 ms.dzen.ru
 0.0.0.0 telemetry.dzen.ru
@@ -73928,7 +73919,6 @@
 0.0.0.0 vmat.gtimg.com
 0.0.0.0 wa.gtimg.com
 0.0.0.0 gtjhpdhs.com
-0.0.0.0 gtlpac.com
 0.0.0.0 ylxq.gtm-dukelgagigal.com
 0.0.0.0 gtop100.com
 0.0.0.0 analytics.gtpstratus.com
@@ -76946,7 +76936,6 @@
 0.0.0.0 kscly.com
 0.0.0.0 ywrcqa.ksdk.com
 0.0.0.0 ksibradio.com
-0.0.0.0 ads.ksl.com
 0.0.0.0 apkquery.ksmobile.net
 0.0.0.0 axp.ksn.com
 0.0.0.0 axp.ksnt.com
@@ -78738,7 +78727,6 @@
 0.0.0.0 mediazotic.net
 0.0.0.0 medicalinnovation.ca
 0.0.0.0 ssl.o.medicinenet.com
-0.0.0.0 medicineteaser.org
 0.0.0.0 elqtracking.medidata.com
 0.0.0.0 mediekompaniet.com
 0.0.0.0 metrics.medievaltimes.com
@@ -79362,7 +79350,6 @@
 0.0.0.0 apiv2eu.moengage.com
 0.0.0.0 app.moengage.com
 0.0.0.0 sdk-03.moengage.com
-0.0.0.0 sdk-04.moengage.com
 0.0.0.0 sdk-100.moengage.com
 0.0.0.0 websdk.moengage.com
 0.0.0.0 matomo.moetiknaardedokter.nl
@@ -81434,7 +81421,6 @@
 0.0.0.0 telemetry.us-luke-1.oraclegovcloud.com
 0.0.0.0 analytics.oracleswap.io
 0.0.0.0 analytics.oralb.com
-0.0.0.0 oralse.cx
 0.0.0.0 analytics.orange.ro
 0.0.0.0 c.orange.fr
 0.0.0.0 datalayer.orange.fr
@@ -85830,7 +85816,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw1.smartadserver.com
+0.0.0.0 euw2.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -86593,7 +86579,6 @@
 0.0.0.0 stakingsmile.com
 0.0.0.0 matomo.caravana-prod.sys11.stakkle.com
 0.0.0.0 stalesummer.com
-0.0.0.0 stallioncredit.com
 0.0.0.0 waatch.standaard.be
 0.0.0.0 panalytics.standardadmin.org
 0.0.0.0 app.info.standardandpoors.com
@@ -87651,7 +87636,6 @@
 0.0.0.0 analytics.telenordigital.com
 0.0.0.0 cmp.telerama.fr
 0.0.0.0 tse.telerama.fr
-0.0.0.0 telergaom.top
 0.0.0.0 telet.me
 0.0.0.0 widget.teletype.app
 0.0.0.0 beam.telex.hu
@@ -87688,7 +87672,6 @@
 0.0.0.0 telezelm-mevv.icu
 0.0.0.0 telezelm-msjr.icu
 0.0.0.0 telezelm-nbwq.icu
-0.0.0.0 telezelm-nene.icu
 0.0.0.0 telezelm-nhhg.icu
 0.0.0.0 telezelm-nmzf.icu
 0.0.0.0 telezelm-nvud.icu
@@ -92092,7 +92075,6 @@
 0.0.0.0 qpb1.sohu.com.cname209.yjs-cdn.com
 0.0.0.0 mountain.zhidao.baidu.com.cname3466.yjs-cdn.com
 0.0.0.0 analytics.gov.yk.ca
-0.0.0.0 r1.ykimg.com
 0.0.0.0 ykkbwdf.cn
 0.0.0.0 yklfg.cn
 0.0.0.0 ykwfnicxmntel.com
@@ -92612,7 +92594,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 35256 rules from this source
+# Converted 35235 rules from this source
 
 
-# Total unique domains: 92591
+# Total unique domains: 92573
