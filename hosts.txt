@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-13 18:22:04 UTC
+# Last modified: 2024-12-14 01:14:44 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -1308,6 +1308,7 @@
 0.0.0.0 wtm.monitoringservice.co
 0.0.0.0 mine.torrent.pw
 0.0.0.0 00d84987c0.com
+0.0.0.0 00f8c4bb25.com
 0.0.0.0 012024jhvjhkozekl.space
 0.0.0.0 0127c96640.com
 0.0.0.0 01counter.com
@@ -1327,6 +1328,7 @@
 0.0.0.0 05e11c9f6f.com
 0.0.0.0 0676el9lskux.top
 0.0.0.0 06a21eff24.com
+0.0.0.0 06cffaae87.com
 0.0.0.0 070880.com
 0.0.0.0 0760571ca9.com
 0.0.0.0 07a1624bd7.com
@@ -7778,6 +7780,7 @@
 0.0.0.0 d0main.ru
 0.0.0.0 d15a035f27.com
 0.0.0.0 d1a0c6affa.com
+0.0.0.0 d1f76eb5a4.com
 0.0.0.0 d1x9q8w2e4.xyz
 0.0.0.0 d1ygczx880h5yu.cloudfront.net
 0.0.0.0 d24ak3f2b.top
@@ -27488,6 +27491,7 @@
 0.0.0.0 wcbxugtfk.com
 0.0.0.0 wcdxpxugsrk.xyz
 0.0.0.0 wcgcddncqveiqia.xyz
+0.0.0.0 wcigmepzygad.com
 0.0.0.0 wcmcs.net
 0.0.0.0 wcnhhqqueu.com
 0.0.0.0 wcoaswaxkrt.com
@@ -28421,6 +28425,7 @@
 0.0.0.0 xwqea.com
 0.0.0.0 xwqvytuiko.com
 0.0.0.0 xwvduxeiuv.com
+0.0.0.0 xwzbpkku-i.site
 0.0.0.0 xx-umomfzqik.today
 0.0.0.0 xxccdshj.com
 0.0.0.0 xxdfexbwv.top
@@ -51139,6 +51144,9 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 wlouqsz.xyz
+0.0.0.0 hcznaubp.icu
+0.0.0.0 truxedku.com
 0.0.0.0 owsrgljb.icu
 0.0.0.0 ziqniduy.com
 0.0.0.0 dddstew6cw8.fun
@@ -57337,7 +57345,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57322 rules from this source
+# Converted 57330 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -93472,4 +93480,4 @@
 # Converted 36126 rules from this source
 
 
-# Total unique domains: 93448
+# Total unique domains: 93456
