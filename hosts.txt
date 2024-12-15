@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-15 01:22:25 UTC
+# Last modified: 2024-12-15 06:21:16 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -51157,6 +51157,7 @@
 0.0.0.0 jtimiya.top
 0.0.0.0 aigfednd.icu
 0.0.0.0 chonaesor.com
+0.0.0.0 warped-bus.com
 0.0.0.0 owsrgljb.icu
 0.0.0.0 ziqniduy.com
 0.0.0.0 dddstew6cw8.fun
@@ -57355,7 +57356,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57340 rules from this source
+# Converted 57341 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -58263,7 +58264,6 @@
 0.0.0.0 ywrcqa.5newsonline.com
 0.0.0.0 5qzone.net
 0.0.0.0 5ra-greaws.com
-0.0.0.0 5sec.info
 0.0.0.0 metrics.5starnutrition.com
 0.0.0.0 5thfinger.com
 0.0.0.0 5uxmusq.cn
@@ -58947,7 +58947,6 @@
 0.0.0.0 ct5.addthis.com
 0.0.0.0 dlx.addthis.com
 0.0.0.0 edge.addthis.com
-0.0.0.0 m.addthis.com
 0.0.0.0 optout.addthis.com
 0.0.0.0 q.addthis.com
 0.0.0.0 v1.addthis.com
@@ -60633,6 +60632,7 @@
 0.0.0.0 tf-presigned-url-eu-central-1-prod-log-collector-bucket.s3.eu-central-1.amazonaws.com
 0.0.0.0 aws3-i-lb-noti-beacon-proxy-81c95c8f8625ff4d.elb.eu-west-1.amazonaws.com
 0.0.0.0 huq-query-loggers-europe-west1-32ef7f4bbf54ce27.elb.eu-west-1.amazonaws.com
+0.0.0.0 o9tt6h08li.execute-api.eu-west-1.amazonaws.com
 0.0.0.0 aws-athena-query-results-data-analytics-brenntag-prod.s3.eu-west-1.amazonaws.com
 0.0.0.0 cirrus-full-snapshots-track-csv-v1-0-eu-prod.s3.eu-west-1.amazonaws.com
 0.0.0.0 csos-telemetry-eu-west-1.s3.eu-west-1.amazonaws.com
@@ -61710,7 +61710,6 @@
 0.0.0.0 posthog.atticus.com
 0.0.0.0 telemetry.attio.build
 0.0.0.0 attractionbanana.com
-0.0.0.0 attractiveafternoon.com
 0.0.0.0 attractivecutiewcx.com
 0.0.0.0 ad.api.attribuly.com
 0.0.0.0 tr.attribuly.com
@@ -64782,7 +64781,6 @@
 0.0.0.0 ckct.ru
 0.0.0.0 ckojwaarrruc.com
 0.0.0.0 ckstatic.com
-0.0.0.0 ckvjswjlud.com
 0.0.0.0 analytics.claas.com
 0.0.0.0 wg.clagssyria.com
 0.0.0.0 clammychicken.com
@@ -85818,7 +85816,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw2.smartadserver.com
+0.0.0.0 euw1.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -87137,7 +87135,6 @@
 0.0.0.0 use-cr.svr-algorix.com
 0.0.0.0 tk.svsound.com
 0.0.0.0 plausible.svvsdtemp.org
-0.0.0.0 sw1block.com
 0.0.0.0 swailsdang.com
 0.0.0.0 swanksoft.com
 0.0.0.0 swankysquare.com
@@ -92596,7 +92593,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 35235 rules from this source
+# Converted 35231 rules from this source
 
 
-# Total unique domains: 92575
+# Total unique domains: 92572
