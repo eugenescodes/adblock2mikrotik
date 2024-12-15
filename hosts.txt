@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-15 06:21:16 UTC
+# Last modified: 2024-12-15 12:29:34 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -5722,6 +5722,7 @@
 0.0.0.0 bryond.com
 0.0.0.0 bsantycbjnf.com
 0.0.0.0 bsbrcdna.com
+0.0.0.0 bservr.com
 0.0.0.0 bsgbd77l.de
 0.0.0.0 bshrdr.com
 0.0.0.0 bsilzzc.com
@@ -12507,7 +12508,6 @@
 0.0.0.0 heavespectaclescoefficient.com
 0.0.0.0 heavyuniversecandy.com
 0.0.0.0 hebenonwidegab.top
-0.0.0.0 hebiichigo.com
 0.0.0.0 hectorfeminine.com
 0.0.0.0 hectorobedient.com
 0.0.0.0 hedgehoghugsyou.com
@@ -28408,7 +28408,6 @@
 0.0.0.0 xuiqxlhqyo.com
 0.0.0.0 xukpqemfs.com
 0.0.0.0 xukpresesmr.info
-0.0.0.0 xupalace.org
 0.0.0.0 xuqza.com
 0.0.0.0 xvbwvle.com
 0.0.0.0 xvfyubhqjp.xyz
@@ -40730,6 +40729,7 @@
 0.0.0.0 gsspcln.jp
 0.0.0.0 gyro-n.com
 0.0.0.0 h-cast.jp
+0.0.0.0 hebiichigo.com
 0.0.0.0 i2i.jp
 0.0.0.0 iid-network.jp
 0.0.0.0 iogous.com
@@ -51158,6 +51158,10 @@
 0.0.0.0 aigfednd.icu
 0.0.0.0 chonaesor.com
 0.0.0.0 warped-bus.com
+0.0.0.0 ktimiyd.top
+0.0.0.0 a5t.icu
+0.0.0.0 xpicj0.icu
+0.0.0.0 siconoi.com
 0.0.0.0 owsrgljb.icu
 0.0.0.0 ziqniduy.com
 0.0.0.0 dddstew6cw8.fun
@@ -57356,7 +57360,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57341 rules from this source
+# Converted 57345 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -91780,6 +91784,7 @@
 0.0.0.0 scene.vip.xunlei.com
 0.0.0.0 material.xl7.xunlei.com
 0.0.0.0 upgrade.xl9.xunlei.com
+0.0.0.0 xupalace.org
 0.0.0.0 analytics.xupervisor.com
 0.0.0.0 static.xvideos.com
 0.0.0.0 xvideoslive.com
@@ -92593,7 +92598,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 35231 rules from this source
+# Converted 35232 rules from this source
 
 
-# Total unique domains: 92572
+# Total unique domains: 92577
