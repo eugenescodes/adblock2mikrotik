@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-18 01:14:02 UTC
+# Last modified: 2024-12-18 06:22:04 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -8880,6 +8880,7 @@
 0.0.0.0 dovictinian.com
 0.0.0.0 down1oads.com
 0.0.0.0 download-adblock-zen.com
+0.0.0.0 download-privacybear.com
 0.0.0.0 download-ready.net
 0.0.0.0 download4.cfd
 0.0.0.0 download4allfree.com
@@ -51165,6 +51166,13 @@
 0.0.0.0 screspoy.com
 0.0.0.0 ua2.icu
 0.0.0.0 ttimiyi.top
+0.0.0.0 elloisny.com
+0.0.0.0 zabpgtjh.icu
+0.0.0.0 utimiyt.top
+0.0.0.0 ee5.icu
+0.0.0.0 pofbpx.icu
+0.0.0.0 sckyf.com
+0.0.0.0 ppio12181ios.top
 0.0.0.0 qonbibff.icu
 0.0.0.0 n7a.icu
 0.0.0.0 craegvin.com
@@ -57386,7 +57394,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57371 rules from this source
+# Converted 57379 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -92480,4 +92488,4 @@
 # Converted 35085 rules from this source
 
 
-# Total unique domains: 92456
+# Total unique domains: 92464
