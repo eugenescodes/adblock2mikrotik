@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-18 18:22:04 UTC
+# Last modified: 2024-12-19 01:14:47 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,9 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 ceefsyqotuagk.com
+0.0.0.0 kljhsanvj.com
+0.0.0.0 leegreemula.net
 0.0.0.0 ldjyvegage.com
 0.0.0.0 skhmjezzj.com
 0.0.0.0 predictivadnetwork.com
@@ -51163,6 +51166,8 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 threkuth.com
+0.0.0.0 nrbwzh.icu
 0.0.0.0 ihearsoh.com
 0.0.0.0 juutckrt.icu
 0.0.0.0 qtimiyy.top
@@ -56964,6 +56969,7 @@
 0.0.0.0 tracker.jabama.com
 0.0.0.0 kar-sentry.karnameh.com
 0.0.0.0 websocket.khanefootball.com
+0.0.0.0 sentry.mci.dev
 0.0.0.0 counter.musicsweb.ir
 0.0.0.0 counter.mahanmusic.net
 0.0.0.0 analytic.magland.ir
@@ -56974,7 +56980,7 @@
 0.0.0.0 stc.ninisite.com
 0.0.0.0 websocket.55online.news
 0.0.0.0 analytics.plaza.ir
-0.0.0.0 sentry.quera.org
+0.0.0.0 sentry.querastaff.ir
 0.0.0.0 a.reymit.ir
 0.0.0.0 sentry.mielse.com
 0.0.0.0 ingest-data-afra.snappfood.dev
@@ -57401,7 +57407,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57386 rules from this source
+# Converted 57392 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -92066,4 +92072,4 @@
 # Converted 34656 rules from this source
 
 
-# Total unique domains: 92042
+# Total unique domains: 92048
