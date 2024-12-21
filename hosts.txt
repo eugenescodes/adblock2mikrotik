@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-20 18:20:04 UTC
+# Last modified: 2024-12-21 01:09:55 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -11778,6 +11778,7 @@
 0.0.0.0 grashaksoudry.net
 0.0.0.0 grasshusk.com
 0.0.0.0 grasutie.net
+0.0.0.0 gratataxis.shop
 0.0.0.0 graterpatent.com
 0.0.0.0 gratertwentieth.com
 0.0.0.0 gratificationdesperate.com
@@ -38203,7 +38204,6 @@
 0.0.0.0 tracking.thehut.net
 0.0.0.0 tracking.tidalhifi.com
 0.0.0.0 tracking.times247.com
-0.0.0.0 tracking.tomshardware.co.uk
 0.0.0.0 tracking.ukwm.co.uk
 0.0.0.0 tracking.unrealengine.com
 0.0.0.0 tracking.yourfilehost.com
@@ -50615,6 +50615,8 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 rktjxj.icu
+0.0.0.0 orodsmnu.com
 0.0.0.0 grmzwc.icu
 0.0.0.0 ppio12200ios.top
 0.0.0.0 ondraits.com
@@ -55836,7 +55838,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 55821 rules from this source
+# Converted 55823 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -90700,4 +90702,4 @@
 # Converted 34855 rules from this source
 
 
-# Total unique domains: 90676
+# Total unique domains: 90678
