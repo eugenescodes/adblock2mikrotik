@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-25 06:21:22 UTC
+# Last modified: 2024-12-25 12:28:54 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -36192,6 +36192,8 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 s.pie.org
+0.0.0.0 t.pie.org
 0.0.0.0 altema-log.com
 0.0.0.0 telemetry.insights.video.a2z.com
 0.0.0.0 w890.denvergazette.com
@@ -38751,6 +38753,7 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 mobile-production.content-square.net
 0.0.0.0 sf16-static.i18n-pglstatp.com
 0.0.0.0 log.pullcenter.live
 0.0.0.0 log.documentmanagerpdfdocxlssale.live
@@ -50860,6 +50863,8 @@
 0.0.0.0 rwdjrn.icu
 0.0.0.0 twilmii.top
 0.0.0.0 r4u.icu
+0.0.0.0 bpxxgkoj.icu
+0.0.0.0 gmso12251oka.top
 0.0.0.0 beenedsl.com
 0.0.0.0 tghrfv.icu
 0.0.0.0 wwilmie.top
@@ -56114,7 +56119,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56099 rules from this source
+# Converted 56104 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -79976,7 +79981,6 @@
 0.0.0.0 analytics.pics.io
 0.0.0.0 telemetry.am.pictet.com
 0.0.0.0 picxxxhub.com
-0.0.0.0 s.pie.org
 0.0.0.0 pieclayton.com
 0.0.0.0 piet2eix3l.com
 0.0.0.0 analytics.pigment.app
@@ -89956,7 +89960,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 33836 rules from this source
+# Converted 33835 rules from this source
 
 
-# Total unique domains: 89935
+# Total unique domains: 89939
