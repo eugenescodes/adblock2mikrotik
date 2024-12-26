@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-26 12:29:38 UTC
+# Last modified: 2024-12-26 18:19:55 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -32631,6 +32631,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 sentinelbi.com
 0.0.0.0 ascendeummedia.com
 0.0.0.0 agma-analytics.de
 0.0.0.0 cdn-gw-dv.vip
@@ -32788,7 +32789,6 @@
 0.0.0.0 pbcs.decider.com
 0.0.0.0 pbcs.pagesix.com
 0.0.0.0 tagtoo.co
-0.0.0.0 sentinelbi.com
 0.0.0.0 count.sibbo.net
 0.0.0.0 umami.is
 0.0.0.0 logger.torimochi-ad.net
@@ -36211,6 +36211,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 syndication.twitter.com
 0.0.0.0 gtm.temu.com
 0.0.0.0 log.shortbread.analytics.console.aws.a2z.com
 0.0.0.0 log.shortbread.aws.dev
@@ -38776,6 +38777,7 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 events.watchtower.imdbtv.amazon.dev
 0.0.0.0 mobile-production.content-square.net
 0.0.0.0 sf16-static.i18n-pglstatp.com
 0.0.0.0 log.pullcenter.live
@@ -46716,6 +46718,7 @@
 0.0.0.0 chinhphu.cc
 0.0.0.0 chinhphu.dulieucutru.org
 0.0.0.0 chinhphu.hodancu.com
+0.0.0.0 chinhphu.kbshkdt.org
 0.0.0.0 chovayfecredit.com
 0.0.0.0 chovaynhanh.online
 0.0.0.0 chovaytiengopsg.com
@@ -48597,6 +48600,7 @@
 0.0.0.0 proapkcrack.com
 0.0.0.0 procfullcracked.com
 0.0.0.0 procrackfree.com
+0.0.0.0 profileid.info
 0.0.0.0 prolicensekeys.com
 0.0.0.0 promomobilsuzukijakarta.com
 0.0.0.0 provider.giize.com
@@ -50889,6 +50893,8 @@
 0.0.0.0 zaeqrath.com
 0.0.0.0 qovunx.com
 0.0.0.0 lurefq.com
+0.0.0.0 5ik.icu
+0.0.0.0 lwilmil.top
 0.0.0.0 vriesziy.com
 0.0.0.0 rwdjrn.icu
 0.0.0.0 twilmii.top
@@ -51142,7 +51148,6 @@
 0.0.0.0 sirrors.com
 0.0.0.0 uldaens.com
 0.0.0.0 qidzwhfp.icu
-0.0.0.0 aizhantj.com
 0.0.0.0 g41i.icu
 0.0.0.0 tweizai.top
 0.0.0.0 wcwkcus.top
@@ -56153,7 +56158,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56138 rules from this source
+# Converted 56143 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -56186,6 +56191,7 @@
 0.0.0.0 0865a125ce.com
 0.0.0.0 087tqb.cn
 0.0.0.0 08916fb8f8.com
+0.0.0.0 190237bdf8.08a62d358c.com
 0.0.0.0 0909810.com
 0.0.0.0 0b57ha4k4zrd.top
 0.0.0.0 0catch.com
@@ -56972,8 +56978,10 @@
 0.0.0.0 ad-configurator.6cloud.fr
 0.0.0.0 ad-interceptor.6cloud.fr
 0.0.0.0 6cyfvvs.com
+0.0.0.0 ba31f372b1.6d0ce9a973.com
 0.0.0.0 6d3f3332fd.com
 0.0.0.0 6dad.com
+0.0.0.0 1ff819101c.6e56e159be.com
 0.0.0.0 6e76e4803d.com
 0.0.0.0 6ea337b8a4.com
 0.0.0.0 6fe1e5ccc3.com
@@ -58405,6 +58413,7 @@
 0.0.0.0 api.us-west-2.aiv-delivery.net
 0.0.0.0 aiwei365.net
 0.0.0.0 collection.aixpirts.com
+0.0.0.0 aizhantj.com
 0.0.0.0 metrics.ajanlatok365.hu
 0.0.0.0 ajcode.co
 0.0.0.0 ajggirci.com
@@ -58681,6 +58690,7 @@
 0.0.0.0 analytics.allthings.how
 0.0.0.0 analytics.allunite.com
 0.0.0.0 sstats.allure.com
+0.0.0.0 s.allureanews.com
 0.0.0.0 alluringbucket.com
 0.0.0.0 allwords.com
 0.0.0.0 metrics.ally.com
@@ -59513,6 +59523,7 @@
 0.0.0.0 aiqx.anyonebutyou.movie
 0.0.0.0 cdn.anyshare.icu
 0.0.0.0 anytag.jp
+0.0.0.0 graylog.anytype.io
 0.0.0.0 telemetry.anytype.io
 0.0.0.0 anyunwl04.com
 0.0.0.0 infos.anz.com
@@ -65297,6 +65308,7 @@
 0.0.0.0 smetrics.costco.ca
 0.0.0.0 smetrics.costco.com
 0.0.0.0 data.trx.costco.com
+0.0.0.0 costco-rewardsaccount1.com
 0.0.0.0 smetrics.costcobusinesscentre.ca
 0.0.0.0 metrics.costcobusinessdelivery.com
 0.0.0.0 smetrics.costcobusinessdelivery.com
@@ -65431,6 +65443,7 @@
 0.0.0.0 umami.creanet.sk
 0.0.0.0 download.createyournextcustomer.com
 0.0.0.0 metrics.creatify.ai
+0.0.0.0 webtracking-v01.creatio.com
 0.0.0.0 te.creation-l.de
 0.0.0.0 creative-mobile.com
 0.0.0.0 creativecarrer.com
@@ -65578,7 +65591,6 @@
 0.0.0.0 analytics.cteis.com
 0.0.0.0 cten10010.com
 0.0.0.0 mydisplay.ctfile.com
-0.0.0.0 ctkjiysyepxwrv.xyz
 0.0.0.0 ctnetwork.hu
 0.0.0.0 gemtun.ctnewsjunkie.com
 0.0.0.0 ctobsnssdk.com
@@ -68404,6 +68416,8 @@
 0.0.0.0 matomo.ds-ultimate.de
 0.0.0.0 s.ds0yue.com
 0.0.0.0 s.ds239w.com
+0.0.0.0 s.ds2gs4.com
+0.0.0.0 s.ds3jbr.com
 0.0.0.0 dsail-tech.com
 0.0.0.0 telemetry.r1.dscore.com
 0.0.0.0 analytics.dscpl.io
@@ -68512,6 +68526,7 @@
 0.0.0.0 a.dynatrace.com
 0.0.0.0 bf.dynatrace.com
 0.0.0.0 js-cdn.dynatrace.com
+0.0.0.0 t.dynatrace.com
 0.0.0.0 dynip.org
 0.0.0.0 analytics.covesmart.dynoanalytics.xyz
 0.0.0.0 aa.dyson.be
@@ -73488,6 +73503,8 @@
 0.0.0.0 infospace.com
 0.0.0.0 infossztech.cfd
 0.0.0.0 telemetry.infosysapps.com
+0.0.0.0 rb.infox.sg
+0.0.0.0 ru.infox.sg
 0.0.0.0 analytics.infozone.pro
 0.0.0.0 analytics.infraloods.nl
 0.0.0.0 count.ing.de
@@ -74256,7 +74273,6 @@
 0.0.0.0 jiglikeshilla.com
 0.0.0.0 jigsrywu.com
 0.0.0.0 jiguang.cn
-0.0.0.0 jihylmjrlrrufr.com
 0.0.0.0 analysis.prod.joyfru.jiji.com
 0.0.0.0 jikungudubber.live
 0.0.0.0 country.jimdo.com
@@ -74437,6 +74453,7 @@
 0.0.0.0 metrics-twoplayers.junglefrog.com
 0.0.0.0 jungroup.com
 0.0.0.0 analytics.junkcleaner.club
+0.0.0.0 click-v4.junmediadclikrmdi.com
 0.0.0.0 xml.junplatdirect.com
 0.0.0.0 junshizhanlue.com
 0.0.0.0 matomo.juraforum.de
@@ -78366,6 +78383,7 @@
 0.0.0.0 tq.ngcluster-a.online
 0.0.0.0 xml-eu-v4.ngcluster-a.online
 0.0.0.0 xml-v4.ngcluster-a.online
+0.0.0.0 xml-v4.ngcluster-c.site
 0.0.0.0 ngcouncern.xyz
 0.0.0.0 ngex.com
 0.0.0.0 tcp.ngrok.io
@@ -79169,6 +79187,7 @@
 0.0.0.0 opntwymri.com
 0.0.0.0 fzgpzp.opodo.de
 0.0.0.0 gtrack.opossumsauce.com
+0.0.0.0 cpm.oppa.media
 0.0.0.0 opparasecton.com
 0.0.0.0 tracking.oppd.com
 0.0.0.0 imagzine.oppomobile.com
@@ -79548,6 +79567,7 @@
 0.0.0.0 a8cv.paidy.com
 0.0.0.0 analytics.paigo.com
 0.0.0.0 pailpatch.com
+0.0.0.0 painolympics.org
 0.0.0.0 paintnet.es
 0.0.0.0 paintnet.fr
 0.0.0.0 paintpear.com
@@ -80287,6 +80307,7 @@
 0.0.0.0 popin.cc
 0.0.0.0 popplantation.com
 0.0.0.0 filter.pops.gg
+0.0.0.0 login.pops.gg
 0.0.0.0 xml.pops.gg
 0.0.0.0 xml-v4.pops.gg
 0.0.0.0 analytics.back.popsicle.finance
@@ -81743,7 +81764,6 @@
 0.0.0.0 revancedextended.com
 0.0.0.0 revancedextended.io
 0.0.0.0 revancedyoutube.org
-0.0.0.0 cpm.revbid.net
 0.0.0.0 revealsgrebe.com
 0.0.0.0 revenue.net
 0.0.0.0 analytics.revenue.io
@@ -83452,7 +83472,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw1.smartadserver.com
+0.0.0.0 euw2.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -86418,6 +86438,7 @@
 0.0.0.0 tuberis.com
 0.0.0.0 tubetitties.com
 0.0.0.0 b1.tubexo.tv
+0.0.0.0 tubgirl.org
 0.0.0.0 ads.production-public.tubi.io
 0.0.0.0 ads4.production-public.tubi.io
 0.0.0.0 pixel.production-public.tubi.io
@@ -89941,8 +89962,9 @@
 0.0.0.0 zzotrack.com
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
+0.0.0.0 zzzperform.com
 
-# Converted 33783 rules from this source
+# Converted 33800 rules from this source
 
 
-# Total unique domains: 89921
+# Total unique domains: 89943
