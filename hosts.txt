@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-26 01:10:13 UTC
+# Last modified: 2024-12-26 06:21:27 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -50876,6 +50876,8 @@
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
 0.0.0.0 pzzedx.icu
+0.0.0.0 owilmik.top
+0.0.0.0 jy7.icu
 0.0.0.0 vriesziy.com
 0.0.0.0 rwdjrn.icu
 0.0.0.0 twilmii.top
@@ -56140,7 +56142,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56125 rules from this source
+# Converted 56127 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -60424,7 +60426,6 @@
 0.0.0.0 awarealley.com
 0.0.0.0 away.com
 0.0.0.0 analytics.awayx.com
-0.0.0.0 awexjtozogod.com
 0.0.0.0 aweyqalyrejb.top
 0.0.0.0 awfonts.com
 0.0.0.0 awgutqp.cc
@@ -63148,7 +63149,7 @@
 0.0.0.0 ciuvo.com
 0.0.0.0 stats.civiccomputing.com
 0.0.0.0 analytics.civicplus.com
-0.0.0.0 get.civicscience.com
+0.0.0.0 civicscience.com
 0.0.0.0 analytics.civitai.com
 0.0.0.0 metrics.civitatis.com
 0.0.0.0 metrics.bp-ste1.civo.com
@@ -74968,7 +74969,6 @@
 0.0.0.0 ktracker.kumparan.com
 0.0.0.0 kundvisaren.se
 0.0.0.0 kuponacdn.de
-0.0.0.0 kuqfudazkn.com
 0.0.0.0 analytics.kurtgeiger.com
 0.0.0.0 analytics.kurtgeiger.us
 0.0.0.0 matomo.kurviger.de
@@ -80062,7 +80062,6 @@
 0.0.0.0 bxumze.pjstar.com
 0.0.0.0 pjstat.com
 0.0.0.0 pjy55d.com
-0.0.0.0 pktriot.net
 0.0.0.0 analytics.plaato.io
 0.0.0.0 placedesleads.com
 0.0.0.0 ea.placedestendances.com
@@ -81265,6 +81264,7 @@
 0.0.0.0 matomo.raiffeisenbank.rs
 0.0.0.0 matomo.rail.cc
 0.0.0.0 railwaygiraffe.com
+0.0.0.0 railwayrainstorm.com
 0.0.0.0 railwayreason.com
 0.0.0.0 analytics.rainbasketballusa.com
 0.0.0.0 raintwig.com
@@ -81837,7 +81837,6 @@
 0.0.0.0 rigidstiffnesszoning.com
 0.0.0.0 rigidveil.com
 0.0.0.0 rigorlab.com
-0.0.0.0 rijmfqzckx.com
 0.0.0.0 analytics.rijwind.com
 0.0.0.0 metrics.rileychildrens.org
 0.0.0.0 rimaje.nl
@@ -81893,7 +81892,6 @@
 0.0.0.0 analytics.flow.riverty.com
 0.0.0.0 trk.rixserv.com
 0.0.0.0 clarity.rjn.com
-0.0.0.0 rjwljrf.xyz
 0.0.0.0 rklmstr.com
 0.0.0.0 rle.ru
 0.0.0.0 analytics.rleeermey.com
@@ -83443,7 +83441,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw2.smartadserver.com
+0.0.0.0 euw1.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -87848,7 +87846,6 @@
 0.0.0.0 vppgamingnetwork.com
 0.0.0.0 vps-41077.vps-default-host.net
 0.0.0.0 vpsgu.cn
-0.0.0.0 vqtyargb.com
 0.0.0.0 jjcypx.vrai.com
 0.0.0.0 vrancaozgdw.com
 0.0.0.0 om.vrbo.com
@@ -87925,7 +87922,6 @@
 0.0.0.0 metrics.stage.www.vwfs.de
 0.0.0.0 smetrics.stage.www.vwfs.de
 0.0.0.0 smetrics.vwfs-service-plans.io
-0.0.0.0 vwlknjjt.com
 0.0.0.0 vwo.com
 0.0.0.0 a.vws4brkfst.com
 0.0.0.0 s.vws4brkfst.com
@@ -89935,7 +89931,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 
-# Converted 33789 rules from this source
+# Converted 33783 rules from this source
 
 
-# Total unique domains: 89914
+# Total unique domains: 89910
