@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-27 12:29:02 UTC
+# Last modified: 2024-12-27 18:19:45 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,8 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 loftersvisaya.com
+0.0.0.0 chimneydicier.com
 0.0.0.0 gsrgjsmymkwt.com
 0.0.0.0 zeecajichaiw.net
 0.0.0.0 server.megabrain.co
@@ -1456,6 +1458,7 @@
 0.0.0.0 291hkcido.de
 0.0.0.0 295a9f642d.com
 0.0.0.0 2989f3f0ff.com
+0.0.0.0 29a7397be5.com
 0.0.0.0 29apfjmg2.de
 0.0.0.0 29b124c44a.com
 0.0.0.0 29s55bf2.de
@@ -1738,6 +1741,7 @@
 0.0.0.0 5ea36e0eb5.com
 0.0.0.0 5ed55e7208.com
 0.0.0.0 5eef1ed9ac.com
+0.0.0.0 5f631bb110.com
 0.0.0.0 5f6dmzflgqso.com
 0.0.0.0 5f6efdfc05.com
 0.0.0.0 5f93004b68.com
@@ -1993,6 +1997,7 @@
 0.0.0.0 a5jogo.biz
 0.0.0.0 a5jogo.club
 0.0.0.0 a64x.com
+0.0.0.0 a67c5c438d.com
 0.0.0.0 a6dc99d1a8.com
 0.0.0.0 a700fb9c8d.com
 0.0.0.0 a717b6d31e.com
@@ -5314,6 +5319,7 @@
 0.0.0.0 bonyspecialist.pro
 0.0.0.0 bonzai.ad
 0.0.0.0 boodaisi.xyz
+0.0.0.0 boodiecawquaw.top
 0.0.0.0 boogopee.com
 0.0.0.0 bookadil.com
 0.0.0.0 bookbannershop.com
@@ -9386,6 +9392,7 @@
 0.0.0.0 embogsoarers.com
 0.0.0.0 embowerdatto.com
 0.0.0.0 embracetrace.com
+0.0.0.0 embrawnseeping.top
 0.0.0.0 embtrk.com
 0.0.0.0 embwmpt.com
 0.0.0.0 emediate.dk
@@ -12127,6 +12134,7 @@
 0.0.0.0 hadtwobr.info
 0.0.0.0 hadute.xyz
 0.0.0.0 haffnetworkmm.com
+0.0.0.0 hafhwagagswy.com
 0.0.0.0 hafonmadp.com
 0.0.0.0 hagdenlupulic.top
 0.0.0.0 hagdispleased.com
@@ -20025,6 +20033,7 @@
 0.0.0.0 principledecliner.info
 0.0.0.0 principlessilas.com
 0.0.0.0 pringed.space
+0.0.0.0 prinkergp.top
 0.0.0.0 prinksdammit.com
 0.0.0.0 printaugment.com
 0.0.0.0 printerswear.com
@@ -25895,6 +25904,7 @@
 0.0.0.0 uads.guru
 0.0.0.0 uads.space
 0.0.0.0 uafkcvpvvelp.com
+0.0.0.0 uahosnnx.com
 0.0.0.0 uaiqkjkw.com
 0.0.0.0 uavbgdw.com
 0.0.0.0 uawvmni.com
@@ -32631,6 +32641,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 untho.de
 0.0.0.0 k-words.io
 0.0.0.0 tlmtr.org
 0.0.0.0 sentinelbi.com
@@ -36213,7 +36224,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
-0.0.0.0 syndication.twitter.com
+0.0.0.0 telemetry.dzen.ru
 0.0.0.0 gtm.temu.com
 0.0.0.0 log.shortbread.analytics.console.aws.a2z.com
 0.0.0.0 log.shortbread.aws.dev
@@ -50894,6 +50905,7 @@
 0.0.0.0 bwilmiv.top
 0.0.0.0 gmso12271oka.top
 0.0.0.0 screddoit.com
+0.0.0.0 n8u.icu
 0.0.0.0 pzzedx.icu
 0.0.0.0 owilmik.top
 0.0.0.0 jy7.icu
@@ -56167,7 +56179,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56152 rules from this source
+# Converted 56164 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -57249,6 +57261,7 @@
 0.0.0.0 axp.abc4.com
 0.0.0.0 abcdlm.com
 0.0.0.0 abcdserver.com
+0.0.0.0 abdicatefluke.com
 0.0.0.0 abducke.com
 0.0.0.0 data.abebooks.com
 0.0.0.0 metrics.abebooks.com
@@ -57366,6 +57379,7 @@
 0.0.0.0 accountsdoor.com
 0.0.0.0 analytics.api.accredible.com
 0.0.0.0 smetrics.accredo.com
+0.0.0.0 accreteprocess.click
 0.0.0.0 metrics.accumulatenetwork.io
 0.0.0.0 accurateanimal.com
 0.0.0.0 analytics.accuristech.com
@@ -57565,6 +57579,7 @@
 0.0.0.0 sw.adduplex.com
 0.0.0.0 swu-x.adduplex.com
 0.0.0.0 addwish.com
+0.0.0.0 c196c337d9.ade6b8430d.com
 0.0.0.0 adeimptrck.com
 0.0.0.0 matomo.adelphi.de
 0.0.0.0 adelva.com
@@ -58076,6 +58091,7 @@
 0.0.0.0 adverum.lt
 0.0.0.0 sgtm.advgo.net
 0.0.0.0 adit.spain.advgo.net
+0.0.0.0 adviceforemost.com
 0.0.0.0 advidates.com
 0.0.0.0 adview.cn
 0.0.0.0 adview.com
@@ -59909,6 +59925,7 @@
 0.0.0.0 appvirality.com
 0.0.0.0 analytics.appypie.com
 0.0.0.0 aadata.april-international.com
+0.0.0.0 apritifka.click
 0.0.0.0 tr.info.aprr.fr
 0.0.0.0 apsalar.com
 0.0.0.0 apserver.net
@@ -60011,6 +60028,7 @@
 0.0.0.0 t.arkansasrazorbacks.com
 0.0.0.0 metrics.arla.com
 0.0.0.0 smetrics.arm.com
+0.0.0.0 armataangrily.shop
 0.0.0.0 armoniacenter.com
 0.0.0.0 armsart.com
 0.0.0.0 metrics.armstrong.com
@@ -60458,7 +60476,6 @@
 0.0.0.0 awarealley.com
 0.0.0.0 away.com
 0.0.0.0 analytics.awayx.com
-0.0.0.0 aweyqalyrejb.top
 0.0.0.0 awfonts.com
 0.0.0.0 awgutqp.cc
 0.0.0.0 awifi.cn
@@ -61428,7 +61445,6 @@
 0.0.0.0 bjcathay.com
 0.0.0.0 analytics.bjornborg.com
 0.0.0.0 smetrics.bjs.com
-0.0.0.0 sdk.api.bjshcw.com
 0.0.0.0 bj1.bjsvp33.space
 0.0.0.0 analytics.bka.sh
 0.0.0.0 metrics.bkb.ch
@@ -62477,6 +62493,7 @@
 0.0.0.0 dumpster.cam4.com
 0.0.0.0 logger007.cam4.com
 0.0.0.0 metrics.cambly.com
+0.0.0.0 cambrelfasc.shop
 0.0.0.0 coreads.cambridge.org
 0.0.0.0 brands.cambrio.com
 0.0.0.0 camelee.cn
@@ -63037,7 +63054,6 @@
 0.0.0.0 analytics.chita.ru
 0.0.0.0 analytics.chitti.app
 0.0.0.0 chivalrouscord.com
-0.0.0.0 chixingkeji.com
 0.0.0.0 chl3.net
 0.0.0.0 chocochipu-o.com
 0.0.0.0 chocolateplatform.com
@@ -63539,7 +63555,6 @@
 0.0.0.0 d262g11wze3cwd.cloudfront.net
 0.0.0.0 d26tbbq8zqdi4v.cloudfront.net
 0.0.0.0 d26us1doo6mh7f.cloudfront.net
-0.0.0.0 d26wyypk7oodc5.cloudfront.net
 0.0.0.0 d27uz827y1nafd.cloudfront.net
 0.0.0.0 d28nwox1gdjlve.cloudfront.net
 0.0.0.0 d28wlxclbkz49x.cloudfront.net
@@ -63672,7 +63687,6 @@
 0.0.0.0 dp58aslhmbcib.cloudfront.net
 0.0.0.0 dpb3g4kqr8xz.cloudfront.net
 0.0.0.0 dq06u9lt5akr2.cloudfront.net
-0.0.0.0 ds2wxzeakypy9.cloudfront.net
 0.0.0.0 ds6br8f5qp1u2.cloudfront.net
 0.0.0.0 dsms0mj1bbhn4.cloudfront.net
 0.0.0.0 dtym7iokkjlif.cloudfront.net
@@ -63729,6 +63743,7 @@
 0.0.0.0 club2.shop
 0.0.0.0 track.clubcar.com
 0.0.0.0 clue6load.com
+0.0.0.0 cluesdumpy.shop
 0.0.0.0 clumoutpomp.click
 0.0.0.0 clumsycar.com
 0.0.0.0 www2.clustrmaps.com
@@ -65619,6 +65634,7 @@
 0.0.0.0 cuba7tilt.com
 0.0.0.0 stats.cubava.cu
 0.0.0.0 cubchannel.com
+0.0.0.0 cubcogons.click
 0.0.0.0 analytics.cube-cloud.com
 0.0.0.0 cubectivel.com
 0.0.0.0 cubepins.com
@@ -68555,7 +68571,6 @@
 0.0.0.0 saa.dysoncanada.ca
 0.0.0.0 clck.dzen.ru
 0.0.0.0 ms.dzen.ru
-0.0.0.0 telemetry.dzen.ru
 0.0.0.0 widgets.dzone.com
 0.0.0.0 dzuvuwtceoxf.com
 0.0.0.0 ad.dzwww.com
@@ -69387,7 +69402,6 @@
 0.0.0.0 eubnm.com
 0.0.0.0 log.eufylife.com
 0.0.0.0 eugamblers.org
-0.0.0.0 eugeniekleig.com
 0.0.0.0 euitx.cn
 0.0.0.0 eulerian.com
 0.0.0.0 piwik.euregio-im-bild.de
@@ -69624,7 +69638,6 @@
 0.0.0.0 exyzz.pl
 0.0.0.0 smetrics.ey.com
 0.0.0.0 ey7ov.com
-0.0.0.0 eybstar.com
 0.0.0.0 eye-watch.in
 0.0.0.0 eyeblaster.com
 0.0.0.0 msafoy.eyebuydirect.com
@@ -70376,6 +70389,7 @@
 0.0.0.0 foundinggulfsaturate.com
 0.0.0.0 ma.fountasandpinnell.com
 0.0.0.0 fourarithmetic.com
+0.0.0.0 fourgonhuss.shop
 0.0.0.0 analytics.fourkites.com
 0.0.0.0 fourlaile.com
 0.0.0.0 metrics.foursixty.com
@@ -72862,7 +72876,6 @@
 0.0.0.0 hpvwdkn.cn
 0.0.0.0 creative.hpyrdr.com
 0.0.0.0 go.hpyrdr.com
-0.0.0.0 hq3x.com
 0.0.0.0 hr44.com
 0.0.0.0 analytics.hrblock.com
 0.0.0.0 clarity.hrblock.com
@@ -74407,7 +74420,6 @@
 0.0.0.0 ele26126.jscrambler.com
 0.0.0.0 jsdelivr.at
 0.0.0.0 jsinfo.net
-0.0.0.0 jslaymxlwb.com
 0.0.0.0 sxjfhh.jsonline.com
 0.0.0.0 jst.ai
 0.0.0.0 publyads.jstag.space
@@ -74519,7 +74531,6 @@
 0.0.0.0 log.kaayun.com
 0.0.0.0 ads.kabooaffiliates.com
 0.0.0.0 kabooo.net
-0.0.0.0 kabrwrynbmwal.top
 0.0.0.0 telemetry.kadatec.cz
 0.0.0.0 analytics.kadena.network
 0.0.0.0 tracking.kadewe.de
@@ -74934,7 +74945,6 @@
 0.0.0.0 kryptoslogic-cve-2021-44228.com
 0.0.0.0 log-sdk.ksapisrv.com
 0.0.0.0 wlog.ksapisrv.com
-0.0.0.0 kscly.com
 0.0.0.0 ywrcqa.ksdk.com
 0.0.0.0 ksibradio.com
 0.0.0.0 apkquery.ksmobile.net
@@ -79753,7 +79763,6 @@
 0.0.0.0 metrics.payfit.com
 0.0.0.0 payglad.com
 0.0.0.0 paymentree.ca
-0.0.0.0 payoneok.com
 0.0.0.0 paypa1.com
 0.0.0.0 paypa1.net
 0.0.0.0 paypa1.org
@@ -83150,6 +83159,7 @@
 0.0.0.0 smetrics.sierra.com
 0.0.0.0 sierrakermit.com
 0.0.0.0 analytics.sieuviet.services
+0.0.0.0 sievabaobab.click
 0.0.0.0 analytics.sievo.com
 0.0.0.0 sifjfirunmi.com
 0.0.0.0 sift.co
@@ -83480,7 +83490,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw2.smartadserver.com
+0.0.0.0 euw1.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -85771,6 +85781,7 @@
 0.0.0.0 data.promo.timhortons.ca
 0.0.0.0 data.promo.timhortons.com
 0.0.0.0 matomo.fra3.timi.cz
+0.0.0.0 timonom.com
 0.0.0.0 analytics.tinggly.com
 0.0.0.0 tingyun.com
 0.0.0.0 matomo.tink.de
@@ -89972,7 +89983,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 33799 rules from this source
+# Converted 33798 rules from this source
 
 
-# Total unique domains: 89951
+# Total unique domains: 89962
