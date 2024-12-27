@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-27 01:10:30 UTC
+# Last modified: 2024-12-27 06:20:48 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -50889,6 +50889,8 @@
 0.0.0.0 cnzz.trafficmanager.net
 0.0.0.0 ncvwnp.icu
 0.0.0.0 sachaits.com
+0.0.0.0 fzdwtage.icu
+0.0.0.0 gw8.icu
 0.0.0.0 pzzedx.icu
 0.0.0.0 owilmik.top
 0.0.0.0 jy7.icu
@@ -56162,7 +56164,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56147 rules from this source
+# Converted 56149 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -57915,6 +57917,7 @@
 0.0.0.0 impr.adservicemedia.dk
 0.0.0.0 adservingfront.com
 0.0.0.0 adservinginternational.com
+0.0.0.0 adservings.ru
 0.0.0.0 adservme.com
 0.0.0.0 xml.adservtday.com
 0.0.0.0 adsfloow.net
@@ -65312,7 +65315,6 @@
 0.0.0.0 smetrics.costco.ca
 0.0.0.0 smetrics.costco.com
 0.0.0.0 data.trx.costco.com
-0.0.0.0 costco-rewardsaccount1.com
 0.0.0.0 smetrics.costcobusinesscentre.ca
 0.0.0.0 metrics.costcobusinessdelivery.com
 0.0.0.0 smetrics.costcobusinessdelivery.com
@@ -74507,7 +74509,6 @@
 0.0.0.0 jzdwl4.cn
 0.0.0.0 bmqjor.k-bid.com
 0.0.0.0 k-colorful.jp
-0.0.0.0 plausible.k-words.io
 0.0.0.0 k0k0cha.link
 0.0.0.0 k1wa.jp
 0.0.0.0 k5a.io
@@ -81861,6 +81862,7 @@
 0.0.0.0 commonwealth.riddler.com
 0.0.0.0 rifftube.net
 0.0.0.0 analytics.right-com.com
+0.0.0.0 go.rightdailyfeed.com
 0.0.0.0 righteouscrayon.com
 0.0.0.0 rightfulfall.com
 0.0.0.0 gtrack.rightlivin.com
@@ -82465,7 +82467,6 @@
 0.0.0.0 metric.sbctest.com
 0.0.0.0 sbeaje.com
 0.0.0.0 analytics.sberhealth.ru
-0.0.0.0 dmp.sbermarketing.ru
 0.0.0.0 sbgsodufuosmmvsdf.info
 0.0.0.0 sbi-push.com
 0.0.0.0 somni.sbicard.com
@@ -89968,7 +89969,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 33800 rules from this source
+# Converted 33799 rules from this source
 
 
-# Total unique domains: 89947
+# Total unique domains: 89948
