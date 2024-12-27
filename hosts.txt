@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-26 18:19:55 UTC
+# Last modified: 2024-12-27 01:10:30 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -32631,6 +32631,8 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 k-words.io
+0.0.0.0 tlmtr.org
 0.0.0.0 sentinelbi.com
 0.0.0.0 ascendeummedia.com
 0.0.0.0 agma-analytics.de
@@ -50885,6 +50887,8 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 ncvwnp.icu
+0.0.0.0 sachaits.com
 0.0.0.0 pzzedx.icu
 0.0.0.0 owilmik.top
 0.0.0.0 jy7.icu
@@ -54814,6 +54818,7 @@
 0.0.0.0 zt2088.com
 0.0.0.0 ztyumn.ifeng.com
 0.0.0.0 27gh.cc
+0.0.0.0 a1.cyyangqiguan.com
 0.0.0.0 jbdch1.appmobile.cn
 0.0.0.0 lcd.aivote.com
 0.0.0.0 cnbd1.appmobile.cn
@@ -54945,7 +54950,6 @@
 0.0.0.0 a.qinghua5.com
 0.0.0.0 a.qncye.net
 0.0.0.0 a.qsjiajiao.com
-0.0.0.0 a.quangushi.com
 0.0.0.0 a.qunzou.com
 0.0.0.0 a.rensheng5.com
 0.0.0.0 a.shenchuang.com
@@ -56158,7 +56162,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56143 rules from this source
+# Converted 56147 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -89967,4 +89971,4 @@
 # Converted 33800 rules from this source
 
 
-# Total unique domains: 89943
+# Total unique domains: 89947
