@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2024-12-28 06:19:34 UTC
+# Last modified: 2024-12-28 12:27:27 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -49588,6 +49588,7 @@
 0.0.0.0 thsdbj.com
 0.0.0.0 thseaeing.fun
 0.0.0.0 thshopee.com
+0.0.0.0 thuekhachsan.com.vn
 0.0.0.0 thuoctangcuongsinhlynam.com
 0.0.0.0 thuonghieutoancau69.com
 0.0.0.0 thuonghieutop1.online
@@ -56191,7 +56192,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56176 rules from this source
+# Converted 56177 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -90178,4 +90179,4 @@
 # Converted 33978 rules from this source
 
 
-# Total unique domains: 90154
+# Total unique domains: 90155
