@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-04 12:27:41 UTC
+# Last modified: 2025-01-04 18:19:04 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -32815,6 +32815,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 cdn.q0losid.com
 0.0.0.0 tags.fullcontact.com
 0.0.0.0 matomo.akbal.dev
 0.0.0.0 sentry.pnblab.com
@@ -36401,6 +36402,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 lgforbes.akamaized.net
 0.0.0.0 event.wondershare.com
 0.0.0.0 collector.abc.net.au
 0.0.0.0 smetrics.kawai-juku.ac.jp
@@ -44741,6 +44743,7 @@
 0.0.0.0 ads.exakt24.se
 0.0.0.0 ads.expekt.se
 0.0.0.0 ads.fotosidan.se
+0.0.0.0 ads.frihetsnytt.se
 0.0.0.0 ads.holid.io
 0.0.0.0 ads.leovegas.com
 0.0.0.0 ads.mainloop.net
@@ -48184,6 +48187,7 @@
 0.0.0.0 minimomo.club
 0.0.0.0 minimomo.fun
 0.0.0.0 miravay.org
+0.0.0.0 mistyforestolqt.online
 0.0.0.0 miu78.me
 0.0.0.0 mizonevn.shop
 0.0.0.0 mkshopmobi.xyz
@@ -51072,6 +51076,10 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 airakgyl.com
+0.0.0.0 scjtfh.xyz
+0.0.0.0 cdyurlif.top
+0.0.0.0 6w7.icu
 0.0.0.0 y4l.icu
 0.0.0.0 drandoxo.com
 0.0.0.0 h5r.icu
@@ -56004,7 +56012,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 55989 rules from this source
+# Converted 55997 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -91435,4 +91443,4 @@
 # Converted 35422 rules from this source
 
 
-# Total unique domains: 91411
+# Total unique domains: 91419
