@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-04 06:19:39 UTC
+# Last modified: 2025-01-04 12:27:41 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -5125,6 +5125,7 @@
 0.0.0.0 blue99703.com
 0.0.0.0 blueberryastronomy.com
 0.0.0.0 bluedawning.com
+0.0.0.0 blueingpoori.com
 0.0.0.0 bluelinknow.com
 0.0.0.0 blueparrot.media
 0.0.0.0 blueswordksh.com
@@ -7586,6 +7587,7 @@
 0.0.0.0 cycledaction.com
 0.0.0.0 cycleworked.com
 0.0.0.0 cyclistforgotten.com
+0.0.0.0 cyclstriche.com
 0.0.0.0 cycndlhot.xyz
 0.0.0.0 cyeqeewyr.com
 0.0.0.0 cyg-byzlgtns.world
@@ -14252,6 +14254,7 @@
 0.0.0.0 junglehikingfence.com
 0.0.0.0 juniorapplesconsonant.com
 0.0.0.0 junivmr.com
+0.0.0.0 junkettypika.shop
 0.0.0.0 junkieswudge.com
 0.0.0.0 junkmildredsuffering.com
 0.0.0.0 junmediadirect.com
@@ -23515,6 +23518,7 @@
 0.0.0.0 so-gr3at3.com
 0.0.0.0 so1cool.com
 0.0.0.0 so333o.com
+0.0.0.0 soacoujusoopsoo.xyz
 0.0.0.0 soadaupaila.net
 0.0.0.0 soadicithaiy.net
 0.0.0.0 soaheeme.net
@@ -27585,6 +27589,7 @@
 0.0.0.0 whiceega.com
 0.0.0.0 whichcandiedhandgrip.com
 0.0.0.0 whidoutounseegn.xyz
+0.0.0.0 whidsugnoackili.net
 0.0.0.0 whileinferioryourself.com
 0.0.0.0 whilieesrogs.top
 0.0.0.0 whilroacix.com
@@ -55999,7 +56004,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 55984 rules from this source
+# Converted 55989 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -56741,7 +56746,6 @@
 0.0.0.0 4b6563a120.com
 0.0.0.0 4buy.net
 0.0.0.0 4cloud.click
-0.0.0.0 4d0m.cn
 0.0.0.0 df48924623.4e16b2e294.com
 0.0.0.0 smetric.4imprint.com
 0.0.0.0 4info.com
@@ -58131,7 +58135,6 @@
 0.0.0.0 afrdtech.com
 0.0.0.0 analysis.afreecatv.com
 0.0.0.0 eventapi.afreecatv.com
-0.0.0.0 metric.bulkhost.africom.mil
 0.0.0.0 after-7.net
 0.0.0.0 after-noon.jp
 0.0.0.0 after-pop-abc.com
@@ -66274,7 +66277,6 @@
 0.0.0.0 sm.dell.com
 0.0.0.0 sst.dell.com
 0.0.0.0 stt.dell.com
-0.0.0.0 piwik.auscorpwfnp.us.dell.com
 0.0.0.0 m.delltechnologies.com
 0.0.0.0 sm.delltechnologies.com
 0.0.0.0 metrics.delocal.hu
@@ -70648,6 +70650,7 @@
 0.0.0.0 affiliation.fotovista.com
 0.0.0.0 api.fouanalytics.com
 0.0.0.0 pagexray.fouanalytics.com
+0.0.0.0 found.io
 0.0.0.0 metric.foundationmedicine.com
 0.0.0.0 foundinggulfsaturate.com
 0.0.0.0 ma.fountasandpinnell.com
@@ -74686,7 +74689,6 @@
 0.0.0.0 ivpnoffers.com
 0.0.0.0 ivsa.org
 0.0.0.0 ivykiosk.com
-0.0.0.0 ivzfpwm.cn
 0.0.0.0 shop.iwantclips.com
 0.0.0.0 iwantu.com
 0.0.0.0 iwatojc.cn
@@ -74792,7 +74794,6 @@
 0.0.0.0 u-x.jd.com
 0.0.0.0 x.jd.com
 0.0.0.0 xlog.jd.com
-0.0.0.0 jdnlynb.cn
 0.0.0.0 jdoasjfojuhod.com
 0.0.0.0 posthog.jdoodle.com
 0.0.0.0 app.info.jdpa.com
@@ -74811,6 +74812,7 @@
 0.0.0.0 trk.jeffersonhealth.org
 0.0.0.0 ylsjdq.jegs.com
 0.0.0.0 analytics.jehebtmakkelijkpraten.nl
+0.0.0.0 jekotyay.com
 0.0.0.0 web.marketing.jellybelly.com
 0.0.0.0 analytics.jellycat.com
 0.0.0.0 jellycounter.com
@@ -77665,7 +77667,6 @@
 0.0.0.0 app.microgent.ru
 0.0.0.0 micronews.eu
 0.0.0.0 ads.microsoft.com
-0.0.0.0 help.ads-int.microsoft.com
 0.0.0.0 advertising.microsoft.com
 0.0.0.0 analyticspixel.microsoft.com
 0.0.0.0 bingads.microsoft.com
@@ -78870,7 +78871,6 @@
 0.0.0.0 naughtymets.com
 0.0.0.0 logs.naukri.com
 0.0.0.0 telemetry.nav.no
-0.0.0.0 nav1.jp
 0.0.0.0 analytics.naver.com
 0.0.0.0 cr.naver.com
 0.0.0.0 g.tivan.naver.com
@@ -79619,7 +79619,6 @@
 0.0.0.0 nxakpj4ac8gkd53.info
 0.0.0.0 nxnjw.com
 0.0.0.0 wa.nxp.com
-0.0.0.0 nxxyjn.com
 0.0.0.0 ny4yze.com
 0.0.0.0 analytics.nydailynews.com
 0.0.0.0 news.nydailyrecord.com
@@ -82037,7 +82036,6 @@
 0.0.0.0 za.qeeq.com
 0.0.0.0 hlok.qertewrt.com
 0.0.0.0 qeucuzpbv6jq.jp
-0.0.0.0 qfgfpi.cn
 0.0.0.0 matomo.qgis.org
 0.0.0.0 matomo.qgiv.com
 0.0.0.0 cdn.qgr.ph
@@ -82392,7 +82390,6 @@
 0.0.0.0 ragnaar.us
 0.0.0.0 countly.rahkar.team
 0.0.0.0 text.rahmenvereinbarungen.de
-0.0.0.0 analytics.raiffeisen.ru
 0.0.0.0 matomo.raiffeisenbank.rs
 0.0.0.0 matomo.rail.cc
 0.0.0.0 railwaygiraffe.com
@@ -82794,7 +82791,6 @@
 0.0.0.0 assets.remerge.io
 0.0.0.0 remijiahotting.com
 0.0.0.0 reminderasking.com
-0.0.0.0 metric.careers.remitly.com
 0.0.0.0 remor.xyz
 0.0.0.0 metric.remove.bg
 0.0.0.0 analytics.remove-background.com
@@ -85828,7 +85824,6 @@
 0.0.0.0 somni.suntrust.com
 0.0.0.0 ads.sup.com
 0.0.0.0 stat.super.cz
-0.0.0.0 super-grander.jp
 0.0.0.0 super-plans.com
 0.0.0.0 smetrics.super99.com
 0.0.0.0 ads.superad.cc
@@ -86600,6 +86595,7 @@
 0.0.0.0 s.tf4srv.com
 0.0.0.0 tfag.de
 0.0.0.0 metrics.store.tfewines.com
+0.0.0.0 tfpipnwengia.com
 0.0.0.0 tftpd.net
 0.0.0.0 tganalytics.xyz
 0.0.0.0 tgram.ru
@@ -87036,7 +87032,6 @@
 0.0.0.0 ssa.tlc.com
 0.0.0.0 analytics.tlg.systems
 0.0.0.0 api.tllms.com
-0.0.0.0 tlmybj.cn
 0.0.0.0 tltmjevd.xyz
 0.0.0.0 tm-awx.com
 0.0.0.0 webanalytics.tm00.com
@@ -87900,7 +87895,6 @@
 0.0.0.0 wmedia-track.uc.cn
 0.0.0.0 u.uc123.com
 0.0.0.0 ucarsoft.com
-0.0.0.0 uceprotect.at
 0.0.0.0 uceprotect.de
 0.0.0.0 uceprotect.org
 0.0.0.0 analytics.ucf.edu
@@ -88846,7 +88840,6 @@
 0.0.0.0 metrics.vilebrequin.com
 0.0.0.0 t.villanova.com
 0.0.0.0 piwik.vilua.de
-0.0.0.0 telemetry.vimeo.com
 0.0.0.0 vimeonk.com
 0.0.0.0 metrics.vimeopro.com
 0.0.0.0 smetrics.vince.com
@@ -89439,7 +89432,6 @@
 0.0.0.0 metrics.wb.com
 0.0.0.0 ometrics.wb.com
 0.0.0.0 sanalytics.wbd.com
-0.0.0.0 wbesryx.cn
 0.0.0.0 event.wbinsights.com
 0.0.0.0 axp.wboy.com
 0.0.0.0 wbqqo.com
@@ -89678,7 +89670,6 @@
 0.0.0.0 trk.wellsfargocenterphilly.com
 0.0.0.0 ra.wellsmedia.com
 0.0.0.0 ads.welocal.cloud
-0.0.0.0 welovemondays.fi
 0.0.0.0 as.welt.de
 0.0.0.0 ast.welt.de
 0.0.0.0 web-logger.prod.ps.welt.de
@@ -90708,7 +90699,6 @@
 0.0.0.0 yaagle.com
 0.0.0.0 yabidos.com
 0.0.0.0 yabynennet.xyz
-0.0.0.0 yac5t.cn
 0.0.0.0 analytics.yacht.nl
 0.0.0.0 yads.tech
 0.0.0.0 smetrics.yaencontre.com
@@ -90921,7 +90911,6 @@
 0.0.0.0 gw-iad-bid.ymmobi.com
 0.0.0.0 metric.ymobile.jp
 0.0.0.0 yndhi.com
-0.0.0.0 ynslvyou.com
 0.0.0.0 ynwsyl.com
 0.0.0.0 yoalizer.com
 0.0.0.0 yodhspaling.com
@@ -91443,7 +91432,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35438 rules from this source
+# Converted 35422 rules from this source
 
 
-# Total unique domains: 91422
+# Total unique domains: 91411
