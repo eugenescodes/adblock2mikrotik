@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-05 06:20:01 UTC
+# Last modified: 2025-01-05 12:27:41 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -13093,6 +13093,7 @@
 0.0.0.0 igoognou.xyz
 0.0.0.0 igouthoatsord.net
 0.0.0.0 igpkppknqeblj.com
+0.0.0.0 igraard.xyz
 0.0.0.0 igvhfmubsaqty.xyz
 0.0.0.0 igwatrsthg.site
 0.0.0.0 ihappymuttered.info
@@ -26044,6 +26045,7 @@
 0.0.0.0 ubish.com
 0.0.0.0 uboungera.com
 0.0.0.0 ucationinin.info
+0.0.0.0 ucavu.live
 0.0.0.0 ucbedayxxqpyuo.xyz
 0.0.0.0 ucconn.live
 0.0.0.0 ucheephu.com
@@ -51083,6 +51085,7 @@
 0.0.0.0 hrjciqyu.icu
 0.0.0.0 hdyurliu.top
 0.0.0.0 en6.icu
+0.0.0.0 cachusrw.com
 0.0.0.0 airakgyl.com
 0.0.0.0 scjtfh.xyz
 0.0.0.0 cdyurlif.top
@@ -56019,7 +56022,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56004 rules from this source
+# Converted 56007 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -57172,8 +57175,6 @@
 0.0.0.0 axp.abc4.com
 0.0.0.0 abcdlm.com
 0.0.0.0 abcdserver.com
-0.0.0.0 abdicatefluke.com
-0.0.0.0 abdomeneast.com
 0.0.0.0 abducke.com
 0.0.0.0 data.abebooks.com
 0.0.0.0 metrics.abebooks.com
@@ -57357,7 +57358,6 @@
 0.0.0.0 act-on.com
 0.0.0.0 adobeanalytics.actalentservices.com
 0.0.0.0 actance.net
-0.0.0.0 actingwoodland.com
 0.0.0.0 analytics.actionableagile.com
 0.0.0.0 actionflash.com
 0.0.0.0 tr.info.actionlogement.fr
@@ -63186,6 +63186,7 @@
 0.0.0.0 analytics.classy.be
 0.0.0.0 metric.classy.be
 0.0.0.0 metrics.classy.be
+0.0.0.0 static.clck-analytics.com
 0.0.0.0 clcktrax.com
 0.0.0.0 cld5r.com
 0.0.0.0 cldirplarimo.com
@@ -69782,7 +69783,9 @@
 0.0.0.0 gannet-cdn.ex.co
 0.0.0.0 gannet-player.ex.co
 0.0.0.0 gpv.ex.co
+0.0.0.0 if-player.ex.co
 0.0.0.0 player.ex.co
+0.0.0.0 v-collector.ex.co
 0.0.0.0 ziff-cdn.ex.co
 0.0.0.0 ziff-player.ex.co
 0.0.0.0 analytics.exacti.us
@@ -71001,7 +71004,6 @@
 0.0.0.0 fuzzyaudio.com
 0.0.0.0 fuzzybasketball.com
 0.0.0.0 fuzzyerror.com
-0.0.0.0 fv77e.icu
 0.0.0.0 fvaweb.it
 0.0.0.0 fvds.ru
 0.0.0.0 fw.nu
@@ -73505,7 +73507,6 @@
 0.0.0.0 huskinessimminentstylus.com
 0.0.0.0 na-pages.husqvarna.com
 0.0.0.0 matomo.hussverlag.de
-0.0.0.0 hustme.com
 0.0.0.0 hutchieshode.com
 0.0.0.0 hutrealebion.com
 0.0.0.0 huusk-original.com
@@ -75572,7 +75573,6 @@
 0.0.0.0 krankin.com
 0.0.0.0 metrics.kravenmovie.com
 0.0.0.0 krebsonsecurity.top
-0.0.0.0 kreisis.top
 0.0.0.0 analytics.krisp.ai
 0.0.0.0 anti.kro.kr
 0.0.0.0 tktlert.kro.kr
@@ -77247,7 +77247,6 @@
 0.0.0.0 tracker.skp.mbank.pl
 0.0.0.0 mbaobao.com
 0.0.0.0 mbcontact.com
-0.0.0.0 mbfhwag.xyz
 0.0.0.0 mbidpp.com
 0.0.0.0 bid.mbidtg.com
 0.0.0.0 mbiypew.cn
@@ -82057,6 +82056,7 @@
 0.0.0.0 qeucuzpbv6jq.jp
 0.0.0.0 matomo.qgis.org
 0.0.0.0 matomo.qgiv.com
+0.0.0.0 qgksqshmibx.com
 0.0.0.0 cdn.qgr.ph
 0.0.0.0 qhaarkie.com
 0.0.0.0 qhapoq.xyz
@@ -82345,7 +82345,6 @@
 0.0.0.0 ssl.o.qxmd.com
 0.0.0.0 qxmopxhblu.com
 0.0.0.0 qxqehcssyubtyje.com
-0.0.0.0 qxzlmzt.xyz
 0.0.0.0 api.ts.feedback.qy.net
 0.0.0.0 msgv6.qy.net
 0.0.0.0 img3.qy0.ru
@@ -83134,6 +83133,7 @@
 0.0.0.0 telemetry.secure.roche.com
 0.0.0.0 smetrics.roche.com
 0.0.0.0 axp.rochesterfirst.com
+0.0.0.0 rochestertrend.com
 0.0.0.0 rock5rice.com
 0.0.0.0 rockabox.co
 0.0.0.0 rockagainst.com
@@ -88974,6 +88974,7 @@
 0.0.0.0 t.vitalwellnessnow.com
 0.0.0.0 smetrics.vitamix.com
 0.0.0.0 vitemadose.fr
+0.0.0.0 cms-stats-view.vitrinabox.com
 0.0.0.0 countly.vitzo.com
 0.0.0.0 serve.vitzo.com
 0.0.0.0 tools.viva.pl
@@ -89208,7 +89209,6 @@
 0.0.0.0 vpon.com
 0.0.0.0 ads.vporn.com
 0.0.0.0 vppgamingnetwork.com
-0.0.0.0 vpqrydt.xyz
 0.0.0.0 vps-41077.vps-default-host.net
 0.0.0.0 vpsgu.cn
 0.0.0.0 vqtyargb.com
@@ -89916,7 +89916,6 @@
 0.0.0.0 wistfulwaste.com
 0.0.0.0 witbe.net
 0.0.0.0 witch-counter.de
-0.0.0.0 with-with.net
 0.0.0.0 analytics.withgoogle.com
 0.0.0.0 metrics.withings.com
 0.0.0.0 withoutverification.com
@@ -91237,6 +91236,7 @@
 0.0.0.0 analytics.zerofasting.com
 0.0.0.0 zerolcp.cn
 0.0.0.0 matomo.zerotier.com
+0.0.0.0 zerowasteinitiative.com
 0.0.0.0 analytics.zerto.com
 0.0.0.0 analytics.api.zerto.com
 0.0.0.0 analytics.zesc.pro
@@ -91448,7 +91448,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35423 rules from this source
+# Converted 35420 rules from this source
 
 
 # Total unique domains: 91427
