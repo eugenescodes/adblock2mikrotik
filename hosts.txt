@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-05 01:16:26 UTC
+# Last modified: 2025-01-05 06:20:01 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -51080,6 +51080,9 @@
 0.0.0.0 cnzz.trafficmanager.net
 0.0.0.0 lirretsn.com
 0.0.0.0 nmzbrd.icu
+0.0.0.0 hrjciqyu.icu
+0.0.0.0 hdyurliu.top
+0.0.0.0 en6.icu
 0.0.0.0 airakgyl.com
 0.0.0.0 scjtfh.xyz
 0.0.0.0 cdyurlif.top
@@ -56016,7 +56019,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56001 rules from this source
+# Converted 56004 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -56627,6 +56630,7 @@
 0.0.0.0 312elementsweb.com
 0.0.0.0 31337.hk
 0.0.0.0 3158.info
+0.0.0.0 3165de3ff8.com
 0.0.0.0 fe807f067c.3183af8c1d.com
 0.0.0.0 31a422feac.com
 0.0.0.0 3201cba126.com
@@ -63973,7 +63977,6 @@
 0.0.0.0 enginebuildltd.co.uk
 0.0.0.0 servedby.engineeringnews.co.za
 0.0.0.0 static.engineeringnews.co.za
-0.0.0.0 enhanceprotocol.co.in
 0.0.0.0 smetrics.ernestjones.co.uk
 0.0.0.0 dcs.esprit.co.uk
 0.0.0.0 analytics.estateapps.co.uk
@@ -75913,6 +75916,7 @@
 0.0.0.0 lcwpaketleme.com
 0.0.0.0 ldgnrtn.com
 0.0.0.0 piwik.ldh-france.org
+0.0.0.0 ldcdn.ldmnq.com
 0.0.0.0 ldnlyap.com
 0.0.0.0 tq.ldnpointer.online
 0.0.0.0 xml-eu-v4.ldnpointer.online
@@ -77223,6 +77227,7 @@
 0.0.0.0 device.maxmind.com
 0.0.0.0 saa.maxpreps.com
 0.0.0.0 maxreturn.cn
+0.0.0.0 maxsecurityultimate.com
 0.0.0.0 push-s.maxthon.com
 0.0.0.0 stat-c.maxthon.com
 0.0.0.0 maxxxhits.com
@@ -88318,7 +88323,6 @@
 0.0.0.0 track.usasjbtracking.com
 0.0.0.0 cm.usatoday.com
 0.0.0.0 sxjfhh.usatoday.com
-0.0.0.0 t.usatoday-breakingupdates.com
 0.0.0.0 usavisaconsultant.com
 0.0.0.0 metrics.usbank.com
 0.0.0.0 smetrics.usbank.com
@@ -91444,7 +91448,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35422 rules from this source
+# Converted 35423 rules from this source
 
 
-# Total unique domains: 91423
+# Total unique domains: 91427
