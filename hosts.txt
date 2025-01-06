@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-06 01:14:05 UTC
+# Last modified: 2025-01-06 06:22:22 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -1851,6 +1851,7 @@
 0.0.0.0 9cd76b4462bb.com
 0.0.0.0 9d2cca15e4.com
 0.0.0.0 9d603009eb.com
+0.0.0.0 9d87b35397.com
 0.0.0.0 9dccbda825.com
 0.0.0.0 9dmnv9z0gtoh.com
 0.0.0.0 9e3810a418.com
@@ -45073,10 +45074,12 @@
 0.0.0.0 stat.brollopstorget.se
 0.0.0.0 stat.devote.se
 0.0.0.0 stat.familjeliv.se
+0.0.0.0 stat.loppi.se
 0.0.0.0 stat.modette.se
 0.0.0.0 stat.nyheter24.se
 0.0.0.0 stat.rodeo.net
 0.0.0.0 stat.torgen.se
+0.0.0.0 stat.vimedbarn.se
 0.0.0.0 stat03.stat.cliche.se
 0.0.0.0 statcounter.va-endpoint.com
 0.0.0.0 static.matchads.net
@@ -51071,6 +51074,8 @@
 0.0.0.0 tixoilll.com
 0.0.0.0 hitalsli.com
 0.0.0.0 lcvwdn.icu
+0.0.0.0 1tp.icu
+0.0.0.0 jdyurlia.top
 0.0.0.0 lirretsn.com
 0.0.0.0 nmzbrd.icu
 0.0.0.0 hrjciqyu.icu
@@ -56015,7 +56020,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56000 rules from this source
+# Converted 56005 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -56974,7 +56979,6 @@
 0.0.0.0 analytics.888sport.com
 0.0.0.0 88fc493306.com
 0.0.0.0 88la.la
-0.0.0.0 88lm02.com
 0.0.0.0 88lm03.com
 0.0.0.0 8911101.com
 0.0.0.0 89f5318ce93d828ab801f693bf6d1bf4ba587299f920697b486e751c.com
@@ -84822,7 +84826,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw2.smartadserver.com
+0.0.0.0 euw1.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -91681,7 +91685,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35660 rules from this source
+# Converted 35659 rules from this source
 
 
-# Total unique domains: 91660
+# Total unique domains: 91664
