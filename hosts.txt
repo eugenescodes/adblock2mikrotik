@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-05 18:18:41 UTC
+# Last modified: 2025-01-06 01:14:05 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -51067,6 +51067,10 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 jjplaqyo.icu
+0.0.0.0 tixoilll.com
+0.0.0.0 hitalsli.com
+0.0.0.0 lcvwdn.icu
 0.0.0.0 lirretsn.com
 0.0.0.0 nmzbrd.icu
 0.0.0.0 hrjciqyu.icu
@@ -56011,7 +56015,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 55996 rules from this source
+# Converted 56000 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -56221,7 +56225,6 @@
 0.0.0.0 analytics.1881.digital
 0.0.0.0 a.18ramp.com
 0.0.0.0 s.18ramp.com
-0.0.0.0 18sexytube.com
 0.0.0.0 1980s.click
 0.0.0.0 198game.com
 0.0.0.0 ads.1997media.com
@@ -56267,7 +56270,6 @@
 0.0.0.0 1prox.com
 0.0.0.0 company.1ps.ru
 0.0.0.0 1q2w3.fun
-0.0.0.0 1qkmxbt.com
 0.0.0.0 1sapp.com
 0.0.0.0 1second.com
 0.0.0.0 1securitycenter.com
@@ -57228,7 +57230,8 @@
 0.0.0.0 absurdbatchconfess.com
 0.0.0.0 absurdwater.com
 0.0.0.0 tk.abt.com
-0.0.0.0 abtasty.com
+0.0.0.0 datacollect3.abtasty.com
+0.0.0.0 dcinfos.abtasty.com
 0.0.0.0 abtshield.com
 0.0.0.0 abundantcoin.com
 0.0.0.0 piwik.abus.com
@@ -57582,6 +57585,28 @@
 0.0.0.0 adipics.com
 0.0.0.0 adirects.com
 0.0.0.0 api-ao.adison.co
+0.0.0.0 ad.adition.com
+0.0.0.0 ad1.adfarm1.adition.com
+0.0.0.0 ad11.adfarm1.adition.com
+0.0.0.0 ad11p.adfarm1.adition.com
+0.0.0.0 ad13.adfarm1.adition.com
+0.0.0.0 ad2.adfarm1.adition.com
+0.0.0.0 ad4.adfarm1.adition.com
+0.0.0.0 ad5.adfarm1.adition.com
+0.0.0.0 ad7.adfarm1.adition.com
+0.0.0.0 ad71.adfarm1.adition.com
+0.0.0.0 ad8.adfarm1.adition.com
+0.0.0.0 ad9.adfarm1.adition.com
+0.0.0.0 adsdk.adfarm1.adition.com
+0.0.0.0 dsp.adfarm1.adition.com
+0.0.0.0 dspcluster.adfarm1.adition.com
+0.0.0.0 match.adfarm1.adition.com
+0.0.0.0 mobile.adfarm1.adition.com
+0.0.0.0 static.adfarm1.adition.com
+0.0.0.0 cd.adition.com
+0.0.0.0 dbt.adition.com
+0.0.0.0 track.adition.com
+0.0.0.0 vt.adition.com
 0.0.0.0 aditserve.com
 0.0.0.0 aditude.cloud
 0.0.0.0 adizio.com
@@ -57900,7 +57925,14 @@
 0.0.0.0 adsupplyads.net
 0.0.0.0 adsux.com
 0.0.0.0 adswip.com
-0.0.0.0 adswizz.com
+0.0.0.0 deliveryengine.adswizz.com
+0.0.0.0 devel.adswizz.com
+0.0.0.0 metrics.adswizz.com
+0.0.0.0 pixel.adswizz.com
+0.0.0.0 pixelg.adswizz.com
+0.0.0.0 sonar.adswizz.com
+0.0.0.0 staging.adswizz.com
+0.0.0.0 streaming.adswizz.com
 0.0.0.0 adsximg.com
 0.0.0.0 adsymptotic.com
 0.0.0.0 metrics.adt.com
@@ -58437,7 +58469,9 @@
 0.0.0.0 appconf-sgp.heytapdl.com.akamaized.net
 0.0.0.0 conf-sg-dc.heytapdl.com.akamaized.net
 0.0.0.0 adsfs-id.heytapimg.com.akamaized.net
-0.0.0.0 smartadserver.com.akamaized.net
+0.0.0.0 csync-apac.smartadserver.com.akamaized.net
+0.0.0.0 csync-eu.smartadserver.com.akamaized.net
+0.0.0.0 csync-us.smartadserver.com.akamaized.net
 0.0.0.0 cdn.stat-track.com.akamaized.net
 0.0.0.0 analytics.akenzo.de
 0.0.0.0 parts.akibablog.net
@@ -60361,7 +60395,6 @@
 0.0.0.0 analytics.avmspa.it
 0.0.0.0 avnads.com
 0.0.0.0 smetrics.avnet.com
-0.0.0.0 avnnqftxioforfr.com
 0.0.0.0 avocams.com
 0.0.0.0 avocarrot.com
 0.0.0.0 avocet.io
@@ -61935,7 +61968,6 @@
 0.0.0.0 bravobusboy.com
 0.0.0.0 bravospots.com
 0.0.0.0 ijaabm.bravotv.com
-0.0.0.0 braze.com
 0.0.0.0 blink.fra-01.braze.eu
 0.0.0.0 clusava.fra-01.braze.eu
 0.0.0.0 customer.fra-01.braze.eu
@@ -61950,6 +61982,61 @@
 0.0.0.0 upratihun.fra-01.braze.eu
 0.0.0.0 fastly.fra-02.braze.eu
 0.0.0.0 rest.fra-02.braze.eu
+0.0.0.0 pub-services.iad.braze.com
+0.0.0.0 andromeda.iad-01.braze.com
+0.0.0.0 ibilisk.iad-01.braze.com
+0.0.0.0 indus.iad-01.braze.com
+0.0.0.0 muliphein.iad-01.braze.com
+0.0.0.0 null-route.iad-01.braze.com
+0.0.0.0 rest.iad-01.braze.com
+0.0.0.0 sdk-tracking.iad-01.braze.com
+0.0.0.0 serpens.iad-01.braze.com
+0.0.0.0 vela.iad-01.braze.com
+0.0.0.0 gudja.iad-02.braze.com
+0.0.0.0 himbrecha.iad-02.braze.com
+0.0.0.0 rest.iad-02.braze.com
+0.0.0.0 viddermux.iad-02.braze.com
+0.0.0.0 atlas.iad-03.braze.com
+0.0.0.0 belgikanst.iad-03.braze.com
+0.0.0.0 carinus.iad-03.braze.com
+0.0.0.0 ceres.iad-03.braze.com
+0.0.0.0 clair.iad-03.braze.com
+0.0.0.0 customer.iad-03.braze.com
+0.0.0.0 daviik.iad-03.braze.com
+0.0.0.0 epsilon.iad-03.braze.com
+0.0.0.0 gaspra.iad-03.braze.com
+0.0.0.0 giausar.iad-03.braze.com
+0.0.0.0 graf.iad-03.braze.com
+0.0.0.0 hassaleh.iad-03.braze.com
+0.0.0.0 hiram.iad-03.braze.com
+0.0.0.0 horus.iad-03.braze.com
+0.0.0.0 inari.iad-03.braze.com
+0.0.0.0 inferna.iad-03.braze.com
+0.0.0.0 izar.iad-03.braze.com
+0.0.0.0 markab.iad-03.braze.com
+0.0.0.0 pali.iad-03.braze.com
+0.0.0.0 phillateemis.iad-03.braze.com
+0.0.0.0 regor.iad-03.braze.com
+0.0.0.0 rest.iad-03.braze.com
+0.0.0.0 rotanev.iad-03.braze.com
+0.0.0.0 sagan.iad-03.braze.com
+0.0.0.0 sargas.iad-03.braze.com
+0.0.0.0 sdk-tracking.iad-03.braze.com
+0.0.0.0 seginus.iad-03.braze.com
+0.0.0.0 sirius.iad-03.braze.com
+0.0.0.0 tali.iad-03.braze.com
+0.0.0.0 taukibreez.iad-03.braze.com
+0.0.0.0 uemelia.iad-03.braze.com
+0.0.0.0 wahacondrax.iad-03.braze.com
+0.0.0.0 wurren.iad-03.braze.com
+0.0.0.0 yildun.iad-03.braze.com
+0.0.0.0 fastly.iad-05.braze.com
+0.0.0.0 rest.iad-05.braze.com
+0.0.0.0 sdk-tracking.iad-05.braze.com
+0.0.0.0 rest.iad-06.braze.com
+0.0.0.0 virgin-self-serve-apps.iad-06.braze.com
+0.0.0.0 fastly.iad-07.braze.com
+0.0.0.0 sdk-tracking.iad-07.braze.com
 0.0.0.0 p-euc-1.braze.eu
 0.0.0.0 ads.brazzers.com
 0.0.0.0 ads2.brazzers.com
@@ -64760,7 +64847,6 @@
 0.0.0.0 dejavu.mercadolivre.com.br
 0.0.0.0 matt.mercadolivre.com.br
 0.0.0.0 pmstrk.mercadolivre.com.br
-0.0.0.0 smartad.mercadolivre.com.br
 0.0.0.0 analytics.mercadopago.com.ar
 0.0.0.0 analytics.mercadopago.com.br
 0.0.0.0 analytics.mercadopago.com.co
@@ -65400,6 +65486,7 @@
 0.0.0.0 coupling-media.de
 0.0.0.0 smetrics.couponcabin.com
 0.0.0.0 couponcraze.com
+0.0.0.0 couponxoo.com
 0.0.0.0 courageousbaby.com
 0.0.0.0 analytics.courant.com
 0.0.0.0 sxjfhh.courier-journal.com
@@ -72798,7 +72885,6 @@
 0.0.0.0 helpcollar.com
 0.0.0.0 helpfirst.in
 0.0.0.0 helpmedb.com
-0.0.0.0 helpwebroot.com
 0.0.0.0 collect.helsana.ch
 0.0.0.0 matomo.it.helsinki.fi
 0.0.0.0 smetrics.helvetia.com
@@ -73409,7 +73495,6 @@
 0.0.0.0 httpads.com
 0.0.0.0 httpdns.pro
 0.0.0.0 https443.net
-0.0.0.0 hty9m.cn
 0.0.0.0 hu-vignette.com
 0.0.0.0 huabian.com
 0.0.0.0 api-analytics-de.huami.com
@@ -74479,7 +74564,6 @@
 0.0.0.0 iodolruddock.com
 0.0.0.0 iofferphoto.com
 0.0.0.0 web.comunicazioni.iol.it
-0.0.0.0 iolsrikq.xyz
 0.0.0.0 ad.iomad.com
 0.0.0.0 sc.iombank.com
 0.0.0.0 ioncibria.com
@@ -74515,7 +74599,6 @@
 0.0.0.0 trk.ipaddress.com
 0.0.0.0 wh.ipaddress.com
 0.0.0.0 ipblue.me
-0.0.0.0 ipfnumgrbbgdnjt.com
 0.0.0.0 iphonedefender.com
 0.0.0.0 s1.ipicture.ru
 0.0.0.0 iwa.iplsc.com
@@ -76048,7 +76131,7 @@
 0.0.0.0 lenzism.com
 0.0.0.0 lenzmx.com
 0.0.0.0 filter.leoback.com
-0.0.0.0 leovegas.com
+0.0.0.0 cdn.leovegas.com
 0.0.0.0 partenaire.leparticulier.fr
 0.0.0.0 cmp.lepoint.fr
 0.0.0.0 l.lepoint.fr
@@ -76340,7 +76423,7 @@
 0.0.0.0 poetry.literotica.com
 0.0.0.0 smetrics.litfulo.com
 0.0.0.0 analytics.app.lithium.com
-0.0.0.0 litix.io
+0.0.0.0 ccjnhnqfnvsr3otokvf59ns52.litix.io
 0.0.0.0 litlyx.com
 0.0.0.0 litpluming.com
 0.0.0.0 littlegirlies.org
@@ -79109,7 +79192,6 @@
 0.0.0.0 tracking.netsuite.com
 0.0.0.0 nettime.ru
 0.0.0.0 legacyportal.nettvservices.com
-0.0.0.0 networkadvertising.org
 0.0.0.0 networkbench.com
 0.0.0.0 networkpb.com
 0.0.0.0 ads.networksolutions.com
@@ -79867,7 +79949,6 @@
 0.0.0.0 app.omappapi.com
 0.0.0.0 z.omappapi.com
 0.0.0.0 omarwhats.app
-0.0.0.0 omaze.com
 0.0.0.0 smetrics.omdia.com
 0.0.0.0 omegatoki.com
 0.0.0.0 omeletshaute.com
@@ -80419,7 +80500,6 @@
 0.0.0.0 matomo.oviahealth.com
 0.0.0.0 analytics.ovidds.com
 0.0.0.0 ovkwiz.xyz
-0.0.0.0 ovldbsik.com
 0.0.0.0 ovnet.net
 0.0.0.0 ovnrmvg.cn
 0.0.0.0 analytics.products.ovoenergy.com
@@ -80804,6 +80884,7 @@
 0.0.0.0 plausible.peakd.com
 0.0.0.0 metric.peakon.com
 0.0.0.0 smetrics.peakperformance.com
+0.0.0.0 peanutrefusesplit.com
 0.0.0.0 smetrics.pearlevision.com
 0.0.0.0 ple.pearlinsurance.com
 0.0.0.0 matomo.pearltrees.com
@@ -83797,7 +83878,12 @@
 0.0.0.0 event.collector.scopely.io
 0.0.0.0 segments.scopely.io
 0.0.0.0 scorchads.com
-0.0.0.0 scorecardresearch.com
+0.0.0.0 ads.scorecardresearch.com
+0.0.0.0 b.scorecardresearch.com
+0.0.0.0 beacon.scorecardresearch.com
+0.0.0.0 census-app-x.scorecardresearch.com
+0.0.0.0 sa.scorecardresearch.com
+0.0.0.0 udm.scorecardresearch.com
 0.0.0.0 ads.scored.co
 0.0.0.0 gallys.scoreland.com
 0.0.0.0 scorespro.com
@@ -83919,6 +84005,11 @@
 0.0.0.0 matomo.seewes.de
 0.0.0.0 sefh.es
 0.0.0.0 sefy.ru
+0.0.0.0 app.segment.com
+0.0.0.0 cdn-settings.segment.com
+0.0.0.0 idsync.segment.com
+0.0.0.0 profiles.segment.com
+0.0.0.0 static.segment.com
 0.0.0.0 in.eu2.segmentapis.com
 0.0.0.0 segoyg.xyz
 0.0.0.0 data.segugio.it
@@ -84082,7 +84173,6 @@
 0.0.0.0 weblink.settrade.com
 0.0.0.0 setupad.io
 0.0.0.0 node.setupad.com
-0.0.0.0 seutop.icu
 0.0.0.0 sevensmooon.com
 0.0.0.0 aiq-in.seventeen.com
 0.0.0.0 td.seventeen.com
@@ -84706,6 +84796,150 @@
 0.0.0.0 abp.smartadcheck.de
 0.0.0.0 smartadserver.es
 0.0.0.0 smartadserver.fr
+0.0.0.0 adapi.smartadserver.com
+0.0.0.0 adapi-4270.smartadserver.com
+0.0.0.0 adapi-apac.smartadserver.com
+0.0.0.0 adapi-srv-apac.smartadserver.com
+0.0.0.0 adapi-srv-eu.smartadserver.com
+0.0.0.0 adapi-srv-us-east.smartadserver.com
+0.0.0.0 adapi-srv-us-east-3050.smartadserver.com
+0.0.0.0 adapi-srv-us-east-3713.smartadserver.com
+0.0.0.0 adapi-srv-us-west.smartadserver.com
+0.0.0.0 adapi-srv-us-west-3050.smartadserver.com
+0.0.0.0 adapi-usfirst.smartadserver.com
+0.0.0.0 ads.smartadserver.com
+0.0.0.0 akamai.smartadserver.com
+0.0.0.0 apac1.smartadserver.com
+0.0.0.0 apm.smartadserver.com
+0.0.0.0 apps.smartadserver.com
+0.0.0.0 cdn1.smartadserver.com
+0.0.0.0 csync.smartadserver.com
+0.0.0.0 csync-apac.smartadserver.com
+0.0.0.0 csync-eu.smartadserver.com
+0.0.0.0 csync-global.smartadserver.com
+0.0.0.0 csync-us.smartadserver.com
+0.0.0.0 demo.smartadserver.com
+0.0.0.0 diff.smartadserver.com
+0.0.0.0 diff3.smartadserver.com
+0.0.0.0 documentation.smartadserver.com
+0.0.0.0 euw2.smartadserver.com
+0.0.0.0 go.smartadserver.com
+0.0.0.0 help.smartadserver.com
+0.0.0.0 itx4.smartadserver.com
+0.0.0.0 itx5.smartadserver.com
+0.0.0.0 manage.smartadserver.com
+0.0.0.0 mobile.smartadserver.com
+0.0.0.0 prg.smartadserver.com
+0.0.0.0 prg-apac.smartadserver.com
+0.0.0.0 prg3429.smartadserver.com
+0.0.0.0 prg3431.smartadserver.com
+0.0.0.0 prg8.smartadserver.com
+0.0.0.0 prga.smartadserver.com
+0.0.0.0 rtb-csync.smartadserver.com
+0.0.0.0 rtb-csync-apac1.smartadserver.com
+0.0.0.0 rtb-csync-euw1.smartadserver.com
+0.0.0.0 rtb-csync-euw2.smartadserver.com
+0.0.0.0 rtb-csync-itx4.smartadserver.com
+0.0.0.0 rtb-csync-itx5.smartadserver.com
+0.0.0.0 rtb-csync-use1.smartadserver.com
+0.0.0.0 rtb-csync-use2.smartadserver.com
+0.0.0.0 rtb-csync-usw1.smartadserver.com
+0.0.0.0 ssb.smartadserver.com
+0.0.0.0 ssb-apac.smartadserver.com
+0.0.0.0 ssb-apac1.smartadserver.com
+0.0.0.0 ssb-eu.smartadserver.com
+0.0.0.0 ssb-eu-secure.smartadserver.com
+0.0.0.0 ssb-eu-secure-11.smartadserver.com
+0.0.0.0 ssb-euw1.smartadserver.com
+0.0.0.0 ssb-euw2.smartadserver.com
+0.0.0.0 ssb-global.smartadserver.com
+0.0.0.0 ssb-ob-apac-13.smartadserver.com
+0.0.0.0 ssb-ob-eu-14.smartadserver.com
+0.0.0.0 ssb-ob-us-east.smartadserver.com
+0.0.0.0 ssb-ob-us-east-12.smartadserver.com
+0.0.0.0 ssb-ob-us-east-16.smartadserver.com
+0.0.0.0 ssb-ob-us-west.smartadserver.com
+0.0.0.0 ssb-sgp.smartadserver.com
+0.0.0.0 ssb-us.smartadserver.com
+0.0.0.0 ssb-us-east.smartadserver.com
+0.0.0.0 ssb-us-west.smartadserver.com
+0.0.0.0 ssb-use1.smartadserver.com
+0.0.0.0 ssb-use2.smartadserver.com
+0.0.0.0 ssb-usw1.smartadserver.com
+0.0.0.0 ssbsync.smartadserver.com
+0.0.0.0 ssbsync-apac1.smartadserver.com
+0.0.0.0 ssbsync-euw1.smartadserver.com
+0.0.0.0 ssbsync-euw2.smartadserver.com
+0.0.0.0 ssbsync-geo.smartadserver.com
+0.0.0.0 ssbsync-global.smartadserver.com
+0.0.0.0 ssbsync-itx4.smartadserver.com
+0.0.0.0 ssbsync-itx5.smartadserver.com
+0.0.0.0 ssbsync-us.smartadserver.com
+0.0.0.0 ssbsync-use1.smartadserver.com
+0.0.0.0 ssbsync-use2.smartadserver.com
+0.0.0.0 ssbsync-usw1.smartadserver.com
+0.0.0.0 ssp-csync.smartadserver.com
+0.0.0.0 styria.smartadserver.com
+0.0.0.0 support.smartadserver.com
+0.0.0.0 sync.smartadserver.com
+0.0.0.0 tagmanager.smartadserver.com
+0.0.0.0 use1.smartadserver.com
+0.0.0.0 use1-secure.smartadserver.com
+0.0.0.0 use2.smartadserver.com
+0.0.0.0 use2-secure.smartadserver.com
+0.0.0.0 usw1.smartadserver.com
+0.0.0.0 usw1-secure.smartadserver.com
+0.0.0.0 videoapi.smartadserver.com
+0.0.0.0 videoapi-2058.smartadserver.com
+0.0.0.0 videoapi-2161.smartadserver.com
+0.0.0.0 videodiff-apac1.smartadserver.com
+0.0.0.0 videodiff-euw1.smartadserver.com
+0.0.0.0 videodiff-euw2.smartadserver.com
+0.0.0.0 videodiff-geo.smartadserver.com
+0.0.0.0 videodiff-itx4.smartadserver.com
+0.0.0.0 videodiff-itx5.smartadserver.com
+0.0.0.0 videodiff-use1.smartadserver.com
+0.0.0.0 videodiff-use2.smartadserver.com
+0.0.0.0 videodiff-usw1.smartadserver.com
+0.0.0.0 ww1003.smartadserver.com
+0.0.0.0 ww1097.smartadserver.com
+0.0.0.0 ww13.smartadserver.com
+0.0.0.0 ww1325.smartadserver.com
+0.0.0.0 ww1388.smartadserver.com
+0.0.0.0 ww1510.smartadserver.com
+0.0.0.0 ww16.smartadserver.com
+0.0.0.0 ww1772.smartadserver.com
+0.0.0.0 ww251.smartadserver.com
+0.0.0.0 ww2545.smartadserver.com
+0.0.0.0 ww264.smartadserver.com
+0.0.0.0 ww2951.smartadserver.com
+0.0.0.0 ww3050.smartadserver.com
+0.0.0.0 ww3436.smartadserver.com
+0.0.0.0 ww386.smartadserver.com
+0.0.0.0 ww400.smartadserver.com
+0.0.0.0 ww484.smartadserver.com
+0.0.0.0 ww50.smartadserver.com
+0.0.0.0 ww55.smartadserver.com
+0.0.0.0 ww62.smartadserver.com
+0.0.0.0 ww687.smartadserver.com
+0.0.0.0 ww690.smartadserver.com
+0.0.0.0 ww691.smartadserver.com
+0.0.0.0 ww721.smartadserver.com
+0.0.0.0 ww84.smartadserver.com
+0.0.0.0 www10.smartadserver.com
+0.0.0.0 www11.smartadserver.com
+0.0.0.0 www13.smartadserver.com
+0.0.0.0 www14.smartadserver.com
+0.0.0.0 www15.smartadserver.com
+0.0.0.0 www17.smartadserver.com
+0.0.0.0 www18.smartadserver.com
+0.0.0.0 www2.smartadserver.com
+0.0.0.0 www4.smartadserver.com
+0.0.0.0 www5.smartadserver.com
+0.0.0.0 www6.smartadserver.com
+0.0.0.0 www7.smartadserver.com
+0.0.0.0 www8.smartadserver.com
+0.0.0.0 www9.smartadserver.com
 0.0.0.0 metrics.smartbear.io
 0.0.0.0 k.smartcanvas.net
 0.0.0.0 smartcj.com
@@ -84774,6 +85008,7 @@
 0.0.0.0 analytics.smp-it-media.de
 0.0.0.0 smplayer.org
 0.0.0.0 smrk.io
+0.0.0.0 smrturl.co
 0.0.0.0 subscription-forms.smsbump.com
 0.0.0.0 smsmovies.net
 0.0.0.0 smspop.com
@@ -85710,8 +85945,9 @@
 0.0.0.0 strikebreaker3x.fun
 0.0.0.0 strikeiron.com
 0.0.0.0 creative.strip.chat
-0.0.0.0 stripchat.com
+0.0.0.0 creative.stripchat.com
 0.0.0.0 creative.stripchat.global
+0.0.0.0 go.stripchat.com
 0.0.0.0 stripedbat.com
 0.0.0.0 analytics.stripo.email
 0.0.0.0 strivesidewalk.com
@@ -86780,7 +87016,6 @@
 0.0.0.0 xml-v4.thetargetmachine.com
 0.0.0.0 thetechloft.com
 0.0.0.0 pac.thetimes.com
-0.0.0.0 thetradedesk.com
 0.0.0.0 xml.thetrafficbid.com
 0.0.0.0 thetrafficboss.com
 0.0.0.0 smetrics.thetruth.com
@@ -87455,7 +87690,6 @@
 0.0.0.0 trapfulgide.com
 0.0.0.0 analytics.trauminselreisen.de
 0.0.0.0 analytics.travel-dealz.de
-0.0.0.0 travelaudience.com
 0.0.0.0 analytics.travelbank.com
 0.0.0.0 travelbar.tools
 0.0.0.0 as.travelbook.de
@@ -89581,7 +89815,6 @@
 0.0.0.0 webogram.ru
 0.0.0.0 webopub.fr
 0.0.0.0 weborama.io
-0.0.0.0 weborama.net
 0.0.0.0 cstatic.weborama.fr
 0.0.0.0 frontend.weborama.fr
 0.0.0.0 weborama-tech.ru
@@ -89597,7 +89830,7 @@
 0.0.0.0 webpuppweb.com
 0.0.0.0 webpushcloud.top
 0.0.0.0 webpushdirect.biz
-0.0.0.0 webpushr.com
+0.0.0.0 bot.webpushr.com
 0.0.0.0 webpushs.com
 0.0.0.0 webredirect.org
 0.0.0.0 webreseau.com
@@ -91448,7 +91681,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35431 rules from this source
+# Converted 35660 rules from this source
 
 
-# Total unique domains: 91427
+# Total unique domains: 91660
