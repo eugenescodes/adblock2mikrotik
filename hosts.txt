@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-06 18:20:33 UTC
+# Last modified: 2025-01-07 01:11:28 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -51073,6 +51073,7 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 jfrrnf.icu
 0.0.0.0 jjplaqyo.icu
 0.0.0.0 tixoilll.com
 0.0.0.0 hitalsli.com
@@ -56027,7 +56028,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56012 rules from this source
+# Converted 56013 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -57700,7 +57701,6 @@
 0.0.0.0 analytics.adnatus.com
 0.0.0.0 adnboost.com
 0.0.0.0 adnection.com
-0.0.0.0 adnet-media.net
 0.0.0.0 adnetasia.com
 0.0.0.0 banners.adnetmedia.lt
 0.0.0.0 adnetwork.net
@@ -60938,6 +60938,7 @@
 0.0.0.0 connect.becker.com
 0.0.0.0 webtracking.becker.com
 0.0.0.0 statistics.beckhoff-web-services.com
+0.0.0.0 beckieintrate.top
 0.0.0.0 smetrics.becomeanex.org
 0.0.0.0 metrics.becquet.fr
 0.0.0.0 analytics.bedbathandbeyond.com
@@ -60963,6 +60964,7 @@
 0.0.0.0 mr-in.beginlearning.com
 0.0.0.0 beginnerpancake.com
 0.0.0.0 beguessbents.com
+0.0.0.0 behooveforeby.top
 0.0.0.0 analytics.behr.com
 0.0.0.0 beintoo.com
 0.0.0.0 api-htp.beizi.biz
@@ -61327,7 +61329,6 @@
 0.0.0.0 interface.bilibili.com
 0.0.0.0 miniapp.bilibili.com
 0.0.0.0 pixel.bilinmedia.net
-0.0.0.0 piwik.sync.sandbox.a.bill.com
 0.0.0.0 billaccountant.com
 0.0.0.0 billboard.cz
 0.0.0.0 metric.billmelater.com
@@ -61357,7 +61358,6 @@
 0.0.0.0 analytics.bio.link
 0.0.0.0 metrics.biocompare.com
 0.0.0.0 smetric.biogen.com
-0.0.0.0 best.biolifesupplement.com
 0.0.0.0 smetrics.biomedtracker.com
 0.0.0.0 metrics.biooncology.com
 0.0.0.0 t.biooncology.com
@@ -62652,7 +62652,6 @@
 0.0.0.0 cashpage.net
 0.0.0.0 banners.cashring.com
 0.0.0.0 cashstaging.me
-0.0.0.0 metric.cashstaging.app
 0.0.0.0 cashsurfers.com
 0.0.0.0 cashtube.ru
 0.0.0.0 cashyinvestment.org
@@ -62794,7 +62793,6 @@
 0.0.0.0 cdnjs-storage.com
 0.0.0.0 http.cdnlayer.com
 0.0.0.0 cdnmaster.com
-0.0.0.0 aff.cdnntx.com
 0.0.0.0 i.cdnpark.com
 0.0.0.0 cdnral.com
 0.0.0.0 ads.cdnslate.com
@@ -63087,7 +63085,6 @@
 0.0.0.0 chozarpeases.com
 0.0.0.0 chpadblock.com
 0.0.0.0 chpok.site
-0.0.0.0 chrgtdhpwf.com
 0.0.0.0 stats.chrispederick.com
 0.0.0.0 tracking.christianpost.com
 0.0.0.0 smetrics.christianscience.com
@@ -64472,6 +64469,7 @@
 0.0.0.0 analytics.codingdojo.com
 0.0.0.0 metrics.codingdojo.com
 0.0.0.0 analytics.codingninjas.com
+0.0.0.0 codmanbumming.com
 0.0.0.0 piwik.coe.int
 0.0.0.0 coertiest.click
 0.0.0.0 biz.coface.com
@@ -65245,6 +65243,7 @@
 0.0.0.0 matomo.concurrences.com
 0.0.0.0 analytics.condata.com
 0.0.0.0 condemnedcomb.com
+0.0.0.0 condemnfundraiserjune.com
 0.0.0.0 api.condenast.io
 0.0.0.0 conditionchange.com
 0.0.0.0 conditioncrush.com
@@ -69359,10 +69358,12 @@
 0.0.0.0 analytics.embark.net
 0.0.0.0 analytics.embedsignage.com
 0.0.0.0 embedx.name
+0.0.0.0 embercascademaple.com
 0.0.0.0 emberenchanter.top
 0.0.0.0 emblemexceptionscorer.com
 0.0.0.0 smetrics.emblemhealth.com
 0.0.0.0 embosknitos.com
+0.0.0.0 emboxsegos.com
 0.0.0.0 embrace.io
 0.0.0.0 embroiderynaturalistsfighter.com
 0.0.0.0 analytics.emburse.com
@@ -70168,6 +70169,7 @@
 0.0.0.0 i20.fastpic.ru
 0.0.0.0 i23.fastpic.ru
 0.0.0.0 fasttiger.io
+0.0.0.0 fatalespedlery.com
 0.0.0.0 smetrics.fatface.com
 0.0.0.0 starman.fathomdns.com
 0.0.0.0 analytics2.fatmedia.io
@@ -81565,6 +81567,7 @@
 0.0.0.0 prayerbeadsworld.com
 0.0.0.0 matomo-188.prdbia1.com
 0.0.0.0 prdirectory.biz
+0.0.0.0 preacidtesters.com
 0.0.0.0 aditude.prebid-server.com
 0.0.0.0 ma.preciofishbone.se
 0.0.0.0 preciousplanes.com
@@ -82069,6 +82072,7 @@
 0.0.0.0 analytics.putnam.com
 0.0.0.0 cdn.puyjjq.com
 0.0.0.0 matomo.puzzleplayz.com
+0.0.0.0 puzzlerchincof.com
 0.0.0.0 metrics.pvcase.com
 0.0.0.0 analytics.pvehs.com
 0.0.0.0 pvk.jp
@@ -82877,6 +82881,7 @@
 0.0.0.0 relateddigital.com
 0.0.0.0 relatedgrouptest.com
 0.0.0.0 analytics.relateiq.com
+0.0.0.0 relatesacinous.top
 0.0.0.0 relationrest.com
 0.0.0.0 matomo.relationshop.net
 0.0.0.0 analytics.relayto.com
@@ -83644,7 +83649,6 @@
 0.0.0.0 metric.samsclub.com
 0.0.0.0 metrics.samsclub.com
 0.0.0.0 dls-account.di.atlas.samsung.com
-0.0.0.0 lp.europe.business.samsung.com
 0.0.0.0 tracking.europe.business.samsung.com
 0.0.0.0 channelusa.samsung.com
 0.0.0.0 dc.dqa.samsung.com
@@ -85192,6 +85196,7 @@
 0.0.0.0 metric.solana.com
 0.0.0.0 metrics.solana.com
 0.0.0.0 analytics.solanafloor.com
+0.0.0.0 solarcyclonesky.com
 0.0.0.0 analytics.solaredge.com
 0.0.0.0 solarislabyrinth.com
 0.0.0.0 solarswitch4all.com
@@ -87666,6 +87671,7 @@
 0.0.0.0 meta-events.trailrunnermag.com
 0.0.0.0 analytics.trajektory.com
 0.0.0.0 matomo.tralalere.com
+0.0.0.0 tramegileno.com
 0.0.0.0 metrics.trammellcrow.com
 0.0.0.0 smetrics.trammellcrow.com
 0.0.0.0 tranazgimvpy.com
@@ -89834,7 +89840,6 @@
 0.0.0.0 webogram.ru
 0.0.0.0 webopub.fr
 0.0.0.0 weborama.io
-0.0.0.0 weborama.net
 0.0.0.0 cstatic.weborama.fr
 0.0.0.0 frontend.weborama.fr
 0.0.0.0 weborama-tech.ru
@@ -90423,6 +90428,7 @@
 0.0.0.0 metrics.writefull.ai
 0.0.0.0 writeme.me
 0.0.0.0 writemypaperbuyefp.com
+0.0.0.0 writtenkoa.top
 0.0.0.0 wrongwound.com
 0.0.0.0 piwik.wrshealth.com
 0.0.0.0 wryfinger.com
@@ -91705,7 +91711,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35672 rules from this source
+# Converted 35677 rules from this source
 
 
-# Total unique domains: 91684
+# Total unique domains: 91690
