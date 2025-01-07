@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-07 01:11:28 UTC
+# Last modified: 2025-01-07 06:22:03 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -51074,6 +51074,10 @@
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
 0.0.0.0 jfrrnf.icu
+0.0.0.0 e50.icu
+0.0.0.0 aos01070ss.xyz
+0.0.0.0 sdyurlib.top
+0.0.0.0 lbfuvlyp.icu
 0.0.0.0 jjplaqyo.icu
 0.0.0.0 tixoilll.com
 0.0.0.0 hitalsli.com
@@ -56028,7 +56032,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56013 rules from this source
+# Converted 56017 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -56374,6 +56378,7 @@
 0.0.0.0 265ccb08af.com
 0.0.0.0 2684e4fd7f.com
 0.0.0.0 26dffa4094.com
+0.0.0.0 1364c2e769.26e8264baa.com
 0.0.0.0 2843b4bf95.com
 0.0.0.0 287feb149d.com
 0.0.0.0 295.ca
@@ -56706,6 +56711,7 @@
 0.0.0.0 37wan.com
 0.0.0.0 3850274698301a9ed25f86e97b2ea9eee4cc8f893e6a78e42006f4fb.com
 0.0.0.0 3897e90a2e.com
+0.0.0.0 b6c215cd84.38e5270423.com
 0.0.0.0 m.38xs.com
 0.0.0.0 app-g.39.net
 0.0.0.0 3917.com
@@ -56721,6 +56727,7 @@
 0.0.0.0 jwz.3conline.com
 0.0.0.0 3d2f.com
 0.0.0.0 3d43d43f68.com
+0.0.0.0 dcaf9fe2a0.3dc5ee5ae1.com
 0.0.0.0 analytics.3dcloud.io
 0.0.0.0 3deepspace.com
 0.0.0.0 3devilattack.net
@@ -56750,6 +56757,7 @@
 0.0.0.0 analytics.404.limited
 0.0.0.0 40a16d92b0.com
 0.0.0.0 40best.com
+0.0.0.0 31e9d899ee.41869c9436.com
 0.0.0.0 jo.429men.com
 0.0.0.0 42dbd09587.com
 0.0.0.0 43478y.online
@@ -56946,6 +56954,7 @@
 0.0.0.0 77bf977ba9.com
 0.0.0.0 787787.com
 0.0.0.0 79383a549a.com
+0.0.0.0 79893962.xyz
 0.0.0.0 alishop.79s.ru
 0.0.0.0 7a2cb45927.com
 0.0.0.0 7a8490057c.com
@@ -58146,7 +58155,6 @@
 0.0.0.0 kliks.affiliate4you.nl
 0.0.0.0 banners.affiliatefuture.com
 0.0.0.0 affiliatepro.it
-0.0.0.0 affiliatescout.com
 0.0.0.0 affiliatetracker.io
 0.0.0.0 affiliatetracking.com
 0.0.0.0 affiliatetracking.net
@@ -58291,6 +58299,7 @@
 0.0.0.0 ahedhjl.cn
 0.0.0.0 ahgxawophb.com
 0.0.0.0 revive.ahk.de
+0.0.0.0 static.ahk.de
 0.0.0.0 ahkoqzxuzsf.com
 0.0.0.0 gtm.ahlsell.se
 0.0.0.0 assets.ahmybid.net
@@ -59340,7 +59349,6 @@
 0.0.0.0 analytics.andersontuftex.com
 0.0.0.0 andevoskolly.click
 0.0.0.0 matomo.andgosystems.dev
-0.0.0.0 andlache.com
 0.0.0.0 piwik.andreas-burmann.com
 0.0.0.0 andrebadi.top
 0.0.0.0 analytics.andritz.com
@@ -59454,7 +59462,6 @@
 0.0.0.0 infos.anz.com
 0.0.0.0 analytics.ao.gl
 0.0.0.0 aoao11241iis.top
-0.0.0.0 aogoxcgqw.com
 0.0.0.0 metrics.aohostels.com
 0.0.0.0 aojeet.icu
 0.0.0.0 aokkwzg.cn
@@ -59867,6 +59874,7 @@
 0.0.0.0 arabss.arabxn.org
 0.0.0.0 arabyads.com
 0.0.0.0 arainfo.org
+0.0.0.0 arakcdn.com
 0.0.0.0 aralego.net
 0.0.0.0 arank.com
 0.0.0.0 arabs.arbada.net
@@ -60318,7 +60326,6 @@
 0.0.0.0 sanalytics.autozone.com
 0.0.0.0 matomo.autrado.de
 0.0.0.0 analytics.auvik.com
-0.0.0.0 auvohoxm.xyz
 0.0.0.0 t.av.st
 0.0.0.0 av-mov.com
 0.0.0.0 stats.avaaz.org
@@ -62894,7 +62901,6 @@
 0.0.0.0 c.cgmission.com
 0.0.0.0 analysis.cgmlife.com
 0.0.0.0 metrics.cgmlife.com
-0.0.0.0 cgpdxpjlpdsr.com
 0.0.0.0 analytics.cgps.dev
 0.0.0.0 cgyx.tv
 0.0.0.0 lc.ch.com
@@ -63917,7 +63923,6 @@
 0.0.0.0 smetrics.flex.amazon.co.uk
 0.0.0.0 rcm-jp.amazon.co.jp
 0.0.0.0 rcm-uk.amazon.co.uk
-0.0.0.0 metric.amo-savo.co.il
 0.0.0.0 analytics.co.il
 0.0.0.0 analytics.co.in
 0.0.0.0 analytics.co.jp
@@ -64069,7 +64074,6 @@
 0.0.0.0 sanl.footlocker.co.uk
 0.0.0.0 formatch.co.jp
 0.0.0.0 smetrics.frontline.co.th
-0.0.0.0 metric.fsworld.co.uk
 0.0.0.0 ad.fujita-kanko.co.jp
 0.0.0.0 securemetrics.gap.co.jp
 0.0.0.0 smetrics.gemcreditline.co.nz
@@ -64334,7 +64338,6 @@
 0.0.0.0 analytics.swimserpentine.co.uk
 0.0.0.0 analytics.swinton.co.uk
 0.0.0.0 smetrics.talkaboutlaminitis.co.uk
-0.0.0.0 metric.telavivim-sb.co.il
 0.0.0.0 smetrics.telegraph.co.uk
 0.0.0.0 mmpstape.tenpin.co.uk
 0.0.0.0 analytics.the-beadshop.co.uk
@@ -64467,7 +64470,6 @@
 0.0.0.0 analytics.codev.uk
 0.0.0.0 analytics.codingblocks.net
 0.0.0.0 analytics.codingdojo.com
-0.0.0.0 metrics.codingdojo.com
 0.0.0.0 analytics.codingninjas.com
 0.0.0.0 codmanbumming.com
 0.0.0.0 piwik.coe.int
@@ -65282,7 +65284,6 @@
 0.0.0.0 conservativefiringline.com
 0.0.0.0 chr.conservativehealthreport.org
 0.0.0.0 analytics.conservativenewsandviews.com
-0.0.0.0 metric.consintiendoamamaconsamsclub.com
 0.0.0.0 piwik.consorciomadrono.es
 0.0.0.0 om-ssl.consorsbank.de
 0.0.0.0 conspicuouswoodland.com
@@ -65501,7 +65502,6 @@
 0.0.0.0 analytics-eu.cloud.coveo.com
 0.0.0.0 analytics.org.coveo.com
 0.0.0.0 analytics.orghipaa.coveo.com
-0.0.0.0 analytics.orgqa.coveo.com
 0.0.0.0 coveritlive.com
 0.0.0.0 analytics.covermymeds.com
 0.0.0.0 caterpillarsigns.coversandall.com
@@ -65533,7 +65533,6 @@
 0.0.0.0 news.cpbj.com
 0.0.0.0 img5-ak.cpcdn.com
 0.0.0.0 cpcstdploqqh.com
-0.0.0.0 cpddgcr.xyz
 0.0.0.0 cpeciadogfoods.com
 0.0.0.0 metric.cpet.ch
 0.0.0.0 analytics.cpex.cz
@@ -65562,7 +65561,7 @@
 0.0.0.0 cracksway.com
 0.0.0.0 craftilypendantwhinny.com
 0.0.0.0 crafting.xyz
-0.0.0.0 analytics.prod.craftsmanplus.com
+0.0.0.0 moloco.analytics.prod.craftsmanplus.com
 0.0.0.0 analytics2.craftsportswear.com
 0.0.0.0 smetrics.crainscleveland.com
 0.0.0.0 smetrics.crainsdetroit.com
@@ -65620,7 +65619,6 @@
 0.0.0.0 analytics.cremedatafoundry.com
 0.0.0.0 analytics.crest.com
 0.0.0.0 crewedbangup.com
-0.0.0.0 analytics.cribl.io
 0.0.0.0 synd.cricbuzz.com
 0.0.0.0 sanalytics.cricketwireless.com
 0.0.0.0 servedby.cricketworld.com
@@ -65755,7 +65753,6 @@
 0.0.0.0 gemtun.ctnewsjunkie.com
 0.0.0.0 ctobsnssdk.com
 0.0.0.0 ctoid.net
-0.0.0.0 ctp1.xyz
 0.0.0.0 analytics.ctpro.io
 0.0.0.0 ctpugwd.cc
 0.0.0.0 ctraffic-dfp.io
@@ -65783,7 +65780,6 @@
 0.0.0.0 users.cuci.nl
 0.0.0.0 cuddlycake.com
 0.0.0.0 cuddlylunchroom.com
-0.0.0.0 download.cudo.org
 0.0.0.0 cue-find.com
 0.0.0.0 cuebiq.com
 0.0.0.0 cuewogxmdi.com
@@ -66263,6 +66259,7 @@
 0.0.0.0 dddiey-s1d2.com
 0.0.0.0 metric.ddfcontent.com
 0.0.0.0 ddgjwrj.cc
+0.0.0.0 ddijapp.com
 0.0.0.0 tadata.ddjiayou.cn
 0.0.0.0 ddmr.com
 0.0.0.0 ddns.info
@@ -68060,7 +68057,6 @@
 0.0.0.0 dftoutiao.com
 0.0.0.0 dfxwdc.com
 0.0.0.0 dgbaozhuang.cn
-0.0.0.0 dgddipgtebuy.com
 0.0.0.0 dghehu.com
 0.0.0.0 dgit.com
 0.0.0.0 dgm2.com
@@ -68098,6 +68094,7 @@
 0.0.0.0 didmakingby.xyz
 0.0.0.0 didomi.io
 0.0.0.0 didtheyreadit.com
+0.0.0.0 dieadi.com
 0.0.0.0 analytics.diecsc.be
 0.0.0.0 analytics.diehl.com
 0.0.0.0 metrics.dierbergs.com
@@ -72537,7 +72534,6 @@
 0.0.0.0 gullyending.com
 0.0.0.0 hruk.gumasi.top
 0.0.0.0 yzcpqa.gumtree.com
-0.0.0.0 gunepszy.xyz
 0.0.0.0 gunggo.com
 0.0.0.0 assets.gunosy.com
 0.0.0.0 cv.gunosy.com
@@ -75771,7 +75767,6 @@
 0.0.0.0 kuxkddg.cn
 0.0.0.0 kuyun.com
 0.0.0.0 nstats.kvadgroup.com
-0.0.0.0 kvhtsvy.xyz
 0.0.0.0 xml-v4.kvicads.com
 0.0.0.0 pop.kvideo.xyz
 0.0.0.0 kvors.com
@@ -76003,7 +75998,6 @@
 0.0.0.0 lcwpaketleme.com
 0.0.0.0 ldgnrtn.com
 0.0.0.0 piwik.ldh-france.org
-0.0.0.0 ldcdn.ldmnq.com
 0.0.0.0 ldnlyap.com
 0.0.0.0 tq.ldnpointer.online
 0.0.0.0 xml-eu-v4.ldnpointer.online
@@ -77035,6 +77029,7 @@
 0.0.0.0 adat.mandiner.hu
 0.0.0.0 analytics.mangahigh.com
 0.0.0.0 log.mangaina.com
+0.0.0.0 mangbaiz.xyz
 0.0.0.0 mangomob.net
 0.0.0.0 manguan.vip
 0.0.0.0 smetrics.manheim.com
@@ -77279,6 +77274,7 @@
 0.0.0.0 tracking.mathworks.com
 0.0.0.0 telemetry.matillion.com
 0.0.0.0 matimati.site
+0.0.0.0 matissa.info
 0.0.0.0 metrics.matlab.com
 0.0.0.0 smetrics.matlab.com
 0.0.0.0 matomo.cloud
@@ -79482,7 +79478,6 @@
 0.0.0.0 data.communicatie.nn.nl
 0.0.0.0 nnbqgxo.cc
 0.0.0.0 nndzsw1.com
-0.0.0.0 nnrbyty.xyz
 0.0.0.0 analytics.prod.nntech.io
 0.0.0.0 matomo.nobiadigital.com
 0.0.0.0 nobid.io
@@ -81041,7 +81036,6 @@
 0.0.0.0 pharteewhi.xyz
 0.0.0.0 phasdesign.com
 0.0.0.0 phcn.xyz
-0.0.0.0 phcrjth.xyz
 0.0.0.0 think.phdinc.com
 0.0.0.0 pheedo.com
 0.0.0.0 discover.phenomenex.com
@@ -82145,7 +82139,6 @@
 0.0.0.0 telemetry.qdrant.io
 0.0.0.0 za.qeeq.com
 0.0.0.0 hlok.qertewrt.com
-0.0.0.0 qeucuzpbv6jq.jp
 0.0.0.0 matomo.qgis.org
 0.0.0.0 matomo.qgiv.com
 0.0.0.0 qgksqshmibx.com
@@ -83075,7 +83068,6 @@
 0.0.0.0 sxjfhh.rgj.com
 0.0.0.0 rgs-rostock.de
 0.0.0.0 static.flat-ads.com.rgslb.net
-0.0.0.0 rgwnbdygfh.com
 0.0.0.0 rgyun.com
 0.0.0.0 success.rhb.com
 0.0.0.0 rhebus.works
@@ -83534,7 +83526,6 @@
 0.0.0.0 discount.s3blog.org
 0.0.0.0 s3xified.com
 0.0.0.0 metrics.s5.com
-0.0.0.0 s5ue6.com
 0.0.0.0 s8bet.com
 0.0.0.0 sabio.us
 0.0.0.0 analytics.sabkezendegi.net
@@ -83865,7 +83856,6 @@
 0.0.0.0 smetric.schwabinstitutional.com
 0.0.0.0 smetric.schwabplan.com
 0.0.0.0 wer.schwarzwaelder-bote.de
-0.0.0.0 dacemirror.sci-hub.se
 0.0.0.0 analytics.scielo.org
 0.0.0.0 smetrics.science.org
 0.0.0.0 scienceaaas.org
@@ -84839,7 +84829,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw2.smartadserver.com
+0.0.0.0 euw1.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -90176,6 +90166,7 @@
 0.0.0.0 wistfulwaste.com
 0.0.0.0 witbe.net
 0.0.0.0 witch-counter.de
+0.0.0.0 withdraw3452.fun
 0.0.0.0 analytics.withgoogle.com
 0.0.0.0 metrics.withings.com
 0.0.0.0 withoutverification.com
@@ -90560,7 +90551,6 @@
 0.0.0.0 wxadserve.xyz
 0.0.0.0 wxdgut.cn
 0.0.0.0 wxhkdcxdhjv.biz
-0.0.0.0 wxhqjojokhsg.com
 0.0.0.0 wyfec.cn
 0.0.0.0 analytics.wyleex.com
 0.0.0.0 wymzwy.cn
@@ -91711,7 +91701,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35677 rules from this source
+# Converted 35663 rules from this source
 
 
-# Total unique domains: 91690
+# Total unique domains: 91680
