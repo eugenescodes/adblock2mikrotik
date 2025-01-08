@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-08 06:21:14 UTC
+# Last modified: 2025-01-08 12:30:39 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -30122,6 +30122,7 @@
 0.0.0.0 speakol.com
 0.0.0.0 splinky.com
 0.0.0.0 splut.com
+0.0.0.0 spokeoaffiliates.com
 0.0.0.0 spolecznosci.net
 0.0.0.0 sponsoredtweets.com
 0.0.0.0 spotible.com
@@ -56102,7 +56103,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56087 rules from this source
+# Converted 56088 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -57394,7 +57395,6 @@
 0.0.0.0 acento.com
 0.0.0.0 acephouths.com
 0.0.0.0 analytics.aceternity.com
-0.0.0.0 aceyearling.com
 0.0.0.0 acglgoa.com
 0.0.0.0 acglottku.com
 0.0.0.0 achetezfacile.com
@@ -57713,7 +57713,6 @@
 0.0.0.0 analytics.tr.adjust.com
 0.0.0.0 analytics.us.adjust.com
 0.0.0.0 adjust-net.jp
-0.0.0.0 adjustmentthesilver.com
 0.0.0.0 adkeeper.com
 0.0.0.0 xml.adkmbc.com
 0.0.0.0 adkontekst.pl
@@ -58112,6 +58111,8 @@
 0.0.0.0 adtech.advertising.com
 0.0.0.0 pixel.advertising.com
 0.0.0.0 advertisingbanners.com
+0.0.0.0 advertisinghelpcenter68.click
+0.0.0.0 advertisinghelpcenter88.click
 0.0.0.0 advertpro.com
 0.0.0.0 advertrek.com
 0.0.0.0 advertstream.com
@@ -58196,7 +58197,6 @@
 0.0.0.0 analytics.aeon.co
 0.0.0.0 metrics.aeon.co
 0.0.0.0 aeoniannagual.top
-0.0.0.0 aerbgpn.xyz
 0.0.0.0 mktg.aero-news.net
 0.0.0.0 pzxhyp.aeropostale.com
 0.0.0.0 adobeanalytics.aerotek.com
@@ -58268,7 +58268,6 @@
 0.0.0.0 smetrics.afvclub.com
 0.0.0.0 afxncq.com
 0.0.0.0 again-agreement.com
-0.0.0.0 againdivine.com
 0.0.0.0 agaux.com
 0.0.0.0 err.agava.ru
 0.0.0.0 matomo.agbar.net
@@ -60017,7 +60016,6 @@
 0.0.0.0 matomo.arkane.com
 0.0.0.0 app.arkansasrazorbacks.com
 0.0.0.0 t.arkansasrazorbacks.com
-0.0.0.0 arkt.xyz
 0.0.0.0 arku.xyz
 0.0.0.0 metrics.arla.com
 0.0.0.0 smetrics.arm.com
@@ -60759,7 +60757,6 @@
 0.0.0.0 balkandernegi.net
 0.0.0.0 rev.balkanmediagroup.com
 0.0.0.0 lu9xve2c97l898gjjxv4.ballercap.com
-0.0.0.0 balletshoes.live
 0.0.0.0 balloonbelieve.com
 0.0.0.0 ballpro.xyz
 0.0.0.0 ballsbanana.com
@@ -61089,6 +61086,7 @@
 0.0.0.0 lb.benchmarkemail.com
 0.0.0.0 bendan.shop
 0.0.0.0 analytics.bending-x.com
+0.0.0.0 beneficioaexito.sbs
 0.0.0.0 analytics.benefitfocus.com
 0.0.0.0 analytics.benefithub.com
 0.0.0.0 text.benefitsatwork.be
@@ -61464,7 +61462,6 @@
 0.0.0.0 branch.wallet.bitcoin.com
 0.0.0.0 bitcoincoin.xyz
 0.0.0.0 bitcoinplus.com
-0.0.0.0 bitcoinpricealertexpert.com
 0.0.0.0 analytics.bitcoinwisdom.io
 0.0.0.0 inside.bitcomet.com
 0.0.0.0 sstats.bitdefender.com
@@ -61507,7 +61504,6 @@
 0.0.0.0 c.bizjournals.com
 0.0.0.0 metrics.bizjournals.com
 0.0.0.0 webads.bizservers.com
-0.0.0.0 bjappzvz.xyz
 0.0.0.0 connect.health.bjc.org
 0.0.0.0 tracking.health.bjc.org
 0.0.0.0 bjcathay.com
@@ -61740,7 +61736,6 @@
 0.0.0.0 smetrics.bncvirtual.com
 0.0.0.0 bnet.com
 0.0.0.0 bnewsblite.me
-0.0.0.0 bnfhxszj.xyz
 0.0.0.0 bnmq.com
 0.0.0.0 bnnfvd.xyz
 0.0.0.0 matomo.test.bnnvara.nl
@@ -64063,7 +64058,6 @@
 0.0.0.0 stats.calcalist.co.il
 0.0.0.0 collect.calvinklein.co.uk
 0.0.0.0 tags.calvinklein.co.uk
-0.0.0.0 canadagooseoutlet.co.uk
 0.0.0.0 analytics.candle-shack.co.uk
 0.0.0.0 cb-mms.carbuyer.co.uk
 0.0.0.0 metrics.careline.co.uk
@@ -65176,7 +65170,6 @@
 0.0.0.0 smetrics.uol.com.br
 0.0.0.0 uploaddeimagens.com.br
 0.0.0.0 countly.vakifbank.com.tr
-0.0.0.0 vccg.com.au
 0.0.0.0 analytics.videotecaead.com.br
 0.0.0.0 adlog.vivo.com.cn
 0.0.0.0 adreq.vivo.com.cn
@@ -66400,6 +66393,7 @@
 0.0.0.0 decisivedrawer.com
 0.0.0.0 decisiveducks.com
 0.0.0.0 deckerenacts.com
+0.0.0.0 declarateenquiebra.cl
 0.0.0.0 decollhuaca.com
 0.0.0.0 decoycreation.com
 0.0.0.0 analytics.dedeman.ro
@@ -69042,7 +69036,6 @@
 0.0.0.0 src.ebay-us.com
 0.0.0.0 ebayadvertising.com
 0.0.0.0 ebaypartnernetwork.com
-0.0.0.0 ebayvip.xyz
 0.0.0.0 ebgwdon.cn
 0.0.0.0 ads.ebihoreanul.ro
 0.0.0.0 ebkb.com
@@ -70626,6 +70619,7 @@
 0.0.0.0 flinstonees.us
 0.0.0.0 api.flipdesk.jp
 0.0.0.0 ads.flipkart.com
+0.0.0.0 flipkart-offer-zone.shop
 0.0.0.0 fliplineads.com
 0.0.0.0 analytics.flipp.dev
 0.0.0.0 countly.flipp.dev
@@ -71058,7 +71052,6 @@
 0.0.0.0 froommixoria.com
 0.0.0.0 analytics.frothdesk.com
 0.0.0.0 frscosr.com
-0.0.0.0 frstma2025aqwwwqw.shop
 0.0.0.0 t.frtyh.com
 0.0.0.0 frtyj.com
 0.0.0.0 frtyk.com
@@ -71751,7 +71744,6 @@
 0.0.0.0 getfivestars.com
 0.0.0.0 getflexsafe.io
 0.0.0.0 analytics.getflits.com
-0.0.0.0 getfnewsolutions.com
 0.0.0.0 getfnewssolutions.com
 0.0.0.0 getformsonline.com
 0.0.0.0 analytics.getgitorious.com
@@ -72490,7 +72482,6 @@
 0.0.0.0 greengaming.de
 0.0.0.0 analytics.greengo.voyage
 0.0.0.0 greengoplatform.com
-0.0.0.0 greeninst.com
 0.0.0.0 analytics.greenmatters.com
 0.0.0.0 analytics.progetti.greenme.it
 0.0.0.0 analytics.greenmountainenergy.com
@@ -73474,7 +73465,6 @@
 0.0.0.0 stats.hot.com
 0.0.0.0 hotadultcontent.com
 0.0.0.0 hotadultvids.com
-0.0.0.0 hotbgapare.com
 0.0.0.0 hotboys.biz
 0.0.0.0 hotdeals360.com
 0.0.0.0 hotdivines.com
@@ -75693,7 +75683,6 @@
 0.0.0.0 kokihap7siexz3.com
 0.0.0.0 kokocha.site
 0.0.0.0 kokojia.com
-0.0.0.0 kolinileas.com
 0.0.0.0 analytics.kollective.app
 0.0.0.0 motion.kollmorgen.com
 0.0.0.0 komatech.net
@@ -75900,7 +75889,6 @@
 0.0.0.0 kytbxcl.cn
 0.0.0.0 technical.kyzen.com
 0.0.0.0 kzdh.com
-0.0.0.0 kzepp.com
 0.0.0.0 kzpizjp.cn
 0.0.0.0 kzyadnfufmif.com
 0.0.0.0 webcontr.l.de
@@ -76448,7 +76436,6 @@
 0.0.0.0 linkadd.de
 0.0.0.0 linkads.xyz
 0.0.0.0 click.linkadx.com
-0.0.0.0 linkbucks.com
 0.0.0.0 linkcase.ru
 0.0.0.0 linkcounter.com
 0.0.0.0 ad.linkedin.com
@@ -76927,7 +76914,6 @@
 0.0.0.0 metric.lysoformmedical.it
 0.0.0.0 iazwzp.lyst.com
 0.0.0.0 lywvsgeducubsrhcufgq.com
-0.0.0.0 lzwpvxulwwjgl.com
 0.0.0.0 m-ateria.com
 0.0.0.0 m-eteor.com
 0.0.0.0 m-eteor.shop
@@ -77581,7 +77567,6 @@
 0.0.0.0 mediumshort.com
 0.0.0.0 analytics.medius.com
 0.0.0.0 matomo.medizinfuchs.de
-0.0.0.0 medlafire.eu
 0.0.0.0 sadobeanalytics.medline.com
 0.0.0.0 telemetry.medpresence.com
 0.0.0.0 ssl.o.medscape.com
@@ -77655,7 +77640,6 @@
 0.0.0.0 servicecut.meizu.com
 0.0.0.0 u.meizu.com
 0.0.0.0 uxip.meizu.com
-0.0.0.0 mekmhvbb.xyz
 0.0.0.0 melchen-testet.at
 0.0.0.0 metric.meli.com
 0.0.0.0 metrics.melia.com
@@ -77717,7 +77701,6 @@
 0.0.0.0 analytics.mercadoshops.com
 0.0.0.0 matomo.mercator-ocean.fr
 0.0.0.0 analytics.mercaux.com
-0.0.0.0 sanalytics.smart.mercedes-benz.com
 0.0.0.0 trk.mercedesamgf1.com
 0.0.0.0 matomo.us-east-1.prod.ext.mercer.com
 0.0.0.0 merchant.com
@@ -78040,7 +78023,6 @@
 0.0.0.0 sreport.mitsubishicars.com
 0.0.0.0 trust.mitutoyo.com
 0.0.0.0 app.miui.com
-0.0.0.0 assistant.miui.com
 0.0.0.0 api.bbs.miui.com
 0.0.0.0 browser.miui.com
 0.0.0.0 api.comm.miui.com
@@ -78240,7 +78222,6 @@
 0.0.0.0 statistics.mobilistics.de
 0.0.0.0 apps.mobilityware.com
 0.0.0.0 mobilup.com
-0.0.0.0 analytics-api.prd.mobimeo.com
 0.0.0.0 mobiquitynetworks.com
 0.0.0.0 mobisage.cn
 0.0.0.0 mobismarter.com
@@ -78649,7 +78630,6 @@
 0.0.0.0 multiupload.com
 0.0.0.0 mumglobal.com
 0.0.0.0 mundanenail.com
-0.0.0.0 analytics.muni.org
 0.0.0.0 muni360.com
 0.0.0.0 sadbelytics.munichre.com
 0.0.0.0 munky.com
@@ -78692,7 +78672,6 @@
 0.0.0.0 mvlkvth.cn
 0.0.0.0 mvng.cn
 0.0.0.0 mvonline.com
-0.0.0.0 mvpqrydt.xyz
 0.0.0.0 auswertung.mvv-muenchen.de
 0.0.0.0 toplista.mw.hu
 0.0.0.0 mwjkteucypb.com
@@ -78758,7 +78737,6 @@
 0.0.0.0 counter.mycomputer.com
 0.0.0.0 mycountdown.org
 0.0.0.0 mycoupons.com
-0.0.0.0 analytics.mycrhnet.com
 0.0.0.0 metrics.mycustomcase.com
 0.0.0.0 mydarkmarket.com
 0.0.0.0 mydarkwebmarketlist.com
@@ -78960,7 +78938,6 @@
 0.0.0.0 gstat.myzaker.com
 0.0.0.0 tracking.myzufall.de
 0.0.0.0 mzbcdn.net
-0.0.0.0 mznizrhd.xyz
 0.0.0.0 mzoczythupi.com
 0.0.0.0 n-case.com
 0.0.0.0 static-rtb2.n-data.io
@@ -79696,7 +79673,6 @@
 0.0.0.0 sbxxyx.notino.cz
 0.0.0.0 ubdsej.notino.pl
 0.0.0.0 beaconin2.notinote.me
-0.0.0.0 notiuser-compllants-adm.com
 0.0.0.0 notmining.org
 0.0.0.0 analytics.notonthehighstreet.com
 0.0.0.0 l.notretemps.com
@@ -81729,7 +81705,6 @@
 0.0.0.0 presssnews.biz
 0.0.0.0 t.pressurewashersdirect.com
 0.0.0.0 prestigesteelbuildings.ca
-0.0.0.0 prettyanimals.net
 0.0.0.0 prettylearning.com
 0.0.0.0 aiq-in.prevention.com
 0.0.0.0 td.prevention.com
@@ -87528,6 +87503,7 @@
 0.0.0.0 topmobis.com
 0.0.0.0 analytics.topocentras.lt
 0.0.0.0 topofferus.info
+0.0.0.0 app.topol.io
 0.0.0.0 topoloveni.ro
 0.0.0.0 toponad.com
 0.0.0.0 toponclick.com
@@ -90707,7 +90683,6 @@
 0.0.0.0 x6img.com
 0.0.0.0 x876789a.store
 0.0.0.0 x9mw.com
-0.0.0.0 xafuzcxr.xyz
 0.0.0.0 matomo.xal.com
 0.0.0.0 xamubee.ru
 0.0.0.0 bsodsm8r.xamzgjedu.com
@@ -91300,6 +91275,7 @@
 0.0.0.0 ad.ymcdn.org
 0.0.0.0 gw-iad-bid.ymmobi.com
 0.0.0.0 metric.ymobile.jp
+0.0.0.0 ympmeafbhj.com
 0.0.0.0 yndhi.com
 0.0.0.0 ynwsyl.com
 0.0.0.0 yoalizer.com
@@ -91821,7 +91797,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35713 rules from this source
+# Converted 35688 rules from this source
 
 
-# Total unique domains: 91800
+# Total unique domains: 91776
