@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-09 12:30:30 UTC
+# Last modified: 2025-01-09 18:20:56 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 uz-kqtecqs.space
 0.0.0.0 mqprzapns.com
 0.0.0.0 dzeaqmeuaql.com
 0.0.0.0 bjjky.cfd
@@ -32876,6 +32877,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 volces.com
 0.0.0.0 twitter.sx
 0.0.0.0 lf1-cdn-tos.bytegoofy.com
 0.0.0.0 view.mngusr.com
@@ -39043,6 +39045,13 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 nstool.netease.com
+0.0.0.0 data.kuiniuca.com
+0.0.0.0 clientlogsf.music.163.com
+0.0.0.0 ye.dun.163yun.com
+0.0.0.0 netapm.music.163.com
+0.0.0.0 clientlogdep.music.163.com
+0.0.0.0 clientlog3.music.163.com
 0.0.0.0 collect.4gtv.tv
 0.0.0.0 uaid.vtwenty.com
 0.0.0.0 telemetry.codefusion.technology
@@ -43628,6 +43637,7 @@
 0.0.0.0 caraneoutraze.uno
 0.0.0.0 adserve.lasentinelle.mu
 0.0.0.0 adserver.icimedias.ca
+0.0.0.0 sb-hip-happy.ourservice.jp
 0.0.0.0 carrier202205.tokyo
 0.0.0.0 axesslove.mixh.jp
 0.0.0.0 kaomanko.axesslove.com
@@ -56132,7 +56142,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56117 rules from this source
+# Converted 56127 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -56312,7 +56322,6 @@
 0.0.0.0 r.mail.163.com
 0.0.0.0 yaolu.mh.163.com
 0.0.0.0 clientlog.music.163.com
-0.0.0.0 clientlog3.music.163.com
 0.0.0.0 popme.163.com
 0.0.0.0 log.study.163.com
 0.0.0.0 temp.163.com
@@ -88665,7 +88674,6 @@
 0.0.0.0 uyulwc.xyz
 0.0.0.0 uyunad.com
 0.0.0.0 uyybde07w.com
-0.0.0.0 uz-kqtecqs.space
 0.0.0.0 analytics.uzeli.com
 0.0.0.0 webstats.uzh.ch
 0.0.0.0 uzzf.com
@@ -91629,7 +91637,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35491 rules from this source
+# Converted 35489 rules from this source
 
 
-# Total unique domains: 91608
+# Total unique domains: 91616
