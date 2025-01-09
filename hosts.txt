@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-09 06:20:44 UTC
+# Last modified: 2025-01-09 12:30:30 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -27174,6 +27174,7 @@
 0.0.0.0 vrcvuqtijiwgemi.com
 0.0.0.0 vrgvugostlyhewo.info
 0.0.0.0 vrime.xyz
+0.0.0.0 vrizead.com
 0.0.0.0 vroomedbedroll.shop
 0.0.0.0 vrplynsfcr.xyz
 0.0.0.0 vrtzads.com
@@ -32449,7 +32450,6 @@
 0.0.0.0 cads.scalemonk.com
 0.0.0.0 adspot.tfgapps.com
 0.0.0.0 analytics.scalemonk.com
-0.0.0.0 vrizead.com
 0.0.0.0 adpopcorn.com
 0.0.0.0 pangle.io
 0.0.0.0 pubnative.info
@@ -32876,6 +32876,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 twitter.sx
 0.0.0.0 lf1-cdn-tos.bytegoofy.com
 0.0.0.0 view.mngusr.com
 0.0.0.0 cdn.q0losid.com
@@ -33282,7 +33283,6 @@
 0.0.0.0 statscollector.sd-rtn.com
 0.0.0.0 predatasrv.com
 0.0.0.0 mediago.io
-0.0.0.0 b.karte.io
 0.0.0.0 cra.hum.works
 0.0.0.0 log.trackingio.com
 0.0.0.0 region1.analytics.google.com
@@ -33921,7 +33921,6 @@
 0.0.0.0 depart.trinitymedia.ai
 0.0.0.0 atrack.avplayer.com
 0.0.0.0 log.gs3.goo.ne.jp
-0.0.0.0 static.karte.io
 0.0.0.0 wonder-ma.com
 0.0.0.0 tracking.adweb.co.kr
 0.0.0.0 tracking02.adweb.co.kr
@@ -36465,6 +36464,8 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 publictelemetry.tophat.com
+0.0.0.0 dynatrace.att.com
 0.0.0.0 csp-report.marketing.aws.dev
 0.0.0.0 telemetry.svc.transifex.net
 0.0.0.0 cpu.baidu.com
@@ -37126,6 +37127,7 @@
 0.0.0.0 track.parentmood.com
 0.0.0.0 track.shrinkplus.com
 0.0.0.0 track.thefunpost.com
+0.0.0.0 analytics-ingestion-v3.main-production-custom.production.k8s.tubi.io
 0.0.0.0 analytics-ingestion.production-public.tubi.io
 0.0.0.0 wayfinderanalytics.servicebus.windows.net
 0.0.0.0 adtima-media.zascdn.me
@@ -41097,6 +41099,7 @@
 0.0.0.0 vppst.iltrovatore.it
 0.0.0.0 analyzer51.fc2.com
 0.0.0.0 bvr.snva.jp
+0.0.0.0 collector.t-idr.com
 0.0.0.0 log.f-tra.com
 0.0.0.0 mail-count.matsui.co.jp
 0.0.0.0 omt.shinobi.jp
@@ -51164,6 +51167,7 @@
 0.0.0.0 chumealq.com
 0.0.0.0 o8s.icu
 0.0.0.0 wf7.icu
+0.0.0.0 ercoils.com
 0.0.0.0 jfrrnf.icu
 0.0.0.0 e50.icu
 0.0.0.0 aos01070ss.xyz
@@ -56128,7 +56132,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56113 rules from this source
+# Converted 56117 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -56788,7 +56792,6 @@
 0.0.0.0 gtrack.365economist.com
 0.0.0.0 track.365economist.com
 0.0.0.0 secure.365insightcreative.com
-0.0.0.0 365l8.com
 0.0.0.0 365multimedia.com
 0.0.0.0 adssettings.365scores.com
 0.0.0.0 bettingads.365scores.com
@@ -58919,7 +58922,6 @@
 0.0.0.0 alt.com
 0.0.0.0 alt.net
 0.0.0.0 altairaquilae.com
-0.0.0.0 altanalizi.net
 0.0.0.0 altdorfer-niklaus.com
 0.0.0.0 metrics.alteregorunning.com
 0.0.0.0 metrics.alternate.nl
@@ -60262,7 +60264,6 @@
 0.0.0.0 dial-access.att.net
 0.0.0.0 digital.att.com
 0.0.0.0 metric.dlife.att.com
-0.0.0.0 dynatrace.att.com
 0.0.0.0 insights.att.com
 0.0.0.0 metric.att.com
 0.0.0.0 metrics.att.com
@@ -61478,7 +61479,6 @@
 0.0.0.0 stats.bitdefender.com
 0.0.0.0 analytics.bite.lt
 0.0.0.0 analytics.bite.lv
-0.0.0.0 analytics.bitfufu.com
 0.0.0.0 analytics.bitgo.com
 0.0.0.0 metric.bitgo-test.com
 0.0.0.0 bitcast-a.bitgravity.com
@@ -61919,7 +61919,6 @@
 0.0.0.0 matomo1.bpb.de
 0.0.0.0 piwik.bpb.de
 0.0.0.0 fraud.bpcbankingtech.com
-0.0.0.0 bpdtrfb.xyz
 0.0.0.0 bplaynetwork.com
 0.0.0.0 analytics.bpmms.com
 0.0.0.0 webtracking-v01.bpmonline.com
@@ -65380,7 +65379,6 @@
 0.0.0.0 analytics.contentstack.com
 0.0.0.0 contentstream.pl
 0.0.0.0 contextualpalace.com
-0.0.0.0 contigoeneroemprende.sbs
 0.0.0.0 rev.contractoruk.com
 0.0.0.0 analytics.contrastsecurity.com
 0.0.0.0 telemetry.dotnet.contrastsecurity.com
@@ -68932,7 +68930,6 @@
 0.0.0.0 absinfo.eagle.org
 0.0.0.0 data.m.eaglesautismfoundation.org
 0.0.0.0 analytics.ean.com
-0.0.0.0 myjobdhl.earcu.com
 0.0.0.0 adserver.earlygame.com
 0.0.0.0 metrics.earlygame.com
 0.0.0.0 load.sgtm.earlygame.com
@@ -69618,7 +69615,6 @@
 0.0.0.0 epsilondelta.co
 0.0.0.0 epsilonlocal.com
 0.0.0.0 epsonprintersupport247.com
-0.0.0.0 eqcwpeo.cn
 0.0.0.0 lib.eqh5.com
 0.0.0.0 metrics.eql.com
 0.0.0.0 metrics.eql.xyz
@@ -70626,7 +70622,6 @@
 0.0.0.0 flowgo.com
 0.0.0.0 analytics.floydhamilton.tech
 0.0.0.0 flu.cc
-0.0.0.0 flubit.top
 0.0.0.0 fluct.jp
 0.0.0.0 posthog2.fluffleinfra.net
 0.0.0.0 analytics.fluidefi.com
@@ -73930,7 +73925,6 @@
 0.0.0.0 ilquige.com
 0.0.0.0 jbezdi.ilsole24ore.com
 0.0.0.0 1.im.cz
-0.0.0.0 im-token.my
 0.0.0.0 imadedinner.net
 0.0.0.0 imagebet.ph
 0.0.0.0 imagecash.net
@@ -74079,7 +74073,6 @@
 0.0.0.0 indiakino.net
 0.0.0.0 indianpornvideos.com
 0.0.0.0 indiansexstories.net
-0.0.0.0 indiapostnd.cyou
 0.0.0.0 etx.indiatimes.com
 0.0.0.0 mobileads.indiatimes.com
 0.0.0.0 analytics.indiblogger.in
@@ -74112,7 +74105,6 @@
 0.0.0.0 track-e.infineon.com
 0.0.0.0 infineon-community.com
 0.0.0.0 infinite-bottom.com
-0.0.0.0 infinitesimals.shop
 0.0.0.0 analytics.infinity.com
 0.0.0.0 cpm.infinityexplorers.com
 0.0.0.0 rtb-useast.infinityexplorers.com
@@ -75025,7 +75017,6 @@
 0.0.0.0 jjlgbyd.in
 0.0.0.0 analytics.jjshouse.com
 0.0.0.0 nbfopy.jjshouse.com
-0.0.0.0 jjvzqjh.xyz
 0.0.0.0 jjyx.com
 0.0.0.0 jjztrz.xyz
 0.0.0.0 jkfdnofnz.com
@@ -75324,6 +75315,8 @@
 0.0.0.0 karossmudde.com
 0.0.0.0 analytics.karpa.us
 0.0.0.0 cdn.karpatzi.com
+0.0.0.0 b.karte.io
+0.0.0.0 static.karte.io
 0.0.0.0 clk.karzinsurance.co
 0.0.0.0 piwik.kasika.io
 0.0.0.0 kasiklz.cc
@@ -79711,7 +79704,6 @@
 0.0.0.0 nvxcvyfedg.com
 0.0.0.0 axp.nwahomepage.com
 0.0.0.0 javascript.nwbox.com
-0.0.0.0 nwpcptmm.xyz
 0.0.0.0 nxakpj4ac8gkd53.info
 0.0.0.0 nxnjw.com
 0.0.0.0 wa.nxp.com
@@ -81053,6 +81045,7 @@
 0.0.0.0 photographpan.com
 0.0.0.0 analytics.api.photohawk.com
 0.0.0.0 photoload.ru
+0.0.0.0 photonlabs.app
 0.0.0.0 a.photowonder.net
 0.0.0.0 analytics.php.net
 0.0.0.0 phpbbex.com
@@ -81168,7 +81161,6 @@
 0.0.0.0 pixanalytics.pixnet.net
 0.0.0.0 pixsrvcs.com
 0.0.0.0 pjiptn.com
-0.0.0.0 pjlxx.com
 0.0.0.0 pjoo8.com
 0.0.0.0 wa.pjplace.com
 0.0.0.0 bxumze.pjstar.com
@@ -82685,7 +82677,6 @@
 0.0.0.0 metric.recart.com
 0.0.0.0 metrics.recart.com
 0.0.0.0 analytics.recastsoftware.com
-0.0.0.0 recaudpromclarr.com
 0.0.0.0 receptiveink.com
 0.0.0.0 receptivereaction.com
 0.0.0.0 analytics.recepty.cz
@@ -82884,7 +82875,6 @@
 0.0.0.0 renhertfo.com
 0.0.0.0 reninet.com
 0.0.0.0 pixel.renovai.com
-0.0.0.0 renovarrmeuubr.com
 0.0.0.0 feqbqn.rent.com
 0.0.0.0 cnt2.rentalcgi.com
 0.0.0.0 rentallane.net
@@ -85060,7 +85050,6 @@
 0.0.0.0 ug.snssdk.com
 0.0.0.0 vas-hl-x.snssdk.com
 0.0.0.0 snt1.net
-0.0.0.0 snta0034.com
 0.0.0.0 snuffilm.com
 0.0.0.0 snux.cn
 0.0.0.0 spro.so.com
@@ -85674,7 +85663,6 @@
 0.0.0.0 smetrics.startribune.com
 0.0.0.0 startsear.ch
 0.0.0.0 startsurfing.com
-0.0.0.0 startwealthtodays.com
 0.0.0.0 tq.starvalue-3.online
 0.0.0.0 xml-eu-v4.starvalue-3.online
 0.0.0.0 xml-v4.starvalue-3.online
@@ -86671,7 +86659,6 @@
 0.0.0.0 analytics.telefonica.de
 0.0.0.0 telegramhcn.com
 0.0.0.0 telegramm.site
-0.0.0.0 telegrampc.cc
 0.0.0.0 analytics.brand-dialog.telekom.com
 0.0.0.0 analytics.design.telekom.com
 0.0.0.0 tracking.levelup.telekom.com
@@ -86718,12 +86705,6 @@
 0.0.0.0 www3.telus.net
 0.0.0.0 smetrics.telustvplus.com
 0.0.0.0 pixelcounter.telva.com
-0.0.0.0 telvgram.band
-0.0.0.0 telvgram.icu
-0.0.0.0 telvgram.ink
-0.0.0.0 telvgram.online
-0.0.0.0 telvgram.studio
-0.0.0.0 telvgram.tech
 0.0.0.0 temava.com
 0.0.0.0 temelio.com
 0.0.0.0 temiakazon.com
@@ -87031,7 +87012,6 @@
 0.0.0.0 thingstaste.com
 0.0.0.0 matomo.think-cell.com
 0.0.0.0 thinkablerice.com
-0.0.0.0 tracking.thinkabt.com
 0.0.0.0 thinkaction.com
 0.0.0.0 thinkdream.com
 0.0.0.0 analytics.thinkesi.com
@@ -87057,7 +87037,6 @@
 0.0.0.0 thisisarray.com
 0.0.0.0 ads.audio.thisisdax.com
 0.0.0.0 cdn.audio.thisisdax.com
-0.0.0.0 thjwxz.xyz
 0.0.0.0 thko.com
 0.0.0.0 tholteti.com
 0.0.0.0 analytics.thomasnet.io
@@ -87310,7 +87289,6 @@
 0.0.0.0 sadb.toggo.de
 0.0.0.0 adscfg.togothermany.cn
 0.0.0.0 adsup.togothermany.cn
-0.0.0.0 token-com.net
 0.0.0.0 toki-no-irodori.com
 0.0.0.0 tokimekimaildesu.net
 0.0.0.0 tokimekitaine.net
@@ -87475,7 +87453,6 @@
 0.0.0.0 tplinkextender.net
 0.0.0.0 tpudapafr.com
 0.0.0.0 tpv-analytics.com
-0.0.0.0 tqhkfwrdxvbyl.monster
 0.0.0.0 tqjqripb.xyz
 0.0.0.0 tqrqfabde.com
 0.0.0.0 tr1net.com
@@ -87664,9 +87641,6 @@
 0.0.0.0 smetrics.transitions.com
 0.0.0.0 analytics.translatorguru.app
 0.0.0.0 analytics.transmatico.com
-0.0.0.0 piwik.3eringtestidpe-imailtpretpreeringtestpreinfra.sandbox.transmissionapp.com
-0.0.0.0 piwik.3eringtestpre-3eringtestpre-careers-careerstpreeringt3tpre.sandbox.transmissionapp.com
-0.0.0.0 piwik.3eringtipsectpreinfra-3eringtipsectpreinfra-3eringtestpre.sandbox.transmissionapp.com
 0.0.0.0 analytics.transoftsolutions.com
 0.0.0.0 transpera.com
 0.0.0.0 analytics.transporeon.com
@@ -87933,7 +87907,6 @@
 0.0.0.0 tuberis.com
 0.0.0.0 tubetitties.com
 0.0.0.0 b1.tubexo.tv
-0.0.0.0 analytics-ingestion-v3.main-production-custom.production.k8s.tubi.io
 0.0.0.0 ads.production-public.tubi.io
 0.0.0.0 ads4.production-public.tubi.io
 0.0.0.0 pixel.production-public.tubi.io
@@ -87965,7 +87938,6 @@
 0.0.0.0 tunnl.com
 0.0.0.0 cohoi.tuoitre.vn
 0.0.0.0 tuplzt.xyz
-0.0.0.0 tuqnwz.icu
 0.0.0.0 turbo-cdn.net
 0.0.0.0 turboadblocker.com
 0.0.0.0 turboeagle.co
@@ -88009,12 +87981,6 @@
 0.0.0.0 mcp.tvinteractive.tv
 0.0.0.0 tvmeta-dynamic.tvinteractive.tv
 0.0.0.0 ssc.tvland.com
-0.0.0.0 tvlegram.fans
-0.0.0.0 tvlegram.pet
-0.0.0.0 tvlegram.run
-0.0.0.0 tvlegram.team
-0.0.0.0 tvlegram.top
-0.0.0.0 tvlegram.wang
 0.0.0.0 tvlyzer.com
 0.0.0.0 ad.services.tvn.pl
 0.0.0.0 gcontent.services.tvn.pl
@@ -88089,7 +88055,6 @@
 0.0.0.0 livestat.u-paris.fr
 0.0.0.0 rum.u-team.by
 0.0.0.0 u1022.com
-0.0.0.0 u1pmt.com
 0.0.0.0 u21033.com
 0.0.0.0 u23033.com
 0.0.0.0 u23055.com
@@ -88227,7 +88192,6 @@
 0.0.0.0 smetrix.avon.uk.com
 0.0.0.0 pubads.g.doubleclick.uk.net
 0.0.0.0 uk-bet.com
-0.0.0.0 ukehacrdmjspvb.com
 0.0.0.0 analytics.ukhc.org
 0.0.0.0 ukrainebadcountry.org
 0.0.0.0 ukrashulya.ru
@@ -89474,7 +89438,6 @@
 0.0.0.0 app.vucommodores.com
 0.0.0.0 t.vucommodores.com
 0.0.0.0 sponsors.vuejs.org
-0.0.0.0 vuelaporcolombia-enlinea.info
 0.0.0.0 vues3d.com
 0.0.0.0 vueujv.com
 0.0.0.0 vulcanbets.pro
@@ -90511,7 +90474,6 @@
 0.0.0.0 wwclicknews.club
 0.0.0.0 ads.wwe-media.de
 0.0.0.0 analytics.wwf.nl
-0.0.0.0 wwhsxwow.xyz
 0.0.0.0 wwinfyzurbw.com
 0.0.0.0 wwjp.cc
 0.0.0.0 axp.wwlp.com
@@ -90716,6 +90678,8 @@
 0.0.0.0 galleryapi.micloud.xiaomi.net
 0.0.0.0 statusapi.micloud.xiaomi.net
 0.0.0.0 ident.mistat.xiaomi.com
+0.0.0.0 stats.music.xiaomi.com
+0.0.0.0 stats-fm.music.xiaomi.com
 0.0.0.0 file.cdn.mvideo.xiaomi.com
 0.0.0.0 api.account.preview.n.xiaomi.net
 0.0.0.0 staging.api.zhuti.n.xiaomi.com
@@ -91267,7 +91231,6 @@
 0.0.0.0 yruws6.com
 0.0.0.0 ys630.com
 0.0.0.0 ysjkbk.com
-0.0.0.0 ysxt9.com
 0.0.0.0 ytelc.com
 0.0.0.0 analytics.yten.com
 0.0.0.0 analytics.ytica.com
@@ -91666,7 +91629,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35532 rules from this source
+# Converted 35491 rules from this source
 
 
-# Total unique domains: 91645
+# Total unique domains: 91608
