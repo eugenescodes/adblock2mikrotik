@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-12 18:18:46 UTC
+# Last modified: 2025-01-13 01:14:49 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -29234,7 +29234,6 @@
 0.0.0.0 adisfy.com
 0.0.0.0 adisn.com
 0.0.0.0 adit-media.com
-0.0.0.0 adition.com
 0.0.0.0 aditize.com
 0.0.0.0 aditude.io
 0.0.0.0 adjal.com
@@ -32714,6 +32713,7 @@
 0.0.0.0 adhood.com
 0.0.0.0 adinfo.tango.me
 0.0.0.0 adinfuse.com
+0.0.0.0 adition.com
 0.0.0.0 adkmob.com
 0.0.0.0 adleads.com
 0.0.0.0 adlibr.com
@@ -43374,6 +43374,7 @@
 0.0.0.0 popvalk.com
 0.0.0.0 bjiuck.com
 0.0.0.0 greencuttlefish.com
+0.0.0.0 ad.cub.red
 0.0.0.0 vst.videolink.host
 0.0.0.0 exad.smi2.ru
 0.0.0.0 tgb.hsmedia.ru
@@ -51230,6 +51231,10 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 nxdefd.icu
+0.0.0.0 thonkoirs.com
+0.0.0.0 vftrfmia.icu
+0.0.0.0 hdomsiu.top
 0.0.0.0 tndbnriz.icu
 0.0.0.0 eisnaisv.com
 0.0.0.0 puhmtt.icu
@@ -56232,7 +56237,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56217 rules from this source
+# Converted 56222 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -92045,4 +92050,4 @@
 # Converted 35804 rules from this source
 
 
-# Total unique domains: 92021
+# Total unique domains: 92026
