@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-13 12:31:42 UTC
+# Last modified: 2025-01-13 18:21:53 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,8 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 news.jennydanny.com
+0.0.0.0 u57.muzikguide.com
 0.0.0.0 9pub.io
 0.0.0.0 uz-kqtecqs.space
 0.0.0.0 mqprzapns.com
@@ -771,6 +773,7 @@
 0.0.0.0 newbluetrue.xyz
 0.0.0.0 onemediawork.com
 0.0.0.0 d162h6x3rxav67.cloudfront.net
+0.0.0.0 sponsors.salesforceben.com
 0.0.0.0 ads.cloudsight.ai
 0.0.0.0 s3-iad-ww.cf.videorolls.row.aiv-cdn.net
 0.0.0.0 openx.tiesraides.lv
@@ -1903,6 +1906,7 @@
 0.0.0.0 a32fc87d2f.com
 0.0.0.0 a34aba7b6c.com
 0.0.0.0 a35e803f21.com
+0.0.0.0 a3b2c775eb.com
 0.0.0.0 a3yqjsrczwwp.com
 0.0.0.0 a48d53647a.com
 0.0.0.0 a4f074a2f8.com
@@ -2226,6 +2230,7 @@
 0.0.0.0 ad2up.com
 0.0.0.0 ad2upapp.com
 0.0.0.0 ad4.com.cn
+0.0.0.0 ad4905c1db.com
 0.0.0.0 ad999.biz
 0.0.0.0 adactioner.com
 0.0.0.0 adappi.co
@@ -2643,6 +2648,7 @@
 0.0.0.0 adultsense.org
 0.0.0.0 adultsjuniorfling.com
 0.0.0.0 aduptaihafy.net
+0.0.0.0 advancedadblocker.pro
 0.0.0.0 advanceencumbrancehive.com
 0.0.0.0 advancinginfinitely.com
 0.0.0.0 advancingprobationhealthy.com
@@ -6225,6 +6231,7 @@
 0.0.0.0 cfgr5.com
 0.0.0.0 cfgrcr1.com
 0.0.0.0 cfivfadtlr.com
+0.0.0.0 cfqfnpbjy.com
 0.0.0.0 cfrsoft.com
 0.0.0.0 cftpolished4.top
 0.0.0.0 cftpolished5.top
@@ -6823,6 +6830,7 @@
 0.0.0.0 codezap.com
 0.0.0.0 codmanrefan.shop
 0.0.0.0 cododeerda.net
+0.0.0.0 codsdnursjrclse.com
 0.0.0.0 coedmediagroup.com
 0.0.0.0 coefficienttolerategravel.com
 0.0.0.0 coendouspare.com
@@ -7868,6 +7876,7 @@
 0.0.0.0 dbvpikc.com
 0.0.0.0 dbwmzcj-r.click
 0.0.0.0 dbycathyhoughs.com
+0.0.0.0 dbyulufecdvsgr.com
 0.0.0.0 dc-feed.com
 0.0.0.0 dc-rotator.com
 0.0.0.0 dcfnihzg81pa.com
@@ -9032,6 +9041,7 @@
 0.0.0.0 e1d56c0a5f.com
 0.0.0.0 e2bec62b64.com
 0.0.0.0 e2ertt.com
+0.0.0.0 e3202e1cad.com
 0.0.0.0 e437040a9a.com
 0.0.0.0 e59a2ad79a.com
 0.0.0.0 e5asyhilodice.com
@@ -11523,6 +11533,7 @@
 0.0.0.0 glimtors.net
 0.0.0.0 glipigaicm.net
 0.0.0.0 gliptoacaft.net
+0.0.0.0 gliraimsofu.net
 0.0.0.0 glistening-novel.pro
 0.0.0.0 glitteringinsertsupervise.com
 0.0.0.0 glitteringobsessionchanges.com
@@ -11792,6 +11803,7 @@
 0.0.0.0 gpjwludjwldi.com
 0.0.0.0 gplansforourcom.com
 0.0.0.0 gplgqqg.com
+0.0.0.0 gpodxdmnivc.com
 0.0.0.0 gporkecpyttu.com
 0.0.0.0 gpsecureads.com
 0.0.0.0 gpseyeykuwgn.rocks
@@ -12099,6 +12111,7 @@
 0.0.0.0 guitarfelicityraw.com
 0.0.0.0 guitarjavgg124.fun
 0.0.0.0 gujakqludcuk.com
+0.0.0.0 gukmodukuleqasfo.com
 0.0.0.0 gulfimply.com
 0.0.0.0 gullible-lawyer.pro
 0.0.0.0 gullibleanimated.com
@@ -14982,6 +14995,7 @@
 0.0.0.0 largestloitering.com
 0.0.0.0 laridaetrionfo.top
 0.0.0.0 larkenjoyedborn.com
+0.0.0.0 larnox.info
 0.0.0.0 larrenpicture.pro
 0.0.0.0 lartoomsauby.com
 0.0.0.0 las4srv.com
@@ -17180,6 +17194,7 @@
 0.0.0.0 naupouch.xyz
 0.0.0.0 naupsakiwhy.com
 0.0.0.0 naupseko.com
+0.0.0.0 naupsithizeekee.com
 0.0.0.0 nauthait.com
 0.0.0.0 nautijutheest.net
 0.0.0.0 nauwheer.net
@@ -18327,6 +18342,7 @@
 0.0.0.0 ongoingverdictparalyzed.com
 0.0.0.0 onkafxtiqcu.com
 0.0.0.0 onkavst.com
+0.0.0.0 onkodjwuq.com
 0.0.0.0 online-adnetwork.com
 0.0.0.0 onlinedeltazone.online
 0.0.0.0 onlinegoodsonline.online
@@ -20572,6 +20588,7 @@
 0.0.0.0 ptewarin.net
 0.0.0.0 ptewauta.net
 0.0.0.0 ptexognouh.xyz
+0.0.0.0 ptichoolsougn.net
 0.0.0.0 pticmootoat.com
 0.0.0.0 ptidsezi.com
 0.0.0.0 ptinouth.com
@@ -24899,6 +24916,7 @@
 0.0.0.0 tcowmrj.com
 0.0.0.0 tcpcharms.com
 0.0.0.0 tcppu.com
+0.0.0.0 tcreativeideasa.com
 0.0.0.0 tcvjhwizmy.com
 0.0.0.0 tcwhycdinjtgar.xyz
 0.0.0.0 td5xffxsx4.com
@@ -28113,6 +28131,7 @@
 0.0.0.0 wouldmakefeagre.info
 0.0.0.0 wouldmeukeuk.com
 0.0.0.0 wouldtalkbust.com
+0.0.0.0 woupsucheerar.net
 0.0.0.0 woushucaug.com
 0.0.0.0 wovensur.com
 0.0.0.0 wow-click.click
@@ -28671,6 +28690,7 @@
 0.0.0.0 yourprivacy.icu
 0.0.0.0 yourquickads.com
 0.0.0.0 yourtopnews.com
+0.0.0.0 yourtthig.com
 0.0.0.0 youruntie.com
 0.0.0.0 yourwebbars.com
 0.0.0.0 yourwownews.com
@@ -30414,6 +30434,7 @@
 0.0.0.0 0ae00c7c.xyz
 0.0.0.0 0c0b6e3f.xyz
 0.0.0.0 0d785fd7.xyz
+0.0.0.0 10288299.xyz
 0.0.0.0 10523745.xyz
 0.0.0.0 10614305.xyz
 0.0.0.0 10753990.xyz
@@ -30586,6 +30607,7 @@
 0.0.0.0 bc98ad.xyz
 0.0.0.0 bcbe.site
 0.0.0.0 bd5a57.xyz
+0.0.0.0 bdec1f37.xyz
 0.0.0.0 c2a0076d.xyz
 0.0.0.0 c31133f7.xyz
 0.0.0.0 c76d1a1b.live
@@ -31446,6 +31468,7 @@
 0.0.0.0 d3efeah7vk80fy.cloudfront.net
 0.0.0.0 d3ej838ds58re9.cloudfront.net
 0.0.0.0 d3ejxyz09ctey7.cloudfront.net
+0.0.0.0 d3eksfxlf7bv9h.cloudfront.net
 0.0.0.0 d3ep3jwb1mgn3k.cloudfront.net
 0.0.0.0 d3eub2e21dc6h0.cloudfront.net
 0.0.0.0 d3evio1yid77jr.cloudfront.net
@@ -51274,6 +51297,9 @@
 0.0.0.0 2za.fun
 0.0.0.0 idomsio.top
 0.0.0.0 uuqrisuy.com
+0.0.0.0 e7h.fun
+0.0.0.0 jdomsia.top
+0.0.0.0 ixbua.xyz
 0.0.0.0 tndbnriz.icu
 0.0.0.0 eisnaisv.com
 0.0.0.0 puhmtt.icu
@@ -56276,7 +56302,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56261 rules from this source
+# Converted 56287 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -72086,7 +72112,6 @@
 0.0.0.0 static-pixel.gliastudios.com
 0.0.0.0 static-pixel.gliavideo.com
 0.0.0.0 glimr.io
-0.0.0.0 gliraimsofu.net
 0.0.0.0 glispa.com
 0.0.0.0 glisteningguide.com
 0.0.0.0 app.glitchtip.com
@@ -75133,7 +75158,6 @@
 0.0.0.0 analytics.jemediacorp.com
 0.0.0.0 ads2.jenite.bg
 0.0.0.0 cyvxfq.jennikayne.com
-0.0.0.0 news.jennydanny.com
 0.0.0.0 trk.jensenprecast.com
 0.0.0.0 app2.jeoway.net
 0.0.0.0 jerboasjourney.com
@@ -78785,7 +78809,6 @@
 0.0.0.0 muvmobile.com
 0.0.0.0 info.muxy.io
 0.0.0.0 muz-tracker.net
-0.0.0.0 u57.muzikguide.com
 0.0.0.0 mvamnng.cn
 0.0.0.0 mvav.com
 0.0.0.0 mvevgi.xyz
@@ -83784,7 +83807,6 @@
 0.0.0.0 analytics.commercecloud.salesforce.com
 0.0.0.0 na2.salesforce.com
 0.0.0.0 omtr2.partners.salesforce.com
-0.0.0.0 sponsors.salesforceben.com
 0.0.0.0 analytics.la1-c1-frf.salesforceliveagent.com
 0.0.0.0 analytics.la1-c2-iad.salesforceliveagent.com
 0.0.0.0 analytics.la1-c2-ord.salesforceliveagent.com
@@ -91883,7 +91905,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35601 rules from this source
+# Converted 35597 rules from this source
 
 
-# Total unique domains: 91862
+# Total unique domains: 91884
