@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-15 06:20:31 UTC
+# Last modified: 2025-01-15 12:29:09 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -51346,6 +51346,7 @@
 0.0.0.0 17282.org
 0.0.0.0 btcili.top
 0.0.0.0 04o.fun
+0.0.0.0 nagvaxvy.com
 0.0.0.0 lazzrv.icu
 0.0.0.0 geinkroll.com
 0.0.0.0 wusfa.xyz
@@ -56371,7 +56372,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56356 rules from this source
+# Converted 56357 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -56949,7 +56950,6 @@
 0.0.0.0 2site.com
 0.0.0.0 2smt6mfgo.de
 0.0.0.0 2trk.info
-0.0.0.0 2u3v4w5x6y.com
 0.0.0.0 2unblocksites.com
 0.0.0.0 2vqgtxw.cn
 0.0.0.0 2waky.com
@@ -62072,7 +62072,6 @@
 0.0.0.0 ads.boylesports.com
 0.0.0.0 analytics.bp.com
 0.0.0.0 bpaqalnke.com
-0.0.0.0 bpaqzithab.com
 0.0.0.0 bpath.com
 0.0.0.0 matomo1.bpb.de
 0.0.0.0 piwik.bpb.de
@@ -69834,7 +69833,6 @@
 0.0.0.0 kok.eroterest.net
 0.0.0.0 js.eroticmv.com
 0.0.0.0 erq.io
-0.0.0.0 go.errpgrt.com
 0.0.0.0 plausible.erudit.org
 0.0.0.0 matomo.erwinhymergroup.com
 0.0.0.0 matomo.erwinmueller.com
@@ -69848,7 +69846,6 @@
 0.0.0.0 ssitecat.eset.com
 0.0.0.0 affil.eshop-rychle.cz
 0.0.0.0 matomo.eshop-rychle.cz
-0.0.0.0 eshopads2.com
 0.0.0.0 metrics.esignal.com
 0.0.0.0 smetrics.esignal.com
 0.0.0.0 metrics.esoft.digital
@@ -70341,7 +70338,6 @@
 0.0.0.0 farna.eu
 0.0.0.0 smetrics.farnell.com
 0.0.0.0 resources.faronics.com
-0.0.0.0 farpetor.shop
 0.0.0.0 farsnails.com
 0.0.0.0 fartit.com
 0.0.0.0 matomo.fas-bfct.fr
@@ -70689,7 +70685,6 @@
 0.0.0.0 startrekk.flaconi.at
 0.0.0.0 flakyfeast.com
 0.0.0.0 flameforgesmith.top
-0.0.0.0 flameshamer.shop
 0.0.0.0 flameuncle.com
 0.0.0.0 gtrack.flamingoof.com
 0.0.0.0 track.flamingoof.com
@@ -71821,8 +71816,6 @@
 0.0.0.0 gepush.com
 0.0.0.0 analytics.gerbergear.com
 0.0.0.0 gerbilshew.com
-0.0.0.0 geriguna.shop
-0.0.0.0 gerlia.shop
 0.0.0.0 matomo.gers.fr
 0.0.0.0 gesas.it
 0.0.0.0 statistiques.gestionexterne.com
@@ -72106,7 +72099,6 @@
 0.0.0.0 globus-inter.com
 0.0.0.0 glocmaift.net
 0.0.0.0 glookup.info
-0.0.0.0 gloomcutter.shop
 0.0.0.0 glopart.ru
 0.0.0.0 gloriousbeef.com
 0.0.0.0 analytics.glossier.com
@@ -72123,7 +72115,6 @@
 0.0.0.0 gluvoob.com
 0.0.0.0 glxgroup.com
 0.0.0.0 tracker.glxplay.io
-0.0.0.0 glynnorin.shop
 0.0.0.0 gmai.com
 0.0.0.0 gmatch.jp
 0.0.0.0 analytics.gmc.com
@@ -72305,7 +72296,6 @@
 0.0.0.0 analytics.gondola.travel
 0.0.0.0 gondolagnome.com
 0.0.0.0 gonet-ads.com
-0.0.0.0 gonnhild.shop
 0.0.0.0 gonorthhalifax.com
 0.0.0.0 analytics.gonzaga.edu
 0.0.0.0 goo.mx
@@ -72719,7 +72709,6 @@
 0.0.0.0 hruk.gumasi.top
 0.0.0.0 yzcpqa.gumtree.com
 0.0.0.0 gunggo.com
-0.0.0.0 gunigunde.shop
 0.0.0.0 assets.gunosy.com
 0.0.0.0 cv.gunosy.com
 0.0.0.0 piwik.gunsamerica.com
@@ -72795,7 +72784,6 @@
 0.0.0.0 metrics.hacknowledge.ch
 0.0.0.0 piwik.hacon.de
 0.0.0.0 hacspynha.com
-0.0.0.0 haelma.shop
 0.0.0.0 client.haffnetworkam.com
 0.0.0.0 t.hagebau.de
 0.0.0.0 secu.hagerty.com
@@ -75499,7 +75487,6 @@
 0.0.0.0 kbomku.xyz
 0.0.0.0 matomo.kbs.de
 0.0.0.0 e.kc-education.com
-0.0.0.0 kc-valves.com
 0.0.0.0 kcaonrbiwamx.com
 0.0.0.0 ywrcqa.kcentv.com
 0.0.0.0 ad1.kde.cz
@@ -76655,6 +76642,7 @@
 0.0.0.0 data.crm.lizearle.com
 0.0.0.0 smetrics.lizearle.com
 0.0.0.0 ljpbtjq.xyz
+0.0.0.0 donasi.lk21.de
 0.0.0.0 matomo.lkab.com
 0.0.0.0 lkgw.cc
 0.0.0.0 lkj-lijn.com
@@ -76949,7 +76937,6 @@
 0.0.0.0 smetrics.lww.com
 0.0.0.0 lxfibrc.cc
 0.0.0.0 metrics.lxgaming.net
-0.0.0.0 lxksalary.com
 0.0.0.0 matomo.werma.lxp-demo.de
 0.0.0.0 analytics.ly200.com
 0.0.0.0 ratings.lycos.com
@@ -77048,7 +77035,6 @@
 0.0.0.0 madserver.net
 0.0.0.0 madvertise.de
 0.0.0.0 tongji.mafengwo.cn
-0.0.0.0 mafivaz.biz
 0.0.0.0 analytics.magapatriotar15.com
 0.0.0.0 pushme.magellanotech.it
 0.0.0.0 unifiedads.magellanotech.it
@@ -77203,7 +77189,6 @@
 0.0.0.0 analytics.marcus.com
 0.0.0.0 metrics.marcus.com
 0.0.0.0 smetrics.marcus.com
-0.0.0.0 marda.shop
 0.0.0.0 analytics.marera.net
 0.0.0.0 bc.marfeel.com
 0.0.0.0 cosmos.marfeel.com
@@ -78460,7 +78445,6 @@
 0.0.0.0 motdgd.com
 0.0.0.0 mother-sku.jp
 0.0.0.0 qtorzy.mothercare.ae
-0.0.0.0 mothersprotect.com
 0.0.0.0 analytics.drone.motimate.app
 0.0.0.0 metric.motimateapp.com
 0.0.0.0 motionberry999xerz.ru
@@ -78763,6 +78747,7 @@
 0.0.0.0 mycountdown.org
 0.0.0.0 mycoupons.com
 0.0.0.0 metrics.mycustomcase.com
+0.0.0.0 mycxhgrp.xyz
 0.0.0.0 mydarkmarket.com
 0.0.0.0 mydarkwebmarketlist.com
 0.0.0.0 mydarkwebmarketplace.com
@@ -80395,7 +80380,6 @@
 0.0.0.0 service.charitiesaidfoundation.org.uk
 0.0.0.0 analytics.cifas.org.uk
 0.0.0.0 clarity.org.uk
-0.0.0.0 dasp.org.pk
 0.0.0.0 analytics.escience.org.cn
 0.0.0.0 analytics.fft.org.uk
 0.0.0.0 analytics.humanappeal.org.uk
@@ -83117,7 +83101,6 @@
 0.0.0.0 rigorlab.com
 0.0.0.0 rijmfqzckx.com
 0.0.0.0 analytics.rijwind.com
-0.0.0.0 riktok.pl
 0.0.0.0 metrics.rileychildrens.org
 0.0.0.0 rimaje.nl
 0.0.0.0 rime8lope.com
@@ -86692,7 +86675,6 @@
 0.0.0.0 cmp.telerama.fr
 0.0.0.0 tse.telerama.fr
 0.0.0.0 telet.me
-0.0.0.0 telety.ru
 0.0.0.0 widget.teletype.app
 0.0.0.0 beam.telex.hu
 0.0.0.0 beam-tracker.telex.hu
@@ -87957,7 +87939,6 @@
 0.0.0.0 bxumze.tuscaloosanews.com
 0.0.0.0 tutad.ru
 0.0.0.0 tutelatechnologies.com
-0.0.0.0 tutgcinarlak.com
 0.0.0.0 tutoads.tv
 0.0.0.0 tutop.com
 0.0.0.0 analytics.tutorprolms.com
@@ -88964,7 +88945,6 @@
 0.0.0.0 analytics.videoken.com
 0.0.0.0 crashes.videolan.org
 0.0.0.0 fingerprint.videolan.org
-0.0.0.0 trac.videolan.org
 0.0.0.0 analytics.videomyjob.com
 0.0.0.0 videonow.ru
 0.0.0.0 videoplayerhub.com
@@ -89578,7 +89558,6 @@
 0.0.0.0 wapjwujfipuz.com
 0.0.0.0 waps.cn
 0.0.0.0 kpbzar.warbyparker.com
-0.0.0.0 warcracker.shop
 0.0.0.0 analytics.wardow.com
 0.0.0.0 trk.wardsauto.com
 0.0.0.0 waredot.com
@@ -90237,7 +90216,6 @@
 0.0.0.0 statics.woozooo.com
 0.0.0.0 it.wopweb.net
 0.0.0.0 tracking.wordfly.com
-0.0.0.0 wordmover.shop
 0.0.0.0 analytics.wordpress.net
 0.0.0.0 metrics.wordpress.net
 0.0.0.0 piwik.wordpress.net
@@ -91408,6 +91386,7 @@
 0.0.0.0 analytics.zerofasting.com
 0.0.0.0 zerolcp.cn
 0.0.0.0 matomo.zerotier.com
+0.0.0.0 zerowasteinitiative.com
 0.0.0.0 analytics.zerto.com
 0.0.0.0 analytics.api.zerto.com
 0.0.0.0 analytics.zesc.pro
@@ -91476,7 +91455,6 @@
 0.0.0.0 zineone.com
 0.0.0.0 telemetry.dataplatform.zing.coach
 0.0.0.0 analytics.zingmyorder.com
-0.0.0.0 zinhice.shop
 0.0.0.0 datasink.ziniao.com
 0.0.0.0 logs-collect.ziniao.com
 0.0.0.0 plausible.zinlab.com
@@ -91616,7 +91594,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35239 rules from this source
+# Converted 35216 rules from this source
 
 
-# Total unique domains: 91595
+# Total unique domains: 91573
