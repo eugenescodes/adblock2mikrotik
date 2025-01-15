@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-15 01:09:34 UTC
+# Last modified: 2025-01-15 06:20:31 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -51342,6 +51342,10 @@
 0.0.0.0 etallkiq.com
 0.0.0.0 tbyfz.xyz
 0.0.0.0 rqvrbf.icu
+0.0.0.0 tovbus.cn
+0.0.0.0 17282.org
+0.0.0.0 btcili.top
+0.0.0.0 04o.fun
 0.0.0.0 lazzrv.icu
 0.0.0.0 geinkroll.com
 0.0.0.0 wusfa.xyz
@@ -56203,6 +56207,7 @@
 0.0.0.0 adv.imadrep.co.kr
 0.0.0.0 safeframe.googlesyndication.com
 0.0.0.0 adservice.google.com
+0.0.0.0 ntkimg.cloud
 0.0.0.0 ttse.b-cdn.net
 0.0.0.0 i.keezip.com
 0.0.0.0 awd.spochak.com
@@ -56366,7 +56371,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56351 rules from this source
+# Converted 56356 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -56687,6 +56692,7 @@
 0.0.0.0 2522june2024.com
 0.0.0.0 2526june2024.com
 0.0.0.0 258zw.com
+0.0.0.0 25u.com
 0.0.0.0 2635ebb1c1.com
 0.0.0.0 265ccb08af.com
 0.0.0.0 2684e4fd7f.com
@@ -58636,7 +58642,6 @@
 0.0.0.0 analytics.airapps.co
 0.0.0.0 t.airasia.com
 0.0.0.0 piwik.admin.airbnb.com
-0.0.0.0 airbnrlkvip.com
 0.0.0.0 api.airbrake.io
 0.0.0.0 analytics.airbushelicopters.com
 0.0.0.0 analytics.looker.aircall.io
@@ -60607,6 +60612,7 @@
 0.0.0.0 shepherd.sb.avast.com
 0.0.0.0 hist.stats.avast.com
 0.0.0.0 stats-search-sites.svc.avast.com
+0.0.0.0 avatarthree.lol
 0.0.0.0 analytics.avatrade.io
 0.0.0.0 avatraffic.com
 0.0.0.0 metric.avax.network
@@ -61965,6 +61971,7 @@
 0.0.0.0 analytics.bonfire.com
 0.0.0.0 tools.bongacams.com
 0.0.0.0 bonne-terre-data-layer.com
+0.0.0.0 bonnetgoblet.com
 0.0.0.0 ads.bonniercorp.com
 0.0.0.0 bonosbevvy.com
 0.0.0.0 kqscrl.bonprix.nl
@@ -62178,6 +62185,7 @@
 0.0.0.0 pub12.bravenet.com
 0.0.0.0 pub13.bravenet.com
 0.0.0.0 pub16.bravenet.com
+0.0.0.0 pub2.bravenet.com
 0.0.0.0 pub23.bravenet.com
 0.0.0.0 pub26.bravenet.com
 0.0.0.0 pub27.bravenet.com
@@ -64599,7 +64607,6 @@
 0.0.0.0 sstats.tiffany.co.uk
 0.0.0.0 tk.tikamoon.co.uk
 0.0.0.0 todordigital.co.uk
-0.0.0.0 toolsave.co.za
 0.0.0.0 tpmn.co.kr
 0.0.0.0 data-1c0a3d83e3.transfermarkt.co.id
 0.0.0.0 data-84a0f3455d.transfermarkt.co.uk
@@ -68588,6 +68595,7 @@
 0.0.0.0 data.marketing.doitbest.com
 0.0.0.0 analytics.doitwithfun.com
 0.0.0.0 dokar-stone.ru
+0.0.0.0 a.doko.moe
 0.0.0.0 dokurs.com
 0.0.0.0 dolanadserver.com
 0.0.0.0 analytics.dolcevita.com
@@ -69826,6 +69834,7 @@
 0.0.0.0 kok.eroterest.net
 0.0.0.0 js.eroticmv.com
 0.0.0.0 erq.io
+0.0.0.0 go.errpgrt.com
 0.0.0.0 plausible.erudit.org
 0.0.0.0 matomo.erwinhymergroup.com
 0.0.0.0 matomo.erwinmueller.com
@@ -70332,6 +70341,7 @@
 0.0.0.0 farna.eu
 0.0.0.0 smetrics.farnell.com
 0.0.0.0 resources.faronics.com
+0.0.0.0 farpetor.shop
 0.0.0.0 farsnails.com
 0.0.0.0 fartit.com
 0.0.0.0 matomo.fas-bfct.fr
@@ -70679,6 +70689,7 @@
 0.0.0.0 startrekk.flaconi.at
 0.0.0.0 flakyfeast.com
 0.0.0.0 flameforgesmith.top
+0.0.0.0 flameshamer.shop
 0.0.0.0 flameuncle.com
 0.0.0.0 gtrack.flamingoof.com
 0.0.0.0 track.flamingoof.com
@@ -71633,6 +71644,7 @@
 0.0.0.0 gcion.com
 0.0.0.0 growthy-release-growthywebcollector-80-kr.gcld-line.com
 0.0.0.0 smetric.gconlineplus.de
+0.0.0.0 metrics.cloud.gcore.lu
 0.0.0.0 gcprivacy.com
 0.0.0.0 analytics.gcsepod.com
 0.0.0.0 gcssem.xyz
@@ -71809,6 +71821,8 @@
 0.0.0.0 gepush.com
 0.0.0.0 analytics.gerbergear.com
 0.0.0.0 gerbilshew.com
+0.0.0.0 geriguna.shop
+0.0.0.0 gerlia.shop
 0.0.0.0 matomo.gers.fr
 0.0.0.0 gesas.it
 0.0.0.0 statistiques.gestionexterne.com
@@ -72092,6 +72106,7 @@
 0.0.0.0 globus-inter.com
 0.0.0.0 glocmaift.net
 0.0.0.0 glookup.info
+0.0.0.0 gloomcutter.shop
 0.0.0.0 glopart.ru
 0.0.0.0 gloriousbeef.com
 0.0.0.0 analytics.glossier.com
@@ -72108,6 +72123,7 @@
 0.0.0.0 gluvoob.com
 0.0.0.0 glxgroup.com
 0.0.0.0 tracker.glxplay.io
+0.0.0.0 glynnorin.shop
 0.0.0.0 gmai.com
 0.0.0.0 gmatch.jp
 0.0.0.0 analytics.gmc.com
@@ -72289,6 +72305,7 @@
 0.0.0.0 analytics.gondola.travel
 0.0.0.0 gondolagnome.com
 0.0.0.0 gonet-ads.com
+0.0.0.0 gonnhild.shop
 0.0.0.0 gonorthhalifax.com
 0.0.0.0 analytics.gonzaga.edu
 0.0.0.0 goo.mx
@@ -72472,7 +72489,6 @@
 0.0.0.0 c.gq.com
 0.0.0.0 li.gq.com
 0.0.0.0 sstats2.gq.com
-0.0.0.0 an.gr-wcon.com
 0.0.0.0 analytics.grab.com
 0.0.0.0 metric.grab.co
 0.0.0.0 metric.grab.com
@@ -72703,6 +72719,7 @@
 0.0.0.0 hruk.gumasi.top
 0.0.0.0 yzcpqa.gumtree.com
 0.0.0.0 gunggo.com
+0.0.0.0 gunigunde.shop
 0.0.0.0 assets.gunosy.com
 0.0.0.0 cv.gunosy.com
 0.0.0.0 piwik.gunsamerica.com
@@ -72778,6 +72795,7 @@
 0.0.0.0 metrics.hacknowledge.ch
 0.0.0.0 piwik.hacon.de
 0.0.0.0 hacspynha.com
+0.0.0.0 haelma.shop
 0.0.0.0 client.haffnetworkam.com
 0.0.0.0 t.hagebau.de
 0.0.0.0 secu.hagerty.com
@@ -73858,6 +73876,7 @@
 0.0.0.0 ibsys.com
 0.0.0.0 stats.ibtimes.sg
 0.0.0.0 matomo.ibumedia.de
+0.0.0.0 ic0.app
 0.0.0.0 online-analytics.ica.se
 0.0.0.0 audience.icareus.com
 0.0.0.0 analytics.iccsafe.org
@@ -74325,7 +74344,6 @@
 0.0.0.0 inklineglobal.com
 0.0.0.0 sponsors.inklink.news
 0.0.0.0 inkscape.fr
-0.0.0.0 inksuaamex.com
 0.0.0.0 inktomi.com
 0.0.0.0 yoda.kwd.inkuai.com
 0.0.0.0 adapi.inlcorp.com
@@ -74621,7 +74639,6 @@
 0.0.0.0 invoiceplanet.info
 0.0.0.0 posthog.admin.involve.me
 0.0.0.0 track.involvkgfr.com
-0.0.0.0 inxualapple.com
 0.0.0.0 inzerille.com
 0.0.0.0 inzn.ru
 0.0.0.0 analytics.inzynk.io
@@ -75798,6 +75815,9 @@
 0.0.0.0 krankin.com
 0.0.0.0 metrics.kravenmovie.com
 0.0.0.0 analytics.krisp.ai
+0.0.0.0 anti.kro.kr
+0.0.0.0 tktlert.kro.kr
+0.0.0.0 yohan002.kro.kr
 0.0.0.0 sstats.kroger.com
 0.0.0.0 stats.kroger.com
 0.0.0.0 tracking.kroll.com
@@ -77183,6 +77203,7 @@
 0.0.0.0 analytics.marcus.com
 0.0.0.0 metrics.marcus.com
 0.0.0.0 smetrics.marcus.com
+0.0.0.0 marda.shop
 0.0.0.0 analytics.marera.net
 0.0.0.0 bc.marfeel.com
 0.0.0.0 cosmos.marfeel.com
@@ -77369,7 +77390,6 @@
 0.0.0.0 matchtap.site
 0.0.0.0 matchx2.com
 0.0.0.0 analytics.matcotools.com
-0.0.0.0 mate-tokens.com
 0.0.0.0 metric.material.security
 0.0.0.0 metrics.material.security
 0.0.0.0 materialisticmoon.com
@@ -79502,6 +79522,7 @@
 0.0.0.0 webmetrics.nintendo-europe.com
 0.0.0.0 analytics.nintexcloud.com
 0.0.0.0 ninthdecimal.com
+0.0.0.0 nip.io
 0.0.0.0 nipanipan.com
 0.0.0.0 analytics.nirestream.com
 0.0.0.0 nisonfofztaf.com
@@ -80374,6 +80395,7 @@
 0.0.0.0 service.charitiesaidfoundation.org.uk
 0.0.0.0 analytics.cifas.org.uk
 0.0.0.0 clarity.org.uk
+0.0.0.0 dasp.org.pk
 0.0.0.0 analytics.escience.org.cn
 0.0.0.0 analytics.fft.org.uk
 0.0.0.0 analytics.humanappeal.org.uk
@@ -80943,7 +80965,6 @@
 0.0.0.0 pelis-123.org
 0.0.0.0 analytics.pella.com
 0.0.0.0 tracking.pella.com
-0.0.0.0 analytics.pellabranch.com
 0.0.0.0 connecttv.pelmorex.com
 0.0.0.0 pelsotin.buzz
 0.0.0.0 metrics.pendular.io
@@ -82608,7 +82629,6 @@
 0.0.0.0 analytics.rca.fr
 0.0.0.0 rcacademy.at
 0.0.0.0 rcblfd.xyz
-0.0.0.0 rccgr.pro
 0.0.0.0 rcestershir.com
 0.0.0.0 ibkups.rci.com
 0.0.0.0 smetrics.rci.com
@@ -82936,7 +82956,6 @@
 0.0.0.0 a.researchgate.net
 0.0.0.0 glassmoni.researchgate.net
 0.0.0.0 tag.researchnow.com
-0.0.0.0 researchresults.com
 0.0.0.0 metrics.reservamossaas.com
 0.0.0.0 posthog.reservoir.tools
 0.0.0.0 analytics.resmed.com
@@ -83450,7 +83469,6 @@
 0.0.0.0 webtrack.rund-ums-baby.de
 0.0.0.0 sanalytics.rundschau-online.de
 0.0.0.0 rundsp.com
-0.0.0.0 runescape.games
 0.0.0.0 rungamepc.ru
 0.0.0.0 sstats.runnersneed.com
 0.0.0.0 aiq-in.runnersworld.com
@@ -84787,7 +84805,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw1.smartadserver.com
+0.0.0.0 euw2.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -87158,7 +87176,6 @@
 0.0.0.0 ads-ttp2.tiktokw.eu
 0.0.0.0 analytics-ipv6.tiktokw.us
 0.0.0.0 analytics-ttp2.tiktokw.eu
-0.0.0.0 tiktuke.com
 0.0.0.0 tiku.io
 0.0.0.0 analytics.prod.tilburytech.net
 0.0.0.0 metrics.tilda.ws
@@ -87753,6 +87770,7 @@
 0.0.0.0 trk-access.com
 0.0.0.0 trk301.com
 0.0.0.0 trk42.net
+0.0.0.0 trkabfbmedia.eu
 0.0.0.0 trkcliq.com
 0.0.0.0 trkd-asia.com
 0.0.0.0 trkkn.com
@@ -89560,6 +89578,7 @@
 0.0.0.0 wapjwujfipuz.com
 0.0.0.0 waps.cn
 0.0.0.0 kpbzar.warbyparker.com
+0.0.0.0 warcracker.shop
 0.0.0.0 analytics.wardow.com
 0.0.0.0 trk.wardsauto.com
 0.0.0.0 waredot.com
@@ -90218,6 +90237,7 @@
 0.0.0.0 statics.woozooo.com
 0.0.0.0 it.wopweb.net
 0.0.0.0 tracking.wordfly.com
+0.0.0.0 wordmover.shop
 0.0.0.0 analytics.wordpress.net
 0.0.0.0 metrics.wordpress.net
 0.0.0.0 piwik.wordpress.net
@@ -90861,7 +90881,6 @@
 0.0.0.0 xypthe.com
 0.0.0.0 hao123.xywy.com
 0.0.0.0 analytics.xyzmedia.net
-0.0.0.0 xz0105.cn
 0.0.0.0 js.xzjhome.cc
 0.0.0.0 xzvhyx.com
 0.0.0.0 t.y1h1.com
@@ -91457,6 +91476,7 @@
 0.0.0.0 zineone.com
 0.0.0.0 telemetry.dataplatform.zing.coach
 0.0.0.0 analytics.zingmyorder.com
+0.0.0.0 zinhice.shop
 0.0.0.0 datasink.ziniao.com
 0.0.0.0 logs-collect.ziniao.com
 0.0.0.0 plausible.zinlab.com
@@ -91595,9 +91615,8 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
-0.0.0.0 crashsight.wetest.net
 
-# Converted 35225 rules from this source
+# Converted 35239 rules from this source
 
 
-# Total unique domains: 91576
+# Total unique domains: 91595
