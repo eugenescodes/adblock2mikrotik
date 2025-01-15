@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-15 12:29:09 UTC
+# Last modified: 2025-01-15 18:19:43 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -33037,6 +33037,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 log-auth.zztfly.com
 0.0.0.0 adsave.co
 0.0.0.0 analytics.bitchute.com
 0.0.0.0 actiontracking.jp
@@ -36633,6 +36634,8 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 s.c-ctrip.com
+0.0.0.0 ma-adx.ctrip.com
 0.0.0.0 logs.mezmo.com
 0.0.0.0 publictelemetry.tophat.com
 0.0.0.0 dynatrace.att.com
@@ -39213,6 +39216,8 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 tp2p.kg.qq.com
+0.0.0.0 twns.p2ptun.qq.com
 0.0.0.0 nstool.netease.com
 0.0.0.0 data.kuiniuca.com
 0.0.0.0 clientlogsf.music.163.com
@@ -51347,6 +51352,7 @@
 0.0.0.0 btcili.top
 0.0.0.0 04o.fun
 0.0.0.0 nagvaxvy.com
+0.0.0.0 epxlt.xyz
 0.0.0.0 lazzrv.icu
 0.0.0.0 geinkroll.com
 0.0.0.0 wusfa.xyz
@@ -56372,7 +56378,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56357 rules from this source
+# Converted 56363 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -62628,7 +62634,6 @@
 0.0.0.0 piwik.bzga.de
 0.0.0.0 c-al-e1nder.com
 0.0.0.0 piwik.c-all.eu
-0.0.0.0 s.c-ctrip.com
 0.0.0.0 api.c-launcher.com
 0.0.0.0 d.c-launcher.com
 0.0.0.0 c-rings.net
@@ -65988,7 +65993,6 @@
 0.0.0.0 ctpugwd.cc
 0.0.0.0 ctraffic-dfp.io
 0.0.0.0 ctrck.com
-0.0.0.0 ma-adx.ctrip.com
 0.0.0.0 u.ctrip.com
 0.0.0.0 crm.ws.ctrip.com
 0.0.0.0 analytics.ctrlprint.net
@@ -91594,7 +91598,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35216 rules from this source
+# Converted 35214 rules from this source
 
 
-# Total unique domains: 91573
+# Total unique domains: 91577
