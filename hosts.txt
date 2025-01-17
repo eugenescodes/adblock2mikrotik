@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-17 06:20:34 UTC
+# Last modified: 2025-01-17 12:28:36 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 unactkiosk.com
 0.0.0.0 pinco225.win
 0.0.0.0 news.jennydanny.com
 0.0.0.0 u57.muzikguide.com
@@ -774,6 +775,9 @@
 0.0.0.0 newbluetrue.xyz
 0.0.0.0 onemediawork.com
 0.0.0.0 d162h6x3rxav67.cloudfront.net
+0.0.0.0 vtrk.dv.tech
+0.0.0.0 cdn-media.brightline.tv
+0.0.0.0 mt.ssai.peacocktv.com
 0.0.0.0 sponsors.salesforceben.com
 0.0.0.0 ads.cloudsight.ai
 0.0.0.0 s3-iad-ww.cf.videorolls.row.aiv-cdn.net
@@ -32445,7 +32449,6 @@
 0.0.0.0 tapulsads.ru
 0.0.0.0 httpdns.bilivideo.com
 0.0.0.0 dataflow.biliapi.com
-0.0.0.0 grpc.biliapi.net
 0.0.0.0 ads.adinmotech.com
 0.0.0.0 kvaedit.site
 0.0.0.0 ads-ap-venues.yinzcam.com
@@ -33077,6 +33080,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 flippback.com
 0.0.0.0 log-auth.zztfly.com
 0.0.0.0 adsave.co
 0.0.0.0 analytics.bitchute.com
@@ -51392,6 +51396,8 @@
 0.0.0.0 lagzoids.com
 0.0.0.0 njnhzh.icu
 0.0.0.0 8u0.fun
+0.0.0.0 pheetuth.com
+0.0.0.0 4ve.fun
 0.0.0.0 ztgha.xyz
 0.0.0.0 djsxm.xyz
 0.0.0.0 0vc.fun
@@ -56436,7 +56442,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56421 rules from this source
+# Converted 56427 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -61607,6 +61613,7 @@
 0.0.0.0 ali-bj-pcdn-37.biliapi.net
 0.0.0.0 ali-bj-pcdn-38.biliapi.net
 0.0.0.0 ali-web-player-tracker.biliapi.net
+0.0.0.0 grpc.biliapi.net
 0.0.0.0 hw-sh-pcdn-06.biliapi.net
 0.0.0.0 hw-sh-pcdn-08.biliapi.net
 0.0.0.0 hw-sh-pcdn-09.biliapi.net
@@ -69093,7 +69100,6 @@
 0.0.0.0 dustyhammer.com
 0.0.0.0 adsmis.duxiaoman.com
 0.0.0.0 duzcujquzl.com
-0.0.0.0 vtrk.dv.tech
 0.0.0.0 analytics.dvc.org
 0.0.0.0 analytics-api.dvdfab.cn
 0.0.0.0 dvdgayonline.com
@@ -91833,4 +91839,4 @@
 # Converted 35388 rules from this source
 
 
-# Total unique domains: 91809
+# Total unique domains: 91815
