@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-19 12:26:04 UTC
+# Last modified: 2025-01-19 18:18:01 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -36707,6 +36707,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 analytics.nike.com
 0.0.0.0 hikari.jiocinema.com
 0.0.0.0 s.c-ctrip.com
 0.0.0.0 ma-adx.ctrip.com
@@ -51428,6 +51429,7 @@
 0.0.0.0 4ce.fun
 0.0.0.0 h6o.fun
 0.0.0.0 gauqoith.com
+0.0.0.0 ccokamif.top
 0.0.0.0 lagzoids.com
 0.0.0.0 njnhzh.icu
 0.0.0.0 8u0.fun
@@ -56482,7 +56484,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56467 rules from this source
+# Converted 56469 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -79791,7 +79793,6 @@
 0.0.0.0 nightnitroglass.com
 0.0.0.0 nightwound.com
 0.0.0.0 abt.nike.com
-0.0.0.0 analytics.nike.com
 0.0.0.0 dbzpek.nike.com
 0.0.0.0 metrics.nike.com
 0.0.0.0 smetrics.nike.net
@@ -91967,7 +91968,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 35479 rules from this source
+# Converted 35478 rules from this source
 
 
-# Total unique domains: 91946
+# Total unique domains: 91947
