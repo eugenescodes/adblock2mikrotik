@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-20 06:21:26 UTC
+# Last modified: 2025-01-20 12:29:48 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -21576,6 +21576,7 @@
 0.0.0.0 reddockbedman.com
 0.0.0.0 redeemforest.com
 0.0.0.0 redetaailshiletteri.com
+0.0.0.0 redexamination.com
 0.0.0.0 redfootcoclea.shop
 0.0.0.0 redheadinfluencedchill.com
 0.0.0.0 redheadpublicityjug.com
@@ -29286,7 +29287,9 @@
 0.0.0.0 try.opera.com
 0.0.0.0 visualmirage.co
 0.0.0.0 vpn-offers.org
+0.0.0.0 xml-v4.lensgard-3.online
 0.0.0.0 xstalkx.ru
+0.0.0.0 zavirand.com
 0.0.0.0 123date.me
 0.0.0.0 2beon.co.kr
 0.0.0.0 2leep.com
@@ -33107,6 +33110,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 obseu.netgreencolumn.com
 0.0.0.0 sygrip.info
 0.0.0.0 log-auth.zztfly.com
 0.0.0.0 adsave.co
@@ -36706,6 +36710,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 mr.homedepot.com
 0.0.0.0 frontend-logger.flippback.com
 0.0.0.0 analytics.nike.com
 0.0.0.0 hikari.jiocinema.com
@@ -51433,6 +51438,9 @@
 0.0.0.0 ccokamif.top
 0.0.0.0 saelphol.com
 0.0.0.0 pfbmht.icu
+0.0.0.0 31y.fun
+0.0.0.0 hcokamiu.top
+0.0.0.0 sterkisg.com
 0.0.0.0 lagzoids.com
 0.0.0.0 njnhzh.icu
 0.0.0.0 8u0.fun
@@ -56487,7 +56495,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56472 rules from this source
+# Converted 56480 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -92144,4 +92152,4 @@
 # Converted 35648 rules from this source
 
 
-# Total unique domains: 92120
+# Total unique domains: 92128
