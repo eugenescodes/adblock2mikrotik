@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-22 06:21:14 UTC
+# Last modified: 2025-01-22 12:29:38 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -36767,6 +36767,8 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 metricreceiver.cellrebel.com
+0.0.0.0 events.app-performance.music.amazon.dev
 0.0.0.0 metrics-a.wbx2.com
 0.0.0.0 event.msi.com
 0.0.0.0 dco.coupang.com
@@ -51491,6 +51493,9 @@
 0.0.0.0 scigzetg.com
 0.0.0.0 bjfsk.xyz
 0.0.0.0 jltwxisa.icu
+0.0.0.0 qo2.fun
+0.0.0.0 01221sop.xyz
+0.0.0.0 thangrurs.com
 0.0.0.0 y0o.fun
 0.0.0.0 icokamio.top
 0.0.0.0 thrumulr.com
@@ -56568,7 +56573,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56553 rules from this source
+# Converted 56558 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -59501,7 +59506,6 @@
 0.0.0.0 smetrics.flex.amazon.in
 0.0.0.0 mads-eu.amazon.com
 0.0.0.0 messaging-director-us-east-1.amazon.com
-0.0.0.0 events.app-performance.music.amazon.dev
 0.0.0.0 telemetry.pxt.amazon.dev
 0.0.0.0 rcm.amazon.com
 0.0.0.0 rcm-de.amazon.de
@@ -63580,7 +63584,6 @@
 0.0.0.0 celinehandbagsonsale.net
 0.0.0.0 analytics.guardian.cellebrite.cloud
 0.0.0.0 ihc.cellmarque.com
-0.0.0.0 metricreceiver.cellrebel.com
 0.0.0.0 celltick.com
 0.0.0.0 matomo.celltrak.net
 0.0.0.0 cemantical4.com
@@ -93879,7 +93882,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 37305 rules from this source
+# Converted 37303 rules from this source
 
 
-# Total unique domains: 93858
+# Total unique domains: 93861
