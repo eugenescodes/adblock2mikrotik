@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-23 06:20:31 UTC
+# Last modified: 2025-01-23 12:29:54 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 wobbly-birth.com
 0.0.0.0 hotbraraja.cc
 0.0.0.0 unactkiosk.com
 0.0.0.0 pinco225.win
@@ -3380,6 +3381,7 @@
 0.0.0.0 ampxchange.com
 0.0.0.0 amre.work
 0.0.0.0 amshroomishan.com
+0.0.0.0 amtmenlana.com
 0.0.0.0 amtracking01.com
 0.0.0.0 amtropiusr.com
 0.0.0.0 amucresol.com
@@ -3702,6 +3704,7 @@
 0.0.0.0 argumentsadrenaline.com
 0.0.0.0 argumentsmaymadly.com
 0.0.0.0 arilsoaxie.xyz
+0.0.0.0 ariotgribble.com
 0.0.0.0 aristianewr.club
 0.0.0.0 arithpouted.com
 0.0.0.0 arkdcz.com
@@ -4388,6 +4391,7 @@
 0.0.0.0 backsweka.com
 0.0.0.0 backupcelebritygrave.com
 0.0.0.0 baconbedside.com
+0.0.0.0 baculeprudery.com
 0.0.0.0 badeldestarticulate.com
 0.0.0.0 badgeclodvariable.com
 0.0.0.0 badgegirdle.com
@@ -6058,6 +6062,7 @@
 0.0.0.0 catgride.com
 0.0.0.0 catharskeek.top
 0.0.0.0 cathedralinthei.info
+0.0.0.0 cathodeoutwood.com
 0.0.0.0 catholicprevalent.com
 0.0.0.0 cathrynslues.com
 0.0.0.0 catiligh.ru
@@ -7590,7 +7595,9 @@
 0.0.0.0 cuesingle.com
 0.0.0.0 cuevastrck.com
 0.0.0.0 cufultahaur.com
+0.0.0.0 cugaksoogleptix.xyz
 0.0.0.0 cuhlsl.info
+0.0.0.0 cuinageaquilid.com
 0.0.0.0 cuisineenvoyadvertise.com
 0.0.0.0 cuisineomnipresentinfinite.com
 0.0.0.0 cullemple-motline.com
@@ -7879,6 +7886,7 @@
 0.0.0.0 datingtopgirls.com
 0.0.0.0 datingvr.ru
 0.0.0.0 datqagdkurce.com
+0.0.0.0 datsunepizzoa.com
 0.0.0.0 daughterinlawrib.com
 0.0.0.0 daughtersarbourbarrel.com
 0.0.0.0 daukshewing.com
@@ -19049,6 +19057,7 @@
 0.0.0.0 pafteejox.com
 0.0.0.0 pagejunky.com
 0.0.0.0 pagemystery.com
+0.0.0.0 paginaltreitre.shop
 0.0.0.0 pagnawhouk.net
 0.0.0.0 paguridrenilla.com
 0.0.0.0 pahbasqibpih.com
@@ -22498,6 +22507,7 @@
 0.0.0.0 rufadses.net
 0.0.0.0 ruftodru.net
 0.0.0.0 rugcrucial.com
+0.0.0.0 ruggyscallop.top
 0.0.0.0 rugiomyh2vmr.com
 0.0.0.0 ruglhiahxam.com
 0.0.0.0 rugupheessupaik.net
@@ -22772,6 +22782,7 @@
 0.0.0.0 sauroajy.net
 0.0.0.0 sausagefaithfemales.com
 0.0.0.0 sausagegirlieheartburn.com
+0.0.0.0 sauthooptoo.net
 0.0.0.0 savableee.com
 0.0.0.0 savefromad.net
 0.0.0.0 savinist.com
@@ -26197,6 +26208,7 @@
 0.0.0.0 tumboaovernet.shop
 0.0.0.0 tumidlyacorus.shop
 0.0.0.0 tumordied.com
+0.0.0.0 tumpsmolla.com
 0.0.0.0 tumri.net
 0.0.0.0 tumultmarten.com
 0.0.0.0 tunatastesentertained.com
@@ -28985,6 +28997,7 @@
 0.0.0.0 zanoogha.com
 0.0.0.0 zaokko.com
 0.0.0.0 zaparena.com
+0.0.0.0 zapasizzard.com
 0.0.0.0 zaphakesleigh.com
 0.0.0.0 zaphararidged.com
 0.0.0.0 zapunited.com
@@ -36787,6 +36800,9 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 egg.afisha.ru
+0.0.0.0 tracking-app.diginetica.net
+0.0.0.0 c.us.heap-api.com
 0.0.0.0 apay-us.amazon.com
 0.0.0.0 logging.g.sst.secureserver.net
 0.0.0.0 metricreceiver.cellrebel.com
@@ -40582,6 +40598,7 @@
 0.0.0.0 t.bimvid.com
 0.0.0.0 t.buyist.app
 0.0.0.0 t.cfjump.com
+0.0.0.0 t.commandbar.com
 0.0.0.0 t.dgm-au.com
 0.0.0.0 t.enuygun.com
 0.0.0.0 t.fullres.net
@@ -51513,6 +51530,9 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 01231sop.xyz
+0.0.0.0 kruraits.com
+0.0.0.0 6lx.fun
 0.0.0.0 scigzetg.com
 0.0.0.0 bjfsk.xyz
 0.0.0.0 jltwxisa.icu
@@ -51523,6 +51543,8 @@
 0.0.0.0 scrorlaets.com
 0.0.0.0 rbzupn.icu
 0.0.0.0 ldjfsdku.icu
+0.0.0.0 lqxzx.com
+0.0.0.0 r0j.fun
 0.0.0.0 y0o.fun
 0.0.0.0 icokamio.top
 0.0.0.0 thrumulr.com
@@ -56600,7 +56622,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56585 rules from this source
+# Converted 56607 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -92919,4 +92941,4 @@
 # Converted 36310 rules from this source
 
 
-# Total unique domains: 92895
+# Total unique domains: 92917
