@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-26 12:26:00 UTC
+# Last modified: 2025-01-26 18:18:42 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -40729,7 +40729,6 @@
 0.0.0.0 statscollector-1.agora.io
 0.0.0.0 statsig.anthropic.com
 0.0.0.0 statt-collect.herokuapp.com
-0.0.0.0 stk.px-cloud.net
 0.0.0.0 stream-log.dditscdn.com
 0.0.0.0 streams.cablecar.sph.com.sg
 0.0.0.0 sunlightmetrics.b-cdn.net
@@ -51677,6 +51676,7 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 xxsmad5.com
 0.0.0.0 qaemphaels.com
 0.0.0.0 vhrhnh.icu
 0.0.0.0 7mk.fun
@@ -51688,6 +51688,7 @@
 0.0.0.0 dklnxtcj.icu
 0.0.0.0 h3d.fun
 0.0.0.0 naettarq.com
+0.0.0.0 8sh.fun
 0.0.0.0 01240sop.xyz
 0.0.0.0 01231sop.xyz
 0.0.0.0 kruraits.com
@@ -56787,7 +56788,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56772 rules from this source
+# Converted 56773 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -60015,6 +60016,7 @@
 0.0.0.0 banners.amigos.com
 0.0.0.0 metrics.amiparis.com
 0.0.0.0 log.amitshah.net
+0.0.0.0 amjllwblmlbyr.top
 0.0.0.0 analytics.ammoseek.com
 0.0.0.0 ads.amna.gr
 0.0.0.0 analytics.amondo.com
@@ -62423,7 +62425,6 @@
 0.0.0.0 smetrics.bncvirtual.com
 0.0.0.0 bnet.com
 0.0.0.0 bnewsblite.me
-0.0.0.0 bnfhxszj.xyz
 0.0.0.0 bnmq.com
 0.0.0.0 bnnfvd.xyz
 0.0.0.0 matomo.test.bnnvara.nl
@@ -66652,6 +66653,7 @@
 0.0.0.0 users.cuci.nl
 0.0.0.0 cuddlycake.com
 0.0.0.0 cuddlylunchroom.com
+0.0.0.0 download.cudo.org
 0.0.0.0 cue-find.com
 0.0.0.0 cuebiq.com
 0.0.0.0 cuewogxmdi.com
@@ -74248,6 +74250,7 @@
 0.0.0.0 regie.hiwit.org
 0.0.0.0 gentian-frd.hjapi.com
 0.0.0.0 hjbotih.cc
+0.0.0.0 hjj.pw
 0.0.0.0 hjr-wq.com
 0.0.0.0 hk6vdj4z.click
 0.0.0.0 metrics.hkjc.com
@@ -75074,6 +75077,7 @@
 0.0.0.0 impression.link
 0.0.0.0 impressiondesk.com
 0.0.0.0 impressionmedia.cz
+0.0.0.0 impressivepail.com
 0.0.0.0 rtb-useast.imprexis.biz
 0.0.0.0 static.imprexis.biz
 0.0.0.0 impulselumber.com
@@ -76485,6 +76489,7 @@
 0.0.0.0 analytics.kennesaw.edu
 0.0.0.0 kennsaku.jp
 0.0.0.0 ywrcqa.kens5.com
+0.0.0.0 kentiaabolish.com
 0.0.0.0 analytics.keplr.app
 0.0.0.0 kerala-ticket.com
 0.0.0.0 keralaticketonline.com
@@ -78073,6 +78078,7 @@
 0.0.0.0 magic1.me
 0.0.0.0 magicadz.co
 0.0.0.0 magiccandles.eu
+0.0.0.0 magicgirlsthere.com
 0.0.0.0 telemetry.magicloud.com
 0.0.0.0 magicminibox.com
 0.0.0.0 analytics.magicpin.in
@@ -79592,6 +79598,7 @@
 0.0.0.0 movstube.com
 0.0.0.0 mowgoats.com
 0.0.0.0 moymednogorsk.ru
+0.0.0.0 moyslovar.ru
 0.0.0.0 analytics.moz.com
 0.0.0.0 telemetry-incoming.r53-2.services.mozilla.com
 0.0.0.0 snippets.mozilla.com
@@ -81018,6 +81025,7 @@
 0.0.0.0 ea.odalys-vacances.com
 0.0.0.0 banner.oddcast.com
 0.0.0.0 vhss-d.oddcast.com
+0.0.0.0 oddgate.com
 0.0.0.0 analytics.oddity.industries
 0.0.0.0 ads.oddschecker.com
 0.0.0.0 smetrics.oddspedia.com
@@ -81831,6 +81839,7 @@
 0.0.0.0 pakjedealsnu.nl
 0.0.0.0 pakmailcanada.com
 0.0.0.0 analytics.pakske.be
+0.0.0.0 palatialdates.com
 0.0.0.0 palecount.com
 0.0.0.0 paleleaf.com
 0.0.0.0 analytics.palink.co
@@ -82239,6 +82248,7 @@
 0.0.0.0 phcn.xyz
 0.0.0.0 think.phdinc.com
 0.0.0.0 pheedo.com
+0.0.0.0 phegnauxoudsez.xyz
 0.0.0.0 discover.phenomenex.com
 0.0.0.0 analytics.phenompeople.com
 0.0.0.0 data.m.philadelphiaeagles.com
@@ -82559,7 +82569,6 @@
 0.0.0.0 pokerterbesar.com
 0.0.0.0 analytics.pokki.com
 0.0.0.0 pokkt.com
-0.0.0.0 pokreess.com
 0.0.0.0 cdn.polarbyte.com
 0.0.0.0 sp-eu.dev.polarbyte.com
 0.0.0.0 analysis.polarisoffice.com
@@ -82790,7 +82799,6 @@
 0.0.0.0 premieropinion.com
 0.0.0.0 premieruandcsystems.com
 0.0.0.0 analytics.premise.com
-0.0.0.0 premium-2023.info
 0.0.0.0 premium-lucky.com
 0.0.0.0 analytics.premiumbeat.com
 0.0.0.0 track.premiumcash.com
@@ -83074,7 +83082,6 @@
 0.0.0.0 ptygunjk.com
 0.0.0.0 pu4.biz
 0.0.0.0 ls.collector.pub-tmaws.io
-0.0.0.0 monetize.pubcircle.ai
 0.0.0.0 pubfs.com
 0.0.0.0 analytics.pubgclanemblem.com
 0.0.0.0 metric.pubgclanemblem.com
@@ -83851,6 +83858,7 @@
 0.0.0.0 rbbutton.bid
 0.0.0.0 countly.merlin.rbi.cloud
 0.0.0.0 countly.merlin-test.rbi.cloud
+0.0.0.0 rbighouse.ru
 0.0.0.0 news.rbj.net
 0.0.0.0 rblx.land
 0.0.0.0 rbone.link
@@ -84577,7 +84585,7 @@
 0.0.0.0 analytics.roundcubeplus.com
 0.0.0.0 roundyearfun.org
 0.0.0.0 rounuatedanximum.com
-0.0.0.0 t1p-adtech.aws.route71.net
+0.0.0.0 orchestrator-adtech-prod.t1p-adtech.aws.route71.net
 0.0.0.0 matomo.routine.vn
 0.0.0.0 analytics.roveconcepts.com
 0.0.0.0 analytics.rowsandall.com
@@ -85384,7 +85392,6 @@
 0.0.0.0 smetrics.sephora.com
 0.0.0.0 seponews.com
 0.0.0.0 analytics.sequoia.com
-0.0.0.0 serachserviceproposal.org
 0.0.0.0 seraphicjewel.com
 0.0.0.0 seraphicjubilee.com
 0.0.0.0 seren1.com
@@ -86101,7 +86108,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw2.smartadserver.com
+0.0.0.0 euw1.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -88033,7 +88040,6 @@
 0.0.0.0 teleargentina.com
 0.0.0.0 analytic.telefonica.com
 0.0.0.0 analytics.telefonica.de
-0.0.0.0 telegramfk.com
 0.0.0.0 telegramhcn.com
 0.0.0.0 telegramm.site
 0.0.0.0 analytics.brand-dialog.telekom.com
@@ -88454,6 +88460,7 @@
 0.0.0.0 throtle.io
 0.0.0.0 thruport.com
 0.0.0.0 ad.thsi.cn
+0.0.0.0 thstvv.com
 0.0.0.0 thubanoa.com
 0.0.0.0 events.thuisbezorgd.nl
 0.0.0.0 analytics.thun.com
@@ -88699,6 +88706,7 @@
 0.0.0.0 toll6kerb.com
 0.0.0.0 analytics.tolunastart.com
 0.0.0.0 tomatoartschool.com
+0.0.0.0 tombedismal.com
 0.0.0.0 metrics.tommeetippee.com
 0.0.0.0 collect.tommy.com
 0.0.0.0 smetrics.tommy.com
@@ -89521,6 +89529,7 @@
 0.0.0.0 hcadv.video.ums.uc.cn
 0.0.0.0 wmedia-track.uc.cn
 0.0.0.0 u.uc123.com
+0.0.0.0 ucapsidop.info
 0.0.0.0 ucarsoft.com
 0.0.0.0 uceprotect.de
 0.0.0.0 uceprotect.org
@@ -89700,6 +89709,8 @@
 0.0.0.0 unetbootin.org
 0.0.0.0 adtrack.unext.jp
 0.0.0.0 unfamiiiiardate.com
+0.0.0.0 unfamiiilardates.com
+0.0.0.0 unfamilliardates.com
 0.0.0.0 unfamliliardates.com
 0.0.0.0 ungulated.com
 0.0.0.0 unhaka.com
@@ -91015,6 +91026,7 @@
 0.0.0.0 want7feed.com
 0.0.0.0 wantingwindow.com
 0.0.0.0 wantubad.com
+0.0.0.0 wantyoudate.net
 0.0.0.0 wapforum.org
 0.0.0.0 wapjwujfipuz.com
 0.0.0.0 waps.cn
@@ -93090,7 +93102,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36297 rules from this source
+# Converted 36308 rules from this source
 
 
-# Total unique domains: 93069
+# Total unique domains: 93081
