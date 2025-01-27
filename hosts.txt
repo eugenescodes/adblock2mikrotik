@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-27 06:21:25 UTC
+# Last modified: 2025-01-27 12:30:05 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -32694,6 +32694,8 @@
 0.0.0.0 deapi.sooplive.co.kr
 0.0.0.0 startup.mobile.yandex.net
 0.0.0.0 startup-mobile.ap.yandex-net.ru
+0.0.0.0 r0.mail.ru
+0.0.0.0 r0.mradx.net
 0.0.0.0 serveraddr.service.kugou.com
 0.0.0.0 d.kugou.com
 0.0.0.0 nbcollect.kugou.com
@@ -39540,6 +39542,7 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 datacollector-drru.dt.dbankcloud.ru
 0.0.0.0 spider-tracker.xiaohongshu.com
 0.0.0.0 tp2p.kg.qq.com
 0.0.0.0 twns.p2ptun.qq.com
@@ -51679,6 +51682,10 @@
 0.0.0.0 xxsmad5.com
 0.0.0.0 hostolhg.com
 0.0.0.0 4zn.fun
+0.0.0.0 rajxjj.icu
+0.0.0.0 as01271kkp.xyz
+0.0.0.0 veilengh.com
+0.0.0.0 fcbdpock.icu
 0.0.0.0 qaemphaels.com
 0.0.0.0 vhrhnh.icu
 0.0.0.0 7mk.fun
@@ -56790,7 +56797,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56775 rules from this source
+# Converted 56782 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -67044,7 +67051,6 @@
 0.0.0.0 datacollector-dra.dt.dbankcloud.cn
 0.0.0.0 datacollector-drcn.dt.dbankcloud.cn
 0.0.0.0 datacollector-dre.dt.dbankcloud.cn
-0.0.0.0 datacollector-drru.dt.dbankcloud.ru
 0.0.0.0 logservice-drru.dt.dbankcloud.ru
 0.0.0.0 metrics.dt.dbankcloud.cn
 0.0.0.0 metrics.dt.dbankcloud.com
@@ -78067,7 +78073,6 @@
 0.0.0.0 1l-view.mail.ru
 0.0.0.0 1link.mail.ru
 0.0.0.0 ad.mail.ru
-0.0.0.0 r0.mail.ru
 0.0.0.0 rs.mail.ru
 0.0.0.0 top.mail.ru
 0.0.0.0 mail-generali.com
@@ -79591,7 +79596,6 @@
 0.0.0.0 mqnrqbl.in
 0.0.0.0 mqwcuesny6.ru
 0.0.0.0 mr.bet
-0.0.0.0 r0.mradx.net
 0.0.0.0 mrazens.com
 0.0.0.0 mrbonus.com
 0.0.0.0 mrdarknet.com
@@ -93011,7 +93015,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36215 rules from this source
+# Converted 36212 rules from this source
 
 
-# Total unique domains: 92990
+# Total unique domains: 92994
