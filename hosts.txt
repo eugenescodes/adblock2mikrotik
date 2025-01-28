@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-27 18:20:17 UTC
+# Last modified: 2025-01-28 01:09:15 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -3085,6 +3085,7 @@
 0.0.0.0 ajrkm1.com
 0.0.0.0 ajrkm3.com
 0.0.0.0 ajscdn.com
+0.0.0.0 ajtcuhodwjup.com
 0.0.0.0 ajvjpupava.com
 0.0.0.0 ajvnragtua.com
 0.0.0.0 ajxx98.online
@@ -5817,6 +5818,7 @@
 0.0.0.0 bwvofgqhmab.com
 0.0.0.0 bxacmsvmxb.com
 0.0.0.0 bxbkh.love
+0.0.0.0 bxejfqxxm.com
 0.0.0.0 bxpwfdmmhlgccon.com
 0.0.0.0 bxrtwyavhyb.online
 0.0.0.0 bxsk.site
@@ -8096,6 +8098,7 @@
 0.0.0.0 degradeaccusationshrink.com
 0.0.0.0 degradeexpedient.com
 0.0.0.0 degreebristlesaved.com
+0.0.0.0 degreewhether.com
 0.0.0.0 degutu.xyz
 0.0.0.0 dehimalowbowohe.info
 0.0.0.0 deitynosebleed.com
@@ -18124,6 +18127,7 @@
 0.0.0.0 oaphooftaus.com
 0.0.0.0 oapsoulreen.net
 0.0.0.0 oaraiwephoursou.net
+0.0.0.0 oardaptaunga.net
 0.0.0.0 oardilin.com
 0.0.0.0 oarouwousti.com
 0.0.0.0 oarsoathaihoamt.net
@@ -36968,7 +36972,6 @@
 0.0.0.0 egg.afisha.ru
 0.0.0.0 tracking-app.diginetica.net
 0.0.0.0 c.us.heap-api.com
-0.0.0.0 apay-us.amazon.com
 0.0.0.0 logging.g.sst.secureserver.net
 0.0.0.0 metricreceiver.cellrebel.com
 0.0.0.0 events.app-performance.music.amazon.dev
@@ -51700,10 +51703,14 @@
 0.0.0.0 hostolhg.com
 0.0.0.0 4zn.fun
 0.0.0.0 rajxjj.icu
+0.0.0.0 tuhmkjce.icu
+0.0.0.0 as01280kkp.xyz
 0.0.0.0 as01271kkp.xyz
 0.0.0.0 veilengh.com
 0.0.0.0 fcbdpock.icu
 0.0.0.0 t2s.fun
+0.0.0.0 pqfpvb.icu
+0.0.0.0 chaqraex.com
 0.0.0.0 qaemphaels.com
 0.0.0.0 vhrhnh.icu
 0.0.0.0 7mk.fun
@@ -56815,7 +56822,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56800 rules from this source
+# Converted 56807 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -59652,6 +59659,7 @@
 0.0.0.0 ags-ext.amazon.com
 0.0.0.0 aax.amazon-adsystem.amazon.com
 0.0.0.0 analytics.amazon.com
+0.0.0.0 apay-us.amazon.com
 0.0.0.0 applab-sdk.amazon.com
 0.0.0.0 metrics.artists.amazon.com
 0.0.0.0 aviary.amazon.com
@@ -93015,7 +93023,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36194 rules from this source
+# Converted 36195 rules from this source
 
 
-# Total unique domains: 92994
+# Total unique domains: 93002
