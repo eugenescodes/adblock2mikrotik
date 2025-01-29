@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-01-29 01:09:01 UTC
+# Last modified: 2025-01-29 06:20:37 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -15790,6 +15790,7 @@
 0.0.0.0 losingfunk.com
 0.0.0.0 losingoldfry.com
 0.0.0.0 losingtiger.com
+0.0.0.0 losobo.xyz
 0.0.0.0 lossactivity.com
 0.0.0.0 lostdormitory.com
 0.0.0.0 lostinfuture.com
@@ -51731,6 +51732,11 @@
 0.0.0.0 addalzq.com
 0.0.0.0 6qo.fun
 0.0.0.0 bhanphevg.com
+0.0.0.0 vtbkhl.icu
+0.0.0.0 vmxvcjuf.icu
+0.0.0.0 jdinmia.top
+0.0.0.0 0592.mobi
+0.0.0.0 kdinmid.top
 0.0.0.0 hdinmiu.top
 0.0.0.0 xxsmad5.com
 0.0.0.0 hostolhg.com
@@ -56857,7 +56863,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56842 rules from this source
+# Converted 56848 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -57445,6 +57451,7 @@
 0.0.0.0 2site.com
 0.0.0.0 2smt6mfgo.de
 0.0.0.0 2trk.info
+0.0.0.0 2u3v4w5x6y.com
 0.0.0.0 2unblocksites.com
 0.0.0.0 2waky.com
 0.0.0.0 2zfzly.com
@@ -57715,7 +57722,6 @@
 0.0.0.0 3bfb3c04e6.6991eeac66.com
 0.0.0.0 69mok.com
 0.0.0.0 6ad5d7a9aa285849df0f7a776f52d17a861901df9fdcda9db9b3404d.com
-0.0.0.0 6c078023c1.com
 0.0.0.0 ad-configurator.6cloud.fr
 0.0.0.0 ad-interceptor.6cloud.fr
 0.0.0.0 6cyfvvs.com
@@ -59160,7 +59166,6 @@
 0.0.0.0 analytics.airapps.co
 0.0.0.0 t.airasia.com
 0.0.0.0 piwik.admin.airbnb.com
-0.0.0.0 airbnrntvip.top
 0.0.0.0 api.airbrake.io
 0.0.0.0 analytics.airbushelicopters.com
 0.0.0.0 analytics.looker.aircall.io
@@ -61224,7 +61229,6 @@
 0.0.0.0 awavjblaaezbb.top
 0.0.0.0 away.com
 0.0.0.0 analytics.awayx.com
-0.0.0.0 awexjtozogod.com
 0.0.0.0 piwik.awfl.eu
 0.0.0.0 awfonts.com
 0.0.0.0 awgutqp.cc
@@ -62238,7 +62242,6 @@
 0.0.0.0 c.bizjournals.com
 0.0.0.0 metrics.bizjournals.com
 0.0.0.0 webads.bizservers.com
-0.0.0.0 bjappzvz.xyz
 0.0.0.0 connect.health.bjc.org
 0.0.0.0 tracking.health.bjc.org
 0.0.0.0 bjcathay.com
@@ -62934,6 +62937,7 @@
 0.0.0.0 metrics.brite.co
 0.0.0.0 britepic.com
 0.0.0.0 britepool.com
+0.0.0.0 british-shorthair.es
 0.0.0.0 brixel.cn
 0.0.0.0 brlliiantsdates.com
 0.0.0.0 track.brmngr.com
@@ -62966,7 +62970,6 @@
 0.0.0.0 analytics.brother.at
 0.0.0.0 analytics.brother.eu
 0.0.0.0 brotherslocket.com
-0.0.0.0 browimeto.click
 0.0.0.0 browsee.io
 0.0.0.0 browsepax.co
 0.0.0.0 browser-intake-ap1-datadoghq.com
@@ -63010,7 +63013,6 @@
 0.0.0.0 analytics.btbanking.com
 0.0.0.0 btc8228.com
 0.0.0.0 btcclicks.com
-0.0.0.0 btcpool.io
 0.0.0.0 btcpop.co
 0.0.0.0 bteux.com
 0.0.0.0 btglss.net
@@ -63799,6 +63801,7 @@
 0.0.0.0 track.chateauberne-vin.com
 0.0.0.0 stats.chateauversailles.fr
 0.0.0.0 chatex.com
+0.0.0.0 chatgpt-premium.com
 0.0.0.0 ads.chaturbate.com
 0.0.0.0 analytics.chaturbate.com
 0.0.0.0 piwik.chaturbate.com
@@ -64971,6 +64974,7 @@
 0.0.0.0 analytics.ignitionsearch.co.uk
 0.0.0.0 imadrep.co.kr
 0.0.0.0 imbalislp.co.za
+0.0.0.0 imbueautoworx.co.za
 0.0.0.0 cmp.impress.co.jp
 0.0.0.0 analytics.in-tend.co.uk
 0.0.0.0 inboxpounds.co.uk
@@ -65515,6 +65519,7 @@
 0.0.0.0 analytics.apps.com.tr
 0.0.0.0 asesoriasconfood.com.co
 0.0.0.0 associacaopeixeboi.com.br
+0.0.0.0 asu.com.vn
 0.0.0.0 adproxy.autohome.com.cn
 0.0.0.0 al.autohome.com.cn
 0.0.0.0 activity.app.autohome.com.cn
@@ -65631,6 +65636,7 @@
 0.0.0.0 ferring.com.ar
 0.0.0.0 countly.fibabanka.com.tr
 0.0.0.0 fitnes-trener.com.ua
+0.0.0.0 neko.flap.com.mx
 0.0.0.0 gtm.flo.com.tr
 0.0.0.0 stats.folha.com.br
 0.0.0.0 metrics.foxsports.com.au
@@ -66395,6 +66401,7 @@
 0.0.0.0 coup7cold.com
 0.0.0.0 analytics.coupadev.com
 0.0.0.0 metrics.coupahost.com
+0.0.0.0 ads.coupang.com
 0.0.0.0 ljc.coupang.com
 0.0.0.0 pcp.coupert.com
 0.0.0.0 coupletalk2024.com
@@ -66874,7 +66881,6 @@
 0.0.0.0 damdoor.com
 0.0.0.0 dameparts.com
 0.0.0.0 damierbrain.top
-0.0.0.0 damnater.com
 0.0.0.0 dampdock.com
 0.0.0.0 dana-b7r.com
 0.0.0.0 filter3.danarimedia.com
@@ -74084,6 +74090,7 @@
 0.0.0.0 u-id.cpc.heytapmobile.com
 0.0.0.0 obus-in.dc.heytapmobile.com
 0.0.0.0 obus-sg.dc.heytapmobile.com
+0.0.0.0 dc-stat-in.heytapmobile.com
 0.0.0.0 api-id.game.heytapmobile.com
 0.0.0.0 httpdns-euex-push.heytapmobile.com
 0.0.0.0 httpdns-ocloud.heytapmobile.com
@@ -75982,6 +75989,7 @@
 0.0.0.0 jbsmediaventures.com
 0.0.0.0 jbzj.com
 0.0.0.0 logging-service-main-prd.k8-svc.jc-gs.com
+0.0.0.0 jcedu.org
 0.0.0.0 jcount.com
 0.0.0.0 kwvbhj.jcpenney.com
 0.0.0.0 smetrics.jcpenney.com
@@ -76805,6 +76813,7 @@
 0.0.0.0 krushmedia.com
 0.0.0.0 beacon.krxd.net
 0.0.0.0 cdn.krxd.net
+0.0.0.0 ks.cn
 0.0.0.0 slb-p2p.vcloud.ks-live.com
 0.0.0.0 log-sdk.ksapisrv.com
 0.0.0.0 wlog.ksapisrv.com
@@ -78120,7 +78129,6 @@
 0.0.0.0 magnus.ms
 0.0.0.0 magpi.com
 0.0.0.0 analytics.magzter.com
-0.0.0.0 mahoganyproductthat.com
 0.0.0.0 mai-tel.jp
 0.0.0.0 mai1b0x.com
 0.0.0.0 analytics.maigerrun.com
@@ -80001,6 +80009,7 @@
 0.0.0.0 analytics.mystream.com
 0.0.0.0 countly-api.mysugr.com
 0.0.0.0 countly.tools.mysugr.com
+0.0.0.0 mysura.it
 0.0.0.0 myswitchads.com
 0.0.0.0 analytics.mysynchrony.com
 0.0.0.0 metrics.mysynchrony.com
@@ -81539,6 +81548,7 @@
 0.0.0.0 metrics.cats.org.uk
 0.0.0.0 service.charitiesaidfoundation.org.uk
 0.0.0.0 analytics.cifas.org.uk
+0.0.0.0 dasp.org.pk
 0.0.0.0 analytics.escience.org.cn
 0.0.0.0 analytics.fft.org.uk
 0.0.0.0 analytics.humanappeal.org.uk
@@ -82691,6 +82701,7 @@
 0.0.0.0 portmap.io
 0.0.0.0 analytics.portswigger.net
 0.0.0.0 telemetry.portswigger.net
+0.0.0.0 posicionamientonatural.es
 0.0.0.0 analytics.position.green
 0.0.0.0 position3452.fun
 0.0.0.0 positive-ads.com
@@ -86888,6 +86899,7 @@
 0.0.0.0 stadiumstage.com
 0.0.0.0 piwik.stadt-koeln.de
 0.0.0.0 stadygogo.biz
+0.0.0.0 staenmoxuvar.skin
 0.0.0.0 staffingsouls.com
 0.0.0.0 analytics.staffomatic.com
 0.0.0.0 analytics.stagecast.io
@@ -87076,6 +87088,7 @@
 0.0.0.0 pixel.staticworld.net
 0.0.0.0 statigr.am
 0.0.0.0 statistic.date
+0.0.0.0 statisticplatform.com
 0.0.0.0 statisticscripts.com
 0.0.0.0 statisticsplatform.com
 0.0.0.0 statlstic.shop
@@ -87114,6 +87127,7 @@
 0.0.0.0 metrics.steelcase.com
 0.0.0.0 steelhouse.com
 0.0.0.0 tagging.steelseries.com
+0.0.0.0 steemcomnunlty.com
 0.0.0.0 analytics.steerhealth.io
 0.0.0.0 matomo.steerhealth.io
 0.0.0.0 matomo.steiermark.com
@@ -90301,6 +90315,7 @@
 0.0.0.0 analytics.vfafacility.com
 0.0.0.0 vfgajrk.cn
 0.0.0.0 vfghe.com
+0.0.0.0 vfocus.net
 0.0.0.0 analytics.vfr-verlag.de
 0.0.0.0 vfreecams.com
 0.0.0.0 ads.vg.no
@@ -91778,7 +91793,6 @@
 0.0.0.0 wpushsdk.com
 0.0.0.0 ywrcqa.wqad.com
 0.0.0.0 matomo.wqmcs.de
-0.0.0.0 wqnwdjjc.xyz
 0.0.0.0 axp.wrbl.com
 0.0.0.0 axp.wreg.com
 0.0.0.0 wretchedfloor.com
@@ -91786,7 +91800,6 @@
 0.0.0.0 analytics.write.as
 0.0.0.0 metrics.writefull.ai
 0.0.0.0 writeme.me
-0.0.0.0 writemypaperbuyefp.com
 0.0.0.0 writtenkoa.top
 0.0.0.0 wrongwound.com
 0.0.0.0 piwik.wrshealth.com
@@ -92463,7 +92476,6 @@
 0.0.0.0 ygxgk.cn
 0.0.0.0 ygzqlnt.cn
 0.0.0.0 yhdd1.com
-0.0.0.0 yhjhmlutxksgyjo.xyz
 0.0.0.0 yhtaefcjiocjikkocisc.com
 0.0.0.0 yhti.net
 0.0.0.0 yhz18.com
@@ -92879,7 +92891,6 @@
 0.0.0.0 zhongsijiacheng.com
 0.0.0.0 zhongwen-telegram.com
 0.0.0.0 zhuangxiu567.com
-0.0.0.0 zhuoju.xyz
 0.0.0.0 analytics.zias.io
 0.0.0.0 m.optout.ziffdavis.com
 0.0.0.0 static.ziffdavis.com
@@ -93067,7 +93078,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36204 rules from this source
+# Converted 36209 rules from this source
 
 
-# Total unique domains: 93046
+# Total unique domains: 93057
