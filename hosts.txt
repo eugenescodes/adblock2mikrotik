@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-02 06:18:49 UTC
+# Last modified: 2025-02-02 12:25:34 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -37118,6 +37118,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 log-upload-os.hoyolab.com
 0.0.0.0 log-upload-os.hoyoverse.com
 0.0.0.0 analytics.avcdn.net
 0.0.0.0 pbc.wsj.com
@@ -51796,6 +51797,7 @@
 0.0.0.0 feronyv.com
 0.0.0.0 rrxapb.icu
 0.0.0.0 zkdefuiz.icu
+0.0.0.0 gumnus.com
 0.0.0.0 tbbfdr.icu
 0.0.0.0 oveakmqk.com
 0.0.0.0 lsxvnzif.icu
@@ -56951,7 +56953,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56936 rules from this source
+# Converted 56938 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -74632,7 +74634,6 @@
 0.0.0.0 s.howtoforge.com
 0.0.0.0 piwik.howtomoodle.com
 0.0.0.0 howtosnaphack.com
-0.0.0.0 log-upload-os.hoyolab.com
 0.0.0.0 hozzs.hk
 0.0.0.0 aiq-in.ext.hp.com
 0.0.0.0 met1.hp.com
@@ -93225,7 +93226,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36268 rules from this source
+# Converted 36267 rules from this source
 
 
-# Total unique domains: 93204
+# Total unique domains: 93205
