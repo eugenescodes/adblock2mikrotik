@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-03 06:21:07 UTC
+# Last modified: 2025-02-03 12:29:41 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -27367,7 +27367,6 @@
 0.0.0.0 veincartrigeforceful.com
 0.0.0.0 veinourdreams.com
 0.0.0.0 vekseptaufin.com
-0.0.0.0 velloxfire.pro
 0.0.0.0 velocecdn.com
 0.0.0.0 velocitycdn.com
 0.0.0.0 velocitypaperwork.com
@@ -37144,6 +37143,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 utiq.actu.fr
 0.0.0.0 apollo.miniclip.com
 0.0.0.0 mega.mydealz.de
 0.0.0.0 log-upload-os.hoyolab.com
@@ -39752,6 +39752,7 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 jpush.io
 0.0.0.0 datacollector-drru.dt.dbankcloud.ru
 0.0.0.0 spider-tracker.xiaohongshu.com
 0.0.0.0 tp2p.kg.qq.com
@@ -46458,7 +46459,6 @@
 0.0.0.0 adflex.vn
 0.0.0.0 adfly.vn
 0.0.0.0 adi.vcmedia.vn
-0.0.0.0 adnetwork.vn
 0.0.0.0 adop.asia
 0.0.0.0 adp.vnecdn.net
 0.0.0.0 ads-admin.hubs.vn
@@ -46532,7 +46532,6 @@
 0.0.0.0 chatbox-static.botbanhang.vn
 0.0.0.0 chatbox-tracking.botbanhang.vn
 0.0.0.0 chatbox-widget.botbanhang.vn
-0.0.0.0 cheap-ads.net
 0.0.0.0 cityadstrack.com
 0.0.0.0 clevernet.vn
 0.0.0.0 cococx.com
@@ -46554,7 +46553,6 @@
 0.0.0.0 ff.imacdn.com
 0.0.0.0 fly-ads.net
 0.0.0.0 flygame.io
-0.0.0.0 gammadsp.com
 0.0.0.0 gammassp.com
 0.0.0.0 genmonet.com
 0.0.0.0 google-ads.hara.vn
@@ -46595,12 +46593,10 @@
 0.0.0.0 logzh.dantocmiennui.vn
 0.0.0.0 logzh.vietnamplus.vn
 0.0.0.0 m.zedcdn.me
-0.0.0.0 mautic.hubs.vn
 0.0.0.0 mclick.mobi
 0.0.0.0 mda.zadn.vn
 0.0.0.0 me.zedcdn.me
 0.0.0.0 media-ads.zaloapp.com
-0.0.0.0 mediad.asia
 0.0.0.0 mediaz.asia
 0.0.0.0 mediaz.vn
 0.0.0.0 mediazcorp.com
@@ -46635,7 +46631,6 @@
 0.0.0.0 phanquang.vn
 0.0.0.0 philacct.com
 0.0.0.0 photo-ads.zaloapp.com
-0.0.0.0 piads.vn
 0.0.0.0 pinetech.vn
 0.0.0.0 pixel.coccoc.com
 0.0.0.0 popup.sapoapps.vn
@@ -46663,15 +46658,11 @@
 0.0.0.0 sdk.zadn.vn
 0.0.0.0 service-api.accesstrade.vn
 0.0.0.0 service.adlinknetwork.vn
-0.0.0.0 serving-system.com
 0.0.0.0 sharefb.cnnd.vn
 0.0.0.0 shop-cdn.coccoc.com
 0.0.0.0 slimads.vn
-0.0.0.0 smartadnetwork.net
-0.0.0.0 smartconvert.co
 0.0.0.0 socialloginplus-apps.haravan.com
 0.0.0.0 sourcetobin.com
-0.0.0.0 sporttv.today
 0.0.0.0 starseed.fr
 0.0.0.0 stat.play.zing.vn
 0.0.0.0 static-addtoany-com.cdn.ampproject.org
@@ -46687,7 +46678,6 @@
 0.0.0.0 stc-support-app-brand.zdn.vn
 0.0.0.0 surfcountor.com
 0.0.0.0 syndication.adlinknetwork.vn
-0.0.0.0 t.sieu-viet.com
 0.0.0.0 tebrand.asia
 0.0.0.0 tebrand.vn
 0.0.0.0 tech.zapps.me
@@ -46722,12 +46712,9 @@
 0.0.0.0 vda.viettel.vn
 0.0.0.0 vdacdn1.viettel.vn
 0.0.0.0 vdacdn2.viettel.vn
-0.0.0.0 viam.com.vn
 0.0.0.0 vietnamnetad.vn
 0.0.0.0 vipads.cc
-0.0.0.0 viraads.com
 0.0.0.0 vnn-tracking.vnncdn.net
-0.0.0.0 vnnayngaytin.vn
 0.0.0.0 wataads.com
 0.0.0.0 watanet.work
 0.0.0.0 wg.zaloapp.com
@@ -46883,7 +46870,6 @@
 0.0.0.0 aff.atp.vn
 0.0.0.0 aff2.linksht.online
 0.0.0.0 affiliate.chiaki.vn
-0.0.0.0 aj2393.online
 0.0.0.0 ak9.6895588.com
 0.0.0.0 alexajstrack.com
 0.0.0.0 an.dongphim.net
@@ -47061,7 +47047,6 @@
 0.0.0.0 log.vneconomy.vn
 0.0.0.0 log.vnfinance.vn
 0.0.0.0 log.vov.vn
-0.0.0.0 log.vovplus.vn
 0.0.0.0 log.vovworld.vn
 0.0.0.0 log.xoso.com.vn
 0.0.0.0 log.zamba.vn
@@ -56984,7 +56969,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56969 rules from this source
+# Converted 56954 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -58307,7 +58292,6 @@
 0.0.0.0 app.activetrail.com
 0.0.0.0 activexsoftwares.com
 0.0.0.0 l.actu.fr
-0.0.0.0 utiq.actu.fr
 0.0.0.0 matomo.actua.nl
 0.0.0.0 actualdeals.com
 0.0.0.0 actuallysheep.com
@@ -58639,6 +58623,7 @@
 0.0.0.0 adnetasia.com
 0.0.0.0 banners.adnetmedia.lt
 0.0.0.0 adnetwork.net
+0.0.0.0 adnetwork.vn
 0.0.0.0 adnexio.com
 0.0.0.0 adnext.co
 0.0.0.0 adnexus.net
@@ -66123,6 +66108,7 @@
 0.0.0.0 smetrics.uol.com.br
 0.0.0.0 uploaddeimagens.com.br
 0.0.0.0 countly.vakifbank.com.tr
+0.0.0.0 viam.com.vn
 0.0.0.0 analytics.videotecaead.com.br
 0.0.0.0 adlog.vivo.com.cn
 0.0.0.0 adreq.vivo.com.cn
@@ -76334,7 +76320,6 @@
 0.0.0.0 delsol.jp.net
 0.0.0.0 track.jpassport.jp
 0.0.0.0 ads.jpost.com
-0.0.0.0 jpush.io
 0.0.0.0 jqpgxwl.in
 0.0.0.0 jqphuor.in
 0.0.0.0 analytics.jqueenwatchwinders.com
@@ -90340,6 +90325,7 @@
 0.0.0.0 veille-referencement.com
 0.0.0.0 veisllc.xyz
 0.0.0.0 velismedia.com
+0.0.0.0 velloxfire.pro
 0.0.0.0 webanalytics.velo-de-ville.de
 0.0.0.0 smetrics.velocityfrequentflyer.com
 0.0.0.0 meta-events.velonews.com
@@ -93212,7 +93198,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36222 rules from this source
+# Converted 36223 rules from this source
 
 
-# Total unique domains: 93191
+# Total unique domains: 93177
