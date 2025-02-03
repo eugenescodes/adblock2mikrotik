@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-02 18:18:32 UTC
+# Last modified: 2025-02-03 01:10:27 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -5761,7 +5761,6 @@
 0.0.0.0 bulky-battle.com
 0.0.0.0 bulkyfriend.com
 0.0.0.0 bull3t.co
-0.0.0.0 bullads.net
 0.0.0.0 bulletinwarmingtattoo.com
 0.0.0.0 bulletproxy.ch
 0.0.0.0 bullfeeding.com
@@ -37145,6 +37144,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 mega.mydealz.de
 0.0.0.0 log-upload-os.hoyolab.com
 0.0.0.0 log-upload-os.hoyoverse.com
 0.0.0.0 analytics.avcdn.net
@@ -51825,6 +51825,9 @@
 0.0.0.0 rrxapb.icu
 0.0.0.0 zkdefuiz.icu
 0.0.0.0 gumnus.com
+0.0.0.0 krirkroins.com
+0.0.0.0 xutvbt.icu
+0.0.0.0 bctuapia.icu
 0.0.0.0 tbbfdr.icu
 0.0.0.0 oveakmqk.com
 0.0.0.0 lsxvnzif.icu
@@ -56980,7 +56983,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56965 rules from this source
+# Converted 56968 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -63214,6 +63217,7 @@
 0.0.0.0 bulbbait.com
 0.0.0.0 bulkregister.com
 0.0.0.0 bulkwebtraffic.io
+0.0.0.0 bullads.net
 0.0.0.0 bulletproof-analytics.com
 0.0.0.0 analytics.bullishfarm.app
 0.0.0.0 bullsanbears.org
@@ -93252,7 +93256,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36266 rules from this source
+# Converted 36267 rules from this source
 
 
-# Total unique domains: 93231
+# Total unique domains: 93235
