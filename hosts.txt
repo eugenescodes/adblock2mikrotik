@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-04 06:21:09 UTC
+# Last modified: 2025-02-04 12:30:02 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -33573,6 +33573,7 @@
 0.0.0.0 mktp-base.mktplatforms.com
 0.0.0.0 f-tra.com
 0.0.0.0 event.dfinery.io
+0.0.0.0 oasjs.kataweb.it
 0.0.0.0 polaranalytics.com
 0.0.0.0 wsknow.net
 0.0.0.0 api.taggrs.io
@@ -33588,7 +33589,6 @@
 0.0.0.0 danatrak.com
 0.0.0.0 optiyield.opti-digital.com
 0.0.0.0 twitter.sx
-0.0.0.0 lf1-cdn-tos.bytegoofy.com
 0.0.0.0 view.mngusr.com
 0.0.0.0 cdn.q0losid.com
 0.0.0.0 tags.fullcontact.com
@@ -37174,6 +37174,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 market-click-baobab.yandex.ru
 0.0.0.0 mssdk.tiktokw.us
 0.0.0.0 gc.newsweek.com
 0.0.0.0 events.onet.pl
@@ -37226,7 +37227,6 @@
 0.0.0.0 gtm.temu.com
 0.0.0.0 log.shortbread.analytics.console.aws.a2z.com
 0.0.0.0 log.shortbread.aws.dev
-0.0.0.0 trck.pix.aak.prod-na.turntable.sonic.advertising.amazon.dev
 0.0.0.0 minerva.devices.a2z.com
 0.0.0.0 s.pie.org
 0.0.0.0 t.pie.org
@@ -51835,6 +51835,7 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 hdinmau.top
 0.0.0.0 feronyv.com
 0.0.0.0 tciqgx.xyz
 0.0.0.0 crolerl.com
@@ -57003,7 +57004,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56988 rules from this source
+# Converted 56989 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -63453,6 +63454,7 @@
 0.0.0.0 log-api.pangolin-sdk-toutiao-b.com.bytedns1.com
 0.0.0.0 api-access.pangolin-sdk-toutiao1.com.bytedns1.com
 0.0.0.0 api.bytegle.tech
+0.0.0.0 lf1-cdn-tos.bytegoofy.com
 0.0.0.0 gpm-mon-va.bytegsdk.com
 0.0.0.0 log-va.bytegsdk.com
 0.0.0.0 p3-tt.byteimg.com
@@ -93346,7 +93348,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36337 rules from this source
+# Converted 36338 rules from this source
 
 
-# Total unique domains: 93325
+# Total unique domains: 93327
