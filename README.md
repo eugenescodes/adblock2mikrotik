@@ -35,8 +35,7 @@ How to implement DNS adblocking on MikroTik RouterOS 7.15+ using online blocklis
 To add a URL-based adlist for DNS adblocking, use the following command in the router terminal:
 
 ```routeros
-/ip/dns/adlist add url=https://raw.githubusercontent.com/eugen
-escodes/adblock2mikrotik/refs/heads/main/hosts.txt ssl-verify=no
+/ip/dns/adlist add url=https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt ssl-verify=no
 ```
 
 If you want to use properties -`ssl-verify=yes` you can download and import [CA certificates](https://curl.se/docs/caextract.html) use next commands:
@@ -73,8 +72,7 @@ certificates-imported: 149
 After that run next command:
 
 ```routeros
-/ip/dns/adlist add url=https://raw.githubusercontent.com/eugen
-escodes/adblock2mikrotik/refs/heads/main/hosts.txt ssl-verify=yes
+/ip/dns/adlist add url=https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt ssl-verify=yes
 ```
 
 For a comprehensive guide on DNS adblocking and adlist configuration, refer to the official MikroTik documentation:
