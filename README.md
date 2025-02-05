@@ -4,7 +4,14 @@ Convert AdBlock/AdGuard filter lists to MikroTik RouterOS DNS adlist format.
 
 ## Overview
 
-A conversion utility designed to transform popular ad-blocking filter lists (AdGuard and Hagezi) into a compact, memory-efficient format compatible with MikroTik RouterOS 7.15+ DNS adlist feature. The primary goal is to create a minimal, optimized host file that addresses the limited memory constraints of low-resource devices like the ```hAP series``` (which has 16 MB storage but less than 3 MB free after upgrading to RouterOS 7), for example the [RB951Ui-2nD hAP](https://mikrotik.com/product/RB951Ui-2nD) router
+A conversion utility designed to transform popular ad-blocking filter lists (AdGuard and Hagezi) into a compact, memory-efficient format compatible with MikroTik RouterOS 7.15+ DNS adlist feature. 
+
+### Source Filter Lists
+
+- AdGuard [AdguardSDNSFilter](https://github.com/AdguardTeam/AdguardSDNSFilter): https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+- Hagezi [Multi LIGHT - Basic protection](https://github.com/hagezi/dns-blocklists#green_book-multi-light---basic-protection-): https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
+
+The primary goal is to create a minimal, optimized host file that addresses the limited memory constraints of low-resource devices like the ```hAP series``` (which has 16 MB storage but less than 3 MB free after upgrading to RouterOS 7), for example the [RB951Ui-2nD hAP](https://mikrotik.com/product/RB951Ui-2nD) router
 
 ## Features
 
