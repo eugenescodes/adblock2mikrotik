@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-06 18:20:10 UTC
+# Last modified: 2025-02-07 01:10:39 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -34174,7 +34174,6 @@
 0.0.0.0 lr-ingest.io
 0.0.0.0 svibeacon.onezapp.com
 0.0.0.0 signalayer.com
-0.0.0.0 statsigapi.net
 0.0.0.0 cdn.cohesionapps.com
 0.0.0.0 c212.net
 0.0.0.0 imp.xmax.jp
@@ -37251,6 +37250,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 events.statsigapi.net
 0.0.0.0 fourier.aliexpress.com
 0.0.0.0 sofire.1024tera.com
 0.0.0.0 ad-events.flashtalking.com
@@ -46226,6 +46226,7 @@
 0.0.0.0 hbagency.it
 0.0.0.0 justearn.it
 0.0.0.0 rtbuzz.net
+0.0.0.0 seowebbs.com
 0.0.0.0 shoppydoo.com
 0.0.0.0 tjekscores.dk
 0.0.0.0 yobee.it
@@ -46299,7 +46300,6 @@
 0.0.0.0 scambiobanner.tv
 0.0.0.0 scambiositi.com
 0.0.0.0 seolabadv.it
-0.0.0.0 seowebbs.com
 0.0.0.0 softwareplanet.net
 0.0.0.0 soluzionibio.it
 0.0.0.0 spicciolo.com
@@ -51920,6 +51920,9 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 xtdvvp.icu
+0.0.0.0 vbllxaaj.icu
+0.0.0.0 apk02070oo.xyz
 0.0.0.0 fagrirtn.com
 0.0.0.0 rqhajf.icu
 0.0.0.0 trellq.com
@@ -57104,7 +57107,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57089 rules from this source
+# Converted 57092 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -87378,6 +87381,7 @@
 0.0.0.0 statsector.hu
 0.0.0.0 statshunt.com
 0.0.0.0 statsie.com
+0.0.0.0 statsigapi.net
 0.0.0.0 analytics.statsperform.com
 0.0.0.0 statuesqueship.com
 0.0.0.0 analytics.status.im
@@ -93338,7 +93342,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36228 rules from this source
+# Converted 36229 rules from this source
 
 
-# Total unique domains: 93317
+# Total unique domains: 93321
