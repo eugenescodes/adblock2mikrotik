@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-07 01:10:39 UTC
+# Last modified: 2025-02-07 06:21:20 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -51923,6 +51923,8 @@
 0.0.0.0 xtdvvp.icu
 0.0.0.0 vbllxaaj.icu
 0.0.0.0 apk02070oo.xyz
+0.0.0.0 pcqhe.cn
+0.0.0.0 wdinmae.top
 0.0.0.0 fagrirtn.com
 0.0.0.0 rqhajf.icu
 0.0.0.0 trellq.com
@@ -57107,7 +57109,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57092 rules from this source
+# Converted 57094 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -58488,7 +58490,6 @@
 0.0.0.0 matomo.adac-nrh.de
 0.0.0.0 metrics.adacreisen.de
 0.0.0.0 adactive.cz
-0.0.0.0 adad.ir
 0.0.0.0 adadapted.com
 0.0.0.0 metric.adafruit.com
 0.0.0.0 smetrics.adage.com
@@ -61483,7 +61484,6 @@
 0.0.0.0 tevzas.autoscout24.fr
 0.0.0.0 tracer.autoscout24.ch
 0.0.0.0 zgwxoy.autoscout24.ro
-0.0.0.0 autoserveisesrovires.cat
 0.0.0.0 analytics.autoshopdashboard.com
 0.0.0.0 analytic.autotirechecking.com
 0.0.0.0 ivegss.autotrack.nl
@@ -62644,7 +62644,6 @@
 0.0.0.0 blackbrake.com
 0.0.0.0 shopify-init.blackcrow.ai
 0.0.0.0 analytics.blackdoctor.org
-0.0.0.0 blackfriday-shoe.top
 0.0.0.0 blackfridaysales.ro
 0.0.0.0 blackhat.be
 0.0.0.0 messages.blackhat.com
@@ -63301,6 +63300,7 @@
 0.0.0.0 metrics.brite.co
 0.0.0.0 britepic.com
 0.0.0.0 britepool.com
+0.0.0.0 british-shorthair.es
 0.0.0.0 brixel.cn
 0.0.0.0 brlliiantsdates.com
 0.0.0.0 track.brmngr.com
@@ -64166,6 +64166,7 @@
 0.0.0.0 track.chateauberne-vin.com
 0.0.0.0 stats.chateauversailles.fr
 0.0.0.0 chatex.com
+0.0.0.0 chatgpt-premium.com
 0.0.0.0 ads.chaturbate.com
 0.0.0.0 analytics.chaturbate.com
 0.0.0.0 piwik.chaturbate.com
@@ -64787,6 +64788,7 @@
 0.0.0.0 d262g11wze3cwd.cloudfront.net
 0.0.0.0 d26tbbq8zqdi4v.cloudfront.net
 0.0.0.0 d26us1doo6mh7f.cloudfront.net
+0.0.0.0 d2715zbmeirdja.cloudfront.net
 0.0.0.0 d27uz827y1nafd.cloudfront.net
 0.0.0.0 d28nwox1gdjlve.cloudfront.net
 0.0.0.0 d28wlxclbkz49x.cloudfront.net
@@ -64801,6 +64803,7 @@
 0.0.0.0 d2izezc8ujpkba.cloudfront.net
 0.0.0.0 d2jn12r3o7an7z.cloudfront.net
 0.0.0.0 d2k8yz7zlc0yyi.cloudfront.net
+0.0.0.0 d2lwxqei0cv44.cloudfront.net
 0.0.0.0 d2m2wsoho8qq12.cloudfront.net
 0.0.0.0 d2mgk3zfd02vd2.cloudfront.net
 0.0.0.0 d2moz0h55szev9.cloudfront.net
@@ -64809,6 +64812,7 @@
 0.0.0.0 d2nx6ydw3e5y5d.cloudfront.net
 0.0.0.0 d2o307dm5mqftz.cloudfront.net
 0.0.0.0 d2oarllo6tn86.cloudfront.net
+0.0.0.0 d2oc8r72icrxft.cloudfront.net
 0.0.0.0 d2od2b2huvmzuj.cloudfront.net
 0.0.0.0 d2p8taqyjofgrq.cloudfront.net
 0.0.0.0 d2psf55e0gm6yv.cloudfront.net
@@ -64880,7 +64884,6 @@
 0.0.0.0 d3pob6t6w1ul0e.cloudfront.net
 0.0.0.0 d3prygw1dnamj9.cloudfront.net
 0.0.0.0 d3qk9u6c2k2cid.cloudfront.net
-0.0.0.0 d3qrbrazsnzdog.cloudfront.net
 0.0.0.0 d3qxef4rp70elm.cloudfront.net
 0.0.0.0 d3qyjzkrkuj7me.cloudfront.net
 0.0.0.0 d3rm04c4p9a75q.cloudfront.net
@@ -64916,6 +64919,7 @@
 0.0.0.0 dfgftt4ecf1of.cloudfront.net
 0.0.0.0 dgpp7fq3iorb.cloudfront.net
 0.0.0.0 dhpikd1t89arn.cloudfront.net
+0.0.0.0 dhscy6duuv9uf.cloudfront.net
 0.0.0.0 dhzws7l31cq8p.cloudfront.net
 0.0.0.0 diodxcszlbmwk.cloudfront.net
 0.0.0.0 disutgh7q0ncc.cloudfront.net
@@ -65337,6 +65341,7 @@
 0.0.0.0 analytics.ignitionsearch.co.uk
 0.0.0.0 imadrep.co.kr
 0.0.0.0 imbalislp.co.za
+0.0.0.0 imbueautoworx.co.za
 0.0.0.0 cmp.impress.co.jp
 0.0.0.0 analytics.in-tend.co.uk
 0.0.0.0 inboxpounds.co.uk
@@ -65879,6 +65884,7 @@
 0.0.0.0 analytics.apps.com.tr
 0.0.0.0 asesoriasconfood.com.co
 0.0.0.0 associacaopeixeboi.com.br
+0.0.0.0 asu.com.vn
 0.0.0.0 adproxy.autohome.com.cn
 0.0.0.0 al.autohome.com.cn
 0.0.0.0 activity.app.autohome.com.cn
@@ -65917,6 +65923,7 @@
 0.0.0.0 bsi.com.vn
 0.0.0.0 analytics.buscape.com.br
 0.0.0.0 matomo.businesstoday.com.tw
+0.0.0.0 c2tec.com.br
 0.0.0.0 caemmun.com.br
 0.0.0.0 capturetheaction.com.au
 0.0.0.0 smetrics.caracol.com.co
@@ -66060,7 +66067,6 @@
 0.0.0.0 jcanoticias.com.ar
 0.0.0.0 jihehuaban.com.cn
 0.0.0.0 jrprosperity.com.au
-0.0.0.0 marketing.net.jumia.com.ng
 0.0.0.0 ad.jxnews.com.cn
 0.0.0.0 adv.jxnews.com.cn
 0.0.0.0 smetrics.kebuena.com.mx
@@ -66555,6 +66561,7 @@
 0.0.0.0 chr.conservativehealthreport.org
 0.0.0.0 analytics.conservativenewsandviews.com
 0.0.0.0 consfera.it
+0.0.0.0 loja.consolata.pt
 0.0.0.0 piwik.consorciomadrono.es
 0.0.0.0 om-ssl.consorsbank.de
 0.0.0.0 analytics.constant.co
@@ -70126,6 +70133,7 @@
 0.0.0.0 metric.dynamic.xyz
 0.0.0.0 dynamic-dns.net
 0.0.0.0 analytics.dynamicarehealth.com
+0.0.0.0 public-eur.mkt.dynamics.com
 0.0.0.0 async-px.dynamicyield.com
 0.0.0.0 async-px-eu.dynamicyield.com
 0.0.0.0 px-eu.dynamicyield.com
@@ -74737,7 +74745,6 @@
 0.0.0.0 api-dogfood.honeycomb.io
 0.0.0.0 api.honeygain.com
 0.0.0.0 analytics.as.honeywell.com
-0.0.0.0 hongluosi.com
 0.0.0.0 honkoutsing.com
 0.0.0.0 honorableland.com
 0.0.0.0 honorata-skarbek.com
@@ -75030,7 +75037,6 @@
 0.0.0.0 hxnzyy.com
 0.0.0.0 hxpohplms.com
 0.0.0.0 hxwscp.cn
-0.0.0.0 hxyx360.com
 0.0.0.0 so8.hyatt.com
 0.0.0.0 hybra2web.co
 0.0.0.0 hydra2wed.co
@@ -75210,7 +75216,6 @@
 0.0.0.0 ieplads.com
 0.0.0.0 analytics.iesdev.com
 0.0.0.0 analytics.ietf.org
-0.0.0.0 ievvo.xyz
 0.0.0.0 smetrics.ifc.org
 0.0.0.0 analytics.bless.ifcj.org
 0.0.0.0 err.ifengcloud.ifeng.com
@@ -76320,6 +76325,7 @@
 0.0.0.0 jbsmediaventures.com
 0.0.0.0 jbzj.com
 0.0.0.0 logging-service-main-prd.k8-svc.jc-gs.com
+0.0.0.0 jcedu.org
 0.0.0.0 jcount.com
 0.0.0.0 kwvbhj.jcpenney.com
 0.0.0.0 smetrics.jcpenney.com
@@ -77135,6 +77141,7 @@
 0.0.0.0 krushmedia.com
 0.0.0.0 beacon.krxd.net
 0.0.0.0 cdn.krxd.net
+0.0.0.0 ks.cn
 0.0.0.0 slb-p2p.vcloud.ks-live.com
 0.0.0.0 log-sdk.ksapisrv.com
 0.0.0.0 wlog.ksapisrv.com
@@ -80267,6 +80274,7 @@
 0.0.0.0 myocean.jp
 0.0.0.0 matomo.tooling.myoddcloud.com
 0.0.0.0 myopiacreeper.com
+0.0.0.0 mypag.io
 0.0.0.0 axp.mypanhandle.com
 0.0.0.0 analytics.ite.mypepsico.com
 0.0.0.0 myphamjapan.com
@@ -80317,6 +80325,7 @@
 0.0.0.0 analytics.mystream.com
 0.0.0.0 countly-api.mysugr.com
 0.0.0.0 countly.tools.mysugr.com
+0.0.0.0 mysura.it
 0.0.0.0 myswitchads.com
 0.0.0.0 analytics.mysynchrony.com
 0.0.0.0 metrics.mysynchrony.com
@@ -81278,6 +81287,7 @@
 0.0.0.0 smetrics.o2online.de
 0.0.0.0 o6z2a2kq8fatj3ch0x5ow6v82ha2gja8x8c7w6pc5gx2ls0zia7bx1n28b5d.com
 0.0.0.0 o7labs.top
+0.0.0.0 oabaubsutha.com
 0.0.0.0 media.oadts.com
 0.0.0.0 oafishchance.com
 0.0.0.0 oafishobservation.com
@@ -81851,6 +81861,7 @@
 0.0.0.0 metrics.cats.org.uk
 0.0.0.0 service.charitiesaidfoundation.org.uk
 0.0.0.0 analytics.cifas.org.uk
+0.0.0.0 dasp.org.pk
 0.0.0.0 analytics.escience.org.cn
 0.0.0.0 analytics.fft.org.uk
 0.0.0.0 analytics.humanappeal.org.uk
@@ -82000,7 +82011,6 @@
 0.0.0.0 sstat.outrigger.com
 0.0.0.0 stat.outrigger.com
 0.0.0.0 analytics.outshine.com
-0.0.0.0 ad.outsidehub.com
 0.0.0.0 accounts-meta-events.outsideonline.com
 0.0.0.0 meta-events.outsideonline.com
 0.0.0.0 tracking.outspot.de
@@ -82567,7 +82577,6 @@
 0.0.0.0 ads-static.phonepe.com
 0.0.0.0 phorm.com
 0.0.0.0 phormchina.com
-0.0.0.0 photo-cam.com
 0.0.0.0 metrics.photoaffections.com
 0.0.0.0 i1218.photobucket.com
 0.0.0.0 photographpan.com
@@ -82992,6 +83001,7 @@
 0.0.0.0 portmap.io
 0.0.0.0 analytics.portswigger.net
 0.0.0.0 telemetry.portswigger.net
+0.0.0.0 posicionamientonatural.es
 0.0.0.0 analytics.position.green
 0.0.0.0 position3452.fun
 0.0.0.0 positive-ads.com
@@ -83204,7 +83214,6 @@
 0.0.0.0 telemetry.proctorcollect.com
 0.0.0.0 telemetry.prod-medidata.net
 0.0.0.0 stats.prodemos.nl
-0.0.0.0 producehealthy.com
 0.0.0.0 analytics.api.productionatlas.net
 0.0.0.0 analytics.productip.com
 0.0.0.0 analytics.productlead.me
@@ -86391,7 +86400,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw2.smartadserver.com
+0.0.0.0 euw1.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -87276,7 +87285,6 @@
 0.0.0.0 analytics.beta.starlink.com
 0.0.0.0 starmeet-time.com
 0.0.0.0 starpacintl.com
-0.0.0.0 starsearchtool.com
 0.0.0.0 metrics.starstable.com
 0.0.0.0 starstablehack.net
 0.0.0.0 start.io
@@ -87372,6 +87380,7 @@
 0.0.0.0 pixel.staticworld.net
 0.0.0.0 statigr.am
 0.0.0.0 statistic.date
+0.0.0.0 statisticplatform.com
 0.0.0.0 statisticscripts.com
 0.0.0.0 statisticsplatform.com
 0.0.0.0 statlstic.shop
@@ -87918,7 +87927,6 @@
 0.0.0.0 szmnl.cn
 0.0.0.0 szmnm.cn
 0.0.0.0 szmyl.cn
-0.0.0.0 countpage.sznews.com
 0.0.0.0 szpbg.cn
 0.0.0.0 szpnc.cn
 0.0.0.0 szpnp.cn
@@ -90590,6 +90598,7 @@
 0.0.0.0 analytics.vfafacility.com
 0.0.0.0 vfgajrk.cn
 0.0.0.0 vfghe.com
+0.0.0.0 vfocus.net
 0.0.0.0 analytics.vfr-verlag.de
 0.0.0.0 vfreecams.com
 0.0.0.0 ads.vg.no
@@ -91313,7 +91322,6 @@
 0.0.0.0 analytics.washington.edu
 0.0.0.0 ads.washingtonpost.com
 0.0.0.0 id.washingtonpost.com
-0.0.0.0 pwapi.washingtonpost.com
 0.0.0.0 smetrics.washingtonpost.com
 0.0.0.0 wasm.stream
 0.0.0.0 analytics.wasserstand-niederoesterreich.at
@@ -92227,7 +92235,6 @@
 0.0.0.0 analyticsproxy.x-kom.pl
 0.0.0.0 analytics.x-onweb.com
 0.0.0.0 x-ozwpiqlb.rocks
-0.0.0.0 x-pictures.net
 0.0.0.0 analytics.x-station.eu
 0.0.0.0 x-vpn.ug
 0.0.0.0 x00.fi
@@ -93342,7 +93349,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36229 rules from this source
+# Converted 36234 rules from this source
 
 
-# Total unique domains: 93321
+# Total unique domains: 93328
