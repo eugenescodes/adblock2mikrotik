@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-10 06:21:50 UTC
+# Last modified: 2025-02-10 12:30:18 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,14 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 loowhujoom.net
+0.0.0.0 glugherg.net
+0.0.0.0 louthicoozit.net
+0.0.0.0 feckurteg.net
+0.0.0.0 octo25.me
+0.0.0.0 vidscriptshark.com
+0.0.0.0 threewoodslose.com
+0.0.0.0 sharkfirelife.com
 0.0.0.0 videocdnmetrika.com
 0.0.0.0 pkyffuewwuhnld.com
 0.0.0.0 phahifoobsie.net
@@ -11912,7 +11920,6 @@
 0.0.0.0 glsfreeads.com
 0.0.0.0 glssp.net
 0.0.0.0 gludqoqmuwbc.com
-0.0.0.0 glugherg.net
 0.0.0.0 glugreez.com
 0.0.0.0 gluilyepacme.shop
 0.0.0.0 glukropi.com
@@ -33219,7 +33226,6 @@
 0.0.0.0 ads-server.mxplay.com
 0.0.0.0 mxaserver.mxplay.com
 0.0.0.0 contextualadv.com
-0.0.0.0 prebid-cache.ifunny.co
 0.0.0.0 tk0x1.com
 0.0.0.0 itdsmr.com
 0.0.0.0 external-api.impression-neo.naver.com
@@ -33737,6 +33743,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 us-behavior.apitd.net
 0.0.0.0 collector.snplow.net
 0.0.0.0 squeezely.tech
 0.0.0.0 d5yoctgpv4cpx.cloudfront.net
@@ -34260,7 +34267,6 @@
 0.0.0.0 analytics.growthphysics.com
 0.0.0.0 sp.tinymce.com
 0.0.0.0 wazimo.com
-0.0.0.0 srmdata-eur.com
 0.0.0.0 doppler-beacons.cbsivideo.com
 0.0.0.0 events.askjdhaa.com
 0.0.0.0 tikstok.fun
@@ -42298,7 +42304,6 @@
 0.0.0.0 dosawes.com
 0.0.0.0 lusupodum.com
 0.0.0.0 clairpixum.com
-0.0.0.0 octo25.me
 0.0.0.0 bmmwa.info
 0.0.0.0 iwrcoct.info
 0.0.0.0 hfnuqljjnt.com
@@ -42329,7 +42334,6 @@
 0.0.0.0 miradres.com
 0.0.0.0 eehhabacgieacfjeaacg.world
 0.0.0.0 bidmatic.io
-0.0.0.0 vidscriptshark.com
 0.0.0.0 1qe.info
 0.0.0.0 23oct2023.site
 0.0.0.0 fcepahafyq.com
@@ -52041,6 +52045,7 @@
 0.0.0.0 brornaeq.com
 0.0.0.0 strakuty.com
 0.0.0.0 zcrddj.icu
+0.0.0.0 nonguds.com
 0.0.0.0 vjzqfh.icu
 0.0.0.0 8ff0.cn
 0.0.0.0 tdinmai.top
@@ -57241,7 +57246,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57226 rules from this source
+# Converted 57231 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -75380,6 +75385,7 @@
 0.0.0.0 iftrack.com
 0.0.0.0 ifuckshemales.com
 0.0.0.0 logs.ifunny.co
+0.0.0.0 prebid-cache.ifunny.co
 0.0.0.0 ig.ig.com
 0.0.0.0 analytics.mobile.ig.com
 0.0.0.0 sig.ig.com
@@ -87297,6 +87303,7 @@
 0.0.0.0 srch.life
 0.0.0.0 matomo.sreal.net
 0.0.0.0 srldkqj.cn
+0.0.0.0 srmdata-eur.com
 0.0.0.0 smetrics.srpnet.com
 0.0.0.0 pages.srsmith.com
 0.0.0.0 srtuiyhuali.at
@@ -93500,7 +93507,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36253 rules from this source
+# Converted 36255 rules from this source
 
 
-# Total unique domains: 93479
+# Total unique domains: 93486
