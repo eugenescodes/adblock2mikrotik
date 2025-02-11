@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-11 01:10:09 UTC
+# Last modified: 2025-02-11 06:20:54 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -23497,6 +23497,7 @@
 0.0.0.0 semicolonrichsieve.com
 0.0.0.0 semicolonsmall.com
 0.0.0.0 semiinfest.com
+0.0.0.0 seminaloakweb.com
 0.0.0.0 seminarcrackingconclude.com
 0.0.0.0 seminarentirely.com
 0.0.0.0 semqraso.net
@@ -52094,6 +52095,8 @@
 0.0.0.0 cnzz.trafficmanager.net
 0.0.0.0 fuuksew.com
 0.0.0.0 xfxvpt.icu
+0.0.0.0 s31u.com
+0.0.0.0 ccinmaf.top
 0.0.0.0 tmvirr.icu
 0.0.0.0 udinmat.top
 0.0.0.0 odinmak.top
@@ -57302,7 +57305,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 57287 rules from this source
+# Converted 57290 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -58422,6 +58425,7 @@
 0.0.0.0 axp.abc4.com
 0.0.0.0 abcdlm.com
 0.0.0.0 abcdserver.com
+0.0.0.0 api.abcsinsights.com
 0.0.0.0 abdo-alyemeni.com
 0.0.0.0 abducke.com
 0.0.0.0 data.abebooks.com
@@ -60918,6 +60922,7 @@
 0.0.0.0 s3.appbrain.com
 0.0.0.0 s4.appbrain.com
 0.0.0.0 sdk.appbrain.com
+0.0.0.0 ads.appbundledownload.com
 0.0.0.0 analytics.appcaremaster.com
 0.0.0.0 appcdn01.xyz
 0.0.0.0 api.appcloudbox.net
@@ -61778,7 +61783,6 @@
 0.0.0.0 awaitinggirls.com
 0.0.0.0 awakebird.com
 0.0.0.0 sgtm.awakenings.com
-0.0.0.0 engine.awaps.net
 0.0.0.0 awarealley.com
 0.0.0.0 awavjblaaezbb.top
 0.0.0.0 away.com
@@ -63948,6 +63952,7 @@
 0.0.0.0 td.caranddriver.com
 0.0.0.0 carbonads.net
 0.0.0.0 analytics.carbonatebrowser-api.com
+0.0.0.0 tracking.carbonatixaudio.com
 0.0.0.0 metrics.cdca.carbonblack.io
 0.0.0.0 carbonquotes.com
 0.0.0.0 analytics.carbravo.com
@@ -64621,7 +64626,7 @@
 0.0.0.0 widget.civey.com
 0.0.0.0 stats.civiccomputing.com
 0.0.0.0 analytics.civicplus.com
-0.0.0.0 get.civicscience.com
+0.0.0.0 civicscience.com
 0.0.0.0 analytics.civitai.com
 0.0.0.0 metrics.civitatis.com
 0.0.0.0 metrics.bp-ste1.civo.com
@@ -66841,6 +66846,7 @@
 0.0.0.0 consentlog.cookieyes.com
 0.0.0.0 sa.cookingchanneltv.com
 0.0.0.0 ssa.cookingchanneltv.com
+0.0.0.0 cooknove.com
 0.0.0.0 coolcashstashes.com
 0.0.0.0 detaillog-global.coolccloud.com
 0.0.0.0 logreport-global.coolccloud.com
@@ -70391,6 +70397,7 @@
 0.0.0.0 e25ebbeb6b.com
 0.0.0.0 metric.e2ctechnology.com
 0.0.0.0 equity.e2g.com
+0.0.0.0 3c18019e0f.e462bd5280.com
 0.0.0.0 e68eaebc30768a673848927c2b8c8e38c38fd42312e367bca04fc622.com
 0.0.0.0 e811df4714.com
 0.0.0.0 e841afabc8.com
@@ -71540,6 +71547,7 @@
 0.0.0.0 f168b7fa34.com
 0.0.0.0 f1nancier.com
 0.0.0.0 f27tltnd.de
+0.0.0.0 d80cb0f7b2.f404af467e.com
 0.0.0.0 mktg.aa.f5.com
 0.0.0.0 mktg.collect.f5.com
 0.0.0.0 mktg.tags.f5.com
@@ -72841,6 +72849,8 @@
 0.0.0.0 metrics.galicia.ar
 0.0.0.0 advise.gallup.com
 0.0.0.0 analytics.gallup.com
+0.0.0.0 bid.gamaibids.com
+0.0.0.0 trk.gamaibids.com
 0.0.0.0 gamblerush.com
 0.0.0.0 game-advertising-online.com
 0.0.0.0 api.game-sdk.com
@@ -72903,6 +72913,7 @@
 0.0.0.0 affiliate-api.gamingtec.com
 0.0.0.0 gamletaarnhuset.no
 0.0.0.0 gammamaximum.com
+0.0.0.0 gamned.com
 0.0.0.0 gamob.com
 0.0.0.0 rtb.gamoshi.io
 0.0.0.0 server.gamyun.net
@@ -75504,7 +75515,6 @@
 0.0.0.0 log.ihuman.com
 0.0.0.0 logapi.ihuman.com
 0.0.0.0 region.ihuman.com
-0.0.0.0 ihwlek.com
 0.0.0.0 iijls.com
 0.0.0.0 iimedia.cn
 0.0.0.0 iion.io
@@ -75622,6 +75632,7 @@
 0.0.0.0 banner.immowelt.de
 0.0.0.0 analytics.imninjas.net
 0.0.0.0 analytics.imodium.de
+0.0.0.0 atb-stats-api.imolive.tv
 0.0.0.0 imop.com
 0.0.0.0 imp2.com
 0.0.0.0 trkapi.impact.com
@@ -76531,7 +76542,6 @@
 0.0.0.0 vs.javcosplay.com
 0.0.0.0 creative.live.javdock.com
 0.0.0.0 javhdporn.com
-0.0.0.0 javhdporn.net
 0.0.0.0 creative.javhdporn.live
 0.0.0.0 creative.live.javmix.tv
 0.0.0.0 javplayer.org
@@ -79404,7 +79414,6 @@
 0.0.0.0 metaresolver.com
 0.0.0.0 metareward.com
 0.0.0.0 matomo.metaver.de
-0.0.0.0 metaverifyyourid.top
 0.0.0.0 metaversemolecule.com
 0.0.0.0 analytics.metaview.ai
 0.0.0.0 metaxads.com
@@ -80383,6 +80392,7 @@
 0.0.0.0 metric.myadobetrainer.com
 0.0.0.0 myads.company
 0.0.0.0 myads.net
+0.0.0.0 myadssupport.com
 0.0.0.0 myadsystem.com
 0.0.0.0 myamericanprzs.com
 0.0.0.0 cookie.myamerigas.com
@@ -80958,6 +80968,7 @@
 0.0.0.0 analytics.netrics.ai
 0.0.0.0 netrk.net
 0.0.0.0 analytics.netsmartcloud.com
+0.0.0.0 netsolhost.com
 0.0.0.0 smetrics.netspend.com
 0.0.0.0 netsponsors.com
 0.0.0.0 tracking.netsuite.com
@@ -83054,6 +83065,7 @@
 0.0.0.0 service-ad-impression-proxy.clusters.pluto.tv
 0.0.0.0 saa.pluto.tv
 0.0.0.0 ply.gg
+0.0.0.0 api.plyair.com
 0.0.0.0 smetrics.plymouthrock.com
 0.0.0.0 analytics.pm-srv.co
 0.0.0.0 coreads.pmdstatic.net
@@ -83077,7 +83089,6 @@
 0.0.0.0 i.po.st
 0.0.0.0 p.po.st
 0.0.0.0 po18.in
-0.0.0.0 po2qgo.xyz
 0.0.0.0 pobalance.com
 0.0.0.0 pocketfaucet.com
 0.0.0.0 pocketlove.jp
@@ -86662,7 +86673,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw2.smartadserver.com
+0.0.0.0 euw1.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -87425,6 +87436,7 @@
 0.0.0.0 xml-v4.srvqck1.com
 0.0.0.0 filter.srvqck2.com
 0.0.0.0 xml.srvqck2.com
+0.0.0.0 filter.srvqck3.com
 0.0.0.0 static.srvqck3.com
 0.0.0.0 xml-eu-v4.srvqck3.com
 0.0.0.0 xml-v4.srvqck3.com
@@ -87535,6 +87547,7 @@
 0.0.0.0 smetrics.staplesadvantage.com
 0.0.0.0 star-media.cn
 0.0.0.0 star61.de
+0.0.0.0 filter.staradsmedia.com
 0.0.0.0 xml.staradsmedia.com
 0.0.0.0 xml-v4.staradsmedia.com
 0.0.0.0 analytics.starbreeze.com
@@ -88052,7 +88065,6 @@
 0.0.0.0 plausible.svvsdtemp.org
 0.0.0.0 sw1block.com
 0.0.0.0 swag45xc.com
-0.0.0.0 swaio.ru
 0.0.0.0 swanksoft.com
 0.0.0.0 swankysquare.com
 0.0.0.0 matomo.swapcard.com
@@ -88583,7 +88595,6 @@
 0.0.0.0 signals.teknosa.com
 0.0.0.0 adobeanalytics.teksystems.com
 0.0.0.0 piwik.teladoc.com
-0.0.0.0 telaria.com
 0.0.0.0 metric.telavox.se
 0.0.0.0 telback.com
 0.0.0.0 matomo.telc.net
@@ -88597,8 +88608,6 @@
 0.0.0.0 teleglasm.cyou
 0.0.0.0 telegramhcn.com
 0.0.0.0 telegramm.site
-0.0.0.0 telegramxy.cc
-0.0.0.0 telegrrag.cc
 0.0.0.0 analytics.brand-dialog.telekom.com
 0.0.0.0 analytics.design.telekom.com
 0.0.0.0 tracking.levelup.telekom.com
@@ -88685,6 +88694,7 @@
 0.0.0.0 tent0mown.com
 0.0.0.0 tepatonol.com
 0.0.0.0 sofire.terabox.app
+0.0.0.0 sofire.terabox.com
 0.0.0.0 terafileshare.com
 0.0.0.0 metric.terafinainc.net
 0.0.0.0 control.teragence.net
@@ -89708,7 +89718,6 @@
 0.0.0.0 metrics.tricolor.ru
 0.0.0.0 metrics.tricolor.tv
 0.0.0.0 trifms.com
-0.0.0.0 trilogyed.com
 0.0.0.0 trimay.ru
 0.0.0.0 tracking.trinet.com
 0.0.0.0 metrics.trinetcloud.com
@@ -90592,6 +90601,7 @@
 0.0.0.0 useriq.com
 0.0.0.0 api.userleap.com
 0.0.0.0 support-widget.userlocal.jp
+0.0.0.0 userlogsanalytics.com
 0.0.0.0 analytex.userpilot.io
 0.0.0.0 analytex-eu.userpilot.io
 0.0.0.0 analytex-us.userpilot.io
@@ -91149,6 +91159,7 @@
 0.0.0.0 visoon-dai.com
 0.0.0.0 analytics.visorando.com
 0.0.0.0 ras.vistaradio.ca
+0.0.0.0 cpm.vistarsagency.com
 0.0.0.0 visual-pagerank.fr
 0.0.0.0 gtrack.visualchase.com
 0.0.0.0 analytics.visualstudio.com
@@ -91730,7 +91741,6 @@
 0.0.0.0 p.webengage.com
 0.0.0.0 c.us.webengage.com
 0.0.0.0 wsdk-files.webengage.com
-0.0.0.0 webenviador.net
 0.0.0.0 analyticseu.weber.com
 0.0.0.0 services.webestools.com
 0.0.0.0 metrics.o.webex.com
@@ -92341,6 +92351,8 @@
 0.0.0.0 wp-cdn.top
 0.0.0.0 analytics.wp-cologne.de
 0.0.0.0 wp-link.ru
+0.0.0.0 wpad.top
+0.0.0.0 wpad.xyz
 0.0.0.0 matomo.wpbeaches.com
 0.0.0.0 telemetry.wpbrigade.com
 0.0.0.0 analytics.wpdeploy.cloud
@@ -93317,6 +93329,7 @@
 0.0.0.0 zarget.com
 0.0.0.0 zarpop.ir
 0.0.0.0 ct1.zashiki.com
+0.0.0.0 zavod.xyz
 0.0.0.0 zavodooo.ru
 0.0.0.0 zax01.com
 0.0.0.0 rttr2.zaycev.net
@@ -93620,7 +93633,6 @@
 0.0.0.0 metrics.hunters.zynga.com
 0.0.0.0 log-collector.svctr.zynga.com
 0.0.0.0 zyns.com
-0.0.0.0 zyoskv38.top
 0.0.0.0 analytics.zyrtec.com
 0.0.0.0 analytics.zyrtecprofessional.com
 0.0.0.0 zyzjpx.cn
@@ -93631,7 +93643,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36323 rules from this source
+# Converted 36332 rules from this source
 
 
-# Total unique domains: 93610
+# Total unique domains: 93622
