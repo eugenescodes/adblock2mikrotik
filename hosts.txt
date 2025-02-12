@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-11 18:19:16 UTC
+# Last modified: 2025-02-12 01:10:23 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -16267,6 +16267,7 @@
 0.0.0.0 masculineillness.com
 0.0.0.0 masklink.org
 0.0.0.0 masonopen.com
+0.0.0.0 masonrycruor.shop
 0.0.0.0 masqueradeentrustveneering.com
 0.0.0.0 masqueradethousand.com
 0.0.0.0 massacreintentionalmemorize.com
@@ -33319,6 +33320,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 analytics.viture.dev
 0.0.0.0 us-behavior.apitd.net
 0.0.0.0 collector.snplow.net
 0.0.0.0 squeezely.tech
@@ -36940,6 +36942,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 inf.miui.com
 0.0.0.0 q.quora.com
 0.0.0.0 evts.ecocart.io
 0.0.0.0 e.fomo.com
@@ -39558,6 +39561,7 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 log.ultimatecleaner.pro
 0.0.0.0 impression.link
 0.0.0.0 rm.aarki.net
 0.0.0.0 use-cr.svr-algorix.com
@@ -51617,6 +51621,9 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 traukvan.com
+0.0.0.0 20wx.com
+0.0.0.0 vitqzd.icu
 0.0.0.0 fuuksew.com
 0.0.0.0 xfxvpt.icu
 0.0.0.0 s31u.com
@@ -56831,7 +56838,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56816 rules from this source
+# Converted 56823 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -79224,7 +79231,6 @@
 0.0.0.0 static.geek.miui.com
 0.0.0.0 hybrid.miui.com
 0.0.0.0 india.miui.com
-0.0.0.0 inf.miui.com
 0.0.0.0 api.accelerator.intl.miui.com
 0.0.0.0 api.aurogon.intl.miui.com
 0.0.0.0 api.browser.intl.miui.com
@@ -93162,7 +93168,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36325 rules from this source
+# Converted 36324 rules from this source
 
 
-# Total unique domains: 93141
+# Total unique domains: 93147
