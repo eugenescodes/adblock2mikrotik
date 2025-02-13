@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-13 01:10:53 UTC
+# Last modified: 2025-02-13 06:20:53 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -51689,6 +51689,10 @@
 0.0.0.0 uhi02130uik.xyz
 0.0.0.0 uhi02121uik.xyz
 0.0.0.0 bypllv.icu
+0.0.0.0 bhelzun.com
+0.0.0.0 fafvvt.icu
+0.0.0.0 gukviels.com
+0.0.0.0 kcinmad.top
 0.0.0.0 traukvan.com
 0.0.0.0 20wx.com
 0.0.0.0 vitqzd.icu
@@ -56908,7 +56912,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56893 rules from this source
+# Converted 56897 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -61010,7 +61014,6 @@
 0.0.0.0 analytics.asiaone.com
 0.0.0.0 asiatube.pro
 0.0.0.0 tags.asics.com
-0.0.0.0 asilusenage.com
 0.0.0.0 asiminst.com
 0.0.0.0 sponsors.asisonline.org
 0.0.0.0 ask-gps.ru
@@ -62319,11 +62322,9 @@
 0.0.0.0 bingads.com
 0.0.0.0 axp.binghamtonhomepage.com
 0.0.0.0 trace.bingoholiday.xyz
-0.0.0.0 bingoocy.com
 0.0.0.0 bingstyle.com
 0.0.0.0 binibeetfly.com
 0.0.0.0 binmedia.ru
-0.0.0.0 binmei-global.com
 0.0.0.0 binomasia.com
 0.0.0.0 binomo.com
 0.0.0.0 analytics.bio.link
@@ -64045,7 +64046,6 @@
 0.0.0.0 sdkoptedge.chinanetcenter.com
 0.0.0.0 chinesean.com
 0.0.0.0 pwk.chineseconverter.com
-0.0.0.0 chinfluence.eu
 0.0.0.0 chingovernment.com
 0.0.0.0 chinkleedestin.uno
 0.0.0.0 chino.io
@@ -69842,7 +69842,6 @@
 0.0.0.0 dyndyn.duckdns.org
 0.0.0.0 frnr.duckdns.org
 0.0.0.0 lah1.duckdns.org
-0.0.0.0 microsoftiswear.duckdns.org
 0.0.0.0 mrtx.duckdns.org
 0.0.0.0 nchdicus.duckdns.org
 0.0.0.0 analytics.ducunt.com
@@ -71684,7 +71683,6 @@
 0.0.0.0 flirtmoms.com
 0.0.0.0 flirtquest.life
 0.0.0.0 flirttime.com
-0.0.0.0 flirtymashed.com
 0.0.0.0 metrics.flitsmeister.app
 0.0.0.0 flixcar.com
 0.0.0.0 assets-widget-l3.flixcdn.com
@@ -79464,7 +79462,6 @@
 0.0.0.0 moboland.net
 0.0.0.0 srv6.mobpedia.com
 0.0.0.0 mobstac.com
-0.0.0.0 go.mobtrks.com
 0.0.0.0 mobupps.com
 0.0.0.0 mobusi.com
 0.0.0.0 mobvista.com
@@ -82564,7 +82561,6 @@
 0.0.0.0 playtomic.com
 0.0.0.0 playurbano.com
 0.0.0.0 analytics.playusdev.com
-0.0.0.0 playvideocenter.com
 0.0.0.0 analytics.playvox.com
 0.0.0.0 cdn.playwire.com
 0.0.0.0 matomo.plazz.net
@@ -85187,7 +85183,6 @@
 0.0.0.0 analytics.brandstudio.schibsted.se
 0.0.0.0 mktg.schlage.com
 0.0.0.0 matomo.schloesser-und-gaerten.de
-0.0.0.0 schmelkecue.com
 0.0.0.0 schmoozecom.net
 0.0.0.0 1.chipde.damoh.schneevonmorgen.com
 0.0.0.0 2.chipde.damoh.schneevonmorgen.com
@@ -86197,7 +86192,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw1.smartadserver.com
+0.0.0.0 euw2.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -87430,7 +87425,6 @@
 0.0.0.0 metrics.subvid.ai
 0.0.0.0 sst.subzero-wolf.com
 0.0.0.0 analytics.successkpis.com
-0.0.0.0 successpop.com
 0.0.0.0 sucksex.com
 0.0.0.0 analytics.sudafed.com
 0.0.0.0 tr.courrier.sudouest.fr
@@ -90152,7 +90146,6 @@
 0.0.0.0 utxmb.cn
 0.0.0.0 game.subway.uu.cc
 0.0.0.0 uu-charisma.jp
-0.0.0.0 uuishsa.com
 0.0.0.0 uulucky.com
 0.0.0.0 uunfybw.cn
 0.0.0.0 uuvzmba.cn
@@ -92531,7 +92524,6 @@
 0.0.0.0 metric.yelp.com
 0.0.0.0 tracing.yelp.com
 0.0.0.0 yeltex7.com
-0.0.0.0 yemayafestival.com
 0.0.0.0 img.yemeksepeti.com
 0.0.0.0 simg.yemeksepeti.com
 0.0.0.0 tnt.yemeksepeti.com
@@ -93138,7 +93130,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36224 rules from this source
+# Converted 36212 rules from this source
 
 
-# Total unique domains: 93117
+# Total unique domains: 93109
