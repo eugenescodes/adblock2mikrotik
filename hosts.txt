@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-14 06:20:39 UTC
+# Last modified: 2025-02-14 12:29:30 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 splendid-concert.com
 0.0.0.0 engine.trialhd.com
 0.0.0.0 getwptag.org
 0.0.0.0 directone.xyz
@@ -37004,6 +37005,7 @@
 0.0.0.0 wizaly.com
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 tagman.britishairways.com
+0.0.0.0 tracker.multisearch.io
 0.0.0.0 apm.yahoo.co.jp
 0.0.0.0 malog.byapps.co.kr
 0.0.0.0 sofire.terabox.app
@@ -39627,6 +39629,8 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 aws.userlogsanalytics.com
+0.0.0.0 atb-stats-api.imolive.tv
 0.0.0.0 i.mxplayer.j2inter.com
 0.0.0.0 flashtalking.com
 0.0.0.0 stat.weamvideo.com
@@ -41832,7 +41836,6 @@
 0.0.0.0 c.keltis.com
 0.0.0.0 sayac.kapital.com.tr
 0.0.0.0 informers.sinoptik.ua
-0.0.0.0 tracker.multisearch.io
 0.0.0.0 f-emc.ngsp.gov.vn
 0.0.0.0 tracking.aita.gov.vn
 0.0.0.0 za.zalo.me
@@ -51702,6 +51705,7 @@
 0.0.0.0 dhuquxqy.com
 0.0.0.0 zbldxf.icu
 0.0.0.0 ldbnhd.icu
+0.0.0.0 i8m6.com
 0.0.0.0 strelgrell.com
 0.0.0.0 h8ne.com
 0.0.0.0 jcinmaa.top
@@ -56932,7 +56936,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 56917 rules from this source
+# Converted 56921 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -75193,7 +75197,6 @@
 0.0.0.0 banner.immowelt.de
 0.0.0.0 analytics.imninjas.net
 0.0.0.0 analytics.imodium.de
-0.0.0.0 atb-stats-api.imolive.tv
 0.0.0.0 imop.com
 0.0.0.0 imp2.com
 0.0.0.0 trkapi.impact.com
@@ -93124,7 +93127,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36186 rules from this source
+# Converted 36185 rules from this source
 
 
-# Total unique domains: 93103
+# Total unique domains: 93106
