@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-23 12:27:19 UTC
+# Last modified: 2025-02-23 18:18:35 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -56623,7 +56623,6 @@
 0.0.0.0 analytics.adsum.io
 0.0.0.0 adsupplyads.net
 0.0.0.0 adsux.com
-0.0.0.0 adswakeup.com
 0.0.0.0 adswip.com
 0.0.0.0 181fm.adswizz.com
 0.0.0.0 acast.adswizz.com
@@ -62702,7 +62701,6 @@
 0.0.0.0 ggdata1.cnr.cn
 0.0.0.0 matomo.rsi.cnr.it
 0.0.0.0 analytics.cnss.ma
-0.0.0.0 cntr-di5.com
 0.0.0.0 sstats.cntraveler.com
 0.0.0.0 cnvlink.com
 0.0.0.0 c.cnzz.com
@@ -64430,7 +64428,6 @@
 0.0.0.0 cowebmedical.com
 0.0.0.0 finder.cox.net
 0.0.0.0 smetrics.cox.com
-0.0.0.0 coxgypsine.shop
 0.0.0.0 coxmt.com
 0.0.0.0 coxx.one
 0.0.0.0 matomo.cozeva.com
@@ -64471,7 +64468,6 @@
 0.0.0.0 crabbychin.com
 0.0.0.0 cracked.sx
 0.0.0.0 crackedkey.org
-0.0.0.0 crackedpc.org
 0.0.0.0 crackingpatching.com
 0.0.0.0 cracksall.com
 0.0.0.0 crackserialcodes.com
@@ -67754,7 +67750,6 @@
 0.0.0.0 analytics.dvc.org
 0.0.0.0 analytics-api.dvdfab.cn
 0.0.0.0 dvdgayonline.com
-0.0.0.0 dvdhentai.net
 0.0.0.0 static.dvidshub.net
 0.0.0.0 telemetry.dvmms.com
 0.0.0.0 analytics.dvnfo.com
@@ -67817,7 +67812,8 @@
 0.0.0.0 aa.dysoncanada.ca
 0.0.0.0 saa.dysoncanada.ca
 0.0.0.0 dzd9.cn
-0.0.0.0 dzen.ru
+0.0.0.0 clck.dzen.ru
+0.0.0.0 ms.dzen.ru
 0.0.0.0 widgets.dzone.com
 0.0.0.0 dzuht.cn
 0.0.0.0 ad.dzwww.com
@@ -70890,7 +70886,6 @@
 0.0.0.0 glb21pkgr.com
 0.0.0.0 a.glcdn.co
 0.0.0.0 xml-v4.glcsrv.com
-0.0.0.0 gldsta-02-or.com
 0.0.0.0 gleamingcow.com
 0.0.0.0 gleaminghaven.com
 0.0.0.0 analytics.prod.glera.cloud
@@ -71633,7 +71628,6 @@
 0.0.0.0 hackfbaccountlive.com
 0.0.0.0 darkavenger.hackfree.us
 0.0.0.0 hacklermiching.com
-0.0.0.0 hackmeout.net
 0.0.0.0 metrics.hacknowledge.ch
 0.0.0.0 hacksforgame.com
 0.0.0.0 hacksndcheats.com
@@ -73818,7 +73812,6 @@
 0.0.0.0 ishieldu.com
 0.0.0.0 analytics.ishopchangi.com
 0.0.0.0 video.ishotube.xyz
-0.0.0.0 isine88.com
 0.0.0.0 iskyworker.com
 0.0.0.0 analytics.islamapp.ru
 0.0.0.0 islandqueeninlandcharters.com
@@ -74357,7 +74350,6 @@
 0.0.0.0 kaishq.top
 0.0.0.0 kaiun-com.com
 0.0.0.0 kaiun-park.jp
-0.0.0.0 kajeputhorn.com
 0.0.0.0 a.kajgana.com
 0.0.0.0 api-ad.kajicam.com
 0.0.0.0 api-ad-data.kajicam.com
@@ -74662,7 +74654,6 @@
 0.0.0.0 kmspico.io
 0.0.0.0 kmspico10.com
 0.0.0.0 kmspicoactivator.net
-0.0.0.0 kmwclt.xyz
 0.0.0.0 kxlogo.knet.cn
 0.0.0.0 rr.knet.cn
 0.0.0.0 ss.knet.cn
@@ -82770,7 +82761,6 @@
 0.0.0.0 runoffree.bid
 0.0.0.0 analytics.runsignup.com
 0.0.0.0 rupeika.info
-0.0.0.0 rupiahlagi.com
 0.0.0.0 rupor.info
 0.0.0.0 ruralrobin.com
 0.0.0.0 ruralstring.com
@@ -84148,7 +84138,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw1.smartadserver.com
+0.0.0.0 euw2.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -86190,7 +86180,6 @@
 0.0.0.0 metric.tesla.services
 0.0.0.0 hcbox.tesla-electronics.eu
 0.0.0.0 tesseradigital.com
-0.0.0.0 telemetry.tessie.com
 0.0.0.0 test.com
 0.0.0.0 stiwa.test.de
 0.0.0.0 metrics.test-socrata.com
@@ -88489,7 +88478,6 @@
 0.0.0.0 viiatomicnumber.com
 0.0.0.0 viicxwec.com
 0.0.0.0 viidah.com
-0.0.0.0 viiddai.com
 0.0.0.0 viidokvg.com
 0.0.0.0 viifun.com
 0.0.0.0 viiigbxo.com
@@ -88920,7 +88908,6 @@
 0.0.0.0 vsepro-forex.ru
 0.0.0.0 vsevjednom.cz
 0.0.0.0 metrics.vshop.es
-0.0.0.0 vsl-history.be
 0.0.0.0 vslinemailers.biz
 0.0.0.0 analytics.vspdirect.com
 0.0.0.0 vstats.me
@@ -91155,7 +91142,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36388 rules from this source
+# Converted 36375 rules from this source
 
 
-# Total unique domains: 91134
+# Total unique domains: 91121
