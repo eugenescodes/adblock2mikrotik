@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-24 01:13:16 UTC
+# Last modified: 2025-02-24 06:22:51 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -15868,7 +15868,6 @@
 0.0.0.0 mnetads.com
 0.0.0.0 mnevjhg.com
 0.0.0.0 mng-ads.com
-0.0.0.0 mngusr.com
 0.0.0.0 mnhjk.com
 0.0.0.0 mnhjkl.com
 0.0.0.0 mntft.com
@@ -31593,6 +31592,7 @@
 0.0.0.0 danatrak.com
 0.0.0.0 optiyield.opti-digital.com
 0.0.0.0 twitter.sx
+0.0.0.0 view.mngusr.com
 0.0.0.0 cdn.q0losid.com
 0.0.0.0 tags.fullcontact.com
 0.0.0.0 matomo.akbal.dev
@@ -49842,6 +49842,8 @@
 0.0.0.0 chuundads.com
 0.0.0.0 xvvfpsmp.icu
 0.0.0.0 phxdrf.icu
+0.0.0.0 qdqppsl.top
+0.0.0.0 qnki.cn
 0.0.0.0 xplbxx.icu
 0.0.0.0 khoqetslh.com
 0.0.0.0 vdpwuxmo.icu
@@ -54803,7 +54805,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 54788 rules from this source
+# Converted 54790 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -77320,7 +77322,6 @@
 0.0.0.0 mneydirec.com
 0.0.0.0 mnfse.cn
 0.0.0.0 mngbqpz.cc
-0.0.0.0 view.mngusr.com
 0.0.0.0 matomo.mnh.fr
 0.0.0.0 lp.mnp.ca
 0.0.0.0 knl.mntzrlt.net
@@ -91184,7 +91185,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36375 rules from this source
+# Converted 36374 rules from this source
 
 
-# Total unique domains: 91163
+# Total unique domains: 91164
