@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-02-26 01:12:28 UTC
+# Last modified: 2025-02-26 06:21:57 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -28777,6 +28777,7 @@
 0.0.0.0 nster.net
 0.0.0.0 ntent.com
 0.0.0.0 numbers.md
+0.0.0.0 o.socoms.net
 0.0.0.0 oboxads.com
 0.0.0.0 oceanwebcraft.com
 0.0.0.0 ocelot.studio
@@ -49989,6 +49990,7 @@
 0.0.0.0 zlzgfj.icu
 0.0.0.0 lnptph.icu
 0.0.0.0 pisb.cn
+0.0.0.0 dyyygyg.top
 0.0.0.0 druqodrly.com
 0.0.0.0 bidotz.icu
 0.0.0.0 nktydx.icu
@@ -49997,6 +49999,7 @@
 0.0.0.0 znlvhnej.icu
 0.0.0.0 okwjmii.top
 0.0.0.0 onjncgq.top
+0.0.0.0 o02260aokk.com
 0.0.0.0 o02251aokk.com
 0.0.0.0 pheidheat.com
 0.0.0.0 thampheth.com
@@ -54970,7 +54973,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 54955 rules from this source
+# Converted 54958 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -55309,7 +55312,6 @@
 0.0.0.0 2635ebb1c1.com
 0.0.0.0 265ccb08af.com
 0.0.0.0 2684e4fd7f.com
-0.0.0.0 295.ca
 0.0.0.0 822dbd57ea.298b7571af.com
 0.0.0.0 29dc237c9b.com
 0.0.0.0 2annalea.com
@@ -59514,6 +59516,7 @@
 0.0.0.0 psh-static.b-cdn.net
 0.0.0.0 sumo.b-cdn.net
 0.0.0.0 unibotscdn.b-cdn.net
+0.0.0.0 userssu.b-cdn.net
 0.0.0.0 voldffgkdsllkjthlkjt.b-cdn.net
 0.0.0.0 b-dns.se
 0.0.0.0 b-online.de
@@ -71835,6 +71838,7 @@
 0.0.0.0 hacksndcheats.com
 0.0.0.0 piwik.hacon.de
 0.0.0.0 haejkmm.cn
+0.0.0.0 consenttool.haendlerbund.de
 0.0.0.0 client.haffnetworkam.com
 0.0.0.0 t.hagebau.de
 0.0.0.0 secu.hagerty.com
@@ -77540,6 +77544,7 @@
 0.0.0.0 smetrics.army.mod.uk
 0.0.0.0 matomo.defencegateway.mod.uk
 0.0.0.0 metric.mod.io
+0.0.0.0 widgets.shop.moda.it
 0.0.0.0 track.data.modanisa.com
 0.0.0.0 signals.modanisa.com
 0.0.0.0 modato.ru
@@ -79118,6 +79123,7 @@
 0.0.0.0 notify.nuviad.com
 0.0.0.0 remp.nv.ua
 0.0.0.0 nv2g.com
+0.0.0.0 nvdeg.org
 0.0.0.0 telemetry.gfe.nvidia.com
 0.0.0.0 smetrics.nvidia.com
 0.0.0.0 stt.nvidia.com
@@ -80726,7 +80732,6 @@
 0.0.0.0 analytics.pmg.com
 0.0.0.0 adobes.pmi.org
 0.0.0.0 pmnct63.shop
-0.0.0.0 pmnpknpjbpqjjc.xyz
 0.0.0.0 analytics.pmsrv.co
 0.0.0.0 eule1.pmu.fr
 0.0.0.0 rza.pmu.fr
@@ -84623,6 +84628,7 @@
 0.0.0.0 iuryhk.soccer.com
 0.0.0.0 hiuplq.soccer24.com
 0.0.0.0 analytics.soccerment.com
+0.0.0.0 views.sociablekit.com
 0.0.0.0 social-touch.com
 0.0.0.0 social2search.com
 0.0.0.0 analytics.socialbakers.com
@@ -84640,7 +84646,6 @@
 0.0.0.0 chat.sociomile.com
 0.0.0.0 sociomods.com
 0.0.0.0 analytics.spearhp.socom.mil
-0.0.0.0 o.socoms.net
 0.0.0.0 metric.socpanel.com
 0.0.0.0 analytics.socportal.cloud
 0.0.0.0 ivox.socratos.net
@@ -85344,6 +85349,7 @@
 0.0.0.0 telemetry.steamos.cloud
 0.0.0.0 steampowerd.com
 0.0.0.0 steamrip.click
+0.0.0.0 steanmecommunity.com
 0.0.0.0 steeelm.online
 0.0.0.0 steelbitepro24.com
 0.0.0.0 metrics.steelcase.com
@@ -85659,6 +85665,7 @@
 0.0.0.0 search.supplyframe.com
 0.0.0.0 supplypoland.com
 0.0.0.0 analytics.supportlogic.com
+0.0.0.0 supportmarketplace.online
 0.0.0.0 supportstudent.link
 0.0.0.0 app.supportthecats.com
 0.0.0.0 supportwaves.com
@@ -87069,7 +87076,6 @@
 0.0.0.0 s.toyotafinancial.com
 0.0.0.0 analytics.toyotaforklift.com
 0.0.0.0 toysbasics.com
-0.0.0.0 toystocksrm.com
 0.0.0.0 toythieves.com
 0.0.0.0 s-assets.tp-cdn.com
 0.0.0.0 tpctrust.com
@@ -89236,6 +89242,7 @@
 0.0.0.0 walkthedinosaur.com
 0.0.0.0 telemetry.wall-box.com
 0.0.0.0 webanalytics.spw.wallonie.be
+0.0.0.0 wallpaperflare.com
 0.0.0.0 gtrack.wallstoriez.com
 0.0.0.0 track.wallstoriez.com
 0.0.0.0 displayads.walmart.com
@@ -90627,6 +90634,7 @@
 0.0.0.0 analytics.yachtneeds.com
 0.0.0.0 yads.tech
 0.0.0.0 smetrics.yaencontre.com
+0.0.0.0 yagla.tv
 0.0.0.0 st.yagla.ru
 0.0.0.0 360.yahoo.com
 0.0.0.0 ad.yahoo.com
@@ -91340,7 +91348,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36364 rules from this source
+# Converted 36369 rules from this source
 
 
-# Total unique domains: 91319
+# Total unique domains: 91327
