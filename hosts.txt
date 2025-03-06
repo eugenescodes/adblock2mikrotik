@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-06 06:22:01 UTC
+# Last modified: 2025-03-06 12:31:47 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,8 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 btloader.com
+0.0.0.0 anewfeedliberty.com
 0.0.0.0 avads.live
 0.0.0.0 dietythraves.top
 0.0.0.0 banner-iframe.com
@@ -3238,6 +3240,7 @@
 0.0.0.0 alternativecpmgate.com
 0.0.0.0 alternativeprofitablegate.com
 0.0.0.0 altfafbih.com
+0.0.0.0 altgwiabhakf.com
 0.0.0.0 altitude-arena.com
 0.0.0.0 altitudeweetonsil.com
 0.0.0.0 altowriestwispy.com
@@ -10126,6 +10129,7 @@
 0.0.0.0 filhibohwowm.com
 0.0.0.0 fillingcater.com
 0.0.0.0 filmesonlinegratis.com
+0.0.0.0 filpili.com
 0.0.0.0 filternannewspaper.com
 0.0.0.0 filtertopplescream.com
 0.0.0.0 filthnair.click
@@ -13804,10 +13808,12 @@
 0.0.0.0 jobsonationsing.com
 0.0.0.0 jobsyndicate.com
 0.0.0.0 jocauzee.net
+0.0.0.0 jocmiglenedsupi.com
 0.0.0.0 jodl.cloud
 0.0.0.0 joemythsomething.com
 0.0.0.0 jogcu.com
 0.0.0.0 jogglenetwork.com
+0.0.0.0 joglomsexurgod.net
 0.0.0.0 johannatailor.com
 0.0.0.0 joiningindulgeyawn.com
 0.0.0.0 joiningnihilum.com
@@ -27748,6 +27754,7 @@
 0.0.0.0 ybs2ffs7v.com
 0.0.0.0 ybtkzjm.com
 0.0.0.0 yceml.net
+0.0.0.0 ychpbvjmubomgu.com
 0.0.0.0 ycpwdvsmtn.com
 0.0.0.0 ycxajdcpesguqh.com
 0.0.0.0 ydagjjgqxmrlqjj.xyz
@@ -29665,6 +29672,7 @@
 0.0.0.0 88545539.xyz
 0.0.0.0 89263907.xyz
 0.0.0.0 89407765.xyz
+0.0.0.0 89598890.xyz
 0.0.0.0 89871256.xyz
 0.0.0.0 8eef59a5.live
 0.0.0.0 91301246.xyz
@@ -32203,7 +32211,6 @@
 0.0.0.0 cloudad.icu
 0.0.0.0 stats2.indianpornempire.com
 0.0.0.0 bt.dns-finder.com
-0.0.0.0 btloader.com
 0.0.0.0 glamipixel.com
 0.0.0.0 nocodelytics.com
 0.0.0.0 stat.fly.codes
@@ -55195,7 +55202,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 55180 rules from this source
+# Converted 55187 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -58553,7 +58560,6 @@
 0.0.0.0 ane102.net
 0.0.0.0 analytics.anedot.com
 0.0.0.0 anetwork.ir
-0.0.0.0 anewfeedliberty.com
 0.0.0.0 push.anews.one
 0.0.0.0 smetrics.angara.com
 0.0.0.0 linktracker.angelfire.com
@@ -91410,7 +91416,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36209 rules from this source
+# Converted 36208 rules from this source
 
 
-# Total unique domains: 91389
+# Total unique domains: 91395
