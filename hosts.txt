@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-05 18:22:30 UTC
+# Last modified: 2025-03-06 01:13:52 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -32128,6 +32128,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 govisibl.io
 0.0.0.0 tver-metrics.streaks.jp
 0.0.0.0 24support.cc
 0.0.0.0 a.hit360.tech
@@ -54950,7 +54951,6 @@
 0.0.0.0 cyad.nate.com
 0.0.0.0 ads.gamemeca.com
 0.0.0.0 adcdn.gamemeca.com
-0.0.0.0 trendpick.shopping.naver.com
 0.0.0.0 powerclick.about.co.kr
 0.0.0.0 ads.tapzin.com
 0.0.0.0 advod.sbs.co.kr
@@ -78426,6 +78426,7 @@
 0.0.0.0 analytics.naver.com
 0.0.0.0 cr.naver.com
 0.0.0.0 nlog.naver.com
+0.0.0.0 trendpick.shopping.naver.com
 0.0.0.0 g.tivan.naver.com
 0.0.0.0 wcs.naver.com
 0.0.0.0 wcs.naver.net
@@ -91451,7 +91452,7 @@
 0.0.0.0 zzux.com
 0.0.0.0 zzzperform.com
 
-# Converted 36253 rules from this source
+# Converted 36254 rules from this source
 
 
-# Total unique domains: 91430
+# Total unique domains: 91431
