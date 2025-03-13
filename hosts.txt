@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-13 06:22:28 UTC
+# Last modified: 2025-03-13 12:32:20 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -16541,6 +16541,7 @@
 0.0.0.0 hbloveinfo.com
 0.0.0.0 hbmode.com
 0.0.0.0 hborq.com
+0.0.0.0 hbqaihowimyiuh.com
 0.0.0.0 hbzikbe.com
 0.0.0.0 hcpvkcznxj.com
 0.0.0.0 hctwekslxuvtlcq.com
@@ -19388,6 +19389,7 @@
 0.0.0.0 liqikxqpx.com
 0.0.0.0 liquidfire.mobi
 0.0.0.0 liquorelectric.com
+0.0.0.0 lissaizocmoog.com
 0.0.0.0 list-ads.com
 0.0.0.0 listbrandnew.com
 0.0.0.0 listenedmusician.com
@@ -19747,6 +19749,7 @@
 0.0.0.0 lungingunified.com
 0.0.0.0 lunio.net
 0.0.0.0 luofinality.com
+0.0.0.0 luqjuzatt.com
 0.0.0.0 lurdoocu.com
 0.0.0.0 lurgaimt.net
 0.0.0.0 lurkfibberband.com
@@ -23046,6 +23049,7 @@
 0.0.0.0 peethobo.com
 0.0.0.0 peevishaboriginalzinc.com
 0.0.0.0 peewhouheeku.net
+0.0.0.0 pefslhmrktkvami.com
 0.0.0.0 peglessbath.shop
 0.0.0.0 pegloang.com
 0.0.0.0 peisantcorneas.com
@@ -25664,6 +25668,7 @@
 0.0.0.0 rkoohcakrfu.com
 0.0.0.0 rkskillsombineukd.com
 0.0.0.0 rkulukhwuoc.com
+0.0.0.0 rkvldurquedh.com
 0.0.0.0 rkvsbobyil.com
 0.0.0.0 rlcdn.com
 0.0.0.0 rletcloaksandth.com
@@ -30559,6 +30564,7 @@
 0.0.0.0 voluumtrk.com
 0.0.0.0 voluumtrk3.com
 0.0.0.0 volyze.com
+0.0.0.0 vomerkalpaks.com
 0.0.0.0 vomitsuite.com
 0.0.0.0 vonkol.com
 0.0.0.0 vooculok.com
@@ -30569,6 +30575,7 @@
 0.0.0.0 vooptikoph.net
 0.0.0.0 vooshagy.net
 0.0.0.0 voovoacivoa.net
+0.0.0.0 vophothoorom.net
 0.0.0.0 voredi.com
 0.0.0.0 vossulekuk.com
 0.0.0.0 voteclassicscocktail.com
@@ -31844,6 +31851,7 @@
 0.0.0.0 yeswplearning.info
 0.0.0.0 yetshape.com
 0.0.0.0 yetterslave.com
+0.0.0.0 yf9pkk1q.com
 0.0.0.0 yfefdlv.com
 0.0.0.0 yfgrxkz.com
 0.0.0.0 yfkflfa.com
@@ -33788,6 +33796,7 @@
 0.0.0.0 1187531871.rsc.cdn77.org
 0.0.0.0 1208344341.rsc.cdn77.org
 0.0.0.0 1352924994.rsc.cdn77.org
+0.0.0.0 1361424968.rsc.cdn77.org
 0.0.0.0 1437953666.rsc.cdn77.org
 0.0.0.0 1529462937.rsc.cdn77.org
 0.0.0.0 1548164934.rsc.cdn77.org
@@ -33956,6 +33965,7 @@
 0.0.0.0 saambaa.com
 0.0.0.0 search-carousel-widget.snc-prod.aws.cinch.co.uk
 0.0.0.0 secure.money.com
+0.0.0.0 serving.lookverin.com
 0.0.0.0 shopmyshelf.us
 0.0.0.0 smartads.statsperform.com
 0.0.0.0 squirrels.getsquirrel.co
@@ -86950,6 +86960,7 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 cnlogs.umengcloud.com
 0.0.0.0 logs.nebulahoroscope.com
 0.0.0.0 braveglobal.tv
 0.0.0.0 insights.alibaba.com
@@ -87456,6 +87467,8 @@
 0.0.0.0 patriot.cs.pp.cn
 0.0.0.0 sdk-orion.appboy.com
 0.0.0.0 io.narrative.io
+0.0.0.0 api.mixpanel.com
+0.0.0.0 decide.mixpanel.com
 0.0.0.0 applog.uc.cn
 0.0.0.0 dispatcher.upmc.uc.cn
 0.0.0.0 gjapplog.uc.cn
@@ -103749,7 +103762,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 103734 rules from this source
+# Converted 103747 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -121576,13 +121589,11 @@
 0.0.0.0 mixedreading.com
 0.0.0.0 mixer-track.com
 0.0.0.0 mixersing.com
-0.0.0.0 api.mixpanel.com
 0.0.0.0 api-compatible.mixpanel.com
 0.0.0.0 api-eu.mixpanel.com
 0.0.0.0 api-js.mixpanel.com
 0.0.0.0 api-secure.mixpanel.com
 0.0.0.0 data.mixpanel.com
-0.0.0.0 decide.mixpanel.com
 0.0.0.0 analytics.mixwiththemasters.com
 0.0.0.0 piwik.mja.io
 0.0.0.0 mjjtobmrqyolqqbqukpl.com
@@ -132568,7 +132579,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 28813 rules from this source
+# Converted 28811 rules from this source
 
 
-# Total unique domains: 132547
+# Total unique domains: 132558
