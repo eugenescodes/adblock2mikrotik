@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-14 18:20:58 UTC
+# Last modified: 2025-03-15 01:12:55 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -88060,6 +88060,7 @@
 0.0.0.0 metrics.doppiocdn.com
 0.0.0.0 metrics.futureplc.engineering
 0.0.0.0 metrics.gs-chat.com
+0.0.0.0 metrics.nsureapi.com
 0.0.0.0 metrics.onshape.com
 0.0.0.0 metrics.scribblelive.com
 0.0.0.0 metrix.emagister.com
@@ -99059,6 +99060,10 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 mvxh.cn
+0.0.0.0 lftcph.icu
+0.0.0.0 ak03150hou.com
+0.0.0.0 guqransoq.com
 0.0.0.0 lmeurbnjs.com
 0.0.0.0 xielloltv.com
 0.0.0.0 lqfctb.icu
@@ -103858,7 +103863,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 103843 rules from this source
+# Converted 103848 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -122559,7 +122564,6 @@
 0.0.0.0 nsn-server.xyz
 0.0.0.0 nsomedidm.xyz
 0.0.0.0 nsudurh.com
-0.0.0.0 metrics.nsureapi.com
 0.0.0.0 metrics.nt.vc
 0.0.0.0 ntalker.com
 0.0.0.0 ntc69oia.com
@@ -132069,7 +132073,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 28205 rules from this source
+# Converted 28204 rules from this source
 
 
-# Total unique domains: 132048
+# Total unique domains: 132052
