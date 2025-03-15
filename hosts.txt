@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-15 06:20:27 UTC
+# Last modified: 2025-03-15 12:28:17 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -33754,6 +33754,7 @@
 0.0.0.0 54199287.xyz
 0.0.0.0 55766925.xyz
 0.0.0.0 56514411.xyz
+0.0.0.0 57473094.xyz
 0.0.0.0 59644010.xyz
 0.0.0.0 59768910.xyz
 0.0.0.0 5cc3ac02.xyz
@@ -36266,6 +36267,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 metrics.nsureapi.com
 0.0.0.0 umeng.com
 0.0.0.0 weborama-tech.ru
 0.0.0.0 qualaroo.com
@@ -88060,7 +88062,6 @@
 0.0.0.0 metrics.doppiocdn.com
 0.0.0.0 metrics.futureplc.engineering
 0.0.0.0 metrics.gs-chat.com
-0.0.0.0 metrics.nsureapi.com
 0.0.0.0 metrics.onshape.com
 0.0.0.0 metrics.scribblelive.com
 0.0.0.0 metrix.emagister.com
@@ -96653,6 +96654,7 @@
 0.0.0.0 nykkky.com
 0.0.0.0 nzu66938s.com
 0.0.0.0 nzx65821s.com
+0.0.0.0 offb.info
 0.0.0.0 offer.great1waytowsuccess.com
 0.0.0.0 officials-kmspico.com
 0.0.0.0 ofth546ebr.cfd
@@ -99064,6 +99066,7 @@
 0.0.0.0 lftcph.icu
 0.0.0.0 ak03150hou.com
 0.0.0.0 guqransoq.com
+0.0.0.0 ghegaintp.com
 0.0.0.0 lmeurbnjs.com
 0.0.0.0 xielloltv.com
 0.0.0.0 lqfctb.icu
@@ -103863,7 +103866,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 103848 rules from this source
+# Converted 103851 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -131887,4 +131890,4 @@
 # Converted 28015 rules from this source
 
 
-# Total unique domains: 131863
+# Total unique domains: 131866
