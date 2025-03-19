@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-19 06:22:47 UTC
+# Last modified: 2025-03-19 12:32:14 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 nkdccsiwixvzj.world
 0.0.0.0 organicowner.com
 0.0.0.0 woeful-trash.pro
 0.0.0.0 dullequivalent.com
@@ -32727,6 +32728,7 @@
 0.0.0.0 adfinity.pro
 0.0.0.0 adfinix.com
 0.0.0.0 adforgames.com
+0.0.0.0 adforge.io
 0.0.0.0 adfrika.com
 0.0.0.0 adgage.es
 0.0.0.0 adgatemedia.com
@@ -36448,6 +36450,7 @@
 0.0.0.0 ib.snssdk.com
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
+0.0.0.0 venatusmedia.com
 0.0.0.0 metrics.nsureapi.com
 0.0.0.0 umeng.com
 0.0.0.0 weborama-tech.ru
@@ -37491,7 +37494,6 @@
 0.0.0.0 durationmedia.net
 0.0.0.0 s.myangular.life
 0.0.0.0 pointmediatracker.com
-0.0.0.0 c-api-bit.shopeemobile.com
 0.0.0.0 sp.dpgmedia.net
 0.0.0.0 distillery.wistia.com
 0.0.0.0 pipedream.wistia.com
@@ -88726,7 +88728,6 @@
 0.0.0.0 track.untd.com
 0.0.0.0 track.uppromote.com
 0.0.0.0 track.us.org
-0.0.0.0 track.venatusmedia.com
 0.0.0.0 track.vscash.com
 0.0.0.0 track.yfret.com
 0.0.0.0 tracker.au.zitcha.app
@@ -99476,6 +99477,7 @@
 0.0.0.0 xrlzhk.top
 0.0.0.0 nogogey.top
 0.0.0.0 otfy.cn
+0.0.0.0 iyof.cn
 0.0.0.0 fbhkxt.icu
 0.0.0.0 lppfnf.icu
 0.0.0.0 shedranfd.com
@@ -104312,7 +104314,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 104297 rules from this source
+# Converted 104299 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -105540,7 +105542,6 @@
 0.0.0.0 adfenix.com
 0.0.0.0 adflight.com
 0.0.0.0 adflownetworks.com
-0.0.0.0 adforge.io
 0.0.0.0 ads.adfork.kr
 0.0.0.0 a2.adform.net
 0.0.0.0 adx.adform.net
@@ -130274,7 +130275,6 @@
 0.0.0.0 velvetquasar.com
 0.0.0.0 analytics.vena.io
 0.0.0.0 analytics.venafi.com
-0.0.0.0 venatusmedia.com
 0.0.0.0 smetrics.venclextahcp.com
 0.0.0.0 vendaregroup.com
 0.0.0.0 vendemore.com
@@ -132476,7 +132476,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 28158 rules from this source
+# Converted 28156 rules from this source
 
 
 # Total unique domains: 132455
