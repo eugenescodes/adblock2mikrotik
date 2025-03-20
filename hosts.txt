@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-20 06:22:34 UTC
+# Last modified: 2025-03-20 12:30:53 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 hakurei.cdnbo.org
 0.0.0.0 nkdccsiwixvzj.world
 0.0.0.0 organicowner.com
 0.0.0.0 woeful-trash.pro
@@ -92667,6 +92668,7 @@
 0.0.0.0 tools-affil2.com
 0.0.0.0 tools.islive.nl
 0.0.0.0 travelads.be
+0.0.0.0 trickyrock.com
 0.0.0.0 vpscash.nl
 0.0.0.0 xpartners.nl
 0.0.0.0 adnx.de
@@ -93352,7 +93354,6 @@
 0.0.0.0 autodeal.agilecrm.com
 0.0.0.0 autoleasedi.bytelab.dk
 0.0.0.0 ax.idg.se
-0.0.0.0 b1.trickyrock.com
 0.0.0.0 backend.qimtek.se
 0.0.0.0 banner.bet365partners.com
 0.0.0.0 banners.instaforex.com
@@ -104341,7 +104342,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 104326 rules from this source
+# Converted 104327 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -129472,6 +129473,7 @@
 0.0.0.0 analytics.tribpub.com
 0.0.0.0 analytics.tribune-group.com
 0.0.0.0 matomo.ttm4j.tricentis.com
+0.0.0.0 b1.trickyrock.com
 0.0.0.0 metrics.tricolor.ru
 0.0.0.0 metrics.tricolor.tv
 0.0.0.0 trifms.com
@@ -132529,7 +132531,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 28182 rules from this source
+# Converted 28183 rules from this source
 
 
-# Total unique domains: 132508
+# Total unique domains: 132510
