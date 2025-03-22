@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-22 06:20:32 UTC
+# Last modified: 2025-03-22 12:28:27 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -96146,6 +96146,7 @@
 0.0.0.0 icloud.support
 0.0.0.0 icloudhelp.com
 0.0.0.0 icloudvi.com
+0.0.0.0 icswdocmv.on-ke.tech
 0.0.0.0 id-icloud.com
 0.0.0.0 id-vietconbank1.uuhuqtp.nethost-4011.000nethost.com
 0.0.0.0 idapple.com
@@ -99509,6 +99510,7 @@
 0.0.0.0 zeroshop.cc
 0.0.0.0 zingmp3.pro
 0.0.0.0 zingshop.net
+0.0.0.0 zkika.okyla.de
 0.0.0.0 zla653.top
 0.0.0.0 zla963.top
 0.0.0.0 zloweb.me
@@ -99525,6 +99527,9 @@
 0.0.0.0 cnzz.trafficmanager.net
 0.0.0.0 stemedntm.com
 0.0.0.0 r5twojylmzsym.top
+0.0.0.0 avkd.cn
+0.0.0.0 yxqmryq.top
+0.0.0.0 eldaridpr.com
 0.0.0.0 feernhuhe.com
 0.0.0.0 vhje.cn
 0.0.0.0 bptnzp.top
@@ -104383,7 +104388,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 104368 rules from this source
+# Converted 104373 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -132647,4 +132652,4 @@
 # Converted 28255 rules from this source
 
 
-# Total unique domains: 132623
+# Total unique domains: 132628
