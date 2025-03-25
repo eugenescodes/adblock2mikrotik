@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-25 12:32:32 UTC
+# Last modified: 2025-03-25 18:22:11 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,8 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 player.gliacloud.com
+0.0.0.0 newmedia.az
 0.0.0.0 glum-mortgage.com
 0.0.0.0 shocking-honey.com
 0.0.0.0 ogaku.site
@@ -2699,7 +2701,6 @@
 0.0.0.0 ab823c0616.3397afa9b2.com
 0.0.0.0 ab9a9bd665.ae83a82a8d.com
 0.0.0.0 acc6ef1b4a.39963f5717.com
-0.0.0.0 ae33d7ee85.029519cbdc.com
 0.0.0.0 afae561ed5.3165de3ff8.com
 0.0.0.0 ajs.bowintelligence.com
 0.0.0.0 ajs.laketrend.com
@@ -5896,6 +5897,7 @@
 0.0.0.0 01jud3v55z.com
 0.0.0.0 023e6510cc.com
 0.0.0.0 0265331.com
+0.0.0.0 029519cbdc.com
 0.0.0.0 0342b40dd6.com
 0.0.0.0 03505ed0f4.com
 0.0.0.0 03b5f525af.com
@@ -9313,6 +9315,7 @@
 0.0.0.0 bergletiphis.shop
 0.0.0.0 berkshiretoday.xyz
 0.0.0.0 berlipurplin.com
+0.0.0.0 bermestricker.shop
 0.0.0.0 berriescourageous.com
 0.0.0.0 berryheight.com
 0.0.0.0 berryhillfarmgwent.com
@@ -13790,6 +13793,7 @@
 0.0.0.0 eluviabattler.com
 0.0.0.0 elyandbegantoti.com
 0.0.0.0 elytronkantele.shop
+0.0.0.0 elzcrexsh.com
 0.0.0.0 emailflyfunny.com
 0.0.0.0 emailon.top
 0.0.0.0 emancytal.com
@@ -16918,6 +16922,7 @@
 0.0.0.0 hintgroin.com
 0.0.0.0 hip-97166b.com
 0.0.0.0 hipals.com
+0.0.0.0 hipanditlastedallth.com
 0.0.0.0 hipersushiads.com
 0.0.0.0 hiphaltlauroyl.shop
 0.0.0.0 hipintimacy.com
@@ -27947,6 +27952,7 @@
 0.0.0.0 stealneitherfirearm.com
 0.0.0.0 stealthlockers.com
 0.0.0.0 steamjaws.com
+0.0.0.0 stedallthrought.com
 0.0.0.0 stedrits.xyz
 0.0.0.0 steeelm.xyz
 0.0.0.0 steefaulrouy.xyz
@@ -28262,6 +28268,7 @@
 0.0.0.0 suitedtack.com
 0.0.0.0 suiteighteen.com
 0.0.0.0 sukbeingajoytow.org
+0.0.0.0 sukspcwrnqpbs.life
 0.0.0.0 sukultingecauy.info
 0.0.0.0 sukultingecauyuk.org
 0.0.0.0 sulfinepaveed.com
@@ -32046,6 +32053,7 @@
 0.0.0.0 xszjh.tech
 0.0.0.0 xszpuvwr7.com
 0.0.0.0 xtalfuwcxh.com
+0.0.0.0 xtdztyiqyhmet.global
 0.0.0.0 xtrackme.com
 0.0.0.0 xtraserp.com
 0.0.0.0 xtremeserve.xyz
@@ -105060,7 +105068,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 105045 rules from this source
+# Converted 105053 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -105699,7 +105707,6 @@
 0.0.0.0 analytics.45.ru
 0.0.0.0 45tu1c0.com
 0.0.0.0 46rtpw.ru
-0.0.0.0 3f9476b86d.47f0db81c9.com
 0.0.0.0 47n78xprrvp1.top
 0.0.0.0 480bbdf9664629877bc67d2094ca011cc759f779887c3337e8ae8bfd.com
 0.0.0.0 analytics.48bytesnorth.com
@@ -106043,7 +106050,6 @@
 0.0.0.0 abpa.at
 0.0.0.0 analytics.abracadabra.money
 0.0.0.0 abridgealgedo.com
-0.0.0.0 abruptroad.com
 0.0.0.0 absentairport.com
 0.0.0.0 analytics.absolutbank.ru
 0.0.0.0 click.absoluteagency.com
@@ -106187,7 +106193,6 @@
 0.0.0.0 ad-server.eu
 0.0.0.0 ad-shield.cc
 0.0.0.0 delivery.ad-sphere.eu
-0.0.0.0 ad-style.com
 0.0.0.0 ad-survey.com
 0.0.0.0 ad-sys.com
 0.0.0.0 ad-tech.com
@@ -107376,6 +107381,8 @@
 0.0.0.0 analytics.strefamarek.allegro.pl
 0.0.0.0 metric.strefamarek.allegro.pl
 0.0.0.0 allegro-reinigung.de
+0.0.0.0 allegroshop.shop
+0.0.0.0 allegrostu.com
 0.0.0.0 annonse.aller.no
 0.0.0.0 allergodil.cz
 0.0.0.0 allergodil.hu
@@ -108485,7 +108492,6 @@
 0.0.0.0 asap-market.com
 0.0.0.0 asap-marketplace.com
 0.0.0.0 asap15.com
-0.0.0.0 asapmarket.in
 0.0.0.0 asapmarketlinks.com
 0.0.0.0 asapmarketonion.com
 0.0.0.0 asapmarkets.org
@@ -109489,6 +109495,7 @@
 0.0.0.0 bingstyle.com
 0.0.0.0 binibeetfly.com
 0.0.0.0 binomasia.com
+0.0.0.0 binomo.com
 0.0.0.0 analytics.bio.link
 0.0.0.0 v2stats.bio.link
 0.0.0.0 metrics.bioderma.us
@@ -109792,6 +109799,7 @@
 0.0.0.0 analytics.boundlessnotions.com
 0.0.0.0 boundlessveil.com
 0.0.0.0 bourbonstreetdistillery.com
+0.0.0.0 boutique-pompiers-gscf.fr
 0.0.0.0 analytics.bouwinvestplatform.nl
 0.0.0.0 bovadapromotions.lv
 0.0.0.0 boveda.uno
@@ -110069,7 +110077,6 @@
 0.0.0.0 brlliiantsdates.com
 0.0.0.0 analytics.broadbandnow.com
 0.0.0.0 broadborder.com
-0.0.0.0 broadboundary.com
 0.0.0.0 broadcastbed.com
 0.0.0.0 matomo.broadcastmed.com
 0.0.0.0 telemetry.broadcom.com
@@ -110704,7 +110711,6 @@
 0.0.0.0 analytics.chaturbate.com
 0.0.0.0 piwik.chaturbate.com
 0.0.0.0 pixel.chaty.app
-0.0.0.0 chawkislandy.top
 0.0.0.0 cheap-result.pro
 0.0.0.0 cheaterboss.com
 0.0.0.0 cheatgame4u.com
@@ -112062,6 +112068,7 @@
 0.0.0.0 i24.com.ua
 0.0.0.0 iabargentina.com.ar
 0.0.0.0 feedbackws.icloud.com.cn
+0.0.0.0 iepdplay.com.br
 0.0.0.0 igoal-ads.com.br
 0.0.0.0 analytics.indeed.com.com
 0.0.0.0 metrics.indeed.com.com
@@ -115098,7 +115105,6 @@
 0.0.0.0 telemetry.diva-portal.com
 0.0.0.0 divatraffic.bid
 0.0.0.0 analytics.bluebat.dive.games
-0.0.0.0 divehope.com
 0.0.0.0 try.divendesign.in
 0.0.0.0 zau.divendesign.in
 0.0.0.0 analytics.diversityresources.com
@@ -115509,7 +115515,6 @@
 0.0.0.0 analytics.dvv-hosting.net
 0.0.0.0 dwclick.com
 0.0.0.0 openx.dwebsite.com
-0.0.0.0 dwhitdoedsrag.org
 0.0.0.0 track.dws.de
 0.0.0.0 dwtkuzo.cn
 0.0.0.0 dx07zxwt.pro
@@ -115850,6 +115855,7 @@
 0.0.0.0 litemsg.ekatox.com
 0.0.0.0 tr.ekatox.com
 0.0.0.0 analytics.ekcs.us
+0.0.0.0 ekdj30.com
 0.0.0.0 ads.ekipa.mk
 0.0.0.0 metrics.ekirana.nl
 0.0.0.0 analytics.ekonsilio.io
@@ -116321,7 +116327,6 @@
 0.0.0.0 exchangead.com
 0.0.0.0 excitablepass.com
 0.0.0.0 excitingtub.com
-0.0.0.0 exclusivebrass.com
 0.0.0.0 execuri.com
 0.0.0.0 executeknowledge.com
 0.0.0.0 analytics.executiveboard.com
@@ -119566,6 +119571,7 @@
 0.0.0.0 sli.indystar.com
 0.0.0.0 ineed2s.ro
 0.0.0.0 webanalytics.inera.se
+0.0.0.0 inetasia.com
 0.0.0.0 infinario.com
 0.0.0.0 infineon-community.com
 0.0.0.0 infinite-bottom.com
@@ -120154,6 +120160,7 @@
 0.0.0.0 jads.cc
 0.0.0.0 jaduda.com
 0.0.0.0 plausible.jaga.sk
+0.0.0.0 analytics-api-production.adse.jagex.com
 0.0.0.0 analytics-api.production.data.aws.jagex.com
 0.0.0.0 jaiporukodaisa.com
 0.0.0.0 jakid.xyz
@@ -120440,7 +120447,6 @@
 0.0.0.0 matomo.jymeo.com
 0.0.0.0 jzdgn.cn
 0.0.0.0 jzdwl4.cn
-0.0.0.0 jzjpntr.xyz
 0.0.0.0 jzkapp.com
 0.0.0.0 k-colorful.jp
 0.0.0.0 k-k-k.com
@@ -121843,6 +121849,7 @@
 0.0.0.0 mamax.tk
 0.0.0.0 mamboedschlep.shop
 0.0.0.0 dt-tracker.mamikos.com
+0.0.0.0 mampfwien.at
 0.0.0.0 managedpush.com
 0.0.0.0 manageintel.com
 0.0.0.0 piwik.mandiant.com
@@ -123836,7 +123843,6 @@
 0.0.0.0 javascript.nwbox.com
 0.0.0.0 nwwkstynowv.xyz
 0.0.0.0 nxakpj4ac8gkd53.info
-0.0.0.0 nxishctcjccry.com
 0.0.0.0 nxnjw.com
 0.0.0.0 ny4yze.com
 0.0.0.0 analytics.nydailynews.com
@@ -124796,7 +124802,6 @@
 0.0.0.0 query.petametrics.com
 0.0.0.0 query-us-east1.petametrics.com
 0.0.0.0 query1.petametrics.com
-0.0.0.0 petasusawber.com
 0.0.0.0 analytics.petrodatasync.net
 0.0.0.0 metrics.petsdeli.de
 0.0.0.0 pexnjio.cn
@@ -126279,7 +126284,6 @@
 0.0.0.0 relifemail555.com
 0.0.0.0 reliz.com
 0.0.0.0 reloadphoto.com
-0.0.0.0 remaininghopefully.com
 0.0.0.0 analytics.cluster-prod-apis.remazing.dev
 0.0.0.0 rembi.lv
 0.0.0.0 rememberdiscussion.com
@@ -126352,7 +126356,6 @@
 0.0.0.0 retargetapp.com
 0.0.0.0 banner.reteambiente.it
 0.0.0.0 analytics.rethinksvcs.org
-0.0.0.0 retimesfowl.top
 0.0.0.0 analytics.retool.com
 0.0.0.0 metrics.retool.com
 0.0.0.0 retrievemint.com
@@ -127812,6 +127815,7 @@
 0.0.0.0 skylinemailing.de
 0.0.0.0 skylink.vn
 0.0.0.0 tracking.skylum.com
+0.0.0.0 skymetrics.co
 0.0.0.0 skypharmacycanada.com
 0.0.0.0 analytics.skypicker.com
 0.0.0.0 skyrisecities.com
@@ -129473,9 +129477,7 @@
 0.0.0.0 matomo.tenet3.com
 0.0.0.0 tenhourweek.com
 0.0.0.0 tenjin.io
-0.0.0.0 tenkeifa.com
 0.0.0.0 tenkeiya.com
-0.0.0.0 tenkeiza.com
 0.0.0.0 tenmei-michibiki.com
 0.0.0.0 tenmoney.business
 0.0.0.0 tensasscarify.com
@@ -130643,7 +130645,6 @@
 0.0.0.0 webanalytics.dfs.un.org
 0.0.0.0 unablehope.com
 0.0.0.0 unaccountablepie.com
-0.0.0.0 unacoh.org
 0.0.0.0 unafei-kokusai.com
 0.0.0.0 unarmedindustry.com
 0.0.0.0 unbecominglamp.com
@@ -132141,7 +132142,6 @@
 0.0.0.0 metrics.worldcoin.org
 0.0.0.0 worldinform.ru
 0.0.0.0 cdn.worldnomads.net
-0.0.0.0 worldofcracks.com
 0.0.0.0 worldpilldeliver.com
 0.0.0.0 posthog.worldshopping.global
 0.0.0.0 analytics.worldsoft-wsw.com
@@ -133282,7 +133282,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 28216 rules from this source
+# Converted 28208 rules from this source
 
 
 # Total unique domains: 133261
