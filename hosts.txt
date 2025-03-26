@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-26 06:22:40 UTC
+# Last modified: 2025-03-26 12:32:34 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 bits.avcdn.net
 0.0.0.0 player.gliacloud.com
 0.0.0.0 newmedia.az
 0.0.0.0 glum-mortgage.com
@@ -8048,6 +8049,7 @@
 0.0.0.0 andtheircleanw.com
 0.0.0.0 anentsyshrug.com
 0.0.0.0 aneorwd.com
+0.0.0.0 anestriberi.com
 0.0.0.0 aneuchoutfit.shop
 0.0.0.0 anewgallondevious.com
 0.0.0.0 anewrelivedivide.com
@@ -10923,6 +10925,7 @@
 0.0.0.0 choobatchautoo.net
 0.0.0.0 choocmailt.com
 0.0.0.0 choodrawiwa.net
+0.0.0.0 chooftutchuw.net
 0.0.0.0 choogeet.net
 0.0.0.0 chooretsi.net
 0.0.0.0 chooseimmersed.com
@@ -14791,6 +14794,7 @@
 0.0.0.0 fireworksane.com
 0.0.0.0 fireworksjowrote.com
 0.0.0.0 firkedpace.life
+0.0.0.0 firmedderere.shop
 0.0.0.0 firmhurrieddetrimental.com
 0.0.0.0 firmlypokingtasting.com
 0.0.0.0 firmmaintenance.com
@@ -16205,6 +16209,7 @@
 0.0.0.0 greezoob.net
 0.0.0.0 grefaunu.com
 0.0.0.0 grefutiwhe.com
+0.0.0.0 gregneegnohoo.com
 0.0.0.0 grehamsoah.xyz
 0.0.0.0 greheelsy.net
 0.0.0.0 grehtrsan.com
@@ -21169,6 +21174,7 @@
 0.0.0.0 mymukindwould.com
 0.0.0.0 mynutraresearch.com
 0.0.0.0 myolnyr5bsk18.com
+0.0.0.0 myosoteruins.com
 0.0.0.0 myperfect2give.com
 0.0.0.0 mypopadpro.com
 0.0.0.0 mypopads.com
@@ -24636,6 +24642,7 @@
 0.0.0.0 pulverizefighting.com
 0.0.0.0 pulvinioreodon.com
 0.0.0.0 pumpbead.com
+0.0.0.0 pumplepore.com
 0.0.0.0 punctual-window.com
 0.0.0.0 punishgrantedvirus.com
 0.0.0.0 punkhonouredrole.com
@@ -27720,6 +27727,7 @@
 0.0.0.0 spikearsonembroider.com
 0.0.0.0 spikethat.xyz
 0.0.0.0 spilldemolitionarrangement.com
+0.0.0.0 spillshijra.top
 0.0.0.0 spin83qr.com
 0.0.0.0 spinbox.net
 0.0.0.0 spindlyrebegin.top
@@ -31484,6 +31492,7 @@
 0.0.0.0 wifegraduallyclank.com
 0.0.0.0 wifescamara.click
 0.0.0.0 wifeverticallywoodland.com
+0.0.0.0 wifiecesare.com
 0.0.0.0 wigetmedia.com
 0.0.0.0 wiggledeteriorate.com
 0.0.0.0 wigneebaimtoa.com
@@ -32312,6 +32321,7 @@
 0.0.0.0 yourwebbars.com
 0.0.0.0 youservit.com
 0.0.0.0 youtube.local
+0.0.0.0 yowdenfalcial.com
 0.0.0.0 yoyadsdom.com
 0.0.0.0 ypersonalrecome.com
 0.0.0.0 ypgmjlcgrp.com
@@ -33965,6 +33975,7 @@
 0.0.0.0 07421283.xyz
 0.0.0.0 08f8f073.xyz
 0.0.0.0 09745951.xyz
+0.0.0.0 0ul1wlo58s-vu69us-r1u.xyz
 0.0.0.0 10288299.xyz
 0.0.0.0 10523745.xyz
 0.0.0.0 10614305.xyz
@@ -34104,6 +34115,7 @@
 0.0.0.0 94597672.xyz
 0.0.0.0 94782806.xyz
 0.0.0.0 95597529.xyz
+0.0.0.0 96679950.xyz
 0.0.0.0 97496b9d.xyz
 0.0.0.0 98140548.xyz
 0.0.0.0 98383163.xyz
@@ -90460,6 +90472,7 @@
 0.0.0.0 templates.buscape.com
 0.0.0.0 yestorrents.org
 0.0.0.0 oecistbenton.com
+0.0.0.0 tp.media
 0.0.0.0 thagrechulo.com
 0.0.0.0 vvdrhe.win
 0.0.0.0 adwadvert.com.ua
@@ -92759,6 +92772,7 @@
 0.0.0.0 masdak.epsilonsoft.to
 0.0.0.0 adserve.lasentinelle.mu
 0.0.0.0 adserver.icimedias.ca
+0.0.0.0 adandhub.com
 0.0.0.0 getallmedia.com
 0.0.0.0 ssdsp.smt.docomo.ne.jp
 0.0.0.0 araklet.mediagene.co.jp
@@ -105075,7 +105089,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 105060 rules from this source
+# Converted 105074 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -133326,4 +133340,4 @@
 # Converted 28242 rules from this source
 
 
-# Total unique domains: 133302
+# Total unique domains: 133316
