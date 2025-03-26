@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-26 12:32:34 UTC
+# Last modified: 2025-03-26 18:22:42 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,8 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 my.pixgallery.xyz
+0.0.0.0 zqvee2re50mr.com
 0.0.0.0 bits.avcdn.net
 0.0.0.0 player.gliacloud.com
 0.0.0.0 newmedia.az
@@ -2686,7 +2688,6 @@
 0.0.0.0 6fb345e22a.0f3f317f1d.com
 0.0.0.0 70d4a0bb45.e82ae52eec.com
 0.0.0.0 75357f7aec.f5ea66a9f7.com
-0.0.0.0 758508e4a0.66f5dd9691.com
 0.0.0.0 76b61c25b1.c8dd7cddbb.com
 0.0.0.0 87f81e4343.d7ea5cbf87.com
 0.0.0.0 8f30b5f042.58c526d99b.com
@@ -6073,6 +6074,7 @@
 0.0.0.0 21162611f8.com
 0.0.0.0 2137dc12f9d8.com
 0.0.0.0 218emo1t.de
+0.0.0.0 21b95312a1.com
 0.0.0.0 21hn4b64m.de
 0.0.0.0 21sexturycash.com
 0.0.0.0 21wiz.com
@@ -6350,6 +6352,7 @@
 0.0.0.0 4dsbanner.net
 0.0.0.0 4dtrk.com
 0.0.0.0 4e0c0b1247.com
+0.0.0.0 4e5902f95e.com
 0.0.0.0 4ed5560812.com
 0.0.0.0 4f2sm1y1ss.com
 0.0.0.0 4f9566374d.com
@@ -6439,6 +6442,7 @@
 0.0.0.0 6657e4f5c2.com
 0.0.0.0 66a3413a7e.com
 0.0.0.0 66a5e92d66.com
+0.0.0.0 66f5dd9691.com
 0.0.0.0 67trackdomain.com
 0.0.0.0 688de7b3822de.com
 0.0.0.0 68amt53h.de
@@ -8955,6 +8959,7 @@
 0.0.0.0 badtopwitch.work
 0.0.0.0 badword.xyz
 0.0.0.0 baect.com
+0.0.0.0 bagabeshear.shop
 0.0.0.0 bagelseven.com
 0.0.0.0 bageltiptoe.com
 0.0.0.0 baggageconservationcaught.com
@@ -10277,6 +10282,7 @@
 0.0.0.0 bygoneskalpas.shop
 0.0.0.0 bygoneudderpension.com
 0.0.0.0 bygsworlowe.info
+0.0.0.0 byijanvfmnxq.com
 0.0.0.0 bylawrite.com
 0.0.0.0 bynix.xyz
 0.0.0.0 bypassmaestro.com
@@ -12982,6 +12988,7 @@
 0.0.0.0 dmiredindeed.info
 0.0.0.0 dmm-video.online
 0.0.0.0 dmntft.com
+0.0.0.0 dmojymtmhtguv.buzz
 0.0.0.0 dmphcubeiux.com
 0.0.0.0 dmrtx.com
 0.0.0.0 dmsktmld.com
@@ -14947,6 +14954,7 @@
 0.0.0.0 fmapiosb.xyz
 0.0.0.0 fmbyqmu.com
 0.0.0.0 fmhyysk.com
+0.0.0.0 fmllcdxf.com
 0.0.0.0 fmoezqerkepc.com
 0.0.0.0 fmpub.net
 0.0.0.0 fmsads.com
@@ -15244,6 +15252,7 @@
 0.0.0.0 fruitfulthinnersuspicion.com
 0.0.0.0 fruitiesmatchina.com
 0.0.0.0 fruitlesshooraytheirs.com
+0.0.0.0 frumpyhoofed.com
 0.0.0.0 frustrationtrek.com
 0.0.0.0 frutwafiwah.com
 0.0.0.0 fryawlauk.com
@@ -16690,6 +16699,7 @@
 0.0.0.0 hearthmint.com
 0.0.0.0 heartilyscales.com
 0.0.0.0 heartynail.pro
+0.0.0.0 heartyquit.com
 0.0.0.0 heaterpealarouse.com
 0.0.0.0 heathertravelledpast.com
 0.0.0.0 heatprecipitation.com
@@ -16946,6 +16956,7 @@
 0.0.0.0 histi.co
 0.0.0.0 historyactorabsolutely.com
 0.0.0.0 hisurnhuh.com
+0.0.0.0 hiswingsandmaki.com
 0.0.0.0 hitbip.com
 0.0.0.0 hitcheddayanim.top
 0.0.0.0 hitchimmerse.com
@@ -20187,6 +20198,7 @@
 0.0.0.0 manualquiet.com
 0.0.0.0 manureinforms.com
 0.0.0.0 manureoddly.com
+0.0.0.0 manwaybawneen.com
 0.0.0.0 mapamnni.com
 0.0.0.0 mapeeree.xyz
 0.0.0.0 maper.info
@@ -20907,6 +20919,7 @@
 0.0.0.0 moradu.com
 0.0.0.0 moral-enthusiasm.pro
 0.0.0.0 moralitylameinviting.com
+0.0.0.0 mordeegroo.net
 0.0.0.0 mordoops.com
 0.0.0.0 moreadsfeed.top
 0.0.0.0 moredetaailsh.com
@@ -22638,6 +22651,7 @@
 0.0.0.0 ormolusapiary.com
 0.0.0.0 ornamentbyechose.com
 0.0.0.0 ornatecomputer.com
+0.0.0.0 ornozxdarol.com
 0.0.0.0 orqkijzk.com
 0.0.0.0 orqrdm.com
 0.0.0.0 orquideassp.com
@@ -24819,6 +24833,7 @@
 0.0.0.0 pyroidscarphs.top
 0.0.0.0 pyrroylceriums.com
 0.0.0.0 pysfhgdpi.com
+0.0.0.0 pywhepteto.pro
 0.0.0.0 pzmeblamivop.world
 0.0.0.0 pzocxjzcitiuaq.com
 0.0.0.0 pzshzhja.com
@@ -25519,6 +25534,7 @@
 0.0.0.0 reliefjawflank.com
 0.0.0.0 reliefreinsside.com
 0.0.0.0 relievedgeoff.com
+0.0.0.0 relievedsong.pro
 0.0.0.0 religiousmischievousskyscraper.com
 0.0.0.0 relinquishbragcarpenter.com
 0.0.0.0 relinquishcooperatedrove.com
@@ -27652,6 +27668,7 @@
 0.0.0.0 sowoltairtoom.net
 0.0.0.0 sowp.cloud
 0.0.0.0 sowrevisionwrecking.com
+0.0.0.0 soxivuphy.com
 0.0.0.0 soyincite.com
 0.0.0.0 soytdpb.com
 0.0.0.0 sozzlypeavies.com
@@ -29043,6 +29060,7 @@
 0.0.0.0 thronestartle.com
 0.0.0.0 throngwhirlpool.com
 0.0.0.0 thronosgeneura.com
+0.0.0.0 throughthesumeme.com
 0.0.0.0 throwinterrogatetwitch.com
 0.0.0.0 throwsceases.com
 0.0.0.0 thrtle.com
@@ -29920,6 +29938,7 @@
 0.0.0.0 ufindsoul.com
 0.0.0.0 ufinkln.com
 0.0.0.0 ufiuhnyydllpaed.com
+0.0.0.0 ufjwqdmqzlquq.world
 0.0.0.0 ufouxbwn.com
 0.0.0.0 ufpcdn.com
 0.0.0.0 ufphkyw.com
@@ -30837,6 +30856,7 @@
 0.0.0.0 vllsour.com
 0.0.0.0 vlnk.me
 0.0.0.0 vlogerads.com
+0.0.0.0 vlqkqetudtvb.com
 0.0.0.0 vlry5l4j5gbn.com
 0.0.0.0 vltjnmkps.xyz
 0.0.0.0 vm8lm1vp.xyz
@@ -32603,6 +32623,7 @@
 0.0.0.0 zouloafi.net
 0.0.0.0 zounaishuphaucu.xyz
 0.0.0.0 zounokawewoaru.com
+0.0.0.0 zouphashocom.com
 0.0.0.0 zouphuru.net
 0.0.0.0 zoustara.net
 0.0.0.0 zouzeeps.net
@@ -36613,7 +36634,6 @@
 0.0.0.0 clickguard.com
 0.0.0.0 ct.beslist.nl
 0.0.0.0 tvpixel.com
-0.0.0.0 applicationinsights.azure.com
 0.0.0.0 analytics.sve.cc
 0.0.0.0 api.taboola.sve.cc
 0.0.0.0 identitypxl.app
@@ -100203,6 +100223,8 @@
 0.0.0.0 gqoi.cn
 0.0.0.0 drlzlc.top
 0.0.0.0 yugjwgg.icu
+0.0.0.0 vytn.cn
+0.0.0.0 teeniaole.com
 0.0.0.0 phorralut.com
 0.0.0.0 pqav.cn
 0.0.0.0 fsjfnp.top
@@ -105089,7 +105111,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 105074 rules from this source
+# Converted 105096 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -105729,7 +105751,6 @@
 0.0.0.0 analytics.45.ru
 0.0.0.0 45tu1c0.com
 0.0.0.0 46rtpw.ru
-0.0.0.0 3f9476b86d.47f0db81c9.com
 0.0.0.0 47n78xprrvp1.top
 0.0.0.0 480bbdf9664629877bc67d2094ca011cc759f779887c3337e8ae8bfd.com
 0.0.0.0 analytics.48bytesnorth.com
@@ -106074,7 +106095,6 @@
 0.0.0.0 abpa.at
 0.0.0.0 analytics.abracadabra.money
 0.0.0.0 abridgealgedo.com
-0.0.0.0 abruptroad.com
 0.0.0.0 absentairport.com
 0.0.0.0 analytics.absolutbank.ru
 0.0.0.0 click.absoluteagency.com
@@ -106218,7 +106238,6 @@
 0.0.0.0 ad-server.eu
 0.0.0.0 ad-shield.cc
 0.0.0.0 delivery.ad-sphere.eu
-0.0.0.0 ad-style.com
 0.0.0.0 ad-survey.com
 0.0.0.0 ad-sys.com
 0.0.0.0 ad-tech.com
@@ -107407,6 +107426,8 @@
 0.0.0.0 analytics.strefamarek.allegro.pl
 0.0.0.0 metric.strefamarek.allegro.pl
 0.0.0.0 allegro-reinigung.de
+0.0.0.0 allegroshop.shop
+0.0.0.0 allegrostu.com
 0.0.0.0 annonse.aller.no
 0.0.0.0 allergodil.cz
 0.0.0.0 allergodil.hu
@@ -107957,6 +107978,7 @@
 0.0.0.0 androiddownload.net
 0.0.0.0 androidhacks4u.com
 0.0.0.0 androidnotice.com
+0.0.0.0 androidnotify.com
 0.0.0.0 ane102.net
 0.0.0.0 analytics.anedot.com
 0.0.0.0 anetwork.ir
@@ -110103,7 +110125,6 @@
 0.0.0.0 brlliiantsdates.com
 0.0.0.0 analytics.broadbandnow.com
 0.0.0.0 broadborder.com
-0.0.0.0 broadboundary.com
 0.0.0.0 broadcastbed.com
 0.0.0.0 matomo.broadcastmed.com
 0.0.0.0 telemetry.broadcom.com
@@ -115132,7 +115153,6 @@
 0.0.0.0 telemetry.diva-portal.com
 0.0.0.0 divatraffic.bid
 0.0.0.0 analytics.bluebat.dive.games
-0.0.0.0 divehope.com
 0.0.0.0 try.divendesign.in
 0.0.0.0 zau.divendesign.in
 0.0.0.0 analytics.diversityresources.com
@@ -115543,6 +115563,7 @@
 0.0.0.0 analytics.dvv-hosting.net
 0.0.0.0 dwclick.com
 0.0.0.0 openx.dwebsite.com
+0.0.0.0 dwhitdoedsrag.org
 0.0.0.0 track.dws.de
 0.0.0.0 dwtkuzo.cn
 0.0.0.0 dx07zxwt.pro
@@ -115885,6 +115906,7 @@
 0.0.0.0 litemsg.ekatox.com
 0.0.0.0 tr.ekatox.com
 0.0.0.0 analytics.ekcs.us
+0.0.0.0 ekdj30.com
 0.0.0.0 ads.ekipa.mk
 0.0.0.0 metrics.ekirana.nl
 0.0.0.0 analytics.ekonsilio.io
@@ -116355,7 +116377,6 @@
 0.0.0.0 exchangead.com
 0.0.0.0 excitablepass.com
 0.0.0.0 excitingtub.com
-0.0.0.0 exclusivebrass.com
 0.0.0.0 execuri.com
 0.0.0.0 executeknowledge.com
 0.0.0.0 analytics.executiveboard.com
@@ -116810,7 +116831,6 @@
 0.0.0.0 fkii.org
 0.0.0.0 fklngauc.com
 0.0.0.0 fl-0wer685hjdp300.com
-0.0.0.0 flagshipism.com
 0.0.0.0 flakyfeast.com
 0.0.0.0 flameforgesmith.top
 0.0.0.0 flameuncle.com
@@ -121503,7 +121523,6 @@
 0.0.0.0 lnstagram.com
 0.0.0.0 lnstagram-help.com
 0.0.0.0 lnstagram-login.com
-0.0.0.0 lnternationaal-service-support.sbs
 0.0.0.0 lnw-like.com
 0.0.0.0 loadingfreerar.top
 0.0.0.0 loadpartners.com
@@ -122950,7 +122969,6 @@
 0.0.0.0 mrmarketonion.com
 0.0.0.0 mrmserve.com
 0.0.0.0 mrpdata.net
-0.0.0.0 mrtb.net
 0.0.0.0 aka.ms-ads.co
 0.0.0.0 ms-links.com
 0.0.0.0 msau.xyz
@@ -123400,7 +123418,6 @@
 0.0.0.0 needlessnorth.com
 0.0.0.0 matomo.nees.de
 0.0.0.0 neevouglu.com
-0.0.0.0 negarehgallery.com
 0.0.0.0 neighborhoodsluts.com
 0.0.0.0 neighborlywatch.com
 0.0.0.0 analytics.neliti.com
@@ -124327,7 +124344,6 @@
 0.0.0.0 ordens-forum.de
 0.0.0.0 ordinarilyinstead.com
 0.0.0.0 analytics.oreca-store.com
-0.0.0.0 oregeryshop02.top
 0.0.0.0 ads.oregonlive.com
 0.0.0.0 oreware.com
 0.0.0.0 webstats01.orf.at
@@ -124840,7 +124856,6 @@
 0.0.0.0 query.petametrics.com
 0.0.0.0 query-us-east1.petametrics.com
 0.0.0.0 query1.petametrics.com
-0.0.0.0 petasusawber.com
 0.0.0.0 analytics.petrodatasync.net
 0.0.0.0 metrics.petsdeli.de
 0.0.0.0 pexnjio.cn
@@ -125057,7 +125072,6 @@
 0.0.0.0 analytics.plunic.com
 0.0.0.0 metrics.plus.nl
 0.0.0.0 analytics.plus500.com
-0.0.0.0 plusclick.biz
 0.0.0.0 ads.plusinfo.mk
 0.0.0.0 api.plyair.com
 0.0.0.0 analytics.pm-srv.co
@@ -125351,7 +125365,6 @@
 0.0.0.0 profitrumour.com
 0.0.0.0 profitshare.bg
 0.0.0.0 bn.profiwin.de
-0.0.0.0 proftrafficcounter.com
 0.0.0.0 profumodilibriecannella.com
 0.0.0.0 progmxs.com
 0.0.0.0 programmaticnexus.com
@@ -132339,7 +132352,6 @@
 0.0.0.0 ads.wwe-media.de
 0.0.0.0 analytics.wwf.nl
 0.0.0.0 wwjp.cc
-0.0.0.0 www-bwin.top
 0.0.0.0 www1.online
 0.0.0.0 www3secure.com
 0.0.0.0 wxadserve.xyz
@@ -133297,7 +133309,6 @@
 0.0.0.0 zpawazrz.com
 0.0.0.0 analytics.zpbt.uk
 0.0.0.0 zpeqosn.icu
-0.0.0.0 zqvee2re50mr.com
 0.0.0.0 zrtlvtsy.xyz
 0.0.0.0 zsjpi.cn
 0.0.0.0 client.zspeed-cdn.com
@@ -133337,7 +133348,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 28242 rules from this source
+# Converted 28231 rules from this source
 
 
-# Total unique domains: 133316
+# Total unique domains: 133327
