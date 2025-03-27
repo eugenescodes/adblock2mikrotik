@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-27 06:22:46 UTC
+# Last modified: 2025-03-27 12:33:06 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -6441,6 +6441,7 @@
 0.0.0.0 6570131a3f.com
 0.0.0.0 65wenv5f.xyz
 0.0.0.0 6657e4f5c2.com
+0.0.0.0 666777888abc.com
 0.0.0.0 66a3413a7e.com
 0.0.0.0 66a5e92d66.com
 0.0.0.0 66f5dd9691.com
@@ -16980,6 +16981,7 @@
 0.0.0.0 hkaphqknkao.com
 0.0.0.0 hkilops.com
 0.0.0.0 hksnu.com
+0.0.0.0 hkzhongzhuangzhan.cc
 0.0.0.0 hlmiq.com
 0.0.0.0 hlserve.com
 0.0.0.0 hlyrecomemum.info
@@ -20827,6 +20829,7 @@
 0.0.0.0 modulecooper.com
 0.0.0.0 moduledescendantlos.com
 0.0.0.0 modulepush.com
+0.0.0.0 moenyandluckybymyside.com
 0.0.0.0 moera.xyz
 0.0.0.0 mofeegavub.net
 0.0.0.0 mogointeractive.com
@@ -29676,6 +29679,7 @@
 0.0.0.0 trustedpeach.com
 0.0.0.0 trustedzone.info
 0.0.0.0 trustflayer1.online
+0.0.0.0 trustgrape.com
 0.0.0.0 trusting-offer.com
 0.0.0.0 trusting-produce.com
 0.0.0.0 trusting-secret.pro
@@ -31299,6 +31303,7 @@
 0.0.0.0 wehaveinourd.com
 0.0.0.0 weighssloughs.shop
 0.0.0.0 weightfeathersoffhand.com
+0.0.0.0 weike88.com
 0.0.0.0 weinas.co.in
 0.0.0.0 weird-speed.pro
 0.0.0.0 weirddistribution.pro
@@ -32662,6 +32667,7 @@
 0.0.0.0 zuhempih.com
 0.0.0.0 zuisinchills.shop
 0.0.0.0 zuisinservo.top
+0.0.0.0 zuizhongyj.com
 0.0.0.0 zujibumlgc.com
 0.0.0.0 zukore.com
 0.0.0.0 zukxd6fkxqn.com
@@ -37088,7 +37094,6 @@
 0.0.0.0 ztrck.me
 0.0.0.0 offer-go.com
 0.0.0.0 d2ezz24t9nm0vu.cloudfront.net
-0.0.0.0 sdk-v2.conscent.in
 0.0.0.0 sdk.conscent.in
 0.0.0.0 tpstelemetry.tencent.com
 0.0.0.0 app.posthog.com
@@ -94378,6 +94383,7 @@
 0.0.0.0 t.fml.rip
 0.0.0.0 t.gatorleads.co.uk
 0.0.0.0 tag.heylink.com
+0.0.0.0 tagging.hemnet.se
 0.0.0.0 tagging-service.fotbollskanalen.se
 0.0.0.0 tagging-service.tv4play.se
 0.0.0.0 tagging-service.tv4.se
@@ -100225,6 +100231,8 @@
 0.0.0.0 fqnojp.top
 0.0.0.0 wnvu.cn
 0.0.0.0 wiiytwd.icu
+0.0.0.0 yuqnyudug.com
+0.0.0.0 spoh.cn
 0.0.0.0 dhaaralzz.com
 0.0.0.0 gqoi.cn
 0.0.0.0 drlzlc.top
@@ -105117,7 +105125,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 105102 rules from this source
+# Converted 105110 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -112493,6 +112501,7 @@
 0.0.0.0 matomo.connexion.io
 0.0.0.0 metrics.connox.de
 0.0.0.0 collect.conrad.de
+0.0.0.0 sdk-v2.conscent.in
 0.0.0.0 consensad.com
 0.0.0.0 analytics.consentmanager.net
 0.0.0.0 analytics.conservativenewsandviews.com
@@ -118693,7 +118702,6 @@
 0.0.0.0 helpfirst.in
 0.0.0.0 matomo.it.helsinki.fi
 0.0.0.0 hemeratenses.com
-0.0.0.0 tagging.hemnet.se
 0.0.0.0 henghost.com
 0.0.0.0 creative.hentaicams.xxx
 0.0.0.0 p.hentaiforce.net
@@ -130365,7 +130373,6 @@
 0.0.0.0 trustedmeets.com
 0.0.0.0 trustedsear.ch
 0.0.0.0 prebid.trustedstack.com
-0.0.0.0 trustgrape.com
 0.0.0.0 analytics.trustlayer.io
 0.0.0.0 analytics.trustmineral.com
 0.0.0.0 trustnlinepharmacy.us
@@ -133326,7 +133333,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 28203 rules from this source
+# Converted 28202 rules from this source
 
 
-# Total unique domains: 133305
+# Total unique domains: 133312
