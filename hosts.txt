@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-03-28 01:15:35 UTC
+# Last modified: 2025-03-28 06:23:00 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -34111,6 +34111,7 @@
 0.0.0.0 49709796.xyz
 0.0.0.0 49766251.xyz
 0.0.0.0 4afa45f1.xyz
+0.0.0.0 50873vmk3263-7sk.xyz
 0.0.0.0 53469662.xyz
 0.0.0.0 54019033.xyz
 0.0.0.0 54199287.xyz
@@ -94081,6 +94082,7 @@
 0.0.0.0 ambassador.referralhero.com
 0.0.0.0 amd.sellingsimplified.net
 0.0.0.0 analys.landskrona.se
+0.0.0.0 analytics.alandsradio.ax
 0.0.0.0 analytics.allas.se
 0.0.0.0 analytics.apotekhjartat.se
 0.0.0.0 analytics.arvika.se
@@ -100279,6 +100281,9 @@
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
 0.0.0.0 eildralfl.com
+0.0.0.0 liqw.cn
+0.0.0.0 hptidc.top
+0.0.0.0 uposnmb.icu
 0.0.0.0 vraataidz.com
 0.0.0.0 fqnojp.top
 0.0.0.0 wnvu.cn
@@ -105180,7 +105185,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 105165 rules from this source
+# Converted 105170 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -133319,4 +133324,4 @@
 # Converted 28130 rules from this source
 
 
-# Total unique domains: 133295
+# Total unique domains: 133300
