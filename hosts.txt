@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-01 06:24:22 UTC
+# Last modified: 2025-04-01 12:34:17 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -85224,7 +85224,6 @@
 0.0.0.0 analytics.slidesai.io
 0.0.0.0 idat.production.ippen.space
 0.0.0.0 snowy.bellroy.com
-0.0.0.0 res.regoo.com
 0.0.0.0 analytics.crea.ca
 0.0.0.0 stat.airdroid.com
 0.0.0.0 tracker.ranker.com
@@ -91899,6 +91898,7 @@
 0.0.0.0 azol.de
 0.0.0.0 twiago.com
 0.0.0.0 bauernative.com
+0.0.0.0 telecome.cn
 0.0.0.0 aizhantj.com
 0.0.0.0 sm-cloud.yunsafe.top
 0.0.0.0 dwyeuy.com
