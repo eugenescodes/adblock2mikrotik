@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-03 18:22:10 UTC
+# Last modified: 2025-04-04 01:15:58 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -6701,6 +6701,7 @@
 0.0.0.0 abpicsrc.com
 0.0.0.0 abpjs23.com
 0.0.0.0 abpnow.xyz
+0.0.0.0 abpwivog.com
 0.0.0.0 abridgesynchronizepleat.com
 0.0.0.0 abruptalertness.com
 0.0.0.0 abruptboroughjudgement.com
@@ -12257,6 +12258,7 @@
 0.0.0.0 denbeigemark.com
 0.0.0.0 dendrito.name
 0.0.0.0 deniedsolesummer.com
+0.0.0.0 denierswildest.top
 0.0.0.0 denoughtanot.info
 0.0.0.0 denoughtanoth.com
 0.0.0.0 densigissy.net
@@ -17871,6 +17873,7 @@
 0.0.0.0 jqmebveababl.top
 0.0.0.0 jqmebwvmbbby.top
 0.0.0.0 jqmebwvmbrvz.top
+0.0.0.0 jqpuqbkbauung.xyz
 0.0.0.0 jqtfoe92.com
 0.0.0.0 jqtqoknktzy.space
 0.0.0.0 jqtree.com
@@ -18375,6 +18378,7 @@
 0.0.0.0 ksnooastqr.xyz
 0.0.0.0 kspmaaiayadg.com
 0.0.0.0 kstjqjuaw.xyz
+0.0.0.0 kstnyuhvyrtpp.club
 0.0.0.0 ksyompbwor.xyz
 0.0.0.0 kteopzgukl.com
 0.0.0.0 ktikpuruxasq.com
@@ -30249,6 +30253,7 @@
 0.0.0.0 wherat.com
 0.0.0.0 where-to.shop
 0.0.0.0 where.com
+0.0.0.0 wherebywhatsoeverduck.com
 0.0.0.0 whereres.com
 0.0.0.0 whereuponcomicsraft.com
 0.0.0.0 wherevertogo.com
@@ -99060,6 +99065,7 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 ilcq.cn
 0.0.0.0 dreiquksz.com
 0.0.0.0 so04030koaq.com
 0.0.0.0 pqnonh.top
@@ -104007,7 +104013,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 103992 rules from this source
+# Converted 103998 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -131847,4 +131853,4 @@
 # Converted 27831 rules from this source
 
 
-# Total unique domains: 131823
+# Total unique domains: 131829
