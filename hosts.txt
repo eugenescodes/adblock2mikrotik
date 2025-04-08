@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-08 06:24:04 UTC
+# Last modified: 2025-04-08 12:33:31 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -85798,6 +85798,7 @@
 0.0.0.0 wiz.sncf-connect.com
 0.0.0.0 wz.allianz.fr
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
+0.0.0.0 metrics.motoblouz.com
 0.0.0.0 fxgate.baidu.com
 0.0.0.0 p.controld.com
 0.0.0.0 collector.bsg.brave.com
@@ -100336,6 +100337,9 @@
 0.0.0.0 pyxytj.icu
 0.0.0.0 liog.cn
 0.0.0.0 vsjavu.top
+0.0.0.0 vahmimb.com
+0.0.0.0 figvatqrwd.com
+0.0.0.0 emsq.cn
 0.0.0.0 ribghr.icu
 0.0.0.0 vhid.cn
 0.0.0.0 mevedyru.com
@@ -105122,7 +105126,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 105107 rules from this source
+# Converted 105111 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -123970,7 +123974,6 @@
 0.0.0.0 motionflowers.com
 0.0.0.0 motionlessmeeting.com
 0.0.0.0 motiontodaynotgogoodnowok.com
-0.0.0.0 metrics.motoblouz.com
 0.0.0.0 analytics.motocard.com
 0.0.0.0 metric.motor.de
 0.0.0.0 ads.motorguia.pt
@@ -135063,7 +135066,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 29935 rules from this source
+# Converted 29934 rules from this source
 
 
-# Total unique domains: 135042
+# Total unique domains: 135045
