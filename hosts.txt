@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-09 06:24:05 UTC
+# Last modified: 2025-04-09 12:33:48 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,8 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 doppiocdn.com
+0.0.0.0 parteinroll.xyz
 0.0.0.0 8ecc2aee4f.com
 0.0.0.0 floors.dev
 0.0.0.0 srvtensz.com
@@ -6211,6 +6213,7 @@
 0.0.0.0 2ucz3ymr1.com
 0.0.0.0 2x2mfeed.com
 0.0.0.0 2xs4eumlc.com
+0.0.0.0 30032c91.b-cdn.net
 0.0.0.0 300daytravel.com
 0.0.0.0 301redirect.site
 0.0.0.0 302kslgdl.de
@@ -11457,6 +11460,7 @@
 0.0.0.0 cottoncabbage.com
 0.0.0.0 coucalhidated.com
 0.0.0.0 couchedbliny.top
+0.0.0.0 coudpigdom.com
 0.0.0.0 coudswamper.com
 0.0.0.0 couldmisspell.com
 0.0.0.0 couledochemy.net
@@ -11530,6 +11534,7 @@
 0.0.0.0 cpx24.com
 0.0.0.0 cpxdeliv.com
 0.0.0.0 cpxinteractive.com
+0.0.0.0 cpyahxlsjcrn.com
 0.0.0.0 cqmgoxqbhsmgg.site
 0.0.0.0 cqnmtmqxecqvyl.com
 0.0.0.0 cqrvwq.com
@@ -11544,6 +11549,7 @@
 0.0.0.0 craftsmangraygrim.com
 0.0.0.0 crafty-math.com
 0.0.0.0 craharice.com
+0.0.0.0 craichybudgets.shop
 0.0.0.0 crajeon.com
 0.0.0.0 crakbanner.com
 0.0.0.0 crakedquartin.com
@@ -11827,6 +11833,7 @@
 0.0.0.0 d1a0c6affa.com
 0.0.0.0 d1f76eb5a4.com
 0.0.0.0 d1nr5af9lc58ok.cloudfront.net
+0.0.0.0 d1tlfk2mmne2t6.cloudfront.net
 0.0.0.0 d1x9q8w2e4.xyz
 0.0.0.0 d24ak3f2b.top
 0.0.0.0 d26e83b697.com
@@ -12996,6 +13003,7 @@
 0.0.0.0 dxmjyxksvc.com
 0.0.0.0 dxouwbn7o.com
 0.0.0.0 dxtv1.com
+0.0.0.0 dxvxblkbjzdi.com
 0.0.0.0 dyerbossier.top
 0.0.0.0 dyeroratory.top
 0.0.0.0 dyhvtkijmeg.xyz
@@ -13079,6 +13087,7 @@
 0.0.0.0 earphonespulse.com
 0.0.0.0 earplugmolka.com
 0.0.0.0 earringsatisfiedsplice.com
+0.0.0.0 earscosign.top
 0.0.0.0 eas696r.xyz
 0.0.0.0 easctmguafe.global
 0.0.0.0 easeavailandpro.info
@@ -14193,6 +14202,7 @@
 0.0.0.0 fh259by01r25.com
 0.0.0.0 fhcdbufjnjcev.com
 0.0.0.0 fhgh9sd.com
+0.0.0.0 fhjrpcmkyrkvi.space
 0.0.0.0 fhldb.site
 0.0.0.0 fhsmtrnsfnt.com
 0.0.0.0 fhv00rxa2.com
@@ -14367,6 +14377,7 @@
 0.0.0.0 fldes6fq.de
 0.0.0.0 fleabagviniest.shop
 0.0.0.0 fleahat.com
+0.0.0.0 flearmordent.com
 0.0.0.0 fleckfound.com
 0.0.0.0 fleenaive.com
 0.0.0.0 fleetingtrustworthydreams.com
@@ -16092,6 +16103,7 @@
 0.0.0.0 heelsmerger.com
 0.0.0.0 heeraiwhubee.net
 0.0.0.0 heethout.xyz
+0.0.0.0 heflewrounda.org
 0.0.0.0 heimishcresyl.shop
 0.0.0.0 heiressplane.com
 0.0.0.0 heiressscore.com
@@ -16106,6 +16118,7 @@
 0.0.0.0 helltraffic.com
 0.0.0.0 helmethomicidal.com
 0.0.0.0 helmregardiso.com
+0.0.0.0 helpersantlia.shop
 0.0.0.0 helpfulduty.pro
 0.0.0.0 helpfulrectifychiefly.com
 0.0.0.0 helpingnauseous.com
@@ -17795,6 +17808,7 @@
 0.0.0.0 juricts.xyz
 0.0.0.0 jursp.com
 0.0.0.0 juryolympicsspookily.com
+0.0.0.0 juska.site
 0.0.0.0 juslsp.info
 0.0.0.0 juslxp.com
 0.0.0.0 just-news.pro
@@ -19038,6 +19052,7 @@
 0.0.0.0 ltengronsa.com
 0.0.0.0 ltetrailwaysint.org
 0.0.0.0 ltmuzcp.com
+0.0.0.0 ltpvtnrugvpihwj.com
 0.0.0.0 ltrac4vyw.com
 0.0.0.0 lubbardstrouds.com
 0.0.0.0 lubowitz.biz
@@ -20452,6 +20467,7 @@
 0.0.0.0 nebsefte.net
 0.0.0.0 nebumsoz.net
 0.0.0.0 necessaryescort.com
+0.0.0.0 nechythithy.pro
 0.0.0.0 nedamericantpas.info
 0.0.0.0 nedmofqnhbvifw.com
 0.0.0.0 nedouseso.com
@@ -20724,6 +20740,7 @@
 0.0.0.0 nohowsankhya.com
 0.0.0.0 noiselessvegetables.com
 0.0.0.0 noisesperusemotel.com
+0.0.0.0 noisseurlin.org
 0.0.0.0 noisyjoke.pro
 0.0.0.0 noisyoursarrears.com
 0.0.0.0 noisytowel.pro
@@ -21897,6 +21914,7 @@
 0.0.0.0 oxamateborrel.shop
 0.0.0.0 oxbbzxqfnv.com
 0.0.0.0 oxcgvnkhvulmq.com
+0.0.0.0 oxdpcmoajzrzbc.com
 0.0.0.0 oxetoneagneaux.click
 0.0.0.0 oxfygsqqgnfts.icu
 0.0.0.0 oxgnxuoxiizko.xyz
@@ -23921,6 +23939,7 @@
 0.0.0.0 qwivhkmuksjodtt.com
 0.0.0.0 qwjxcvdzrafum.club
 0.0.0.0 qwkrmrnlxl.xyz
+0.0.0.0 qwkryrwrwo.com
 0.0.0.0 qwoyfys.com
 0.0.0.0 qwpsgqyzrzcr.life
 0.0.0.0 qwrwhosailedbe.info
@@ -24298,6 +24317,7 @@
 0.0.0.0 refuseddissolveduniversity.com
 0.0.0.0 refusemovie.com
 0.0.0.0 refuserates.com
+0.0.0.0 refuterquilt.shop
 0.0.0.0 regainchiasmi.shop
 0.0.0.0 regainthong.com
 0.0.0.0 regainwoodlandsraised.com
@@ -26457,6 +26477,7 @@
 0.0.0.0 spoutable.com
 0.0.0.0 spoutitchyyummy.com
 0.0.0.0 sppopups.com
+0.0.0.0 sppynxuilxodo.icu
 0.0.0.0 sprangsugar.com
 0.0.0.0 sprayearthy.com
 0.0.0.0 spreadingsinew.com
@@ -26752,6 +26773,7 @@
 0.0.0.0 straight-storage.pro
 0.0.0.0 straightenchin.com
 0.0.0.0 straightenedsleepyanalysis.com
+0.0.0.0 straightforwardaudition.com
 0.0.0.0 straightmenu.com
 0.0.0.0 strainprimar.com
 0.0.0.0 straitchangeless.com
@@ -28534,6 +28556,7 @@
 0.0.0.0 unanimousbrashtrauma.com
 0.0.0.0 unarbokor.com
 0.0.0.0 unauthorizedsufficientlysensitivity.com
+0.0.0.0 unautonsure.shop
 0.0.0.0 unavailableprocessionamazingly.com
 0.0.0.0 unawaredisk.com
 0.0.0.0 unbearablepulverizeinevitably.com
@@ -29315,6 +29338,7 @@
 0.0.0.0 vnsvkaaaghq.xyz
 0.0.0.0 vntsm.com
 0.0.0.0 vntsm.io
+0.0.0.0 vnxisingv.xyz
 0.0.0.0 voapozol.com
 0.0.0.0 vocalreverencepester.com
 0.0.0.0 vocationalenquired.com
@@ -29383,6 +29407,7 @@
 0.0.0.0 vpn-offers.info
 0.0.0.0 vpnlist.to
 0.0.0.0 vpnonly.site
+0.0.0.0 vpovuwtwuzu.com
 0.0.0.0 vprtrfc.com
 0.0.0.0 vptbn.com
 0.0.0.0 vpuaklat.com
@@ -29735,6 +29760,7 @@
 0.0.0.0 wetsireoverload.com
 0.0.0.0 wewearegogogo.com
 0.0.0.0 wewlorozwojrm.top
+0.0.0.0 wewlorozwolyz.top
 0.0.0.0 wextap.com
 0.0.0.0 wfcs.lol
 0.0.0.0 wfexxzpmengpk.today
@@ -30598,6 +30624,7 @@
 0.0.0.0 yottacash.com
 0.0.0.0 youdatlng.com
 0.0.0.0 youdguide.com
+0.0.0.0 youdloaners.com
 0.0.0.0 youlamedia.com
 0.0.0.0 youlouk.com
 0.0.0.0 youngestclaims.com
@@ -84773,6 +84800,7 @@
 0.0.0.0 wiz.sncf-connect.com
 0.0.0.0 wz.allianz.fr
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
+0.0.0.0 d3aicbrzoy14kh.cloudfront.net
 0.0.0.0 metrics.motoblouz.com
 0.0.0.0 fxgate.baidu.com
 0.0.0.0 p.controld.com
@@ -88373,7 +88401,6 @@
 0.0.0.0 mediametrics.mpsa.com
 0.0.0.0 metering.pagesuite.com
 0.0.0.0 metrics.ctvdigital.net
-0.0.0.0 metrics.doppiocdn.com
 0.0.0.0 metrics.futureplc.engineering
 0.0.0.0 metrics.gs-chat.com
 0.0.0.0 metrics.onshape.com
@@ -99317,6 +99344,8 @@
 0.0.0.0 uucatiqnd.com
 0.0.0.0 ixoe.cn
 0.0.0.0 trlptm.top
+0.0.0.0 enbg.cn
+0.0.0.0 vezeqzyb.com
 0.0.0.0 zaiqnethl.com
 0.0.0.0 pyxytj.icu
 0.0.0.0 liog.cn
@@ -104112,7 +104141,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 104097 rules from this source
+# Converted 104126 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -114903,7 +114932,6 @@
 0.0.0.0 dope88.com
 0.0.0.0 dopeblackfriday.shop
 0.0.0.0 dopecurldizzy.com
-0.0.0.0 doppiocdn.com
 0.0.0.0 dopub.site
 0.0.0.0 ads.doradcasmaku.pl
 0.0.0.0 dorcelcash.com
@@ -134092,7 +134120,6 @@
 0.0.0.0 union.youdao.com
 0.0.0.0 ydpushserver.youdao.com
 0.0.0.0 log.yex.youdao.com
-0.0.0.0 youdloaners.com
 0.0.0.0 yougandan.com
 0.0.0.0 youjiudilai.com
 0.0.0.0 html.atm.youku.com
@@ -134525,7 +134552,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 30407 rules from this source
+# Converted 30405 rules from this source
 
 
-# Total unique domains: 134504
+# Total unique domains: 134531
