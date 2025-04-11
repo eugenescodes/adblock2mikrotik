@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-11 06:23:40 UTC
+# Last modified: 2025-04-11 12:32:58 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,8 +14,8 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 xdrlthfhikvgm.club
 0.0.0.0 measlepotomac.shop
-0.0.0.0 doppiocdn.com
 0.0.0.0 parteinroll.xyz
 0.0.0.0 8ecc2aee4f.com
 0.0.0.0 floors.dev
@@ -88636,6 +88636,7 @@
 0.0.0.0 mediametrics.mpsa.com
 0.0.0.0 metering.pagesuite.com
 0.0.0.0 metrics.ctvdigital.net
+0.0.0.0 metrics.doppiocdn.com
 0.0.0.0 metrics.futureplc.engineering
 0.0.0.0 metrics.gs-chat.com
 0.0.0.0 metrics.onshape.com
@@ -99585,6 +99586,8 @@
 0.0.0.0 zqifmyt.icu
 0.0.0.0 xwtylm.top
 0.0.0.0 jmif.cn
+0.0.0.0 rvxo.cn
+0.0.0.0 idhaiafq.com
 0.0.0.0 tezlpl.icu
 0.0.0.0 duuddots.com
 0.0.0.0 mjik.cn
@@ -104394,7 +104397,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 104379 rules from this source
+# Converted 104382 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -115169,6 +115172,7 @@
 0.0.0.0 dope88.com
 0.0.0.0 dopeblackfriday.shop
 0.0.0.0 dopecurldizzy.com
+0.0.0.0 doppiocdn.com
 0.0.0.0 dopub.site
 0.0.0.0 ads.doradcasmaku.pl
 0.0.0.0 dorcelcash.com
@@ -134767,7 +134771,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 30367 rules from this source
+# Converted 30368 rules from this source
 
 
-# Total unique domains: 134746
+# Total unique domains: 134750
