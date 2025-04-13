@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-12 18:20:18 UTC
+# Last modified: 2025-04-13 02:44:31 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -88566,6 +88566,7 @@
 0.0.0.0 beamanalytics.b-cdn.net
 0.0.0.0 bee.tc.easebar.com
 0.0.0.0 bento.agoda.com
+0.0.0.0 bi-metrics.aramuz.net
 0.0.0.0 bi.heyloyalty.com
 0.0.0.0 bi.medscape.com
 0.0.0.0 bmrg.reflected.net
@@ -89578,6 +89579,7 @@
 0.0.0.0 admile.ru
 0.0.0.0 adsmediator.com
 0.0.0.0 airlogs.ru
+0.0.0.0 apptracer.ru
 0.0.0.0 avsplow.com
 0.0.0.0 ban.su
 0.0.0.0 bidderrtb.com
@@ -89720,6 +89722,7 @@
 0.0.0.0 tracking.srv2.de
 0.0.0.0 tracking.webtradecenter.com
 0.0.0.0 trecker.aklamio.com
+0.0.0.0 tw.reppublika.com
 0.0.0.0 vtrtl.de
 0.0.0.0 webcounter.goweb.de
 0.0.0.0 x.bloggurat.net
@@ -99776,6 +99779,9 @@
 0.0.0.0 okeaxgugq.com
 0.0.0.0 kvqp.cn
 0.0.0.0 mvcnmtx.top
+0.0.0.0 ifethbrzb.com
+0.0.0.0 nnntxx.icu
+0.0.0.0 okvt.cn
 0.0.0.0 ruvgbv.icu
 0.0.0.0 chugveasoy.com
 0.0.0.0 sfile.top
@@ -104594,7 +104600,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 104579 rules from this source
+# Converted 104585 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -134603,4 +134609,4 @@
 # Converted 30000 rules from this source
 
 
-# Total unique domains: 134579
+# Total unique domains: 134585
