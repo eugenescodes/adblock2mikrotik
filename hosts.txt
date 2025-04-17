@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-17 01:17:44 UTC
+# Last modified: 2025-04-17 06:23:44 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 orquidea.ai
 0.0.0.0 few-politics.com
 0.0.0.0 dreary-hunt.com
 0.0.0.0 craniolgozzan.com
@@ -32312,7 +32313,6 @@
 0.0.0.0 domainadvertising.com
 0.0.0.0 dotomi.com
 0.0.0.0 doubleclick.com
-0.0.0.0 doubleclick.net
 0.0.0.0 doubleverify.com
 0.0.0.0 dreamaquarium.com
 0.0.0.0 dropkickmedia.com
@@ -100096,6 +100096,11 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 ewdk.cn
+0.0.0.0 fflbpi.top
+0.0.0.0 hbeafcac.top
+0.0.0.0 stildreans.com
+0.0.0.0 uucnmtt.top
 0.0.0.0 vunqrotm.com
 0.0.0.0 ghrs.cn
 0.0.0.0 pjbbhj.icu
@@ -104947,6 +104952,7 @@
 0.0.0.0 tracking.ustream.tv
 0.0.0.0 trackpm.shop2market.com
 0.0.0.0 adocean.cz
+0.0.0.0 doubleclick.net
 0.0.0.0 vahufapave.com
 0.0.0.0 cewegncr.com
 0.0.0.0 dwabissw.com
@@ -104971,7 +104977,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 104956 rules from this source
+# Converted 104962 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -105786,7 +105792,6 @@
 0.0.0.0 787787.com
 0.0.0.0 alishop.79s.ru
 0.0.0.0 7art-screensavers.com
-0.0.0.0 7caidai.xyz
 0.0.0.0 7ccsch4.com
 0.0.0.0 7ce7b7e102.com
 0.0.0.0 7dqjgdk.com
@@ -106043,7 +106048,6 @@
 0.0.0.0 accipiter.com
 0.0.0.0 acclaimed-exchange.com
 0.0.0.0 track.acclaimnetwork.com
-0.0.0.0 account-review.com
 0.0.0.0 accountingdept.co
 0.0.0.0 track.accountinsight.cloud
 0.0.0.0 analytics.accountscore.net
@@ -107026,7 +107030,6 @@
 0.0.0.0 agrant.cn
 0.0.0.0 agrantsem.com
 0.0.0.0 agreeablearch.com
-0.0.0.0 agriturismoilcascinone.com
 0.0.0.0 agroeconom.kz
 0.0.0.0 agt.net
 0.0.0.0 agtamzsm.com
@@ -107055,7 +107058,6 @@
 0.0.0.0 analytics.ahrefs.dev
 0.0.0.0 analytics.ahswarranty.com
 0.0.0.0 aht42trk.com
-0.0.0.0 ahwangtao.com
 0.0.0.0 ai.net
 0.0.0.0 ai-mono.jp
 0.0.0.0 countly.aia-apps.com
@@ -107412,6 +107414,8 @@
 0.0.0.0 analytics.strefamarek.allegro.pl
 0.0.0.0 metric.strefamarek.allegro.pl
 0.0.0.0 allegro-reinigung.de
+0.0.0.0 allegroshop.shop
+0.0.0.0 allegrostu.com
 0.0.0.0 annonse.aller.no
 0.0.0.0 allergodil.cz
 0.0.0.0 allergodil.hu
@@ -109730,6 +109734,7 @@
 0.0.0.0 blacklistalert.org
 0.0.0.0 blackmarketblock.com
 0.0.0.0 blackstunners.com
+0.0.0.0 blaghfpd.com
 0.0.0.0 blaick.com
 0.0.0.0 metrics.blancheporte.fr
 0.0.0.0 plausible.blank.page
@@ -109999,7 +110004,6 @@
 0.0.0.0 analytics.bpmms.com
 0.0.0.0 webtracking-v01.bpmonline.com
 0.0.0.0 bpywqfn.cc
-0.0.0.0 bpztsxx.com
 0.0.0.0 bqltphcdmuu.xyz
 0.0.0.0 bqmbams.com
 0.0.0.0 bqpthdh.cc
@@ -110289,6 +110293,7 @@
 0.0.0.0 analytics.browserstack.com
 0.0.0.0 browserwise.com
 0.0.0.0 browsingcontredir.com
+0.0.0.0 bruisedlungmisuse.com
 0.0.0.0 brujosglozed.com
 0.0.0.0 piwik.brunata-metrona.de
 0.0.0.0 brunecky.com
@@ -110408,7 +110413,6 @@
 0.0.0.0 buttonladybug.com
 0.0.0.0 t.bux1a3si.xyz
 0.0.0.0 buxbery.com
-0.0.0.0 buxiranzamin.com
 0.0.0.0 buxnet.ir
 0.0.0.0 buy404s.com
 0.0.0.0 track.buybestday.com
@@ -110596,6 +110600,7 @@
 0.0.0.0 metrics.canvasworld.com
 0.0.0.0 analytics.canvoo.com
 0.0.0.0 analytics.caop.nl
+0.0.0.0 capabilityhonorary.com
 0.0.0.0 mssdk-sg.capcutapi.com
 0.0.0.0 mssdk-va-us-looki.capcutapi.com
 0.0.0.0 analytics.capella.edu
@@ -110699,7 +110704,6 @@
 0.0.0.0 metrics.cathaycargo.com
 0.0.0.0 analytics.cathaypacific.com
 0.0.0.0 metrics.cathaypacific.com
-0.0.0.0 catholicchurchreformintl.org
 0.0.0.0 cathyimemediate.com
 0.0.0.0 analytics.catking.in
 0.0.0.0 catnapstye.shop
@@ -110714,7 +110718,6 @@
 0.0.0.0 cautiouscredit.com
 0.0.0.0 cavecurtain.com
 0.0.0.0 cavy9soho.com
-0.0.0.0 cawada.com
 0.0.0.0 cazamba.com
 0.0.0.0 cb-cdn.com
 0.0.0.0 cbads.com
@@ -111141,7 +111144,6 @@
 0.0.0.0 analytics.claas.com
 0.0.0.0 clammychicken.com
 0.0.0.0 claria.com
-0.0.0.0 clarifyverse.com
 0.0.0.0 analytics.resources.clario.com
 0.0.0.0 cdnil.clarisite.com
 0.0.0.0 protected-by.clarium.io
@@ -112998,6 +113000,7 @@
 0.0.0.0 crankyads.com
 0.0.0.0 mdt.crateandbarrel.com
 0.0.0.0 cratecamera.com
+0.0.0.0 craveandlamb.com
 0.0.0.0 crawlability.com
 0.0.0.0 crawlclocks.com
 0.0.0.0 matomo.crazy-factory.com
@@ -115318,6 +115321,7 @@
 0.0.0.0 telemetry.deswik.com
 0.0.0.0 detailedgovernment.com
 0.0.0.0 detailedkitten.com
+0.0.0.0 details-update.com
 0.0.0.0 secure.details24group.com
 0.0.0.0 secure.detailsinventivegroup.com
 0.0.0.0 detectdiscovery.com
@@ -115790,6 +115794,7 @@
 0.0.0.0 douglasjamestraining.com
 0.0.0.0 analytics.core.doutorfinancas.pt
 0.0.0.0 douveejoalastu.net
+0.0.0.0 douyaobuy.com
 0.0.0.0 msg.douyu.com
 0.0.0.0 wan.douyu.com
 0.0.0.0 dyp2p-hw.douyucdn.cn
@@ -116908,6 +116913,7 @@
 0.0.0.0 exxohwvxupjv.com
 0.0.0.0 exypnes-idees.gr
 0.0.0.0 exyzz.pl
+0.0.0.0 ey7ov.com
 0.0.0.0 eye-watch.in
 0.0.0.0 eyenewton.ru
 0.0.0.0 telemetry.eyeo.com
@@ -117040,7 +117046,6 @@
 0.0.0.0 analytics.farmjournal.com
 0.0.0.0 farsnails.com
 0.0.0.0 matomo.fas-bfct.fr
-0.0.0.0 fasfezc.fr
 0.0.0.0 ads.fashionel.mk
 0.0.0.0 fast.ge
 0.0.0.0 fast2cloud.com
@@ -117364,7 +117369,6 @@
 0.0.0.0 flippedfunnel.com
 0.0.0.0 fbo-statistics-collector-tc.is.flippingbook.com
 0.0.0.0 flipshope.com
-0.0.0.0 app.flipsnack.com
 0.0.0.0 analytics.flir.com
 0.0.0.0 flirtanu.com
 0.0.0.0 flirtcafe.de
@@ -117551,6 +117555,7 @@
 0.0.0.0 apm.us-west-2.aws.found.io
 0.0.0.0 metric.foundationmedicine.com
 0.0.0.0 foundinggulfsaturate.com
+0.0.0.0 four-amsterdam.com
 0.0.0.0 analytics.fourkites.com
 0.0.0.0 fourlaile.com
 0.0.0.0 fourpawsahead.com
@@ -118259,6 +118264,7 @@
 0.0.0.0 gerbilshew.com
 0.0.0.0 germancies.com
 0.0.0.0 matomo.gers.fr
+0.0.0.0 gesas.it
 0.0.0.0 gestantdabitis.click
 0.0.0.0 statistiques.gestionexterne.com
 0.0.0.0 get-kmspico.com
@@ -119080,7 +119086,6 @@
 0.0.0.0 gwryfkd.cc
 0.0.0.0 gwyvusam.com
 0.0.0.0 gxgbvmg.cn
-0.0.0.0 gxh1yqz2v.xyz
 0.0.0.0 gxhzv.cn
 0.0.0.0 tracking.gxmedia-ads.com
 0.0.0.0 gxsearch.club
@@ -120213,6 +120218,7 @@
 0.0.0.0 imgtrack.de
 0.0.0.0 mp.imgur.com
 0.0.0.0 zrk.imgur.com
+0.0.0.0 imiitrk23.com
 0.0.0.0 imimobile.com
 0.0.0.0 plausible.imio.be
 0.0.0.0 analytics.imirwin.com
@@ -121420,7 +121426,6 @@
 0.0.0.0 khuzibatekes.com
 0.0.0.0 analytics.kibty.town
 0.0.0.0 kick1pore.com
-0.0.0.0 kickasstorrents.website
 0.0.0.0 1t2.kicker.de
 0.0.0.0 kickoffo.site
 0.0.0.0 analytics.kickstarter.com
@@ -122288,7 +122293,7 @@
 0.0.0.0 liveexpert.ru
 0.0.0.0 analytics.livefootballtickets.com
 0.0.0.0 newbrowse.livehelper.com
-0.0.0.0 livehost.live
+0.0.0.0 www.livehost.live
 0.0.0.0 liveintent.com
 0.0.0.0 img0.liveinternet.ru
 0.0.0.0 wiki.liveinternet.ru
@@ -122519,6 +122524,7 @@
 0.0.0.0 analytics.lucide.dev
 0.0.0.0 analytics.lucidgov.app
 0.0.0.0 analytics.app.lucidpress.com
+0.0.0.0 www.lucklayed.info
 0.0.0.0 lucky-bet.site
 0.0.0.0 lucky-star8.com
 0.0.0.0 lucky135.com
@@ -123307,6 +123313,7 @@
 0.0.0.0 analytics.meundies.com
 0.0.0.0 mews2ruck.com
 0.0.0.0 meyoudate.com
+0.0.0.0 mfacebook-com.vn
 0.0.0.0 mfilecloud.com
 0.0.0.0 mg2connext.com
 0.0.0.0 mgbid.net
@@ -125568,7 +125575,6 @@
 0.0.0.0 oxycode.net
 0.0.0.0 oxygenfuse.com
 0.0.0.0 oyfnkle.cn
-0.0.0.0 oyhurln.cn
 0.0.0.0 oylgklds.win
 0.0.0.0 oyndr.com
 0.0.0.0 analytics.service.oyoclass.com
@@ -125602,7 +125608,6 @@
 0.0.0.0 analytics.paddleplanner.com
 0.0.0.0 metric.paddypower.it
 0.0.0.0 paderrer.com
-0.0.0.0 go.padsdel.com
 0.0.0.0 analytics.simpli.padsquad.com
 0.0.0.0 padsthai.com
 0.0.0.0 padstm.com
@@ -126215,7 +126220,6 @@
 0.0.0.0 pointlessprofit.com
 0.0.0.0 matomo.pointnemo.com
 0.0.0.0 analytics.lxc.points.com
-0.0.0.0 poisedpig.com
 0.0.0.0 poke10ve.com
 0.0.0.0 analytics.pokemon-zone.com
 0.0.0.0 poker-unique.com
@@ -126260,7 +126264,6 @@
 0.0.0.0 poor5zero.com
 0.0.0.0 poorgasillago.click
 0.0.0.0 pop6.com
-0.0.0.0 popadvert.com
 0.0.0.0 popblockergold.com
 0.0.0.0 popblockergold.info
 0.0.0.0 popin.cc
@@ -126482,7 +126485,6 @@
 0.0.0.0 matomo.pro-g.eu
 0.0.0.0 cookies.pro-idea.cz
 0.0.0.0 matomo.proactive.inc
-0.0.0.0 probns.com
 0.0.0.0 analytics.probo.in
 0.0.0.0 proc-dotgov.us
 0.0.0.0 analytics.processfinger.com
@@ -126867,6 +126869,7 @@
 0.0.0.0 q20jqurls0y7gk8.info
 0.0.0.0 q36.cn
 0.0.0.0 analytics.qadex.com
+0.0.0.0 qamwjzgwtvpm.com
 0.0.0.0 ad-static.qanda.ai
 0.0.0.0 analytic.qapitalapp.net
 0.0.0.0 analytics.qapitalapp.net
@@ -127128,6 +127131,7 @@
 0.0.0.0 quicklaunch.com
 0.0.0.0 quicklyedit.com
 0.0.0.0 quickpcfixer.click
+0.0.0.0 quicksandear.com
 0.0.0.0 reverselookup.quicksetcloud.com
 0.0.0.0 cdn.quicksprout.com
 0.0.0.0 tools.quicksprout.com
@@ -128696,6 +128700,7 @@
 0.0.0.0 test.seo-brain.net
 0.0.0.0 analytics.seoptiks.com
 0.0.0.0 axx.seovietnam.pro
+0.0.0.0 separatesilver.com
 0.0.0.0 separatesort.com
 0.0.0.0 seponews.com
 0.0.0.0 analytics.sequoia.com
@@ -128862,6 +128867,7 @@
 0.0.0.0 secure.sharpinspiration-instinct.com
 0.0.0.0 analytics.sharplaunch.com
 0.0.0.0 matomo.sharpnecdisplays.eu
+0.0.0.0 sharppatch.com
 0.0.0.0 analytics.shawcontract.com
 0.0.0.0 analytics.shawfloors.com
 0.0.0.0 shawnee-bluejacket.com
@@ -129297,7 +129303,7 @@
 0.0.0.0 diff.smartadserver.com
 0.0.0.0 diff3.smartadserver.com
 0.0.0.0 documentation.smartadserver.com
-0.0.0.0 euw1.smartadserver.com
+0.0.0.0 euw2.smartadserver.com
 0.0.0.0 go.smartadserver.com
 0.0.0.0 help.smartadserver.com
 0.0.0.0 itx4.smartadserver.com
@@ -130203,7 +130209,6 @@
 0.0.0.0 metrics.stjude.org
 0.0.0.0 metrics.qa.stjude.org
 0.0.0.0 metrics.wip.stjude.org
-0.0.0.0 stlpnom.xyz
 0.0.0.0 stmarylebone.org
 0.0.0.0 stmatthewsnj.org
 0.0.0.0 stockerator.com
@@ -130423,6 +130428,7 @@
 0.0.0.0 analytics.qa.supplyframe.com
 0.0.0.0 search.supplyframe.com
 0.0.0.0 analytics.supportlogic.com
+0.0.0.0 www.supportsentparticle.com
 0.0.0.0 supportwaves.com
 0.0.0.0 supportxmr.com
 0.0.0.0 suppresswhileobvious.com
@@ -130444,6 +130450,7 @@
 0.0.0.0 sushipool.com
 0.0.0.0 susmovies.lol
 0.0.0.0 suspectmark.com
+0.0.0.0 www.suspectplainrevulsion.com
 0.0.0.0 pixel.suspilne.media
 0.0.0.0 sustac.com
 0.0.0.0 metrics.sustainablecrops.ca
@@ -130480,6 +130487,7 @@
 0.0.0.0 sweetchicksclub.com
 0.0.0.0 sweetmemo.net
 0.0.0.0 sweetmemoryy.com
+0.0.0.0 sweetslope.com
 0.0.0.0 api.swetrix.com
 0.0.0.0 swfhostltd.com
 0.0.0.0 analytics.swguide.co
@@ -130973,6 +130981,7 @@
 0.0.0.0 tenhourweek.com
 0.0.0.0 tenjin.io
 0.0.0.0 tenkeiya.com
+0.0.0.0 www.tenlineunden.uno
 0.0.0.0 tenmei-michibiki.com
 0.0.0.0 tenmoney.business
 0.0.0.0 tensasscarify.com
@@ -131340,6 +131349,7 @@
 0.0.0.0 tinyswans.com
 0.0.0.0 tinytapgame.com
 0.0.0.0 tinytendency.com
+0.0.0.0 e428.tio.nl
 0.0.0.0 ads.tipico.com
 0.0.0.0 dot.tipinfolist.com
 0.0.0.0 analytics.tipsbladet.dk
@@ -131414,6 +131424,7 @@
 0.0.0.0 ta.tokopedia.com
 0.0.0.0 tokumeichat135.net
 0.0.0.0 tokumeichatmail.net
+0.0.0.0 tokuyama-kaiun.com
 0.0.0.0 tokyobag.shop
 0.0.0.0 matomo.toll-collect.de
 0.0.0.0 toll6kerb.com
@@ -131928,6 +131939,7 @@
 0.0.0.0 ttt777.com
 0.0.0.0 tttturbonet.com
 0.0.0.0 statistics.tu-darmstadt.de
+0.0.0.0 www.tualcaldia.com
 0.0.0.0 ad-mediation.tuanguwen.com
 0.0.0.0 tube6sour.com
 0.0.0.0 ht.tube8.com
@@ -133417,6 +133429,7 @@
 0.0.0.0 analytics.watco.de
 0.0.0.0 analytics.waterford.com
 0.0.0.0 watergate.tv
+0.0.0.0 wateryvan.com
 0.0.0.0 wathzapp.com
 0.0.0.0 wauk1care.com
 0.0.0.0 up-banner.wavecdn.net
@@ -133763,7 +133776,6 @@
 0.0.0.0 analytics.windsor.ai
 0.0.0.0 secure.wine9bond.com
 0.0.0.0 analytics.winespies.com
-0.0.0.0 winfr-wtc.com
 0.0.0.0 metrics.winkelstraat.nl
 0.0.0.0 winner-prize.com
 0.0.0.0 winneronline.com
@@ -134743,6 +134755,7 @@
 0.0.0.0 ys630.com
 0.0.0.0 ysjkbk.com
 0.0.0.0 yt-adblocker.com
+0.0.0.0 www.yt118.com
 0.0.0.0 ytelc.com
 0.0.0.0 analytics.yten.com
 0.0.0.0 analytics.ytica.com
@@ -135028,7 +135041,6 @@
 0.0.0.0 analytics.zoho.sa
 0.0.0.0 analytics.wiki.zoho.com
 0.0.0.0 analytics.zohocloud.ca
-0.0.0.0 files-accl.zohoexternal.com
 0.0.0.0 docs.zohopublic.eu
 0.0.0.0 analytics.zola.com
 0.0.0.0 mandrillapp.zola.com
@@ -135079,6 +135091,7 @@
 0.0.0.0 ad.zurnal24.si
 0.0.0.0 analytics.zuto.com
 0.0.0.0 zvetki.ru
+0.0.0.0 zvkytbjimbhk.com
 0.0.0.0 zvu9s9.com
 0.0.0.0 api.zwizzarmyknife.com
 0.0.0.0 zx-adnet.com
@@ -135100,7 +135113,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 30123 rules from this source
+# Converted 30130 rules from this source
 
 
-# Total unique domains: 135079
+# Total unique domains: 135092
