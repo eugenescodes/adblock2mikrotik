@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-17 06:23:44 UTC
+# Last modified: 2025-04-17 12:33:01 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -6948,6 +6948,7 @@
 0.0.0.0 ad.linksynergy.com
 0.0.0.0 ad.mox.tv
 0.0.0.0 ad.tradertimerz.media
+0.0.0.0 ad2f8c6f8e.com
 0.0.0.0 ad2the.net
 0.0.0.0 ad4.com.cn
 0.0.0.0 ad4905c1db.com
@@ -8280,6 +8281,7 @@
 0.0.0.0 aqjbfed.com
 0.0.0.0 aqkkoalfpz.com
 0.0.0.0 aqncinxrexa.com
+0.0.0.0 aqndcybah.com
 0.0.0.0 aqnnysd.com
 0.0.0.0 aqptziligoqn.com
 0.0.0.0 aqpwckoqbjikrg.xyz
@@ -11636,6 +11638,7 @@
 0.0.0.0 copieraback.com
 0.0.0.0 copiousgoutswimwear.com
 0.0.0.0 coppercranberrylamp.com
+0.0.0.0 copycatsoirees.top
 0.0.0.0 copyrightmonastery.com
 0.0.0.0 cor8ni3shwerex.com
 0.0.0.0 cordclck.cc
@@ -13562,6 +13565,7 @@
 0.0.0.0 egykofo.com
 0.0.0.0 eh0ag0-rtbix.top
 0.0.0.0 ehgavvcqj.xyz
+0.0.0.0 ehkualecb.com
 0.0.0.0 ehlrxixabvzbo.tech
 0.0.0.0 ehokeeshex.com
 0.0.0.0 ehrydnmdoe.com
@@ -19575,6 +19579,7 @@
 0.0.0.0 lwonclbench.com
 0.0.0.0 lwoqroszooq.com
 0.0.0.0 lwrnikzjpp.com
+0.0.0.0 lwxegrybymzah.love
 0.0.0.0 lwxuo.com
 0.0.0.0 lx2rv.com
 0.0.0.0 lxiapwwqfcbms.tech
@@ -20015,6 +20020,7 @@
 0.0.0.0 mediumdisarmament.com
 0.0.0.0 mediumtunapatter.com
 0.0.0.0 medleyads.com
+0.0.0.0 medlikeamate.org
 0.0.0.0 medoofty.com
 0.0.0.0 medriz.xyz
 0.0.0.0 medusasglance.com
@@ -22455,6 +22461,7 @@
 0.0.0.0 ozectynptd.com
 0.0.0.0 ozkpkocib.com
 0.0.0.0 ozlenbl.com
+0.0.0.0 ozmbzowg.com
 0.0.0.0 ozmspawupo.com
 0.0.0.0 ozobsaib.com
 0.0.0.0 ozonemedia.com
@@ -27552,6 +27559,7 @@
 0.0.0.0 sunflowercoastlineprobe.com
 0.0.0.0 sunflowerinformed.com
 0.0.0.0 sunglassesexpensive.com
+0.0.0.0 sungtoaz.club
 0.0.0.0 sunkwarriors.com
 0.0.0.0 sunmediaads.com
 0.0.0.0 sunnshele.com
@@ -29669,6 +29677,7 @@
 0.0.0.0 vazypteke.pro
 0.0.0.0 vbhuivr.com
 0.0.0.0 vbmjlevwwvyzj.top
+0.0.0.0 vbptgoyketwhv.global
 0.0.0.0 vbrusdiifpfd.com
 0.0.0.0 vbtrax.com
 0.0.0.0 vcdc.com
@@ -30001,6 +30010,7 @@
 0.0.0.0 voicepainlessdonut.com
 0.0.0.0 voicepeaches.com
 0.0.0.0 voicepythons.shop
+0.0.0.0 voidthemhen.org
 0.0.0.0 vokaunget.xyz
 0.0.0.0 volatintptr.com
 0.0.0.0 volcaedecants.shop
@@ -30939,6 +30949,7 @@
 0.0.0.0 wysasys.com
 0.0.0.0 wyvlljvbbjvvm.top
 0.0.0.0 wyvlllooalobz.top
+0.0.0.0 wywkwqzkavlvw.top
 0.0.0.0 wzcuinglezyz.one
 0.0.0.0 wzijtuxzut.com
 0.0.0.0 wzk5ndpc3x05.com
@@ -85534,6 +85545,10 @@
 0.0.0.0 wz.allianz.fr
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 incoming.telemetry.mozilla.org
+0.0.0.0 sspnm.emol.com
+0.0.0.0 ssp.emol.com
+0.0.0.0 stats.emol.com
+0.0.0.0 rvv.emol.com
 0.0.0.0 rma.homedepot.com
 0.0.0.0 db7q4jg5rkhk8.cloudfront.net
 0.0.0.0 backend-pixel.zotek.io
@@ -90345,6 +90360,7 @@
 0.0.0.0 f-emc.ngsp.gov.vn
 0.0.0.0 tracking.aita.gov.vn
 0.0.0.0 za.zalo.me
+0.0.0.0 ads-redis.ecn.cl
 0.0.0.0 publi.elliberal.com.ar
 0.0.0.0 xad.dnoticias.pt
 0.0.0.0 adclient-uol.lp.uol.com.br
@@ -100101,7 +100117,11 @@
 0.0.0.0 hbeafcac.top
 0.0.0.0 stildreans.com
 0.0.0.0 uucnmtt.top
+0.0.0.0 iwcnmto.top
+0.0.0.0 dighavrap.com
+0.0.0.0 chienzul.com
 0.0.0.0 vunqrotm.com
+0.0.0.0 lkmgjfkhfh.top
 0.0.0.0 ghrs.cn
 0.0.0.0 pjbbhj.icu
 0.0.0.0 wucnmte.top
@@ -104977,7 +104997,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 104962 rules from this source
+# Converted 104982 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -116474,9 +116494,6 @@
 0.0.0.0 analytics.emol.cl
 0.0.0.0 banners.emol.com
 0.0.0.0 geo.emol.cl
-0.0.0.0 rvv.emol.com
-0.0.0.0 ssp.emol.com
-0.0.0.0 sspnm.emol.com
 0.0.0.0 statsmp2.emol.com
 0.0.0.0 unm.emol.com
 0.0.0.0 cdn.emoryday-analytics.com
@@ -135113,7 +135130,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 30130 rules from this source
+# Converted 30127 rules from this source
 
 
-# Total unique domains: 135092
+# Total unique domains: 135109
