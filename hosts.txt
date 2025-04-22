@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-22 06:23:50 UTC
+# Last modified: 2025-04-22 12:33:17 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 performoo.com
 0.0.0.0 keethoostoaps.net
 0.0.0.0 rneniibeiijmxeb.com
 0.0.0.0 s2.static.cfgr3.com
@@ -7706,6 +7707,7 @@
 0.0.0.0 aj2532.bid
 0.0.0.0 aj2550.bid
 0.0.0.0 aj2555.bid
+0.0.0.0 aj2627.bid
 0.0.0.0 aj2635.bid
 0.0.0.0 ajestigie.com
 0.0.0.0 ajillionmax.com
@@ -20749,6 +20751,7 @@
 0.0.0.0 mutinygrannyhenceforward.com
 0.0.0.0 mutsjeamenism.com
 0.0.0.0 mutteredadisa.com
+0.0.0.0 muyusaitcze.com
 0.0.0.0 muzarabeponym.website
 0.0.0.0 muzikguide.com
 0.0.0.0 muzoohat.net
@@ -25834,6 +25837,7 @@
 0.0.0.0 rzneekilff.com
 0.0.0.0 rzobsgow.com
 0.0.0.0 rzuokcobzru.com
+0.0.0.0 rzxxflvdnvtws.vip
 0.0.0.0 s-adzone.com
 0.0.0.0 s0-greate.net
 0.0.0.0 s0cool.net
@@ -26598,6 +26602,7 @@
 0.0.0.0 shussausach.com
 0.0.0.0 shutesaroph.com
 0.0.0.0 shvnfhf.com
+0.0.0.0 shvsrrpkgjcuk.life
 0.0.0.0 shydastidu.com
 0.0.0.0 shyrepair.pro
 0.0.0.0 sialsizably.shop
@@ -29124,6 +29129,7 @@
 0.0.0.0 tvoiioftvfzzc.buzz
 0.0.0.0 tvpnnrungug.xyz
 0.0.0.0 tvprocessing.com
+0.0.0.0 twaglurtuh.xyz
 0.0.0.0 twazzyoidwlfe.com
 0.0.0.0 tweakarrangement.com
 0.0.0.0 tweelessatic.co.in
@@ -89756,6 +89762,7 @@
 0.0.0.0 tr-op.datatrics.com
 0.0.0.0 tr.cloud-media.fr
 0.0.0.0 tr.datatrics.com
+0.0.0.0 tr.standardadmin.org
 0.0.0.0 traccoon.intellectsoft.net
 0.0.0.0 trace.swaven.com
 0.0.0.0 track-dark-bz.b-cdn.net
@@ -90816,7 +90823,6 @@
 0.0.0.0 templates.buscape.com
 0.0.0.0 yestorrents.org
 0.0.0.0 oecistbenton.com
-0.0.0.0 tp.media
 0.0.0.0 vvdrhe.win
 0.0.0.0 adwadvert.com.ua
 0.0.0.0 nanthou.life
@@ -100466,6 +100472,13 @@
 0.0.0.0 lhdnba.top
 0.0.0.0 eucnwtw.top
 0.0.0.0 wwcnmte.top
+0.0.0.0 ubudhal.com
+0.0.0.0 51dxs.com
+0.0.0.0 lui8426.xyz
+0.0.0.0 91ks.online
+0.0.0.0 qwerhao3.com
+0.0.0.0 cholurd.com
+0.0.0.0 dhimphits.com
 0.0.0.0 hgreils.com
 0.0.0.0 lvqo.cn
 0.0.0.0 jibtdn.top
@@ -105387,7 +105400,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 105372 rules from this source
+# Converted 105385 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -132031,6 +132044,7 @@
 0.0.0.0 recommend.tws.toyota.jp
 0.0.0.0 analytics.toyotafinancial.com
 0.0.0.0 toysbasics.com
+0.0.0.0 tp.media
 0.0.0.0 tpctrust.com
 0.0.0.0 tpid.es
 0.0.0.0 analytics.tplinkcloud.com
@@ -135667,7 +135681,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 30274 rules from this source
+# Converted 30275 rules from this source
 
 
-# Total unique domains: 135646
+# Total unique domains: 135660
