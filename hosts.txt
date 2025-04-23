@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-22 18:23:09 UTC
+# Last modified: 2025-04-23 01:18:22 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -2577,7 +2577,6 @@
 0.0.0.0 f4180a6e8c.ed908e7884.com
 0.0.0.0 f44e776d83.c9e362ce20.com
 0.0.0.0 f4611b5cd8.9900149f2a.com
-0.0.0.0 f6c8374b9b.4c81b78eca.com
 0.0.0.0 f860ddd061.6bc1f4d014.com
 0.0.0.0 f97c68bed0.0a10a1bb7b.com
 0.0.0.0 fa3b0cdce1.37e1087e51.com
@@ -2610,7 +2609,6 @@
 0.0.0.0 4ad8ea329d.f168b7fa34.com
 0.0.0.0 4ef69e5814.c7b419036b.com
 0.0.0.0 4fc2d0c0e2.abb030d6a7.com
-0.0.0.0 503f39274f.cc33b86bbf.com
 0.0.0.0 5364d8c646.aa92754c5e.com
 0.0.0.0 54d6a7edfb.218cc08472.com
 0.0.0.0 58c19941c7.78af853196.com
@@ -6322,6 +6320,7 @@
 0.0.0.0 4armn.com
 0.0.0.0 4b6994dfa47cee4.com
 0.0.0.0 4bad5cdf48.com
+0.0.0.0 4c81b78eca.com
 0.0.0.0 4c935d6a244f.com
 0.0.0.0 4co7mbsb.de
 0.0.0.0 4d33a4adbc.com
@@ -6456,6 +6455,7 @@
 0.0.0.0 6zy9yqe1ew.com
 0.0.0.0 7-7-7-partner.com
 0.0.0.0 70b7d98dec.com
+0.0.0.0 71df446534.com
 0.0.0.0 721ffc3ec5.com
 0.0.0.0 72hdgb5o.de
 0.0.0.0 730fcb332f.com
@@ -10588,6 +10588,7 @@
 0.0.0.0 cbro.win
 0.0.0.0 cbyqzt.xy
 0.0.0.0 cc-dt.com
+0.0.0.0 cc33b86bbf.com
 0.0.0.0 ccaa0e51d8.com
 0.0.0.0 ccc9c93083.com
 0.0.0.0 cchdbond.com
@@ -12885,6 +12886,7 @@
 0.0.0.0 dmavtliwh.global
 0.0.0.0 dmetherearlyinhes.info
 0.0.0.0 dmeukeuktyoue.info
+0.0.0.0 dmgsymwgj.com
 0.0.0.0 dmhbbivu.top
 0.0.0.0 dmhclkohnrpvg.com
 0.0.0.0 dmiredindeed.com
@@ -21420,6 +21422,7 @@
 0.0.0.0 nqowmugodougu.com
 0.0.0.0 nqrkzcd7ixwr.com
 0.0.0.0 nqslmtuswqdz.com
+0.0.0.0 nqucjilr.com
 0.0.0.0 nqvi-lnlu.icu
 0.0.0.0 nrcykmnukb.com
 0.0.0.0 nrdpfnpqunyle.rocks
@@ -29850,6 +29853,7 @@
 0.0.0.0 vbhuivr.com
 0.0.0.0 vbmjlevwwvyzj.top
 0.0.0.0 vbptgoyketwhv.global
+0.0.0.0 vbqrzzrzazaew.top
 0.0.0.0 vbrusdiifpfd.com
 0.0.0.0 vbtrax.com
 0.0.0.0 vcdc.com
@@ -30713,6 +30717,7 @@
 0.0.0.0 whoisezh.com
 0.0.0.0 whoksoadousto.net
 0.0.0.0 wholituaten.com
+0.0.0.0 whollyindependentlylooking.com
 0.0.0.0 whollyneedy.com
 0.0.0.0 whomcomposescientific.com
 0.0.0.0 whomsudsikaxu.com
@@ -100478,6 +100483,8 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 leirerspfz.com
+0.0.0.0 ifje.cn
 0.0.0.0 grimoiksep.com
 0.0.0.0 iutq.cn
 0.0.0.0 lhdnba.top
@@ -105413,7 +105420,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 105398 rules from this source
+# Converted 105405 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -135675,4 +135682,4 @@
 # Converted 30253 rules from this source
 
 
-# Total unique domains: 135651
+# Total unique domains: 135658
