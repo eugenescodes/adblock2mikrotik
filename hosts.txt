@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-26 06:21:23 UTC
+# Last modified: 2025-04-26 12:29:44 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -10747,7 +10747,6 @@
 0.0.0.0 cdnapi.net
 0.0.0.0 cdnativ.com
 0.0.0.0 cdnativepush.com
-0.0.0.0 cdnaz.win
 0.0.0.0 cdnbit.com
 0.0.0.0 cdnfimgs.com
 0.0.0.0 cdnflex.me
@@ -101212,6 +101211,8 @@
 0.0.0.0 pktfla.top
 0.0.0.0 mucnwtx.top
 0.0.0.0 owcnmtk.top
+0.0.0.0 cnwuamf.top
+0.0.0.0 dheilgorsy.com
 0.0.0.0 hvrunsqqy.com
 0.0.0.0 nlnlrn.top
 0.0.0.0 ohqp.cn
@@ -105860,7 +105861,6 @@
 0.0.0.0 xn--s-4z5e652a53k.com
 0.0.0.0 categorysort.com
 0.0.0.0 adcastmarket.com
-0.0.0.0 ssl-daumcdn-dvmq7lf5.kgslb.com
 0.0.0.0 adgirl.yes24.com
 0.0.0.0 ad.api.adwiser.kr
 0.0.0.0 recoshopping.naver.com
@@ -111587,6 +111587,7 @@
 0.0.0.0 cdn-spurit.com
 0.0.0.0 cdn-webstats.com
 0.0.0.0 livetech.shopee.co.id.cdn20.com
+0.0.0.0 cdnaz.win
 0.0.0.0 cdnbucket.com
 0.0.0.0 posthog.cdndate.net
 0.0.0.0 delivery.cdnfastfront.com
@@ -121619,6 +121620,7 @@
 0.0.0.0 aem-collector-22ylcwym.kgslb.com
 0.0.0.0 analytics-ad-eyu9u2md.kgslb.com
 0.0.0.0 display-ad-rgt0me85.kgslb.com
+0.0.0.0 ssl-daumcdn-dvmq7lf5.kgslb.com
 0.0.0.0 adv.resto.kharkov.ua
 0.0.0.0 khbutla.cc
 0.0.0.0 analytics.khealth.com
@@ -134392,7 +134394,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 28210 rules from this source
+# Converted 28212 rules from this source
 
 
-# Total unique domains: 134371
+# Total unique domains: 134373
