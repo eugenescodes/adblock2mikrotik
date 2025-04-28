@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-28 06:31:07 UTC
+# Last modified: 2025-04-28 12:35:18 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -89279,7 +89279,6 @@
 0.0.0.0 cnlogs.umengcloud.com
 0.0.0.0 logs.nebulahoroscope.com
 0.0.0.0 braveglobal.tv
-0.0.0.0 insights.alibaba.com
 0.0.0.0 mssdk-boot.cpacutapi.com
 0.0.0.0 collect.ureca-lab.com
 0.0.0.0 api.abcsinsights.com
@@ -91614,6 +91613,7 @@
 0.0.0.0 templates.buscape.com
 0.0.0.0 yestorrents.org
 0.0.0.0 oecistbenton.com
+0.0.0.0 w.rulive.ru
 0.0.0.0 vvdrhe.win
 0.0.0.0 adwadvert.com.ua
 0.0.0.0 nanthou.life
@@ -101275,6 +101275,9 @@
 0.0.0.0 tiboha.top
 0.0.0.0 knwuamd.top
 0.0.0.0 bwcnmtv.top
+0.0.0.0 wwok04281kl.com
+0.0.0.0 qwti.cn
+0.0.0.0 gekhasaks.com
 0.0.0.0 zbislaernv.com
 0.0.0.0 xebetp.icu
 0.0.0.0 inwuamo.top
@@ -106257,7 +106260,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 106242 rules from this source
+# Converted 106245 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -108369,6 +108372,7 @@
 0.0.0.0 activities.alibaba.com
 0.0.0.0 click.alibaba.com
 0.0.0.0 hydra.alibaba.com
+0.0.0.0 insights.alibaba.com
 0.0.0.0 offer.alibaba.com
 0.0.0.0 umlazada.alibaba.com
 0.0.0.0 analytics.alibaba-inc.com
@@ -134486,7 +134490,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 28223 rules from this source
+# Converted 28224 rules from this source
 
 
-# Total unique domains: 134465
+# Total unique domains: 134469
