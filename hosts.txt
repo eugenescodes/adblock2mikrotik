@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-28 18:23:57 UTC
+# Last modified: 2025-04-29 01:19:06 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -87157,6 +87157,8 @@
 0.0.0.0 wz.allianz.fr
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 incoming.telemetry.mozilla.org
+0.0.0.0 log.tosspayments.com
+0.0.0.0 event.tosspayments.com
 0.0.0.0 pipeline.rd.nl
 0.0.0.0 ocular.hotukdeals.com
 0.0.0.0 telemetry.individual.githubcopilot.com
@@ -90898,6 +90900,7 @@
 0.0.0.0 recs.shareaholic.com
 0.0.0.0 refer.wordpress.com
 0.0.0.0 removeads.workers.dev
+0.0.0.0 report.23video.com
 0.0.0.0 reporting.cdndex.io
 0.0.0.0 reports-api.sqreen.io
 0.0.0.0 reports.hibu.com
@@ -95964,7 +95967,6 @@
 0.0.0.0 r.existenz.se
 0.0.0.0 recirculation.spot.im
 0.0.0.0 regstat.se
-0.0.0.0 report.23video.com
 0.0.0.0 resor-external.barnsemester.se
 0.0.0.0 retargettracker.com
 0.0.0.0 revive.edgeflyfishing.com
@@ -101771,6 +101773,8 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 bxdupj.icu
+0.0.0.0 cautols.com
 0.0.0.0 oldh.cn
 0.0.0.0 vcaqexl.com
 0.0.0.0 hua4207.xyz
@@ -106765,7 +106769,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 106750 rules from this source
+# Converted 106754 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -140086,4 +140090,4 @@
 # Converted 33312 rules from this source
 
 
-# Total unique domains: 140062
+# Total unique domains: 140066
