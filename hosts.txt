@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-04-29 06:24:44 UTC
+# Last modified: 2025-04-29 12:35:53 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -36101,6 +36101,7 @@
 0.0.0.0 deapi.sooplive.co.kr
 0.0.0.0 startup.mobile.yandex.net
 0.0.0.0 startup-mobile.ap.yandex-net.ru
+0.0.0.0 maticooads.com
 0.0.0.0 apishow.babybus.com
 0.0.0.0 apppromoteapi.babybus.com
 0.0.0.0 tiktokpangle.us
@@ -87158,6 +87159,8 @@
 0.0.0.0 wz.allianz.fr
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 incoming.telemetry.mozilla.org
+0.0.0.0 ashiato.travel.rakuten.co.jp
+0.0.0.0 event.notifier.rakuten.co.jp
 0.0.0.0 log.tosspayments.com
 0.0.0.0 event.tosspayments.com
 0.0.0.0 pipeline.rd.nl
@@ -89762,6 +89765,7 @@
 0.0.0.0 int.vlancaa.site
 0.0.0.0 int.vlancaa.fun
 0.0.0.0 tok.vaicore.xyz
+0.0.0.0 log-sdk.ksapisrv.com
 0.0.0.0 ulogjs.ksapisrv.com
 0.0.0.0 adashx4id.ut.taobao.com
 0.0.0.0 analytics.us.tiktok.com
@@ -101786,6 +101790,8 @@
 0.0.0.0 rhdifs.top
 0.0.0.0 enwuamw.top
 0.0.0.0 mwcnmtx.top
+0.0.0.0 wwok04291kl.com
+0.0.0.0 fvitteilse.com
 0.0.0.0 oldh.cn
 0.0.0.0 vcaqexl.com
 0.0.0.0 hua4207.xyz
@@ -106142,6 +106148,7 @@
 0.0.0.0 jun01.oss-cn-beijing.aliyuncs.com
 0.0.0.0 shaquevip.oss-cn-zhangjiakou.aliyuncs.com
 0.0.0.0 wzjs1.oss-accelerate.aliyuncs.com
+0.0.0.0 mihoutao1868.github.io
 0.0.0.0 22588888.com
 0.0.0.0 2481e.com
 0.0.0.0 693836.com
@@ -106780,7 +106787,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 106765 rules from this source
+# Converted 106772 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -114672,10 +114679,8 @@
 0.0.0.0 insight.rakuten.co.id
 0.0.0.0 insight.rakuten.co.jp
 0.0.0.0 insight.rakuten.co.th
-0.0.0.0 event.notifier.rakuten.co.jp
 0.0.0.0 s-evt.rmp.rakuten.co.jp
 0.0.0.0 rt.rakuten.co.jp
-0.0.0.0 ashiato.travel.rakuten.co.jp
 0.0.0.0 count.upc.rakuten.co.jp
 0.0.0.0 clicks.rbs.co.uk
 0.0.0.0 reddevilsrugby.co.uk
@@ -125285,7 +125290,6 @@
 0.0.0.0 mistat.xiaomi.com.download.ks-cdn.com
 0.0.0.0 slb-p2p.vcloud.ks-live.com
 0.0.0.0 ks-marine.com
-0.0.0.0 log-sdk.ksapisrv.com
 0.0.0.0 ulogs1.ksapisrv.com
 0.0.0.0 ulogs2.ksapisrv.com
 0.0.0.0 wlog.ksapisrv.com
@@ -140124,7 +140128,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 33338 rules from this source
+# Converted 33335 rules from this source
 
 
-# Total unique domains: 140103
+# Total unique domains: 140107
