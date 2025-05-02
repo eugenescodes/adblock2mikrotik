@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-05-02 06:24:04 UTC
+# Last modified: 2025-05-02 12:33:16 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 8s5s.com
 0.0.0.0 hersfohiplace.org
 0.0.0.0 perky-method.com
 0.0.0.0 nvpartnerspromo.com
@@ -3121,7 +3122,6 @@
 0.0.0.0 s.dstfgh.com
 0.0.0.0 s.dsvrqo.com
 0.0.0.0 s.dsx827.com
-0.0.0.0 s.dsxmn0.com
 0.0.0.0 s.eaalink.com
 0.0.0.0 s.elink2b.com
 0.0.0.0 s.elink2c.com
@@ -7691,6 +7691,7 @@
 0.0.0.0 ahfmruafx.com
 0.0.0.0 ahfninqtaamj.com
 0.0.0.0 ahhwpucku.com
+0.0.0.0 ahkapsalz.com
 0.0.0.0 ahlefind.com
 0.0.0.0 ahmar2four.xyz
 0.0.0.0 ahomsoalsoah.net
@@ -9627,6 +9628,7 @@
 0.0.0.0 beveledetna.com
 0.0.0.0 bevelerimps.com
 0.0.0.0 bewailindigestionunhappy.com
+0.0.0.0 bewailknotcorruption.com
 0.0.0.0 bewarevampiresister.com
 0.0.0.0 bewathis.com
 0.0.0.0 beweepsnetful.top
@@ -10655,6 +10657,7 @@
 0.0.0.0 cannetkitish.shop
 0.0.0.0 canningpajamastint.com
 0.0.0.0 canoemissioninjunction.com
+0.0.0.0 canoerepenttorment.com
 0.0.0.0 canoevaguely.com
 0.0.0.0 canolamonthlyswapping.com
 0.0.0.0 canoperation.com
@@ -11320,6 +11323,7 @@
 0.0.0.0 claspedtwelve.com
 0.0.0.0 claspsnuff.com
 0.0.0.0 classesfolksprofession.com
+0.0.0.0 classesrainbowburka.com
 0.0.0.0 classessavagely.com
 0.0.0.0 classic-bonus.com
 0.0.0.0 classiccarefullycredentials.com
@@ -12811,6 +12815,7 @@
 0.0.0.0 denoughtanot.info
 0.0.0.0 denoughtanoth.com
 0.0.0.0 densigissy.net
+0.0.0.0 densubmarinesubdued.com
 0.0.0.0 dental-drawer.pro
 0.0.0.0 denthaitingshospic.com
 0.0.0.0 dentiststockunsoiled.com
@@ -13498,6 +13503,7 @@
 0.0.0.0 dronediscussed.com
 0.0.0.0 droopcomate.top
 0.0.0.0 droopingfur.com
+0.0.0.0 dropalcoholnarrow.com
 0.0.0.0 dropdoneraining.com
 0.0.0.0 dropletevaporateumpire.com
 0.0.0.0 droppalpateraft.com
@@ -13535,6 +13541,7 @@
 0.0.0.0 dstimaariraconians.info
 0.0.0.0 dstoppedtotalkto.com
 0.0.0.0 dsultra.com
+0.0.0.0 dsxmn0.com
 0.0.0.0 dsxwcas.com
 0.0.0.0 dt4ever.com
 0.0.0.0 dt51.net
@@ -13803,6 +13810,7 @@
 0.0.0.0 eburnaboost.top
 0.0.0.0 eburnahornito.shop
 0.0.0.0 ebuzzing.com
+0.0.0.0 ebvvvnjesjgx.com
 0.0.0.0 ebz.io
 0.0.0.0 ec49775bc5.com
 0.0.0.0 ec7be59676.com
@@ -14552,6 +14560,7 @@
 0.0.0.0 expectationtragicpreview.com
 0.0.0.0 expectedballpaul.com
 0.0.0.0 expelledmotivestall.com
+0.0.0.0 expelteemperson.com
 0.0.0.0 expensivefire.com
 0.0.0.0 expensivelikeness.com
 0.0.0.0 experienceabdomen.com
@@ -14564,6 +14573,7 @@
 0.0.0.0 explodedecompose.com
 0.0.0.0 exploderunway.com
 0.0.0.0 explore-site.com
+0.0.0.0 explorerapiecebachelor.com
 0.0.0.0 explorerippledisperse.com
 0.0.0.0 expocrack.com
 0.0.0.0 exporder-patuility.com
@@ -14773,6 +14783,7 @@
 0.0.0.0 fatchilli.media
 0.0.0.0 fatenoticemayhem.com
 0.0.0.0 fathomcleft.com
+0.0.0.0 fatiguenoodlecomb.com
 0.0.0.0 fatihabespurt.shop
 0.0.0.0 fatsosjogs.com
 0.0.0.0 faubaudunaich.net
@@ -15134,6 +15145,7 @@
 0.0.0.0 fliffusparaph.com
 0.0.0.0 flightsjabbed.com
 0.0.0.0 flimsy-beat.com
+0.0.0.0 flintdepreciate.com
 0.0.0.0 flintsuperintendent.com
 0.0.0.0 flipool.com
 0.0.0.0 flippantguilt.com
@@ -15573,6 +15585,7 @@
 0.0.0.0 funbestgetjoobsli.org
 0.0.0.0 funcats.info
 0.0.0.0 functionsreturn.com
+0.0.0.0 functionssubqueries.com
 0.0.0.0 fundatingquest.fun
 0.0.0.0 fundtraveller.com
 0.0.0.0 fungiaoutfame.com
@@ -15756,6 +15769,7 @@
 0.0.0.0 gardeningseparatedudley.com
 0.0.0.0 gardoult.com
 0.0.0.0 gargantuan-menu.pro
+0.0.0.0 garglingably.com
 0.0.0.0 garlandprotectedashtray.com
 0.0.0.0 garlandshark.com
 0.0.0.0 garlicice.store
@@ -17192,6 +17206,7 @@
 0.0.0.0 highrevenuegate.com
 0.0.0.0 highrevenuenetwork.com
 0.0.0.0 highsmammon.top
+0.0.0.0 highspeedads.top
 0.0.0.0 highwaycpmrevenue.com
 0.0.0.0 higouckoavuck.net
 0.0.0.0 higrigake.com
@@ -18193,6 +18208,7 @@
 0.0.0.0 interpretprogrammesmap.com
 0.0.0.0 interrogationpeepchat.com
 0.0.0.0 interruptchalkedlie.com
+0.0.0.0 interruptimpendingdetrimental.com
 0.0.0.0 interruptionapartswiftly.com
 0.0.0.0 intersads.com
 0.0.0.0 intersectionweigh.com
@@ -19758,6 +19774,7 @@
 0.0.0.0 lettenfluoric.com
 0.0.0.0 letterslamp.online
 0.0.0.0 letterwolves.com
+0.0.0.0 lettingsneak.com
 0.0.0.0 leukemiaruns.com
 0.0.0.0 leumatawsed.top
 0.0.0.0 leveesmicker.top
@@ -20268,6 +20285,7 @@
 0.0.0.0 lugwzalsqvacb.one
 0.0.0.0 luhhcodutax.com
 0.0.0.0 lukeexposure.com
+0.0.0.0 lukeinoffensive.com
 0.0.0.0 lukyday.xyz
 0.0.0.0 lumaktoys.com
 0.0.0.0 lumberperpetual.com
@@ -20587,6 +20605,7 @@
 0.0.0.0 marinegruffexpecting.com
 0.0.0.0 marineingredientinevitably.com
 0.0.0.0 maritaltrousersidle.com
+0.0.0.0 maritanoded.shop
 0.0.0.0 markedoneofth.com
 0.0.0.0 markedoneofthe.info
 0.0.0.0 markerleery.com
@@ -21322,6 +21341,7 @@
 0.0.0.0 mothandhad.info
 0.0.0.0 mothandhadbe.info
 0.0.0.0 motionless-range.pro
+0.0.0.0 motionperformedstew.com
 0.0.0.0 motionretire.com
 0.0.0.0 motionspots.com
 0.0.0.0 motivatingother.com
@@ -22104,6 +22124,7 @@
 0.0.0.0 notepastaparliamentary.com
 0.0.0.0 notepositivelycomplaints.com
 0.0.0.0 notesbook.in
+0.0.0.0 nothingelbowsigns.com
 0.0.0.0 nothingfairnessdemonstrate.com
 0.0.0.0 nothingpetwring.com
 0.0.0.0 nothycantyo.com
@@ -24069,6 +24090,7 @@
 0.0.0.0 pilsarde.net
 0.0.0.0 pimentoscoter.com
 0.0.0.0 pimpledshivey.top
+0.0.0.0 pimzqbkblhv.com
 0.0.0.0 pinaffectionatelyaborigines.com
 0.0.0.0 pincersnap.com
 0.0.0.0 pineappleconsideringpreference.com
@@ -24688,6 +24710,7 @@
 0.0.0.0 proceedingdream.com
 0.0.0.0 proceedingmusic.com
 0.0.0.0 processedagrarian.com
+0.0.0.0 processingnettleremiss.com
 0.0.0.0 processionrecital.com
 0.0.0.0 processpardon.com
 0.0.0.0 processsky.com
@@ -26017,6 +26040,7 @@
 0.0.0.0 repentant-plant.pro
 0.0.0.0 repentantsympathy.com
 0.0.0.0 repentconsiderwoollen.com
+0.0.0.0 repetitiousfontmonopoly.com
 0.0.0.0 replaceexplanationevasion.com
 0.0.0.0 replacestuntissue.com
 0.0.0.0 replicaskeane.shop
@@ -26073,6 +26097,7 @@
 0.0.0.0 resourcefulpower.com
 0.0.0.0 resourceterminatepickles.com
 0.0.0.0 respeaktret.com
+0.0.0.0 respectfullyalternate.com
 0.0.0.0 respectfullyarena.com
 0.0.0.0 respectfulofficiallydoorway.com
 0.0.0.0 respectfulpleaabsolve.com
@@ -26730,6 +26755,7 @@
 0.0.0.0 rzneekilff.com
 0.0.0.0 rzobsgow.com
 0.0.0.0 rzuokcobzru.com
+0.0.0.0 rzvcdclxehmnd.global
 0.0.0.0 rzxxflvdnvtws.vip
 0.0.0.0 s-adzone.com
 0.0.0.0 s0-greate.net
@@ -29292,6 +29318,7 @@
 0.0.0.0 thereforedolemeasurement.com
 0.0.0.0 theremployeesi.info
 0.0.0.0 thereuponprevented.com
+0.0.0.0 thermometercourtroomfusion.com
 0.0.0.0 thermometerdoll.com
 0.0.0.0 thermometerinconceivablewild.com
 0.0.0.0 thermometertally.com
@@ -29618,6 +29645,7 @@
 0.0.0.0 tomekas.com
 0.0.0.0 tomladvert.com
 0.0.0.0 tomlldahehun.org
+0.0.0.0 tommyholysnapped.com
 0.0.0.0 tomorroweducated.com
 0.0.0.0 tomorrowspanelliot.com
 0.0.0.0 tomorrowtardythe.com
@@ -30054,6 +30082,7 @@
 0.0.0.0 tsy-jnugwavj.love
 0.0.0.0 tsyndicate.com
 0.0.0.0 ttbm.com
+0.0.0.0 ttedwm.com
 0.0.0.0 tteodxsfaqto.com
 0.0.0.0 tteojtlqlxrev.com
 0.0.0.0 tterforiwasin.org
@@ -30558,6 +30587,7 @@
 0.0.0.0 unusuallypilgrim.com
 0.0.0.0 unusuallyswam.com
 0.0.0.0 unusualtestoverthrow.com
+0.0.0.0 unwantedpointingwaspish.com
 0.0.0.0 unwaryunpegs.top
 0.0.0.0 unwelcomegardenerinterpretation.com
 0.0.0.0 unwelcomehurry.com
@@ -31501,6 +31531,7 @@
 0.0.0.0 wazoceckoo.net
 0.0.0.0 wazzeyrykkbk.top
 0.0.0.0 wazzeyzlobbj.top
+0.0.0.0 wbamedia.com
 0.0.0.0 wbdds.com
 0.0.0.0 wbfkyjvspddnd.site
 0.0.0.0 wbidder.online
@@ -31658,6 +31689,7 @@
 0.0.0.0 wfjkzgbcjnezi.fun
 0.0.0.0 wfnetwork.com
 0.0.0.0 wfredir.net
+0.0.0.0 wfvuctrttrdwk.global
 0.0.0.0 wg-aff.com
 0.0.0.0 wgchrrammzv.com
 0.0.0.0 wggqzhmnz.com
@@ -31726,6 +31758,7 @@
 0.0.0.0 whichcandiedhandgrip.com
 0.0.0.0 whidsugnoackili.net
 0.0.0.0 whilstrorty.com
+0.0.0.0 whilsttypewriter.com
 0.0.0.0 whimmedcaptain.shop
 0.0.0.0 whimogheshestid.net
 0.0.0.0 whimsical-bag.pro
@@ -31880,6 +31913,7 @@
 0.0.0.0 winslinks.com
 0.0.0.0 wintrck.com
 0.0.0.0 winzessolicit.com
+0.0.0.0 wipedcurved.com
 0.0.0.0 wipedhypocrite.com
 0.0.0.0 wipepeepcyclist.com
 0.0.0.0 wipowaxe.com
@@ -31947,6 +31981,7 @@
 0.0.0.0 wmccd.com
 0.0.0.0 wmcdct.com
 0.0.0.0 wmcdpt.com
+0.0.0.0 wmedps.com
 0.0.0.0 wmeqoborqboyv.top
 0.0.0.0 wmgtr.com
 0.0.0.0 wmlollmkvybzm.top
@@ -32082,6 +32117,7 @@
 0.0.0.0 wpnjs.com
 0.0.0.0 wpnsrv.com
 0.0.0.0 wpshsdk.com
+0.0.0.0 wptcd.com
 0.0.0.0 wpu.sh
 0.0.0.0 wpush.org
 0.0.0.0 wpushsdk.com
@@ -87294,6 +87330,7 @@
 0.0.0.0 wz.allianz.fr
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 incoming.telemetry.mozilla.org
+0.0.0.0 open-analytics.hrw.org
 0.0.0.0 counter.asobeans.jp
 0.0.0.0 intelligence.xnews.one
 0.0.0.0 log.tosspayments.com
@@ -91191,6 +91228,7 @@
 0.0.0.0 tag.mtrcs.samba.tv
 0.0.0.0 tag.myplay.com
 0.0.0.0 tag.rightmessage.com
+0.0.0.0 tagging.shiftdigitalapps.io
 0.0.0.0 tags.master-perf-tools.com
 0.0.0.0 tagtracking.vibescm.com
 0.0.0.0 telemetry.phenixrts.com
@@ -106601,7 +106639,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 106586 rules from this source
+# Converted 106624 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -118792,6 +118830,7 @@
 0.0.0.0 analytics.dstny.be
 0.0.0.0 analytics.dstny.fr
 0.0.0.0 analytics.dstny.nl
+0.0.0.0 s.dsxmn0.com
 0.0.0.0 analytics.dtcc.edu
 0.0.0.0 dtcqhfip.com
 0.0.0.0 analytics.dtgapi.com
@@ -120428,7 +120467,6 @@
 0.0.0.0 fling.com
 0.0.0.0 flingo.tv
 0.0.0.0 flintbg.com
-0.0.0.0 flintdepreciate.com
 0.0.0.0 api.flipdesk.jp
 0.0.0.0 fliplineads.com
 0.0.0.0 analytics.flipp.dev
@@ -120885,7 +120923,6 @@
 0.0.0.0 metrics.functional-bodybuilding.com
 0.0.0.0 functionalcrown.com
 0.0.0.0 functionalfeather.com
-0.0.0.0 functionssubqueries.com
 0.0.0.0 fundglobally.org
 0.0.0.0 analytics.fundingpips.com
 0.0.0.0 funerariaamadeus.com
@@ -140134,7 +140171,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 33527 rules from this source
+# Converted 33526 rules from this source
 
 
-# Total unique domains: 140113
+# Total unique domains: 140150
