@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-05-03 18:20:57 UTC
+# Last modified: 2025-05-04 01:26:54 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -21651,6 +21651,7 @@
 0.0.0.0 mysweetteam.com
 0.0.0.0 mytdsnet.com
 0.0.0.0 myteamdev.com
+0.0.0.0 mythad.com
 0.0.0.0 mythicsallies.com
 0.0.0.0 mythings.com
 0.0.0.0 mythpointsatheism.com
@@ -37141,7 +37142,6 @@
 0.0.0.0 srvgl.com
 0.0.0.0 webmaxlogger.net
 0.0.0.0 prodregistryv2.org
-0.0.0.0 mythad.com
 0.0.0.0 ga2.getresponse.com
 0.0.0.0 analytics.wikitide.net
 0.0.0.0 shgcdn3.com
@@ -87413,6 +87413,7 @@
 0.0.0.0 wz.allianz.fr
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 incoming.telemetry.mozilla.org
+0.0.0.0 pl.elements.video
 0.0.0.0 sgtm.alfinans.dk
 0.0.0.0 sgtm.aziendechesifinanzianodasole.com
 0.0.0.0 sgtm.comprend.com
@@ -92292,6 +92293,7 @@
 0.0.0.0 dbex-tracker-v2.driveback.ru
 0.0.0.0 error.videonow.ru
 0.0.0.0 events.auth.gid.ru
+0.0.0.0 events.plus.yandex.net
 0.0.0.0 ga-tracker-dot-detmir-bonus.appspot.com
 0.0.0.0 ip.up66.ru
 0.0.0.0 metrics.aviasales.ru
@@ -102131,8 +102133,12 @@
 0.0.0.0 zywjpypco.7hujk.de
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 bebx.cn
+0.0.0.0 qqosk05040llo.com
 0.0.0.0 ebroktean.com
 0.0.0.0 ffxe.cn
+0.0.0.0 croqoltdp.com
+0.0.0.0 okpl05040ai.com
 0.0.0.0 okpl05030ai.com
 0.0.0.0 vtqhelleano.com
 0.0.0.0 qqosk05030llo.com
@@ -106809,7 +106815,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 106794 rules from this source
+# Converted 106800 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -140281,4 +140287,4 @@
 # Converted 33463 rules from this source
 
 
-# Total unique domains: 140257
+# Total unique domains: 140263
