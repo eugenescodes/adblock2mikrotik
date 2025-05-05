@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-05-05 06:25:31 UTC
+# Last modified: 2025-05-05 12:34:32 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 awdeliverynet.com
 0.0.0.0 bevfpfekwskzg.world
 0.0.0.0 ebvvvnjesjgx.com
 0.0.0.0 yrscfbbegumijt.com
@@ -102176,6 +102177,7 @@
 0.0.0.0 qiwqaagnaell.com
 0.0.0.0 zibjls.top
 0.0.0.0 snwucnb.top
+0.0.0.0 wlberlaiw.com
 0.0.0.0 bebx.cn
 0.0.0.0 qqosk05040llo.com
 0.0.0.0 ebroktean.com
@@ -106863,7 +106865,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 106848 rules from this source
+# Converted 106850 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -111258,7 +111260,6 @@
 0.0.0.0 awavjblaaezbb.top
 0.0.0.0 analytics.awayx.com
 0.0.0.0 awcnsvikjfvh.com
-0.0.0.0 awdeliverynet.com
 0.0.0.0 awesome-meeting.jp
 0.0.0.0 aweyqalylqqr.top
 0.0.0.0 piwik.awfl.eu
@@ -140258,7 +140259,7 @@
 0.0.0.0 zztxr.cn
 0.0.0.0 zzzperform.com
 
-# Converted 33389 rules from this source
+# Converted 33388 rules from this source
 
 
-# Total unique domains: 140237
+# Total unique domains: 140238
