@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-05-10 18:20:21 UTC
+# Last modified: 2025-05-11 01:25:27 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -90381,8 +90381,11 @@
 0.0.0.0 yigao.com
 0.0.0.0 zampda.net
 0.0.0.0 ztcadx.com
+0.0.0.0 adactive.cz
 0.0.0.0 affiliateport.eu
 0.0.0.0 analights.com
+0.0.0.0 boldem.cz
+0.0.0.0 ehub.cz
 0.0.0.0 programmatic.cz
 0.0.0.0 retargeted.co
 0.0.0.0 semnicneposilejte.cz
@@ -100758,6 +100761,8 @@
 0.0.0.0 unwucnt.top
 0.0.0.0 qpqp05101oki.com
 0.0.0.0 qcogiellq.com
+0.0.0.0 fbhorutgy.com
+0.0.0.0 hur05110kns.com
 0.0.0.0 hur05101kns.com
 0.0.0.0 xklv.cn
 0.0.0.0 jguhqbe.top
@@ -105498,7 +105503,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 105483 rules from this source
+# Converted 105488 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -106347,7 +106352,6 @@
 0.0.0.0 ada-bojana.info
 0.0.0.0 adablog69.com
 0.0.0.0 adabra.com
-0.0.0.0 adactive.cz
 0.0.0.0 adadapted.com
 0.0.0.0 adaftegloomto.com
 0.0.0.0 adagio.io
@@ -132376,7 +132380,7 @@
 0.0.0.0 analytics.zyrtec.com
 0.0.0.0 zzzperform.com
 
-# Converted 26872 rules from this source
+# Converted 26871 rules from this source
 
 
-# Total unique domains: 132355
+# Total unique domains: 132359
