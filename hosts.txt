@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-05-14 06:24:46 UTC
+# Last modified: 2025-05-14 12:34:50 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,12 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 aucdn.net
+0.0.0.0 s.dt6ycu.com
+0.0.0.0 zipup.click
+0.0.0.0 cpmemes.cfd
+0.0.0.0 fileescd.cfd
+0.0.0.0 productdownload.pro
 0.0.0.0 hrzn-nxt.com
 0.0.0.0 madcheddar.net
 0.0.0.0 tradehouse.media
@@ -35488,6 +35494,12 @@
 0.0.0.0 xlog.snssdk.com
 0.0.0.0 log.snssdk.com
 0.0.0.0 kib.hu
+0.0.0.0 adlink.wurl.com
+0.0.0.0 miqdigital.com
+0.0.0.0 imp.datafyhq.com
+0.0.0.0 getrockerbox.com
+0.0.0.0 tuhesok.com
+0.0.0.0 advmusic.com
 0.0.0.0 track.iegcom.com
 0.0.0.0 af.click.ru
 0.0.0.0 treconeanalytics.com
@@ -92200,7 +92212,6 @@
 0.0.0.0 xxyolk.com
 0.0.0.0 mountrs.com
 0.0.0.0 multibux.org
-0.0.0.0 advmusic.com
 0.0.0.0 dtashjvcjswq.info
 0.0.0.0 7nkbwdf1uq.ru
 0.0.0.0 tiz.jsite.top
@@ -106200,7 +106211,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 106185 rules from this source
+# Converted 106196 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -109177,7 +109188,6 @@
 0.0.0.0 attsuppliers.com
 0.0.0.0 attvip.mx
 0.0.0.0 auburnmole.pro
-0.0.0.0 aucdn.net
 0.0.0.0 auctionads.com
 0.0.0.0 auctionlive-portal.xyz
 0.0.0.0 counters.auctiva.com
@@ -117356,7 +117366,6 @@
 0.0.0.0 getpush.net
 0.0.0.0 getpushmonkey.com
 0.0.0.0 getreview.pl
-0.0.0.0 getrockerbox.com
 0.0.0.0 telemetry.getsendit.com
 0.0.0.0 analytics.getsling.com
 0.0.0.0 analytics.getsnworks.com
@@ -122513,7 +122522,6 @@
 0.0.0.0 minutemedia-prebid.com
 0.0.0.0 adv.mip.com
 0.0.0.0 miprimercamino.com
-0.0.0.0 miqdigital.com
 0.0.0.0 mir-kliparta.ru
 0.0.0.0 mir-stalkera.ru
 0.0.0.0 mirabelanalytics.com
@@ -130567,7 +130575,6 @@
 0.0.0.0 tufoknaqzolp.com
 0.0.0.0 tuftaitchouft.com
 0.0.0.0 analytics.tugraz.at
-0.0.0.0 tuhesok.com
 0.0.0.0 tuia.cn
 0.0.0.0 tula9mari.com
 0.0.0.0 akidesu.tumabeni.com
@@ -132564,7 +132571,6 @@
 0.0.0.0 wumii.com
 0.0.0.0 banners.wunderground.com
 0.0.0.0 wunderkind.co
-0.0.0.0 adlink.wurl.com
 0.0.0.0 wusuzee6.pro
 0.0.0.0 wuwaii.com
 0.0.0.0 wvbhawaalqwws.com
@@ -133599,7 +133605,7 @@
 0.0.0.0 analytics.zyrtec.com
 0.0.0.0 zzzperform.com
 
-# Converted 27393 rules from this source
+# Converted 27388 rules from this source
 
 
-# Total unique domains: 133578
+# Total unique domains: 133584
