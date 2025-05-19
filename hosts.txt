@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-05-19 06:26:09 UTC
+# Last modified: 2025-05-19 12:36:25 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -14,6 +14,7 @@
 
 # Source: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
+0.0.0.0 aoqenxgnxtnnc.club
 0.0.0.0 plush-abuse.com
 0.0.0.0 obnoljac.com
 0.0.0.0 aucdn.net
@@ -2562,7 +2563,6 @@
 0.0.0.0 d6b1635a92.829c4efedc.com
 0.0.0.0 dd47055762.df6733029c.com
 0.0.0.0 df48924623.4e16b2e294.com
-0.0.0.0 e0c8eba8be.8ffea74ec5.com
 0.0.0.0 e2154c9ee1.87eb0a33a9.com
 0.0.0.0 e8a209dc96.ab0a4bc0ae.com
 0.0.0.0 ecd2f27cc8.d0056a5b0b.com
@@ -6666,6 +6666,7 @@
 0.0.0.0 80055404.vtt
 0.0.0.0 8162f6c343.com
 0.0.0.0 817dae10e1.com
+0.0.0.0 81af8eb64e.com
 0.0.0.0 81c875a340.com
 0.0.0.0 8231e5c33a.com
 0.0.0.0 828af6b8ce.com
@@ -6686,11 +6687,13 @@
 0.0.0.0 88eq7spm.de
 0.0.0.0 8ab16250fe.com
 0.0.0.0 8d96fe2f01.com
+0.0.0.0 8da1db73e4.com
 0.0.0.0 8db4fde90b.com
 0.0.0.0 8de5d7e235.com
 0.0.0.0 8ea1272194.com
 0.0.0.0 8ecc2aee4f.com
 0.0.0.0 8exx9qtuojv1.shop
+0.0.0.0 8ffea74ec5.com
 0.0.0.0 8il2nsgm5.com
 0.0.0.0 8j1f0af5.de
 0.0.0.0 8jay04c4q7te.com
@@ -8180,6 +8183,7 @@
 0.0.0.0 amtgqceeirm.com
 0.0.0.0 amtracking01.com
 0.0.0.0 amtropiusr.com
+0.0.0.0 amuletsourcemadden.com
 0.0.0.0 amunfezanttor.com
 0.0.0.0 amusedfoisted.top
 0.0.0.0 amusementrehearseevil.com
@@ -8426,6 +8430,7 @@
 0.0.0.0 apxlv.com
 0.0.0.0 apxratqisc.com
 0.0.0.0 apxszeaj.com
+0.0.0.0 apyboqno.com
 0.0.0.0 apzgcipacpu.com
 0.0.0.0 aq30me9nw.com
 0.0.0.0 aq7ua5ma85rddeinve.com
@@ -9242,6 +9247,7 @@
 0.0.0.0 bardicjazzed.com
 0.0.0.0 bardspintura.shop
 0.0.0.0 barefootedleisurelypizza.com
+0.0.0.0 barelydonkeysteed.com
 0.0.0.0 barelytwinkledelegate.com
 0.0.0.0 bargainintake.com
 0.0.0.0 bargedale.com
@@ -10339,6 +10345,7 @@
 0.0.0.0 bunintruder.com
 0.0.0.0 bunjaraserumal.com
 0.0.0.0 bunkcalfcrystal.com
+0.0.0.0 bunkieloris.shop
 0.0.0.0 bunnslibby.com
 0.0.0.0 bunquaver.com
 0.0.0.0 bunth.net
@@ -11208,6 +11215,7 @@
 0.0.0.0 clearadnetwork.com
 0.0.0.0 clearancejoinjavelin.com
 0.0.0.0 clearancemadnessadvised.com
+0.0.0.0 clearcutadministration.com
 0.0.0.0 clearonclick.com
 0.0.0.0 clearwatch.tv
 0.0.0.0 cleftmeter.com
@@ -11641,6 +11649,7 @@
 0.0.0.0 constructpiece.com
 0.0.0.0 constructpreachystopper.com
 0.0.0.0 consukultinge.info
+0.0.0.0 consukultingeca.com
 0.0.0.0 consultantvariabilitybandage.com
 0.0.0.0 consumodakir.top
 0.0.0.0 contact-universe.com
@@ -11947,6 +11956,7 @@
 0.0.0.0 criminalalcovebeacon.com
 0.0.0.0 criminalmention.pro
 0.0.0.0 criminalweightforetaste.com
+0.0.0.0 criolloflatten.top
 0.0.0.0 crippledwingant.com
 0.0.0.0 crisistuesdayartillery.com
 0.0.0.0 crisp-freedom.com
@@ -12166,8 +12176,10 @@
 0.0.0.0 cypfdxbynb.com
 0.0.0.0 cypresslocum.com
 0.0.0.0 cyrociest.shop
+0.0.0.0 cysegreglo.pro
 0.0.0.0 cytomecruor.top
 0.0.0.0 cyuyvjwyfvn.com
+0.0.0.0 czamfgpnexsxo.vip
 0.0.0.0 czaraptitude.com
 0.0.0.0 czarmishap.com
 0.0.0.0 czh5aa.xyz
@@ -12181,34 +12193,21 @@
 0.0.0.0 d03ab571b4.com
 0.0.0.0 d08l9a634.com
 0.0.0.0 d0main.ru
-0.0.0.0 d14x46ho6sn9yf.cloudfront.net
 0.0.0.0 d15a035f27.com
 0.0.0.0 d170971757.com
 0.0.0.0 d1a0c6affa.com
-0.0.0.0 d1d38a26hlyhe3.cloudfront.net
-0.0.0.0 d1dtl43j681tft.cloudfront.net
 0.0.0.0 d1f76eb5a4.com
-0.0.0.0 d1jd9usa22o1l7.cloudfront.net
 0.0.0.0 d1x9q8w2e4.xyz
-0.0.0.0 d21uxxljl9m8ns.cloudfront.net
-0.0.0.0 d232dy72shugnx.cloudfront.net
 0.0.0.0 d24ak3f2b.top
 0.0.0.0 d29gqcij.com
-0.0.0.0 d2ob6t3bgjo11t.cloudfront.net
 0.0.0.0 d2ship.com
-0.0.0.0 d39xkyrc56llbg.cloudfront.net
-0.0.0.0 d3cwzq09n68ejj.cloudfront.net
 0.0.0.0 d3d30ac9d4.com
 0.0.0.0 d3edbb478c.com
-0.0.0.0 d3gaegctu6cvoa.cloudfront.net
-0.0.0.0 d3gv17rz6malag.cloudfront.net
-0.0.0.0 d3yl7tmbqe1mq.cloudfront.net
 0.0.0.0 d43849fz.xyz
 0.0.0.0 d44501d9f7.com
 0.0.0.0 d49ae3cc10.com
 0.0.0.0 d5465f9d11.com
 0.0.0.0 d5db478dde.com
-0.0.0.0 d5xsfddfzb99g.cloudfront.net
 0.0.0.0 d8c04a25e8.com
 0.0.0.0 d95bda138b.com
 0.0.0.0 d9db994995.com
@@ -12431,7 +12430,6 @@
 0.0.0.0 ddtladjyq.com
 0.0.0.0 ddtvskish.com
 0.0.0.0 ddzk5l3bd.com
-0.0.0.0 dea9webxhb7gu.cloudfront.net
 0.0.0.0 dead-put.com
 0.0.0.0 deadlyrelationship.com
 0.0.0.0 deadmentionsunday.com
@@ -12538,11 +12536,11 @@
 0.0.0.0 degreaseserpentwashhouse.com
 0.0.0.0 degreewhether.com
 0.0.0.0 degutu.xyz
-0.0.0.0 deguxtdhf6d01.cloudfront.net
 0.0.0.0 deitynosebleed.com
 0.0.0.0 dejjjdbifojmi.com
 0.0.0.0 deksoarguph.net
 0.0.0.0 del-del-ete.com
+0.0.0.0 delawhorsely.shop
 0.0.0.0 delayedmall.pro
 0.0.0.0 delianoquassa.top
 0.0.0.0 delicateomissionarched.com
@@ -12705,12 +12703,12 @@
 0.0.0.0 dfe89deba4.com
 0.0.0.0 dffa09cade.com
 0.0.0.0 dfsdkkka.com
-0.0.0.0 dfwp6qatulz0p.cloudfront.net
 0.0.0.0 dfyui8r5rs.click
 0.0.0.0 dfyvcihusajf.com
 0.0.0.0 dgafgadsgkjg.top
 0.0.0.0 dgcyyabks.com
 0.0.0.0 dgglooigbvpksp.com
+0.0.0.0 dgkkeiedhqgmp.top
 0.0.0.0 dgkmdia.com
 0.0.0.0 dgmaustralia.com
 0.0.0.0 dgnlrpth-a.today
@@ -12819,7 +12817,6 @@
 0.0.0.0 dippingunstable.com
 0.0.0.0 diptaich.com
 0.0.0.0 dipxmakuja.com
-0.0.0.0 diqftdf1fp8u.cloudfront.net
 0.0.0.0 dirdoophounu.net
 0.0.0.0 direcompulsion.com
 0.0.0.0 direct-specific.com
@@ -13305,7 +13302,6 @@
 0.0.0.0 dtx.click
 0.0.0.0 dtyathercockrem.com
 0.0.0.0 dtylhedgelnham.com
-0.0.0.0 du99h8anpnevg.cloudfront.net
 0.0.0.0 dualmarket.info
 0.0.0.0 duamilsyr.com
 0.0.0.0 dubdiggcofmo.com
@@ -13539,6 +13535,7 @@
 0.0.0.0 eburnaboost.top
 0.0.0.0 eburnahornito.shop
 0.0.0.0 ebuzzing.com
+0.0.0.0 ebxaslffntje.xyz
 0.0.0.0 ebz.io
 0.0.0.0 ec49775bc5.com
 0.0.0.0 ec7be59676.com
@@ -13893,6 +13890,7 @@
 0.0.0.0 enjaaiwix.com
 0.0.0.0 enlightencentury.com
 0.0.0.0 enlightenedstring.pro
+0.0.0.0 enlivebards.shop
 0.0.0.0 enlnks.com
 0.0.0.0 enodiarahnthedon.com
 0.0.0.0 enointselety.shop
@@ -14283,6 +14281,7 @@
 0.0.0.0 extrer.com
 0.0.0.0 extsoft.info
 0.0.0.0 exurbdaimiel.com
+0.0.0.0 exvrbxjy.com
 0.0.0.0 exxaygm.com
 0.0.0.0 ey43.com
 0.0.0.0 eyauknalyticafra.info
@@ -14669,6 +14668,7 @@
 0.0.0.0 finnan2you.com
 0.0.0.0 finnan2you.net
 0.0.0.0 finnan2you.org
+0.0.0.0 finnierazotine.top
 0.0.0.0 finnnann.com
 0.0.0.0 finreporter.net
 0.0.0.0 finsoogn.xyz
@@ -14960,6 +14960,7 @@
 0.0.0.0 forooqso.tv
 0.0.0.0 forprimeapeon.com
 0.0.0.0 forruesummula.shop
+0.0.0.0 forsakenburn.com
 0.0.0.0 forsawka.com
 0.0.0.0 forscprts.com
 0.0.0.0 forsphealan.com
@@ -15786,6 +15787,7 @@
 0.0.0.0 glyshalimu.com
 0.0.0.0 gmads.net
 0.0.0.0 gmaringpoliticism.org
+0.0.0.0 gmbylpvhssfpfhd.com
 0.0.0.0 gme-trking.com
 0.0.0.0 gmehcotihh.com
 0.0.0.0 gmiqicw.com
@@ -16092,6 +16094,7 @@
 0.0.0.0 grizzled-reality.pro
 0.0.0.0 grmtas.com
 0.0.0.0 groabopith.xyz
+0.0.0.0 groadamsoux.com
 0.0.0.0 groampez.xyz
 0.0.0.0 groamsal.net
 0.0.0.0 groaxonsoow.net
@@ -17017,6 +17020,7 @@
 0.0.0.0 htlbid.com
 0.0.0.0 htliaproject.com
 0.0.0.0 htmonster.com
+0.0.0.0 htnejxlhoskug.love
 0.0.0.0 htnswmuugnjpr.club
 0.0.0.0 htobficta.com
 0.0.0.0 htocmofkyqfi.com
@@ -17218,6 +17222,7 @@
 0.0.0.0 ieluqiqttdwv.com
 0.0.0.0 ieo8qjp3x9jn.pro
 0.0.0.0 ietyofedinj89yewtburgh.com
+0.0.0.0 iewixvvsbfkwd.world
 0.0.0.0 ieyipznx.art
 0.0.0.0 ieyri61b.xyz
 0.0.0.0 iezxmddndn.com
@@ -18028,6 +18033,7 @@
 0.0.0.0 jhodfooz.com
 0.0.0.0 jholtata.com
 0.0.0.0 jhsnshueyt.click
+0.0.0.0 jiakihtkynvks.today
 0.0.0.0 jibbahazara.top
 0.0.0.0 jicamadoless.com
 0.0.0.0 jiclzori.com
@@ -19028,6 +19034,7 @@
 0.0.0.0 leefosto.com
 0.0.0.0 leeptoadeesh.net
 0.0.0.0 leersiapsst.shop
+0.0.0.0 leerstighter.top
 0.0.0.0 leesaushoah.net
 0.0.0.0 leetaipt.net
 0.0.0.0 leeteehigloothu.net
@@ -20644,6 +20651,7 @@
 0.0.0.0 mskpwqlppxham.life
 0.0.0.0 mslpowan.shop
 0.0.0.0 msrehcmpeme.com
+0.0.0.0 msstavby.cz
 0.0.0.0 mt34iofvjay.com
 0.0.0.0 mtburn.com
 0.0.0.0 mtkgyrzfygdh.com
@@ -20951,6 +20959,7 @@
 0.0.0.0 neeceeglogu.net
 0.0.0.0 neechube.net
 0.0.0.0 needeevo.xyz
+0.0.0.0 needfulazafrin.shop
 0.0.0.0 needyscarcasserole.com
 0.0.0.0 neegreez.com
 0.0.0.0 neehaifam.net
@@ -23992,6 +24001,7 @@
 0.0.0.0 qazrvobkmqvmr.top
 0.0.0.0 qazrvoyayvawv.top
 0.0.0.0 qbkraweaoemer.top
+0.0.0.0 qblllqzqezlyz.top
 0.0.0.0 qbrzvovrozqer.top
 0.0.0.0 qbwebebwkeqar.top
 0.0.0.0 qcbtygylmnfez.fun
@@ -24031,6 +24041,7 @@
 0.0.0.0 qgevavwyafjf.com
 0.0.0.0 qgwgweoxulrb.com
 0.0.0.0 qgxbluhsgad.com
+0.0.0.0 qhiatcfrywgse.click
 0.0.0.0 qhnojvbyxfgcf.click
 0.0.0.0 qhogcyoqrl.com
 0.0.0.0 qhurchaisrea.org
@@ -24109,6 +24120,7 @@
 0.0.0.0 qrubv.buzz
 0.0.0.0 qrwoayzjybzwo.top
 0.0.0.0 qsbqxvdxhbnf.xyz
+0.0.0.0 qseacheby.xyz
 0.0.0.0 qservz.com
 0.0.0.0 qskxpvncyjly.com
 0.0.0.0 qsmnt.online
@@ -24257,6 +24269,7 @@
 0.0.0.0 rageryedison.top
 0.0.0.0 raglassofrum.cc
 0.0.0.0 ragofkanc.com
+0.0.0.0 rahdarigondi.shop
 0.0.0.0 raheglin.xyz
 0.0.0.0 raideeshaili.net
 0.0.0.0 raikijausa.net
@@ -24926,6 +24939,7 @@
 0.0.0.0 rizzomdaledh.top
 0.0.0.0 rjeruqs.com
 0.0.0.0 rjftgiby.com
+0.0.0.0 rjokawzwvryra.top
 0.0.0.0 rjowzlkaz.today
 0.0.0.0 rjw4obbw.com
 0.0.0.0 rjxphruqiu.com
@@ -25205,6 +25219,7 @@
 0.0.0.0 rugtranslating.com
 0.0.0.0 ruincrayfish.com
 0.0.0.0 ruinertapper.shop
+0.0.0.0 ruiningcoast.shop
 0.0.0.0 ruinjan.com
 0.0.0.0 rukanw.com
 0.0.0.0 rukskijruza.com
@@ -25869,6 +25884,7 @@
 0.0.0.0 shitucka.net
 0.0.0.0 shivermarchingchance.com
 0.0.0.0 shlyapapodplesk.site
+0.0.0.0 shmohuk.shop
 0.0.0.0 shoacmoackaugnu.com
 0.0.0.0 shoadessuglouz.net
 0.0.0.0 shoagloumtoamir.net
@@ -26675,6 +26691,7 @@
 0.0.0.0 stickyadstv.com
 0.0.0.0 sticoowhowu.com
 0.0.0.0 stiesboxtop.top
+0.0.0.0 stiff-hate.com
 0.0.0.0 stiffeat.pro
 0.0.0.0 stiffengobetween.com
 0.0.0.0 stiffenpreciseannoying.com
@@ -27006,6 +27023,7 @@
 0.0.0.0 swan-swan-goose.com
 0.0.0.0 swanbxca.com
 0.0.0.0 swansinksnow.com
+0.0.0.0 swapnell.shop
 0.0.0.0 swarfamlikar.com
 0.0.0.0 swarmpush.com
 0.0.0.0 swarthyamong.com
@@ -27583,6 +27601,7 @@
 0.0.0.0 tiltoofughes.com
 0.0.0.0 tilttrk.com
 0.0.0.0 tiltwin.com
+0.0.0.0 timberfrittermud.com
 0.0.0.0 time4news.net
 0.0.0.0 timecrom.com
 0.0.0.0 timeforagreement.com
@@ -27593,6 +27612,7 @@
 0.0.0.0 timetoagree.com
 0.0.0.0 timetrpchines.top
 0.0.0.0 timidseducingcorpse.com
+0.0.0.0 timingrunaway.com
 0.0.0.0 timmerintice.com
 0.0.0.0 timot-cvk.info
 0.0.0.0 timsef.com
@@ -27642,6 +27662,7 @@
 0.0.0.0 tizkakcritpe.com
 0.0.0.0 tizohjpaq.com
 0.0.0.0 tjaard11.xyz
+0.0.0.0 tjpkgnwvighek.click
 0.0.0.0 tjpzz.buzz
 0.0.0.0 tkbo.com
 0.0.0.0 tkiahfogn.com
@@ -28088,6 +28109,7 @@
 0.0.0.0 tsapphiresand.info
 0.0.0.0 tsaristcanapes.com
 0.0.0.0 tsarkinds.com
+0.0.0.0 tsazdxinqmano.love
 0.0.0.0 tsbck.com
 0.0.0.0 tsguwdaubbqgs.world
 0.0.0.0 tshxxhgmjgut.com
@@ -28675,6 +28697,7 @@
 0.0.0.0 uuyhonsdpa.com
 0.0.0.0 uveamiskept.shop
 0.0.0.0 uvoonaix.top
+0.0.0.0 uvyowldksqt.com
 0.0.0.0 uvzsmwfxa.com
 0.0.0.0 uwaxoyfklhm.com
 0.0.0.0 uwfcqtdb.xyz
@@ -28912,6 +28935,7 @@
 0.0.0.0 vfuqivac.com
 0.0.0.0 vfvdsati.com
 0.0.0.0 vfyhwapi.com
+0.0.0.0 vfyjinofkad.com
 0.0.0.0 vg4u8rvq65t6.com
 0.0.0.0 vgfhycwkvh.com
 0.0.0.0 vhabwaoh.com
@@ -29223,6 +29247,7 @@
 0.0.0.0 vwwydixeuufec.tech
 0.0.0.0 vwwzygltq.com
 0.0.0.0 vxpcarcapffdp.global
+0.0.0.0 vydfergcp.com
 0.0.0.0 vyebzzbovvorz.top
 0.0.0.0 vyfrxuytzn.com
 0.0.0.0 vyhxugizkaktg.tech
@@ -29308,6 +29333,7 @@
 0.0.0.0 warriorflowsweater.com
 0.0.0.0 warsabnormality.com
 0.0.0.0 warscoltmarvellous.com
+0.0.0.0 wartsrokey.com
 0.0.0.0 warumbistdusoarm.space
 0.0.0.0 warwickgph.top
 0.0.0.0 wary-corner.com
@@ -29494,6 +29520,7 @@
 0.0.0.0 weredthechildre.com
 0.0.0.0 weremoiety.com
 0.0.0.0 wererxrzmp.com
+0.0.0.0 werlxcdenbm.com
 0.0.0.0 weshooship.net
 0.0.0.0 wesicuros.com
 0.0.0.0 wesmallproclaim.com
@@ -29929,6 +29956,7 @@
 0.0.0.0 writhehawm.com
 0.0.0.0 wroahqavna.com
 0.0.0.0 wrongwayfarer.com
+0.0.0.0 wrqkrnicufwmc.xyz
 0.0.0.0 wrrlidnlerx.com
 0.0.0.0 wrtgbqgjtjo.com
 0.0.0.0 wrufer.com
@@ -29998,6 +30026,7 @@
 0.0.0.0 wxseedslpi.com
 0.0.0.0 wyaoormajveqk.top
 0.0.0.0 wyaoormajvwqj.top
+0.0.0.0 wyaoormajvykm.top
 0.0.0.0 wyglyvaso.com
 0.0.0.0 wyhifdpatl.com
 0.0.0.0 wyidsbopxpifd.love
@@ -30078,6 +30107,7 @@
 0.0.0.0 xenylclio.com
 0.0.0.0 xepsygfqsvyyv.tech
 0.0.0.0 xerasiasoled.top
+0.0.0.0 xfbjiyqezmwew.space
 0.0.0.0 xfdmihlzrmks.com
 0.0.0.0 xfileload.com
 0.0.0.0 xfjptlrwocfkx.one
@@ -30348,6 +30378,7 @@
 0.0.0.0 yoads.net
 0.0.0.0 yoc-adserver.com
 0.0.0.0 yockingdey.shop
+0.0.0.0 yofnvrab.com
 0.0.0.0 yogapersuasive.com
 0.0.0.0 yogar2ti8nf09.com
 0.0.0.0 yoibbka.com
@@ -32299,6 +32330,7 @@
 0.0.0.0 inrdeals.com
 0.0.0.0 join.megaphonetv.com
 0.0.0.0 js.bigcomics.win
+0.0.0.0 js.gov.cfd
 0.0.0.0 js.kakuyomu.in
 0.0.0.0 js.kkraw.com
 0.0.0.0 js.mangaraw.bid
@@ -32432,6 +32464,7 @@
 0.0.0.0 d149mkdvjofx4v.cloudfront.net
 0.0.0.0 d14l1tkufmtp1z.cloudfront.net
 0.0.0.0 d14osandwrs90r.cloudfront.net
+0.0.0.0 d14x46ho6sn9yf.cloudfront.net
 0.0.0.0 d14zhsq5aop7ap.cloudfront.net
 0.0.0.0 d154nw1c88j0q6.cloudfront.net
 0.0.0.0 d15bcy38hlba76.cloudfront.net
@@ -32500,11 +32533,13 @@
 0.0.0.0 d1crfzlys5jsn1.cloudfront.net
 0.0.0.0 d1crt12zco2cvf.cloudfront.net
 0.0.0.0 d1csp7vj6qqoa6.cloudfront.net
+0.0.0.0 d1d38a26hlyhe3.cloudfront.net
 0.0.0.0 d1d7hwtv2l91pm.cloudfront.net
 0.0.0.0 d1dcnte8mfzkpv.cloudfront.net
 0.0.0.0 d1dh1gvx7p0imm.cloudfront.net
 0.0.0.0 d1diqetif5itzx.cloudfront.net
 0.0.0.0 d1djrodi2reo2w.cloudfront.net
+0.0.0.0 d1dtl43j681tft.cloudfront.net
 0.0.0.0 d1e28xq8vu3baf.cloudfront.net
 0.0.0.0 d1e3vw6pz2ty1m.cloudfront.net
 0.0.0.0 d1e51ovcxdu97v.cloudfront.net
@@ -32553,6 +32588,7 @@
 0.0.0.0 d1j818d3wapogd.cloudfront.net
 0.0.0.0 d1j9qsxe04m2ki.cloudfront.net
 0.0.0.0 d1jcj9gy98l90g.cloudfront.net
+0.0.0.0 d1jd9usa22o1l7.cloudfront.net
 0.0.0.0 d1jnvfp2m6fzvq.cloudfront.net
 0.0.0.0 d1juimniehopp3.cloudfront.net
 0.0.0.0 d1jwpd11ofhd5g.cloudfront.net
@@ -32704,6 +32740,7 @@
 0.0.0.0 d21m5j4ptsok5u.cloudfront.net
 0.0.0.0 d21rpkgy8pahcu.cloudfront.net
 0.0.0.0 d21rudljp9n1rr.cloudfront.net
+0.0.0.0 d21uxxljl9m8ns.cloudfront.net
 0.0.0.0 d223xrf0cqrzzz.cloudfront.net
 0.0.0.0 d227cncaprzd7y.cloudfront.net
 0.0.0.0 d227n6rw2vv5cw.cloudfront.net
@@ -32715,6 +32752,7 @@
 0.0.0.0 d22sfab2t5o9bq.cloudfront.net
 0.0.0.0 d22xmn10vbouk4.cloudfront.net
 0.0.0.0 d22z575k8abudv.cloudfront.net
+0.0.0.0 d232dy72shugnx.cloudfront.net
 0.0.0.0 d235m8fpdlskx9.cloudfront.net
 0.0.0.0 d236v5t33fsfwk.cloudfront.net
 0.0.0.0 d23a1izvegnhq4.cloudfront.net
@@ -32874,6 +32912,7 @@
 0.0.0.0 d2o03z2xnyxlz5.cloudfront.net
 0.0.0.0 d2o51l6pktevii.cloudfront.net
 0.0.0.0 d2ob4whwpjvvpa.cloudfront.net
+0.0.0.0 d2ob6t3bgjo11t.cloudfront.net
 0.0.0.0 d2ohmkyg5w2c18.cloudfront.net
 0.0.0.0 d2ojfulajn60p5.cloudfront.net
 0.0.0.0 d2oouw5449k1qr.cloudfront.net
@@ -33029,6 +33068,7 @@
 0.0.0.0 d396osuty6rfec.cloudfront.net
 0.0.0.0 d399jvos5it4fl.cloudfront.net
 0.0.0.0 d39hdzmeufnl50.cloudfront.net
+0.0.0.0 d39xkyrc56llbg.cloudfront.net
 0.0.0.0 d39xxywi4dmut5.cloudfront.net
 0.0.0.0 d3a49eam5ump99.cloudfront.net
 0.0.0.0 d3a781y1fb2dm6.cloudfront.net
@@ -33048,6 +33088,7 @@
 0.0.0.0 d3cl0ipbob7kki.cloudfront.net
 0.0.0.0 d3cod80thn7qnd.cloudfront.net
 0.0.0.0 d3cpib6kv2rja7.cloudfront.net
+0.0.0.0 d3cwzq09n68ejj.cloudfront.net
 0.0.0.0 d3cynajatn2qbc.cloudfront.net
 0.0.0.0 d3d0wndor0l4xe.cloudfront.net
 0.0.0.0 d3d54j7si4woql.cloudfront.net
@@ -33074,6 +33115,7 @@
 0.0.0.0 d3frqqoat98cng.cloudfront.net
 0.0.0.0 d3g4s1p0bmuj5f.cloudfront.net
 0.0.0.0 d3g5ovfngjw9bw.cloudfront.net
+0.0.0.0 d3gaegctu6cvoa.cloudfront.net
 0.0.0.0 d3gi4w10ruedfh.cloudfront.net
 0.0.0.0 d3glbzj5024wpt.cloudfront.net
 0.0.0.0 d3glxtkdbno0so.cloudfront.net
@@ -33193,6 +33235,7 @@
 0.0.0.0 d3vvrup2jpfiep.cloudfront.net
 0.0.0.0 d3vw4uehoh23hx.cloudfront.net
 0.0.0.0 d3x0jb14w6nqz.cloudfront.net
+0.0.0.0 d3yl7tmbqe1mq.cloudfront.net
 0.0.0.0 d3zd5ejbi4l9w.cloudfront.net
 0.0.0.0 d415l8qlhk6u6.cloudfront.net
 0.0.0.0 d41j1hzuhqg2.cloudfront.net
@@ -33202,6 +33245,7 @@
 0.0.0.0 d5d3sg85gu7o6.cloudfront.net
 0.0.0.0 d5onopbfw009h.cloudfront.net
 0.0.0.0 d5wxfe8ietrpg.cloudfront.net
+0.0.0.0 d5xsfddfzb99g.cloudfront.net
 0.0.0.0 d63a3au5lqmtu.cloudfront.net
 0.0.0.0 d6cto2pyf2ks.cloudfront.net
 0.0.0.0 d6deij4k3ikap.cloudfront.net
@@ -33264,7 +33308,9 @@
 0.0.0.0 ddxwjtou7avz0.cloudfront.net
 0.0.0.0 ddzswov1e84sp.cloudfront.net
 0.0.0.0 de2nsnw1i3egd.cloudfront.net
+0.0.0.0 dea9webxhb7gu.cloudfront.net
 0.0.0.0 defppmasu35cw.cloudfront.net
+0.0.0.0 deguxtdhf6d01.cloudfront.net
 0.0.0.0 deisd5o6v8rgq.cloudfront.net
 0.0.0.0 desgao1zt7irn.cloudfront.net
 0.0.0.0 dew9ckzjyt2gn.cloudfront.net
@@ -33274,6 +33320,7 @@
 0.0.0.0 dfiqvf0syzl54.cloudfront.net
 0.0.0.0 dfqcp2awt0947.cloudfront.net
 0.0.0.0 dfwbfr2blhmr5.cloudfront.net
+0.0.0.0 dfwp6qatulz0p.cloudfront.net
 0.0.0.0 dg0hrtzcus4q4.cloudfront.net
 0.0.0.0 dg6gu9iqplusg.cloudfront.net
 0.0.0.0 dg7k1tpeaxzcq.cloudfront.net
@@ -33289,6 +33336,7 @@
 0.0.0.0 dihutyaiafuhr.cloudfront.net
 0.0.0.0 dil4q0t0blrf8.cloudfront.net
 0.0.0.0 dilvyi2h98h1q.cloudfront.net
+0.0.0.0 diqftdf1fp8u.cloudfront.net
 0.0.0.0 dita6jhhqwoiz.cloudfront.net
 0.0.0.0 divekcl7q9fxi.cloudfront.net
 0.0.0.0 diz4z73aymwyp.cloudfront.net
@@ -33393,6 +33441,7 @@
 0.0.0.0 du01z5hhojprz.cloudfront.net
 0.0.0.0 du0pud0sdlmzf.cloudfront.net
 0.0.0.0 du2uh7rq0r0d3.cloudfront.net
+0.0.0.0 du99h8anpnevg.cloudfront.net
 0.0.0.0 due5a6x777z0x.cloudfront.net
 0.0.0.0 dufai4b1ap33z.cloudfront.net
 0.0.0.0 duh0b8nl8uhfn.cloudfront.net
@@ -87298,6 +87347,7 @@
 0.0.0.0 wz.allianz.fr
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 incoming.telemetry.mozilla.org
+0.0.0.0 web-ivcbrasil-tag.s3.us-west-2.amazonaws.com
 0.0.0.0 log.realelements.live
 0.0.0.0 metrics.cs.money
 0.0.0.0 counter-mdpr.freetls.fastly.net
@@ -95753,6 +95803,7 @@
 0.0.0.0 ads.skolvarlden.se
 0.0.0.0 ads.ungdomar.se
 0.0.0.0 ads.varldenidag.se
+0.0.0.0 adsaga.telgenytt.se
 0.0.0.0 adserver.ddev.site
 0.0.0.0 adserver.so-rummet.se
 0.0.0.0 adservice.google.se
@@ -101864,6 +101915,15 @@
 0.0.0.0 cnzz.trafficmanager.net
 0.0.0.0 xdea.cn
 0.0.0.0 ldrerirbuaou.com
+0.0.0.0 rwbqll.top
+0.0.0.0 68s4eyiru.com
+0.0.0.0 pbgufjylmzsym.top
+0.0.0.0 adfsda005.xyz
+0.0.0.0 etdggwj.top
+0.0.0.0 ahqihkm.top
+0.0.0.0 rudhjah.top
+0.0.0.0 wbqhehokmy.com
+0.0.0.0 rcilgeill.com
 0.0.0.0 niu05180jd.top
 0.0.0.0 n0ocxl4w5g.top
 0.0.0.0 afce.cn
@@ -106705,7 +106765,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 106690 rules from this source
+# Converted 106750 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -110093,7 +110153,6 @@
 0.0.0.0 log.baohatinh.vn
 0.0.0.0 barbadoshello.com
 0.0.0.0 metrics.barclaycardus.com
-0.0.0.0 barelydonkeysteed.com
 0.0.0.0 baremetrics.com
 0.0.0.0 baritpurees.shop
 0.0.0.0 metrics.barkbox.com
@@ -118411,7 +118470,6 @@
 0.0.0.0 grintracks.com
 0.0.0.0 analytics.grizly.com
 0.0.0.0 act.gro-fru.net
-0.0.0.0 groadamsoux.com
 0.0.0.0 groamth.com
 0.0.0.0 grocery-delivery-66.click
 0.0.0.0 grocery-delivery-p2.site
@@ -127803,7 +127861,6 @@
 0.0.0.0 gtm.rvshare.com
 0.0.0.0 rvugsfbnox.com
 0.0.0.0 rwadx.com
-0.0.0.0 rwbqll.top
 0.0.0.0 rwdfn.run
 0.0.0.0 rwqvmokreuebla.xyz
 0.0.0.0 rwzvqzvqkzaza.top
@@ -134566,7 +134623,7 @@
 0.0.0.0 zzsysp.com
 0.0.0.0 zzzperform.com
 
-# Converted 27855 rules from this source
+# Converted 27852 rules from this source
 
 
-# Total unique domains: 134545
+# Total unique domains: 134602
