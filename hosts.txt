@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-06-02 06:26:56 UTC
+# Last modified: 2025-06-02 12:36:18 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -93616,6 +93616,7 @@
 0.0.0.0 xad.dnoticias.pt
 0.0.0.0 adclient-uol.lp.uol.com.br
 0.0.0.0 adv.r7.com
+0.0.0.0 ceremonyjogglecling.com
 0.0.0.0 simpleads.com.br
 0.0.0.0 upeex.com.br
 0.0.0.0 upeex.com
@@ -103286,6 +103287,7 @@
 0.0.0.0 funqraedp.com
 0.0.0.0 lgndhq.top
 0.0.0.0 7hgw85qugx.com
+0.0.0.0 hfttufu4jo.top
 0.0.0.0 lxsz0w0aw.com
 0.0.0.0 dejcxwlv8.com
 0.0.0.0 fk3nf1xeh.top
@@ -108290,7 +108292,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 108275 rules from this source
+# Converted 108277 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -113465,7 +113467,6 @@
 0.0.0.0 cephei-b.com
 0.0.0.0 cerambycidae.ru
 0.0.0.0 ceramic-tile-floor.info
-0.0.0.0 ceremonyjogglecling.com
 0.0.0.0 ceremoony.com
 0.0.0.0 ceresenvironmental.com
 0.0.0.0 piwik.web.cern.ch
@@ -137934,7 +137935,7 @@
 0.0.0.0 zzz-telegram.com
 0.0.0.0 zzzperform.com
 
-# Converted 29638 rules from this source
+# Converted 29637 rules from this source
 
 
-# Total unique domains: 137913
+# Total unique domains: 137914
