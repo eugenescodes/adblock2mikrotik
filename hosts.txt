@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-06-03 18:25:04 UTC
+# Last modified: 2025-06-04 01:23:20 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -93080,6 +93080,7 @@
 0.0.0.0 d2j74sjmqqyf26.cloudfront.net
 0.0.0.0 d2kdl5wcwrtj90.cloudfront.net
 0.0.0.0 d2lxqodqbpy7c2.cloudfront.net
+0.0.0.0 d2lyx5ly60ksu3.cloudfront.net
 0.0.0.0 d2o67tzzxkqap2.cloudfront.net
 0.0.0.0 d2pozfvrp52dk4.cloudfront.net
 0.0.0.0 d2pt12ct4kmq21.cloudfront.net
@@ -93745,6 +93746,7 @@
 0.0.0.0 tracker.iltrovatore.it
 0.0.0.0 tracking.trovaprezzi.it
 0.0.0.0 tracks.arubamediamarketing.it
+0.0.0.0 usage.centsdonations.com
 0.0.0.0 vppst.iltrovatore.it
 0.0.0.0 analyzer51.fc2.com
 0.0.0.0 bvr.snva.jp
@@ -103555,6 +103557,14 @@
 0.0.0.0 hash.trafficmanager.net
 0.0.0.0 51tongji.trafficmanager.net
 0.0.0.0 cnzz.trafficmanager.net
+0.0.0.0 def2g1kz2t.top
+0.0.0.0 tpuo.cn
+0.0.0.0 ruqneakyp.com
+0.0.0.0 yjnlk.com
+0.0.0.0 titroikan.com
+0.0.0.0 wj9uod3838.com
+0.0.0.0 5d7k30pv1u.com
+0.0.0.0 cpglqg.icu
 0.0.0.0 pjdhguh14.com
 0.0.0.0 c7o9xp4e4.com
 0.0.0.0 geqzt6tkg.top
@@ -108579,7 +108589,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 108564 rules from this source
+# Converted 108574 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -137778,4 +137788,4 @@
 # Converted 29190 rules from this source
 
 
-# Total unique domains: 137754
+# Total unique domains: 137764
