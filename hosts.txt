@@ -3,7 +3,7 @@
 # Homepage: https://github.com/eugenescodes/adblock2mikrotik
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
-# Last modified: 2025-06-12 06:26:35 UTC
+# Last modified: 2025-06-12 12:35:42 UTC
 #  
 # Sources:
 # - AdGuard DNS filter
@@ -4607,7 +4607,6 @@
 0.0.0.0 app.torchad.com
 0.0.0.0 c.cgmission.com
 0.0.0.0 calls.uptownleads.com
-0.0.0.0 click-eu-v4.cldirplarimo.com
 0.0.0.0 click-eu-v4.direxclkp.com
 0.0.0.0 click-eu-v4.exmnclk.com
 0.0.0.0 click-eu-v4.explodasclksec.com
@@ -4616,7 +4615,6 @@
 0.0.0.0 click-eu-v4.mainexdircllk.com
 0.0.0.0 click-eu-v4.mainexpclkdir.com
 0.0.0.0 click-eu-v4.preclksize.com
-0.0.0.0 click-eu.cldirplarimo.com
 0.0.0.0 click-eu.explodasclksec.com
 0.0.0.0 click-eu.jundclikrmdi.com
 0.0.0.0 click-eu.junexclkmid.com
@@ -4632,7 +4630,6 @@
 0.0.0.0 click-rtb2-useast.adsync.global
 0.0.0.0 click-rtb2-useast.applabs.live
 0.0.0.0 click-rtb2-useast.mediarise.io
-0.0.0.0 click-v4.cldirplarimo.com
 0.0.0.0 click-v4.direxclkp.com
 0.0.0.0 click-v4.exmnclk.com
 0.0.0.0 click-v4.expilaclkdir.com
@@ -4651,7 +4648,6 @@
 0.0.0.0 click-v4.yojnclk.com
 0.0.0.0 click-v4.yolkclknu.com
 0.0.0.0 click.aarthpro.com
-0.0.0.0 click.cldirplarimo.com
 0.0.0.0 click.datafilteringsite.com
 0.0.0.0 click.direxclkp.com
 0.0.0.0 click.eclk.club
@@ -5331,7 +5327,6 @@
 0.0.0.0 tq-eu.startbrws-4.online
 0.0.0.0 tq-eu.starvalue-3.online
 0.0.0.0 tq-eu.stevbade1.online
-0.0.0.0 tq-eu.stevbade2.online
 0.0.0.0 tq-eu.uclpointer.online
 0.0.0.0 tq.boardpress-a.online
 0.0.0.0 tq.boardpress-c.online
@@ -5355,7 +5350,6 @@
 0.0.0.0 tq.startbrws-4.online
 0.0.0.0 tq.starvalue-3.online
 0.0.0.0 tq.stevbade1.online
-0.0.0.0 tq.stevbade2.online
 0.0.0.0 tq.uclpointer.online
 0.0.0.0 uixml.bidcampaign.com
 0.0.0.0 webpush.reachyield.com
@@ -5456,7 +5450,6 @@
 0.0.0.0 xml-eu-v4.startbrws-4.online
 0.0.0.0 xml-eu-v4.starvalue-3.online
 0.0.0.0 xml-eu-v4.stevbade1.online
-0.0.0.0 xml-eu-v4.stevbade2.online
 0.0.0.0 xml-eu-v4.trackifyy.com
 0.0.0.0 xml-eu-v4.uclpointer.online
 0.0.0.0 xml-eu-v4.winkleads.com
@@ -5495,7 +5488,6 @@
 0.0.0.0 xml-eu.staradsmedia.com
 0.0.0.0 xml-eu.startbrws-2.online
 0.0.0.0 xml-eu.stevbade1.online
-0.0.0.0 xml-eu.stevbade2.online
 0.0.0.0 xml-eu.trackifyy.com
 0.0.0.0 xml-eu.winkleads.com
 0.0.0.0 xml-v4.100conversions.com
@@ -5595,7 +5587,6 @@
 0.0.0.0 xml-v4.startbrws-4.online
 0.0.0.0 xml-v4.starvalue-3.online
 0.0.0.0 xml-v4.stevbade1.online
-0.0.0.0 xml-v4.stevbade2.online
 0.0.0.0 xml-v4.strongkeyword.com
 0.0.0.0 xml-v4.strongmetrics.io
 0.0.0.0 xml-v4.swelltomedia.com
@@ -5772,7 +5763,6 @@
 0.0.0.0 xml.startbrws-4.online
 0.0.0.0 xml.starvalue-3.online
 0.0.0.0 xml.stevbade1.online
-0.0.0.0 xml.stevbade2.online
 0.0.0.0 xml.strongkeyword.com
 0.0.0.0 xml.sweetides.xyz
 0.0.0.0 xml.swelltomedia.com
@@ -7530,6 +7520,7 @@
 0.0.0.0 adjmntesdsoi.love
 0.0.0.0 adjs.media
 0.0.0.0 adjustbedevilsweep.com
+0.0.0.0 adjustmentthesilver.com
 0.0.0.0 adjux.com
 0.0.0.0 adkaora.space
 0.0.0.0 adkernel.com
@@ -8339,6 +8330,7 @@
 0.0.0.0 allaqxoh.com
 0.0.0.0 allaschcaraipi.com
 0.0.0.0 allegationcolanderprinter.com
+0.0.0.0 allegemagnanimityensue.com
 0.0.0.0 allegianceenableselfish.com
 0.0.0.0 alleliteads.com
 0.0.0.0 allemodels.com
@@ -9202,6 +9194,7 @@
 0.0.0.0 attemptingstray.com
 0.0.0.0 attempttensionfrom.com
 0.0.0.0 attempttipsrye.com
+0.0.0.0 attendanceoffvow.com
 0.0.0.0 attentionsbreastfeeding.com
 0.0.0.0 attentiverutfamous.com
 0.0.0.0 attenuatenovelty.com
@@ -9228,6 +9221,7 @@
 0.0.0.0 aubaigeep.com
 0.0.0.0 aubpcunw.com
 0.0.0.0 auburn9819.com
+0.0.0.0 aubxktrpbesh.com
 0.0.0.0 auchoahy.net
 0.0.0.0 auchoons.net
 0.0.0.0 aucmoartoas.com
@@ -10920,6 +10914,7 @@
 0.0.0.0 burleskspoiler.com
 0.0.0.0 burntarcherydecompose.com
 0.0.0.0 burntclear.com
+0.0.0.0 burreehauled.top
 0.0.0.0 burrhelkouros.top
 0.0.0.0 burydwellingchristmas.com
 0.0.0.0 busedsoccage.shop
@@ -11093,6 +11088,7 @@
 0.0.0.0 calomelsiti.com
 0.0.0.0 caltertangintin.com
 0.0.0.0 calvali.com
+0.0.0.0 calyxesdefames.com
 0.0.0.0 camads.net
 0.0.0.0 camassmastic.com
 0.0.0.0 camberchimp.com
@@ -11261,6 +11257,7 @@
 0.0.0.0 caunuscoagel.com
 0.0.0.0 causingguard.com
 0.0.0.0 causingparameterfavour.com
+0.0.0.0 causlesscauslessshowerconventional.com
 0.0.0.0 causoque.xyz
 0.0.0.0 caustopa.net
 0.0.0.0 cautionpursued.com
@@ -11814,6 +11811,7 @@
 0.0.0.0 clbjmp.com
 0.0.0.0 clcknads.pro
 0.0.0.0 clcktrck.com
+0.0.0.0 cldirplarimo.com
 0.0.0.0 cldlr.com
 0.0.0.0 clean-browsing.com
 0.0.0.0 clean.gg
@@ -13658,6 +13656,7 @@
 0.0.0.0 dislodgeneversatirical.com
 0.0.0.0 disloyalmoviesfavor.com
 0.0.0.0 dismalbowl.com
+0.0.0.0 dismalcontact.com
 0.0.0.0 dismaldirection.pro
 0.0.0.0 dismantlepenantiterrorist.com
 0.0.0.0 dismantleunloadaffair.com
@@ -13965,6 +13964,7 @@
 0.0.0.0 dozenshallow.com
 0.0.0.0 dozubatan.com
 0.0.0.0 dpdnav.com
+0.0.0.0 dpflnehslamox.com
 0.0.0.0 dpkpnzbtbkqmg.buzz
 0.0.0.0 dpmsrv.com
 0.0.0.0 dprivatedquali.org
@@ -14006,6 +14006,7 @@
 0.0.0.0 draystownet.com
 0.0.0.0 drctcldff.com
 0.0.0.0 dreadedrevisablevest.com
+0.0.0.0 dreadfullyemulateconservation.com
 0.0.0.0 dreadfulprofitable.com
 0.0.0.0 dreadluckdecidedly.com
 0.0.0.0 dream-contact-junction.com
@@ -15798,6 +15799,7 @@
 0.0.0.0 fnyaynma.com
 0.0.0.0 fnyfiexpectth.org
 0.0.0.0 foaglaid.xyz
+0.0.0.0 foalwaltzer.top
 0.0.0.0 foamingjessant.shop
 0.0.0.0 foapsovi.net
 0.0.0.0 foawogredoony.com
@@ -15843,6 +15845,7 @@
 0.0.0.0 foodersettos.click
 0.0.0.0 foodieblogroll.com
 0.0.0.0 foojeshoops.xyz
+0.0.0.0 foolhardy-style.pro
 0.0.0.0 foolishyours.com
 0.0.0.0 foomaque.net
 0.0.0.0 fooptoat.com
@@ -15960,6 +15963,7 @@
 0.0.0.0 fpfysmjkw.com
 0.0.0.0 fpgedsewst.com
 0.0.0.0 fpgswbwrimkwhw.com
+0.0.0.0 fphiiphfuboj.com
 0.0.0.0 fpnpmcdn.net
 0.0.0.0 fpoamzzaz.com
 0.0.0.0 fpojmiamnfa.com
@@ -16541,6 +16545,7 @@
 0.0.0.0 ghcaoaefmj.com
 0.0.0.0 ghettosteal.shop
 0.0.0.0 ghhidmrlpiogcg.com
+0.0.0.0 ghhonwyrbqmbbt.com
 0.0.0.0 ghlyrecomemurg.com
 0.0.0.0 ghnvfncbleiu.xyz
 0.0.0.0 ghostnewz.com
@@ -17427,6 +17432,7 @@
 0.0.0.0 hardnesscorkimmature.com
 0.0.0.0 haremarianne.com
 0.0.0.0 haresmodus.com
+0.0.0.0 harmonious-neck.pro
 0.0.0.0 harpoonsnits.top
 0.0.0.0 harpyiajumbled.top
 0.0.0.0 harrenmedianetwork.com
@@ -18131,6 +18137,7 @@
 0.0.0.0 hulakgacqaqw.com
 0.0.0.0 hulkyens.top
 0.0.0.0 hullloofas.top
+0.0.0.0 hullotyper.top
 0.0.0.0 hulocvvma.com
 0.0.0.0 humatecortin.com
 0.0.0.0 humble-gap.com
@@ -18173,6 +18180,7 @@
 0.0.0.0 husbandnights.com
 0.0.0.0 husfly.com
 0.0.0.0 hushpub.com
+0.0.0.0 huskierlurches.top
 0.0.0.0 huskinessimminentstylus.com
 0.0.0.0 huskypartydance.com
 0.0.0.0 hussaiphoa.com
@@ -18575,6 +18583,7 @@
 0.0.0.0 increasevoluntaryhour.com
 0.0.0.0 increasinglycockroachpolicy.com
 0.0.0.0 increasinglypatientstared.com
+0.0.0.0 incrediblegrandfather.com
 0.0.0.0 incremydeal.sbs
 0.0.0.0 incurabledevote.com
 0.0.0.0 indebtedatrocious.com
@@ -19157,6 +19166,7 @@
 0.0.0.0 jenonaw.com
 0.0.0.0 jeoawamqybkeb.top
 0.0.0.0 jeoawamqybkjj.top
+0.0.0.0 jeopardizegrowled.com
 0.0.0.0 jeopardycruel.com
 0.0.0.0 jepsauveel.net
 0.0.0.0 jeqjawqyvboqj.top
@@ -19199,6 +19209,7 @@
 0.0.0.0 jgtdptiivqmxubk.com
 0.0.0.0 jgubbpypmlxbk.one
 0.0.0.0 jguroejplzivn.site
+0.0.0.0 jgvwtegm.com
 0.0.0.0 jgwwszqkvyxcg.site
 0.0.0.0 jhbjkqqykibyt.buzz
 0.0.0.0 jhcnvrqljibffep.com
@@ -20024,6 +20035,7 @@
 0.0.0.0 kursatarak.com
 0.0.0.0 kursruvfia.com
 0.0.0.0 kusjyfwishbhtgg.com
+0.0.0.0 kuskitedecius.shop
 0.0.0.0 kusumpisachi.top
 0.0.0.0 kutpkolpek.com
 0.0.0.0 kuttabjaman.shop
@@ -20909,6 +20921,7 @@
 0.0.0.0 lubowitz.biz
 0.0.0.0 lubricantexaminer.com
 0.0.0.0 lubrifymodi.top
+0.0.0.0 lubywhabi.com
 0.0.0.0 lucanbloop.top
 0.0.0.0 lucgryxiw.com
 0.0.0.0 luciditycuddle.com
@@ -21048,6 +21061,7 @@
 0.0.0.0 lyfjnkpupaxixm.com
 0.0.0.0 lyingleisurelycontagious.com
 0.0.0.0 lylfxnnmp.com
+0.0.0.0 lylowerhughe.com
 0.0.0.0 lylufhuxqwi.com
 0.0.0.0 lymckensecuryren.org
 0.0.0.0 lynnegomerel.top
@@ -21400,6 +21414,7 @@
 0.0.0.0 mcqmfeiuntlwk.space
 0.0.0.0 mcrertpgdjbvj.com
 0.0.0.0 mcvfjyhvyvp.com
+0.0.0.0 mcvqdhkiehvtms.xyz
 0.0.0.0 mcxmke.com
 0.0.0.0 mcyaabdssxdlg.space
 0.0.0.0 mcytxdrqjmrly.fun
@@ -23192,6 +23207,7 @@
 0.0.0.0 offertops.info
 0.0.0.0 offerwall.site
 0.0.0.0 offfurreton.com
+0.0.0.0 officerbeginner.com
 0.0.0.0 officerdiscontentedalley.com
 0.0.0.0 officetablntry.org
 0.0.0.0 offmachopor.com
@@ -23620,6 +23636,7 @@
 0.0.0.0 oqpahlskaqal.com
 0.0.0.0 oqpfalkz.com
 0.0.0.0 oqpgzeopstk.com
+0.0.0.0 oqrbtiqhe.com
 0.0.0.0 oqrtuvguhl.com
 0.0.0.0 oqrvraab.com
 0.0.0.0 oqrzuvarwgm.com
@@ -25001,6 +25018,7 @@
 0.0.0.0 ppaymnknqzvqw.tech
 0.0.0.0 ppclinking.com
 0.0.0.0 ppcmate.com
+0.0.0.0 ppcmdqttfy.com
 0.0.0.0 ppcnt.pro
 0.0.0.0 ppctraffic.co
 0.0.0.0 ppexfeox.com
@@ -25705,6 +25723,7 @@
 0.0.0.0 qcerujcajnme.com
 0.0.0.0 qchmlmtkpbswf.buzz
 0.0.0.0 qclruwltqxojpo.com
+0.0.0.0 qcqigqbfbkeipgq.com
 0.0.0.0 qcwnfoqtqgvau.icu
 0.0.0.0 qcyqkirxrhidh.site
 0.0.0.0 qdfscelxyyem.club
@@ -26044,6 +26063,7 @@
 0.0.0.0 ragrolromairsou.net
 0.0.0.0 rahdarigondi.shop
 0.0.0.0 raheglin.xyz
+0.0.0.0 raigleephi.net
 0.0.0.0 railingperformance.com
 0.0.0.0 railroadlineal.com
 0.0.0.0 railroadunofficial.com
@@ -26520,6 +26540,7 @@
 0.0.0.0 resourcefulpower.com
 0.0.0.0 resourceterminatepickles.com
 0.0.0.0 respeaktret.com
+0.0.0.0 respectapothgm.shop
 0.0.0.0 respectfullyalternate.com
 0.0.0.0 respectfulofficiallydoorway.com
 0.0.0.0 respectfulpleaabsolve.com
@@ -26989,6 +27010,7 @@
 0.0.0.0 rqwvvtsvnu.com
 0.0.0.0 rqyebojzwaywq.top
 0.0.0.0 rqzolelelmaea.top
+0.0.0.0 rqzolelelmayy.top
 0.0.0.0 rrayqhqxmybn.com
 0.0.0.0 rrbzvmklrzwmk.top
 0.0.0.0 rreftyonkak.com
@@ -27145,6 +27167,7 @@
 0.0.0.0 rvstcsghqcu.com
 0.0.0.0 rvukbeuexr.com
 0.0.0.0 rvvmynjd.love
+0.0.0.0 rwbkrnihzrbrb.online
 0.0.0.0 rwdmymnfiklbj.com
 0.0.0.0 rwfwlrhyolok.com
 0.0.0.0 rwhnuqxubwqvn.one
@@ -28193,6 +28216,7 @@
 0.0.0.0 smyvuljawh.com
 0.0.0.0 snaglighter.com
 0.0.0.0 snammar-jumntal.com
+0.0.0.0 snappypalps.shop
 0.0.0.0 snarlingrequirement.com
 0.0.0.0 snarlsfuzzes.com
 0.0.0.0 snebbubbled.com
@@ -28265,6 +28289,7 @@
 0.0.0.0 softresumesuperserver.com
 0.0.0.0 softwares2015.com
 0.0.0.0 soggingterman.com
+0.0.0.0 soggy-personality.pro
 0.0.0.0 sogropidy.com
 0.0.0.0 soholfit.com
 0.0.0.0 soilenthusiasmshindig.com
@@ -28408,6 +28433,7 @@
 0.0.0.0 spediumege.com
 0.0.0.0 speeb.com
 0.0.0.0 speechanchor.com
+0.0.0.0 speechlesstow.com
 0.0.0.0 speedilycartrigeglove.com
 0.0.0.0 speedilyeuropeanshake.com
 0.0.0.0 speedsupermarketdonut.com
@@ -28688,6 +28714,7 @@
 0.0.0.0 stesywijy.com
 0.0.0.0 stethathehadsto.com
 0.0.0.0 stethepsartopo.com
+0.0.0.0 stevbade2.online
 0.0.0.0 stgcdn.com
 0.0.0.0 stgowan.com
 0.0.0.0 sthevoyager.org
@@ -28769,6 +28796,7 @@
 0.0.0.0 strainprimar.com
 0.0.0.0 strainviscountbestial.com
 0.0.0.0 straitchangeless.com
+0.0.0.0 strangineersa.com
 0.0.0.0 strangineersalyl.org
 0.0.0.0 strangleslogan.com
 0.0.0.0 strastconversity.com
@@ -30480,6 +30508,7 @@
 0.0.0.0 uitjngvykqxxk.space
 0.0.0.0 uiypods.my
 0.0.0.0 ujdtnsgiagbxx.click
+0.0.0.0 ujqwhqjckhscl.com
 0.0.0.0 ujscdn.com
 0.0.0.0 ujtgtmj.com
 0.0.0.0 ujw1y54r.fun
@@ -30556,6 +30585,7 @@
 0.0.0.0 uncletroublescircumference.com
 0.0.0.0 uncolylirella.top
 0.0.0.0 uncomfortableremote.com
+0.0.0.0 uncomfortablewanted.com
 0.0.0.0 uncommonperceived.com
 0.0.0.0 uncopedekkos.top
 0.0.0.0 uncrobator.com
@@ -30893,6 +30923,7 @@
 0.0.0.0 vaikeeecvys.com
 0.0.0.0 vaikijie.net
 0.0.0.0 vaimucuvikuwu.net
+0.0.0.0 vainanalyst.com
 0.0.0.0 vainfulkmole.com
 0.0.0.0 vaipsona.com
 0.0.0.0 vaipsouw.com
@@ -31508,6 +31539,7 @@
 0.0.0.0 wambugureining.shop
 0.0.0.0 wammukadsr.com
 0.0.0.0 wamolcralq.com
+0.0.0.0 wamylpjsegdmba.xyz
 0.0.0.0 wanalnatnwto.com
 0.0.0.0 wanderingbloke.com
 0.0.0.0 wanderingchimneypainting.com
@@ -31737,6 +31769,7 @@
 0.0.0.0 wetnesstommer.com
 0.0.0.0 wetrackgames.com
 0.0.0.0 wetsireoverload.com
+0.0.0.0 wevrwqjqemeyz.top
 0.0.0.0 wevrwqjqemkrm.top
 0.0.0.0 wevrwqjqemkyj.top
 0.0.0.0 wewearegogogo.com
@@ -31866,6 +31899,7 @@
 0.0.0.0 wicdn.cloud
 0.0.0.0 wickedhumankindbarrel.com
 0.0.0.0 wicopymastery.com
+0.0.0.0 widdermixtec.com
 0.0.0.0 wideaplentyinsurance.com
 0.0.0.0 wideeyed-painting.com
 0.0.0.0 widenaccident.com
@@ -32043,6 +32077,7 @@
 0.0.0.0 wnt-some-push.net
 0.0.0.0 wnujsatapndbq.today
 0.0.0.0 woafoame.net
+0.0.0.0 woagloojaigri.net
 0.0.0.0 woajoatheevaim.com
 0.0.0.0 woamoogloow.net
 0.0.0.0 woapheer.com
@@ -32712,6 +32747,7 @@
 0.0.0.0 yrzkvwrrpampg.online
 0.0.0.0 yrzmxrasdhwbq.store
 0.0.0.0 ysesials.net
+0.0.0.0 yseyxucrhjfi.com
 0.0.0.0 yshfyhfhzvcik.club
 0.0.0.0 ystationalhed.com
 0.0.0.0 ytdut.online
@@ -35285,6 +35321,7 @@
 0.0.0.0 d2va1d0hpla18n.cloudfront.net
 0.0.0.0 d2vmavw0uawm2t.cloudfront.net
 0.0.0.0 d2vorijeeka2cf.cloudfront.net
+0.0.0.0 d2vptth0euqbxm.cloudfront.net
 0.0.0.0 d2vvyk8pqw001z.cloudfront.net
 0.0.0.0 d2vwl2vhlatm2f.cloudfront.net
 0.0.0.0 d2vwsmst56j4zq.cloudfront.net
@@ -89673,6 +89710,7 @@
 0.0.0.0 wz.allianz.fr
 0.0.0.0 d1udjti6mtxz9q.cloudfront.net
 0.0.0.0 incoming.telemetry.mozilla.org
+0.0.0.0 stats.anime-go.cc
 0.0.0.0 kamp.daum.net
 0.0.0.0 netmarbleslog.netmarble.com
 0.0.0.0 slf.fugu-it.com
@@ -103780,7 +103818,6 @@
 0.0.0.0 clicksure.com
 0.0.0.0 data.bookline.hu
 0.0.0.0 hitelkereso.hu
-0.0.0.0 iforex.com
 0.0.0.0 iitech.dk
 0.0.0.0 ingatlannet.hu
 0.0.0.0 klix.hu
@@ -108737,7 +108774,7 @@
 0.0.0.0 a4.overclockers.ua
 0.0.0.0 novunu.football-plyus.net
 
-# Converted 108722 rules from this source
+# Converted 108759 rules from this source
 
 
 # Source: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
@@ -110891,7 +110928,6 @@
 0.0.0.0 log.alldocumentmate.pro
 0.0.0.0 log.alldocumentplus.pro
 0.0.0.0 log.alldocumentsviewer.pro
-0.0.0.0 allegemagnanimityensue.com
 0.0.0.0 analytics.alleghenycounty.us
 0.0.0.0 allegiantcare.com
 0.0.0.0 allegronagroda.online
@@ -114273,7 +114309,6 @@
 0.0.0.0 clck-analytics.com
 0.0.0.0 clcktrax.com
 0.0.0.0 cld5r.com
-0.0.0.0 cldirplarimo.com
 0.0.0.0 clean-delivery.ch
 0.0.0.0 log.cleanernoble.live
 0.0.0.0 log.cleanerwish.live
@@ -122196,6 +122231,7 @@
 0.0.0.0 iflirts.com
 0.0.0.0 analytics.iflysouthern.com
 0.0.0.0 logconf.iflytek.com
+0.0.0.0 iforex.com
 0.0.0.0 iftrack.com
 0.0.0.0 ifuckshemales.com
 0.0.0.0 prebid-cache-k8s.ifunny.co
@@ -132421,6 +132457,8 @@
 0.0.0.0 stereoproxy.com
 0.0.0.0 stereotypedsugar.com
 0.0.0.0 ox2.sterta.pl
+0.0.0.0 xml-eu-v4.stevbade2.online
+0.0.0.0 xml-v4.stevbade2.online
 0.0.0.0 analytics.stevemadden.com
 0.0.0.0 sgtm.stevemadden.com
 0.0.0.0 analytics.stickerapp.com
@@ -137502,7 +137540,7 @@
 0.0.0.0 zzgnyc.com
 0.0.0.0 zzzperform.com
 
-# Converted 28759 rules from this source
+# Converted 28760 rules from this source
 
 
-# Total unique domains: 137481
+# Total unique domains: 137519
