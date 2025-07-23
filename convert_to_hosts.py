@@ -51,7 +51,7 @@ def main():
 # Last modified: {current_time}
 #  
 # Sources:
-# - AdGuard DNS filter
+# 
 # - Hagezi DNS blocklist for syntax adblock
 #
 # Format: 0.0.0.0 domain.tld
