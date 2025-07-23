@@ -31,10 +31,10 @@ def convert_rule(rule):
 
 def main():
     urls = [
-        "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
-        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",
-        # "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
-        # "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.mini.txt",
+        # "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
+        # "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",
+        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
+        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.mini.txt",
         # "https://..."
     ]
 
