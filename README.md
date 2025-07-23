@@ -4,12 +4,12 @@ Convert AdBlock/AdGuard filter lists to MikroTik RouterOS DNS adlist format.
 
 ## Overview
 
-A conversion utility designed to transform popular ad-blocking filter lists (AdGuard and Hagezi) into a compact, memory-efficient format compatible with MikroTik RouterOS 7.15+ DNS adlist feature. 
+A conversion utility designed to transform popular ad-blocking filter lists (AdGuard and Hagezi) into a compact, memory-efficient format compatible with MikroTik RouterOS 7.15+ DNS adlist feature.
 
 ### Source Filter Lists
 
-- AdGuard [AdguardSDNSFilter](https://github.com/AdguardTeam/AdguardSDNSFilter): https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-- Hagezi [Multi LIGHT - Basic protection](https://github.com/hagezi/dns-blocklists#green_book-multi-light---basic-protection-): https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
+- Hagezi [Multi PRO mini](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#ledger-multi-pro-mini-recommended-for-browsermobile-adblockers-): [link to file on adblock format](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt)
+- Hagezi [Threat Intelligence Feeds - Mini version](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#closed_lock_with_key-threat-intelligence-feeds---mini-version-): [link to file on adblock format](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.mini.txt)
 
 The primary goal is to create a minimal, optimized host file that addresses the limited memory constraints of low-resource devices like the ```hAP series``` (which has 16 MB storage but less than 3 MB free after upgrading to RouterOS 7), for example the [RB951Ui-2nD hAP](https://mikrotik.com/product/RB951Ui-2nD) router
 
@@ -93,9 +93,9 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 ## Acknowledgments
 
-- AdGuard and Hagezi communities for maintaining comprehensive filter lists
+- Hagezi communities for maintaining comprehensive filter lists
 - MikroTik for implementing DNS adlist feature in RouterOS 7.15
 
 ## Note
 
-This tool is not affiliated with MikroTik or AdGuard.
+This tool is not affiliated with MikroTik
