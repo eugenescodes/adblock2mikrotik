@@ -1,10 +1,10 @@
 # adblock2mikrotik
 
-Convert AdBlock/AdGuard filter lists to MikroTik RouterOS DNS adlist format.
+Convert ad-blocking filter lists to MikroTik RouterOS DNS adlist format.
 
 ## Overview
 
-A conversion utility designed to transform popular ad-blocking filter lists (AdGuard and Hagezi) into a compact, memory-efficient format compatible with MikroTik RouterOS 7.15+ DNS adlist feature.
+A conversion utility designed to transform popular ad-blocking filter lists (such as Hagezi) into a compact, memory-efficient format compatible with MikroTik RouterOS 7.15+ DNS adlist feature.
 
 ### Source Filter Lists
 
@@ -15,14 +15,14 @@ The primary goal is to create a minimal, optimized host file that addresses the 
 
 ## Features
 
-- Converts AdBlock/AdGuard syntax to MikroTik DNS adlist format
+- Converts ad-blocking filter list syntax to MikroTik DNS adlist format
 - Removes duplicates and optimizes storage space
 - Supports multiple input filter list formats
 - Compatible with RouterOS 7.15 and newer
 - Preserves only domain-based rules
 - Removes comments and unnecessary elements
 
-Supports common AdBlock/AdGuard filter rules, including:
+Supports common ad-blocking filter rules, including:
 
 - Domain rules (`||example.com^`)
 - Basic URL rules

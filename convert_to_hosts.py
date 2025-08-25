@@ -20,7 +20,7 @@ def convert_rule(rule):
         
     # Handle different rule formats
     if rule.startswith('||') and '^' in rule:
-        # Extract domain from AdGuard/uBlock style rule
+        # Extract domain from common ad-blocking rule style (e.g., ||domain^)
         domain = rule[2:].split('^')[0]
         # Remove any additional modifiers after ^
         domain = domain.split('$')[0]
