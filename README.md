@@ -37,16 +37,36 @@ Generates a clean list of domains in MikroTik DNS adlist format:
 0.0.0.0 tracking.example.org
 ```
 
-## Use
+## Usage
 
-How to implement DNS adblocking on MikroTik RouterOS 7.15+ using online blocklists. You must have active internet connextion and basic RouterOS configuration knowledge.
+This tool converts popular ad-blocking filter lists into MikroTik RouterOS DNS adlist format. It is designed for use with MikroTik RouterOS 7.15+.
+
+### Running the tool
+
+You can run the Python script directly:
+
+```bash
+python convert_to_hosts.py
+```
+
+Or using Docker:
+
+```bash
+docker build -t convert_to_hosts .
+docker run --rm -v $(pwd):/app -e PYTHONPATH=/app --entrypoint python convert_to_hosts convert_to_hosts.py
+```
+
+### Implementing DNS adblocking on MikroTik RouterOS
+
+You must have an active internet connection and basic RouterOS configuration knowledge.
+
 To add a URL-based adlist for DNS adblocking, use the following command in the router terminal:
 
 ```routeros
 /ip/dns/adlist add url=https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt ssl-verify=no
 ```
 
-If you want to use properties -`ssl-verify=yes` you can download and import [CA certificates](https://curl.se/docs/caextract.html) use next commands:
+If you want to use `ssl-verify=yes`, you can download and import [CA certificates](https://curl.se/docs/caextract.html) using the following commands:
 
 ```routeros
 /tool fetch url=https://curl.se/ca/cacert.pem
@@ -61,10 +81,10 @@ The resulting output should be:
     duration: 1s 
 ```
 
-Then run next command:
+Then run the next command:
 
 ```routeros
-/certificate import file-name=cacert.pem passphrase=""                                                  
+/certificate import file-name=cacert.pem passphrase=""
 ```
 
 Output should be:
@@ -77,11 +97,13 @@ certificates-imported: 149
   keys-with-no-certificate:   0
 ```
 
-After that run next command:
+After that, run the following command:
 
 ```routeros
 /ip/dns/adlist add url=https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt ssl-verify=yes
 ```
+
+### Additional Resources
 
 For a comprehensive guide on DNS adblocking and adlist configuration, refer to the official MikroTik documentation:
 
