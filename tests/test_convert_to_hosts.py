@@ -8,9 +8,15 @@ def test_convert_rule_valid():
     # Valid rule with || and ^
     assert convert_to_hosts.convert_rule("||example.com^") == "0.0.0.0 example.com"
     # Valid rule with modifiers after ^
-    assert convert_to_hosts.convert_rule("||example.com^$third-party") == "0.0.0.0 example.com"
+    assert (
+        convert_to_hosts.convert_rule("||example.com^$third-party")
+        == "0.0.0.0 example.com"
+    )
     # Rule with comment and whitespace
-    assert convert_to_hosts.convert_rule("||example.com^  # comment") == "0.0.0.0 example.com"
+    assert (
+        convert_to_hosts.convert_rule("||example.com^  # comment")
+        == "0.0.0.0 example.com"
+    )
 
 
 def test_convert_rule_invalid():
@@ -53,7 +59,9 @@ def test_main(mock_file, mock_fetch_rules):
     handle = mock_file()
 
     # Check that header was written
-    header_written = any("Title:" in call.args[0] for call in handle.write.call_args_list)
+    header_written = any(
+        "Title:" in call.args[0] for call in handle.write.call_args_list
+    )
     assert header_written
 
     # Check that converted rules were written
