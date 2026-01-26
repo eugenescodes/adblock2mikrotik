@@ -1,3 +1,6 @@
+> [!TIP]
+> URL to add in RouterOS: <https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt>
+
 # adblock2mikrotik
 
 Convert ad-blocking filter lists to MikroTik RouterOS DNS adlist format.
