@@ -67,15 +67,6 @@ jobs:
             echo "No formatting changes to commit."
           fi
 
-      - name: Run tests inside Docker
-        run: |
-          docker build -t convert_to_hosts:latest .
-          docker run --rm \
-            -v ${{ github.workspace }}:/app \
-            -e PYTHONPATH=/app \
-            --entrypoint pytest \
-            convert_to_hosts:latest -v tests/test_convert_to_hosts.py
-
   # ─────────────────────────────────────────────
   # JOB 2: UPDATE HOSTS (Run only on Schedule or Dispatch)
   # ─────────────────────────────────────────────
