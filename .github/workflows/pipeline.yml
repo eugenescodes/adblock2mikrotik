@@ -84,10 +84,12 @@ jobs:
         uses: astral-sh/setup-uv@v7
 
       - name: Install dependencies via uv
-        run: uv pip install -r requirements.txt --system
+        run: |
+          uv venv
+          uv pip install -r requirements.txt
 
       - name: Run conversion script
-        run: python convert_to_hosts.py
+        run: uv run python convert_to_hosts.py
 
       - name: Commit and push hosts.txt
         run: |
