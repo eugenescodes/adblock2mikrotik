@@ -49,6 +49,17 @@ jobs:
           ruff check . --fix
           ruff format .
 
+      - name: Install test dependencies via uv
+        run: |
+          uv venv
+          # Встановлюємо залежності проєкту + pytest
+          uv pip install -r requirements.txt pytest
+
+      - name: Run tests natively
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: uv run pytest -v tests/test_convert_to_hosts.py
+
       - name: Commit and push ALL formatting fixes
         if: github.event_name == 'push'
         run: |
