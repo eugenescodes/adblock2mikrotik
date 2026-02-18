@@ -1,0 +1,113 @@
+name: Pipeline
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: pipeline-${{ github.ref }}
+  cancel-in-progress: true 
+
+jobs:
+  # ─────────────────────────────────────────────
+  # JOB 1: FORMAT & TEST (Run only on Push/PR/Dispatch)
+  # ─────────────────────────────────────────────
+  format-and-test:
+    # not run every 6 hours on cron, but only on push/pr/dispatch
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install ruff
+        run: uv tool install ruff
+
+      - name: Lint and fix Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v22 
+        with:
+          fix: true
+          globs: '**/*.md'
+        continue-on-error: true
+
+      - name: Run ruff (fix and format)
+        run: |
+          ruff check . --fix
+          ruff format .
+
+      - name: Commit and push ALL formatting fixes
+        if: github.event_name == 'push'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # safe branch name for both PRs and direct pushes
+          BRANCH_NAME=${{ github.head_ref || github.ref_name }}
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "Auto-fix formatting (Markdown & Ruff)" || exit 0
+            git pull --rebase origin "$BRANCH_NAME"
+            git push origin "HEAD:refs/heads/$BRANCH_NAME"
+          else
+            echo "No formatting changes to commit."
+          fi
+
+      - name: Run tests inside Docker
+        run: |
+          docker build -t convert_to_hosts:latest .
+          docker run --rm \
+            -v ${{ github.workspace }}:/app \
+            -e PYTHONPATH=/app \
+            --entrypoint pytest \
+            convert_to_hosts:latest -v tests/test_convert_to_hosts.py
+
+  # ─────────────────────────────────────────────
+  # JOB 2: UPDATE HOSTS (Run only on Schedule or Dispatch)
+  # ─────────────────────────────────────────────
+  update-hosts:
+    # run only timer from cron or manual trigger, not on push/pr
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install dependencies via uv
+        run: uv pip install -r requirements.txt --system
+
+      - name: Run conversion script
+        run: python convert_to_hosts.py
+
+      - name: Commit and push hosts.txt
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if [[ -n $(git status --porcelain hosts.txt) ]]; then
+            git add hosts.txt
+            git commit -m "Update hosts.txt via schedule"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "No changes to commit."
+          fi
