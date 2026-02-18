@@ -15,7 +15,7 @@ on:
 
 concurrency:
   group: pipeline-${{ github.ref }}
-  cancel-in-progress: true 
+  cancel-in-progress: false
 
 jobs:
   # ─────────────────────────────────────────────
@@ -56,11 +56,11 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           # safe branch name for both PRs and direct pushes
-          BRANCH_NAME=${{ github.head_ref || github.ref_name }}
+          BRANCH_NAME="${{ github.head_ref || github.ref_name }}"
           
           if [ -n "$(git status --porcelain)" ]; then
             git add .
-            git commit -m "Auto-fix formatting (Markdown & Ruff)" || exit 0
+            git commit -m "Auto-fix formatting (Markdown & Ruff)"
             git pull --rebase origin "$BRANCH_NAME"
             git push origin "HEAD:refs/heads/$BRANCH_NAME"
           else
