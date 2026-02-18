@@ -1,6 +1,7 @@
-import requests
 import re
-from datetime import datetime, UTC
+from datetime import UTC, datetime
+
+import requests
 
 
 def fetch_rules(url):
