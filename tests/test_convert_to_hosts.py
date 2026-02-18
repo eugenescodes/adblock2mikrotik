@@ -1,7 +1,8 @@
 import sys
-import requests
 from pathlib import Path
 from unittest.mock import mock_open, patch
+
+import requests
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
@@ -41,6 +42,7 @@ def test_fetch_rules_success(mock_get):
     result = convert_to_hosts.fetch_rules("http://fakeurl")
     assert result == ["line1", "line2", "line3"]
     mock_get.assert_called_once_with("http://fakeurl", timeout=(3, 10))
+
 
 @patch("convert_to_hosts.requests.get")
 def test_fetch_rules_failure(mock_get, capsys):
