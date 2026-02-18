@@ -48,20 +48,23 @@ def main():
 
     # Write header with timestamp
     current_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
-    header = f"""# Title: This filter compiled from trusted, verified sources and optimized for compatibility with DNS-level ad blocking by merging and simplifying multiple filters
-#
-# Homepage: https://github.com/eugenescodes/adblock2mikrotik
-# License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
-#
-# Last modified: {current_time}
-#
-# Sources:
-#
-# - Hagezi DNS blocklist for syntax adblock
-#
-# Format: 0.0.0.0 domain.tld
-#
-"""
+    header = (
+        "# Title: This filter compiled from trusted, verified sources and optimized "
+        "for compatibility with DNS-level ad blocking by merging and simplifying "
+        "multiple filters\n"
+        "#\n"
+        "# Homepage: https://github.com/eugenescodes/adblock2mikrotik\n"
+        "# License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE\n"
+        "#\n"
+        f"# Last modified: {current_time}\n"
+        "#\n"
+        "# Sources:\n"
+        "#\n"
+        "# - Hagezi DNS blocklist for syntax adblock\n"
+        "#\n"
+        "# Format: 0.0.0.0 domain.tld\n"
+        "#\n"
+    )
 
     with open("hosts.txt", "w", encoding="utf-8") as f:
         f.write(header)
