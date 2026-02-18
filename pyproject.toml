@@ -1,0 +1,18 @@
+[project]
+name = "adblock2mikrotik"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88  # same default as Black
+
+[tool.ruff.lint]
+# E/W — pycodestyle, F — pyflakes, I — isort, UP — pyupgrade
+select = ["E", "W", "F", "I", "UP"]
+ignore = []
+
+[tool.ruff.format]
+# Use double quotes and Black-compatible style
+quote-style = "double"
+indent-style = "space"
