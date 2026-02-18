@@ -1,4 +1,5 @@
 import sys
+import requests
 from pathlib import Path
 from unittest.mock import mock_open, patch
 
@@ -40,6 +41,14 @@ def test_fetch_rules_success(mock_get):
     result = convert_to_hosts.fetch_rules("http://fakeurl")
     assert result == ["line1", "line2", "line3"]
     mock_get.assert_called_once_with("http://fakeurl", timeout=(3, 10))
+
+@patch("convert_to_hosts.requests.get")
+def test_fetch_rules_failure(mock_get, capsys):
+    mock_get.side_effect = requests.RequestException("Mocked network error")
+    result = convert_to_hosts.fetch_rules("http://fakeurl")
+    assert result == []
+    captured = capsys.readouterr()
+    assert "Error fetching http://fakeurl: Mocked network error" in captured.out
 
 
 @patch("convert_to_hosts.fetch_rules")
