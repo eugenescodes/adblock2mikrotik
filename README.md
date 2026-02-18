@@ -113,6 +113,59 @@ For a comprehensive guide on DNS adblocking and adlist configuration, refer to t
 - [DNS Adlist - MikroTik Documentation](https://help.mikrotik.com/docs/spaces/ROS/pages/37748767/DNS#DNS-Adlist)
 - [Certificates - MikroTik Documentation](https://help.mikrotik.com/docs/spaces/ROS/pages/2555969/Certificates)
 
+## Development
+
+This project uses [uv](https://docs.astral.sh/uv/) for package management and [Ruff](https://docs.astral.sh/ruff/) for linting and formatting.
+
+### Prerequisites
+
+Install `uv` (replaces `pip` and `venv`) [more info about uv](https://docs.astral.sh/uv/getting-started/installation/):
+
+```bash
+# macOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+### Setup
+
+```bash
+# Create virtual environment and install dependencies
+uv venv
+uv pip install -r requirements.txt
+
+# Install Ruff globally via uv
+uv tool install ruff
+```
+
+### Linting and formatting
+
+Ruff replaces both `flake8` (linter) and `black` (formatter) in a single tool [more info about ruff](https://docs.astral.sh/ruff/installation/):
+
+```bash
+# Check for lint errors
+ruff check .
+
+# Fix lint errors automatically
+ruff check . --fix
+
+# Format code
+ruff format .
+
+# Check formatting without applying changes
+ruff format --check .
+```
+
+### Running tests
+
+```bash
+# Run tests directly
+uv run pytest tests/
+
+# Or inside Docker
+docker build -t convert_to_hosts .
+docker run --rm -v $(pwd):/app -e PYTHONPATH=/app --entrypoint pytest convert_to_hosts -v tests/test_convert_to_hosts.py
+```
+
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
