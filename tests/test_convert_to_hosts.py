@@ -1,4 +1,8 @@
+import sys
+from pathlib import Path
 from unittest.mock import mock_open, patch
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import convert_to_hosts
 
