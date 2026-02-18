@@ -52,7 +52,6 @@ jobs:
       - name: Install test dependencies via uv
         run: |
           uv venv
-          # Встановлюємо залежності проєкту + pytest
           uv pip install -r requirements.txt pytest
 
       - name: Run tests natively
