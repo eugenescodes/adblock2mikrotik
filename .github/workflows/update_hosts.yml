@@ -1,5 +1,9 @@
 name: Update Converted Hosts
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -45,4 +49,6 @@ jobs:
 
       - name: Push changes
         if: steps.check-for-changes.outputs.changed == 'true'
-        run: git push
+        run: |
+          git pull --rebase origin "${GITHUB_REF##*/}"
+          git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref }}
