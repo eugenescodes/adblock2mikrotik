@@ -54,9 +54,9 @@ def main():
 # License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE
 #
 # Last modified: {current_time}
-#  
+#
 # Sources:
-# 
+#
 # - Hagezi DNS blocklist for syntax adblock
 #
 # Format: 0.0.0.0 domain.tld
