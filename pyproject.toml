@@ -24,3 +24,8 @@ ignore = []
 # Use double quotes and Black-compatible style
 quote-style = "double"
 indent-style = "space"
+
+[dependency-groups]
+dev = [
+    "pytest-cov>=7.0.0",
+]
