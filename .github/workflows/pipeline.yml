@@ -15,7 +15,7 @@ on:
 
 concurrency:
   group: pipeline-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   # ─────────────────────────────────────────────
