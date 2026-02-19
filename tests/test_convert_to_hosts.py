@@ -59,6 +59,7 @@ def test_main(mock_file, mock_fetch_rules):
     # Mock fetch_rules to return sample rules
     mock_fetch_rules.return_value = [
         "||example.com^",
+        "||example.com^",  # Duplicate
         "||test.com^$third-party",
         "# comment",
         "",
@@ -81,5 +82,6 @@ def test_main(mock_file, mock_fetch_rules):
     # Check that converted rules were written
     written_text = "".join(call.args[0] for call in handle.write.call_args_list)
     assert "0.0.0.0 example.com" in written_text
+    assert written_text.count("0.0.0.0 example.com") == 1
     assert "0.0.0.0 test.com" in written_text
     assert "# Converted 2 rules from this source" in written_text
