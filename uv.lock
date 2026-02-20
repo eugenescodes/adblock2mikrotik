@@ -10,13 +10,13 @@ dependencies = [
     { name = "certifi" },
     { name = "charset-normalizer" },
     { name = "idna" },
-    { name = "pytest" },
     { name = "requests" },
     { name = "urllib3" },
 ]
 
 [package.dev-dependencies]
 dev = [
+    { name = "pytest" },
     { name = "pytest-cov" },
 ]
 
@@ -25,13 +25,15 @@ requires-dist = [
     { name = "certifi", specifier = "==2026.1.4" },
     { name = "charset-normalizer", specifier = "==3.4.4" },
     { name = "idna", specifier = "==3.11" },
-    { name = "pytest", specifier = "==9.0.2" },
     { name = "requests", specifier = "==2.32.5" },
     { name = "urllib3", specifier = "==2.6.3" },
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "pytest-cov", specifier = ">=7.0.0" }]
+dev = [
+    { name = "pytest", specifier = ">=9.0.2" },
+    { name = "pytest-cov", specifier = ">=7.0.0" },
+]
 
 [[package]]
 name = "certifi"
