@@ -6,7 +6,6 @@ dependencies = [
     "certifi==2026.1.4",
     "charset-normalizer==3.4.4",
     "idna==3.11",
-    "pytest==9.0.2",
     "requests==2.32.5",
     "urllib3==2.6.3",
 ]
@@ -27,5 +26,6 @@ indent-style = "space"
 
 [dependency-groups]
 dev = [
+    "pytest>=9.0.2",
     "pytest-cov>=7.0.0",
 ]
