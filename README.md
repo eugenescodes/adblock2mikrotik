@@ -131,9 +131,21 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```bash
 # Create virtual environment and install dependencies
 uv venv
+
+# Activate virtual environment
+# On Linux/macOS:
+source .venv/bin/activate
+
+# On Windows:
+# .venv\Scripts\activate
+
+# Install dependencies (modern method - recommended)
+uv sync
+
+# Legacy method (if needed):
 uv pip install -r requirements.txt
 
-# Install Ruff globally via uv
+# Install Ruff globally via uv for linting and formatting
 uv tool install ruff
 ```
 
