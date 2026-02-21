@@ -50,6 +50,7 @@ You can run the Python script directly.
 Before running, make sure you have the dependencies installed:
 
 **Option 1: With virtual environment (recommended)**
+
 ```bash
 # Create and activate virtual environment
 uv venv
@@ -63,6 +64,7 @@ python convert_to_hosts.py
 ```
 
 **Option 2: Direct execution (quick test)**
+
 ```bash
 # Install dependencies globally (not recommended for production)
 uv pip install -r requirements.txt
@@ -72,6 +74,7 @@ python convert_to_hosts.py
 ```
 
 **Option 3: Using Docker**
+
 ```bash
 # Build the Docker image
 docker build -t convert_to_hosts .
@@ -87,6 +90,7 @@ After running the script, a `hosts.txt` file will be created in the current dire
 ### Integration with MikroTik RouterOS
 
 You can also use the public URL for the generated list:
+
 ```
 https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt
 ```
