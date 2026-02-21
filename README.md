@@ -46,18 +46,52 @@ This tool converts popular ad-blocking filter lists into MikroTik RouterOS DNS a
 
 ### Running the tool
 
-You can run the Python script directly:
+You can run the Python script directly.
+Before running, make sure you have the dependencies installed:
 
+**Option 1: With virtual environment (recommended)**
 ```bash
+# Create and activate virtual environment
+uv venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies
+uv sync
+
+# Run the script
 python convert_to_hosts.py
 ```
 
-Or using Docker:
-
+**Option 2: Direct execution (quick test)**
 ```bash
+# Install dependencies globally (not recommended for production)
+uv pip install -r requirements.txt
+
+# Run the script
+python convert_to_hosts.py
+```
+
+**Option 3: Using Docker**
+```bash
+# Build the Docker image
 docker build -t convert_to_hosts .
+
+# Run the container
 docker run --rm -v $(pwd):/app -e PYTHONPATH=/app --entrypoint python convert_to_hosts convert_to_hosts.py
 ```
+
+### Result
+
+After running the script, a `hosts.txt` file will be created in the current directory containing the converted adblocking list in MikroTik DNS adlist format. You can use this file directly or upload it to your MikroTik router.
+
+### Integration with MikroTik RouterOS
+
+You can also use the public URL for the generated list:
+```
+https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt
+```
+
+Add this URL to your RouterOS DNS adlist following the instructions in the "Implementing DNS adblocking on MikroTik RouterOS" section.
 
 ### Implementing DNS adblocking on MikroTik RouterOS
 
@@ -133,11 +167,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv
 
 # Activate virtual environment
-# On Linux/macOS:
-source .venv/bin/activate
-
-# On Windows:
-# .venv\Scripts\activate
+source .venv/bin/activate # On Windows: .venv\Scripts\activate
 
 # Install dependencies (modern method - recommended)
 uv sync
