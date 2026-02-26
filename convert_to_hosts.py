@@ -69,9 +69,11 @@ def main():
     url_lines = "".join(f"# - {url}\n" for url in urls)
 
     header = (
-        "# Title: Unified DNS blocklist optimized for RouterOS, compiled from Hagezi sources\n"
+        "# Title: Unified DNS blocklist optimized for RouterOS,\n"
+        "# compiled from Hagezi sources\n"
         "#\n"
-        "# RouterOS URL: https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt\n"
+        "# URL to add in RouterOS:\n"
+        "# https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt\n"
         "#\n"
         "# Homepage: https://github.com/eugenescodes/adblock2mikrotik\n"
         "# License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE\n"
