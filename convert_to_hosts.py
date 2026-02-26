@@ -47,12 +47,31 @@ def main():
     # Use a set to track unique rules
     unique_rules = set()
 
+    source_data = {}  # { url: [converted_rules] }
+
+    for url in urls:
+        rules = fetch_rules(url)
+        converted = []
+        for rule in rules:
+            result = convert_rule(rule)
+            if result and result not in unique_rules:
+                unique_rules.add(result)
+                converted.append(result)
+        source_data[url] = converted
+
     # Write header with timestamp
     current_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
+
+    source_lines = "".join(
+        f"# - {url.split('/')[-1]} --> {len(rules):,} unique domains\n"
+        for url, rules in source_data.items()
+    )
+    url_lines = "".join(f"# - {url}\n" for url in urls)
+
     header = (
-        "# Title: This filter is compiled from trusted, verified sources and optimized "
-        "for compatibility with DNS-level ad blocking by merging and simplifying "
-        "multiple filters\n"
+        "# Title: Unified DNS blocklist optimized for RouterOS, compiled from Hagezi sources\n"
+        "#\n"
+        "# RouterOS URL: https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt\n"
         "#\n"
         "# Homepage: https://github.com/eugenescodes/adblock2mikrotik\n"
         "# License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE\n"
@@ -60,29 +79,24 @@ def main():
         f"# Last modified: {current_time}\n"
         "#\n"
         "# This filter is generated using the following Hagezi DNS blocklist sources:\n"
-        f"# - {', \n# - '.join(urls)}\n"
+        f"{url_lines}"
+        "#\n"
+        f"# Total unique domains: {len(unique_rules):,}\n"
+        f"{source_lines}"
         "#\n"
     )
 
-    with open("hosts.txt", "w", encoding="utf-8") as f:
-        f.write(header)
+    with open("hosts.txt", "w", encoding="utf-8") as file:
+        file.write(header)
 
-        for url in urls:
-            f.write(f"\n# Source: {url}\n\n")
-            rules = fetch_rules(url)
-            converted_count = 0
-
+        for url, rules in source_data.items():
+            file.write(f"\n# Source: {url}\n\n")
             for rule in rules:
-                converted = convert_rule(rule)
-                if converted and converted not in unique_rules:
-                    unique_rules.add(converted)
-                    f.write(converted + "\n")
-                    converted_count += 1
-
-            f.write(f"\n# Converted {converted_count} rules from this source\n\n")
+                file.write(rule + "\n")
+            file.write(f"\n# Converted {len(rules):,} rules from this source\n\n")
 
         # Write total count at the end
-        f.write(f"\n# Total unique domains: {len(unique_rules)}\n")
+        file.write(f"\n# Total unique domains: {len(unique_rules)}\n")
 
 
 if __name__ == "__main__":

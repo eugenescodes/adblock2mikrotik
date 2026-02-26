@@ -46,6 +46,8 @@ This tool converts popular ad-blocking filter lists into MikroTik RouterOS DNS a
 
 ### Running the tool
 
+This project uses `uv` for dependency management [Development](#development).
+
 You can run the Python script directly.
 Before running, make sure you have the dependencies installed:
 
