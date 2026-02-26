@@ -37,6 +37,11 @@ jobs:
       - name: Install ruff
         run: uv tool install ruff
 
+      - name: Configure git identity
+        run: |
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Lint and fix Markdown
         uses: DavidAnson/markdownlint-cli2-action@v22 
         with:
@@ -52,9 +57,6 @@ jobs:
       - name: Commit and push ALL formatting fixes
         if: github.event_name == 'push'
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
           # safe branch name for both PRs and direct pushes
           BRANCH_NAME="${{ github.head_ref || github.ref_name }}"
           
