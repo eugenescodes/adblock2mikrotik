@@ -50,7 +50,7 @@ def main():
     # Write header with timestamp
     current_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
     header = (
-        "# Title: This filter compiled from trusted, verified sources and optimized "
+        "# Title: This filter is compiled from trusted, verified sources and optimized "
         "for compatibility with DNS-level ad blocking by merging and simplifying "
         "multiple filters\n"
         "#\n"
@@ -59,11 +59,8 @@ def main():
         "#\n"
         f"# Last modified: {current_time}\n"
         "#\n"
-        "# Sources:\n"
-        "#\n"
-        "# - Hagezi DNS blocklist for syntax adblock\n"
-        "#\n"
-        "# Format: 0.0.0.0 domain.tld\n"
+        "# This filter is generated using the following Hagezi DNS blocklist sources:\n"
+        f"# - {', \n# - '.join(urls)}\n"
         "#\n"
     )
 
