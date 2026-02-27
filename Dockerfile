@@ -1,21 +1,27 @@
-FROM python:3.14-slim
+FROM python:3.12-slim
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
 
 # Install system dependencies for processing
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+# Copy the project into the image
+COPY . /app
 
-# Copy requirements and install Python dependencies
-COPY requirements.txt .
-RUN uv pip install --system --no-cache -r requirements.txt
+# Disable development dependencies
+ENV UV_NO_DEV=1
+
+# Sync the project into a new environment, asserting the lockfile is up to date
+WORKDIR /app
+RUN uv sync --locked
 
 # Copy application
-COPY convert_to_hosts.py .
+COPY convert_to_hosts.py ./
 
 # Set up entrypoint
-ENTRYPOINT ["python", "convert_to_hosts.py"]
-
-CMD ["--help"]
+ENTRYPOINT ["uv", "run", "convert_to_hosts.py"]
