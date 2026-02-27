@@ -61,28 +61,21 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 # Install dependencies
 uv sync
 
-# Run the script
-python convert_to_hosts.py
-```
-
-**Option 2: Direct execution (quick test)**
-
-```bash
-# Install dependencies globally (not recommended for production)
+# Or install dependencies use pip: 
 uv pip install -r requirements.txt
 
 # Run the script
-python convert_to_hosts.py
+python3 convert_to_hosts.py
 ```
 
-**Option 3: Using Docker**
+**Option 2: Using Docker**
 
 ```bash
 # Build the Docker image
 docker build -t convert_to_hosts .
 
 # Run the container
-docker run --rm -v $(pwd):/app -e PYTHONPATH=/app --entrypoint python convert_to_hosts convert_to_hosts.py
+docker run --rm -v $(pwd):/app convert_to_hosts
 ```
 
 ### Result
