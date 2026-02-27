@@ -49,8 +49,13 @@ def main():
 
     source_data = {}  # { url: [converted_rules] }
 
+    print(f"Starting conversion of {len(urls)} source(s)...\n")
+
     for url in urls:
+        print(f"Fetching: {url}")
         rules = fetch_rules(url)
+        print(f"Fetched {len(rules):,} lines")
+
         converted = []
         for rule in rules:
             result = convert_rule(rule)
@@ -58,6 +63,9 @@ def main():
                 unique_rules.add(result)
                 converted.append(result)
         source_data[url] = converted
+        print(f"Converted {len(converted):,} unique domains\n")
+
+    print(f"Total unique domains across all sources: {len(unique_rules):,}")
 
     # Write header with timestamp
     current_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
@@ -88,7 +96,8 @@ def main():
         "#\n"
     )
 
-    with open("hosts.txt", "w", encoding="utf-8") as file:
+    output_file = "hosts.txt"
+    with open(output_file, "w", encoding="utf-8") as file:
         file.write(header)
 
         for url, rules in source_data.items():
@@ -99,6 +108,8 @@ def main():
 
         # Write total count at the end
         file.write(f"\n# Total unique domains: {len(unique_rules)}\n")
+
+    print(f"Done! Written to: {output_file}")
 
 
 if __name__ == "__main__":
