@@ -20,8 +20,5 @@ ENV UV_NO_DEV=1
 WORKDIR /app
 RUN uv sync --locked
 
-# Copy application
-COPY convert_to_hosts.py ./
-
 # Set up entrypoint
 ENTRYPOINT ["uv", "run", "convert_to_hosts.py"]
