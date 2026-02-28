@@ -1,38 +1,42 @@
-# Include any files or directories that you don't want to be copied to your
-# container here (e.g., local build artifacts, temporary files, etc.).
-#
-# For more help, visit the .dockerignore file reference guide at
-# https://docs.docker.com/go/build-context-dockerignore/
+# Git and Docker configuration
+.git/
+.github/
+.gitignore
+.dockerignore
+Dockerfile*
+docker-compose*.yml
 
-**/.DS_Store
-**/__pycache__
-**/.venv
-**/.classpath
-**/.dockerignore
-**/.env
-**/.git
-**/.github
-**/.gitignore
-**/.project
-**/.settings
-**/.toolstarget
-**/.vs
-**/.vscode
-**/.ruff_cache
-**/.pytest_cache
-**/*.*proj.user
-**/*.dbmdl
-**/*.jfm
-**/bin
-**/charts
-**/docker-compose*
-**/compose.y*ml
-**/Dockerfile*
-**/node_modules
-**/npm-debug.log
-**/obj
-**/secrets.dev.yaml
-**/values.dev.yaml
-**/hosts.txt
-LICENSE
-README.md
+# OS & Editor configurations
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*
+
+# -----------------------
+# Python
+# -----------------------
+# Avoid copying local environments and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# -----------------------
+# Rust
+# -----------------------
+# Avoid copying local build targets, let Docker compile it
+target/
+
+# Cargo backup files
+**/*.rs.bk
+
+# Note: Cargo.lock should be committed for binary projects, 
+# but ignored for library projects. Remove the '#' below if building a library.
+# Cargo.lock
