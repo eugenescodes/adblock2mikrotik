@@ -23,12 +23,12 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "certifi", specifier = "==2026.2.25" },
-    { name = "charset-normalizer", specifier = "==3.4.4" },
-    { name = "idna", specifier = "==3.11" },
-    { name = "requests", specifier = "==2.32.5" },
+    { name = "certifi", specifier = ">=2026.2.25" },
+    { name = "charset-normalizer", specifier = ">=3.4.4" },
+    { name = "idna", specifier = ">=3.11" },
+    { name = "requests", specifier = ">=2.32.5" },
     { name = "ruff", specifier = ">=0.15.4" },
-    { name = "urllib3", specifier = "==2.6.3" },
+    { name = "urllib3", specifier = ">=2.6.3" },
 ]
 
 [package.metadata.requires-dev]
