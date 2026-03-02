@@ -30,9 +30,14 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      
-      - name: Set up Python 
-        uses: actions/setup-python@v6 
+
+      - name: Configure git identity
+        run: |
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v6
         with:
           python-version-file: ".python-version"
 
@@ -41,13 +46,8 @@ jobs:
         with:
           enable-cache: true
 
-      - name: Install dependencies 
+      - name: Install dependencies
         run: uv sync
-
-      - name: Configure git identity
-        run: |
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Lint and fix Markdown
         uses: DavidAnson/markdownlint-cli2-action@v22 
@@ -64,13 +64,17 @@ jobs:
       - name: Commit and push ALL formatting fixes
         if: github.event_name == 'push'
         run: |
-          # safe branch name for both PRs and direct pushes
+          # Disable interactive prompts for git
+          export GIT_MERGE_AUTOEDIT=no
+          export GIT_TERMINAL_PROMPT=0
+
           BRANCH_NAME="${{ github.head_ref || github.ref_name }}"
-          
+
           if [ -n "$(git status --porcelain)" ]; then
             git add .
             git commit -m "Auto-fix formatting (Markdown & Ruff)"
-            git pull --rebase origin "$BRANCH_NAME"
+            # Use --no-edit to avoid hanging on merge messages
+            git pull --rebase --no-edit origin "$BRANCH_NAME"
             git push origin "HEAD:refs/heads/$BRANCH_NAME"
           else
             echo "No formatting changes to commit."
@@ -80,6 +84,23 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: uv run pytest tests/ -v
+
+      # --- fast check docker with GHA-cache ---
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker Image (Dry Run)
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          load: true
+          tags: adblock2mikrotik:ci-test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Verify container startup and dependency compatibility
+        run: docker run --rm adblock2mikrotik:ci-test
 
   # ─────────────────────────────────────────────
   # JOB 2: UPDATE HOSTS (Run only on Schedule or Dispatch)
