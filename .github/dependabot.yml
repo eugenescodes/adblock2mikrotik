@@ -13,7 +13,7 @@ updates:
     schedule:
       interval: daily
 
-  # Configuration for Dockerfile    
+  # Configuration for Docker dependencies
   - package-ecosystem: docker
     directory: /
     schedule:
