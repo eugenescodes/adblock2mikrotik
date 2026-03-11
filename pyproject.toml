@@ -3,12 +3,8 @@ name = "adblock2mikrotik"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
-    "certifi>=2026.2.25",
-    "charset-normalizer>=3.4.4",
-    "idna>=3.11",
     "requests>=2.32.5",
     "ruff>=0.15.4",
-    "urllib3>=2.6.3",
 ]
 
 [tool.ruff]
@@ -18,7 +14,10 @@ line-length = 88  # same default as Black
 [tool.ruff.lint]
 # E/W — pycodestyle, F — pyflakes, I — isort, UP — pyupgrade
 select = ["E", "W", "F", "I", "UP"]
-ignore = []
+ignore = ["E501"] # Ignore line length errors
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.ruff.format]
 # Use double quotes and Black-compatible style
@@ -28,5 +27,4 @@ indent-style = "space"
 [dependency-groups]
 dev = [
     "pytest>=9.0.2",
-    "pytest-cov>=7.0.0",
 ]

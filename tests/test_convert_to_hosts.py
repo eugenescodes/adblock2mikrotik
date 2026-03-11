@@ -1,6 +1,6 @@
 import sys
 from pathlib import Path
-from unittest.mock import mock_open, patch
+from unittest.mock import MagicMock, mock_open, patch
 
 import requests
 
@@ -37,20 +37,64 @@ def test_convert_rule_invalid():
 
 @patch("convert_to_hosts.requests.get")
 def test_fetch_rules_success(mock_get):
-    mock_get.return_value.status_code = 200
-    mock_get.return_value.text = "line1\nline2\nline3"
+    # Create a mock response that supports the context manager protocol
+    mock_response = MagicMock()
+    mock_response.status_code = 200
+    mock_response.iter_lines.return_value = ["line1", "line2", "line3"]
+    mock_response.raise_for_status = MagicMock()
+
+    # Set up the mock to return itself when entering the context manager
+    mock_get.return_value.__enter__.return_value = mock_response
+    mock_get.return_value.__exit__ = MagicMock(return_value=None)
+
     result = convert_to_hosts.fetch_rules("http://fakeurl")
     assert result == ["line1", "line2", "line3"]
-    mock_get.assert_called_once_with("http://fakeurl", timeout=(3, 10))
+    mock_get.assert_called_once_with("http://fakeurl", timeout=(3, 10), stream=True)
 
 
+@patch("convert_to_hosts.time.sleep")  # don't need wait really time in tests
 @patch("convert_to_hosts.requests.get")
-def test_fetch_rules_failure(mock_get, capsys):
+def test_fetch_rules_retries_then_fails(mock_get, mock_sleep, capsys):
     mock_get.side_effect = requests.RequestException("Mocked network error")
+
     result = convert_to_hosts.fetch_rules("http://fakeurl")
+
     assert result == []
+    assert mock_get.call_count == 3  # call 3 times due to retries
+
+    # sleep calls: after 1st and 2nd attempts, but not after 3rd
+    assert mock_sleep.call_count == 2
+    mock_sleep.assert_any_call(2)  # backoff after 1st attempt
+    mock_sleep.assert_any_call(4)  # backoff after 2nd attempt
+
     captured = capsys.readouterr()
-    assert "Error fetching http://fakeurl: Mocked network error" in captured.out
+    assert "Attempt 1 failed" in captured.out
+    assert "Attempt 2 failed" in captured.out
+    assert "Error fetching http://fakeurl after 3 attempts" in captured.out
+
+
+@patch("convert_to_hosts.time.sleep")
+@patch("convert_to_hosts.requests.get")
+def test_fetch_rules_succeeds_on_retry(mock_get, mock_sleep):
+    """Successful response after one failed attempt."""
+    # Create a proper mock response object
+    mock_response = MagicMock()
+    mock_response.iter_lines.return_value = ["a", "b"]
+    mock_response.raise_for_status = MagicMock()
+
+    # Set up the mock to return itself when entering the context manager
+    mock_get.side_effect = [
+        requests.RequestException("Temporary error"),
+        MagicMock(
+            __enter__=lambda self: mock_response, __exit__=MagicMock(return_value=None)
+        ),
+    ]
+
+    result = convert_to_hosts.fetch_rules("http://fakeurl")
+
+    assert result == ["a", "b"]
+    assert mock_get.call_count == 2
+    assert mock_sleep.call_count == 1
 
 
 @patch("convert_to_hosts.fetch_rules")
