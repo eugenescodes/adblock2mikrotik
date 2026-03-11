@@ -1,69 +1,90 @@
+import os
 import re
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import UTC, datetime
 
 import requests
 
+# Pre-compiled once at module load for performance
+_COMMENT_RE = re.compile(r"#.*$")
+_DOMAIN_RE = re.compile(r"^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
 
-def fetch_rules(url):
-    try:
-        response = requests.get(
-            url, timeout=(3, 10)
-        )  # timeout=(connect_timeout, read_timeout)
-        response.raise_for_status()  # Check for HTTP errors
-        return response.text.splitlines()
-    except requests.RequestException as e:
-        print(f"Error fetching {url}: {e}")
-        return []
+# OUTPUT_DIR is set in Docker to /output (a dedicated writable volume).
+# When running locally (uv or bare Python), OUTPUT_DIR is not set -> writes to CWD.
+_output_dir = os.environ.get("OUTPUT_DIR")
+OUTPUT_FILE = os.path.join(_output_dir, "hosts.txt") if _output_dir else "hosts.txt"
+
+SOURCES = [
+    # "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.mini.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/gambling.mini.txt",
+    # "https://...",  # add more sources as needed
+]
 
 
-def convert_rule(rule):
-    # Remove comments and whitespace
-    rule = re.sub(r"#.*$", "", rule).strip()
+def fetch_rules(url: str) -> list[str]:
+    # Retry-logic: 3 attempts with exponential backoff: 2s → 4s (no wait after final attempt)
+    last_exception = None
+    for attempt in range(3):
+        try:
+            # stream=True: avoids loading the entire response into memory at once
+            with requests.get(url, timeout=(3, 10), stream=True) as response:
+                response.raise_for_status()
+                return [
+                    line for line in response.iter_lines(decode_unicode=True) if line
+                ]
+        except requests.RequestException as e:
+            last_exception = e
+            if attempt < 2:  # don't wait after the last attempt
+                wait = 2 ** (attempt + 1)  # 2s, then 4s
+                print(f"Attempt {attempt + 1} failed for {url}. Retrying in {wait}s...")
+                time.sleep(wait)
+    print(f"Error fetching {url} after 3 attempts: {last_exception}")
+    return []
 
+
+def convert_rule(rule: str) -> str | None:
+    rule = _COMMENT_RE.sub("", rule).strip()
     if not rule:
         return None
-
-    # Handle different rule formats
     if rule.startswith("||") and "^" in rule:
-        # Extract domain from common ad-blocking rule style (e.g., ||domain^)
         domain = rule[2:].split("^")[0]
-        # Remove any additional modifiers after ^
-        domain = domain.split("$")[0]
-        # Basic domain validation
-        if re.match(r"^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", domain):
+        if _DOMAIN_RE.match(domain):
             return f"0.0.0.0 {domain}"
     return None
 
 
-def main():
-    urls = [
-        # "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",
-        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
-        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.mini.txt",
-        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/gambling.mini.txt",
-        # "https://..."
-    ]
+def main() -> None:
+    urls = SOURCES
 
-    # Use a set to track unique rules
-    unique_rules = set()
-
-    source_data = {}  # { url: [converted_rules] }
+    unique_rules: set[str] = set()
+    source_data: dict[str, list[str]] = {}
 
     print(f"Starting conversion of {len(urls)} source(s)...\n")
 
-    for url in urls:
-        print(f"Fetching: {url}")
-        rules = fetch_rules(url)
-        print(f"Fetched {len(rules):,} lines")
+    with ThreadPoolExecutor(max_workers=len(urls)) as executor:
+        futures = {executor.submit(fetch_rules, url): url for url in urls}
 
-        converted = []
-        for rule in rules:
-            result = convert_rule(rule)
-            if result and result not in unique_rules:
-                unique_rules.add(result)
-                converted.append(result)
-        source_data[url] = converted
-        print(f"Converted {len(converted):,} unique domains\n")
+        for future in as_completed(futures):
+            url = futures[future]
+            rules = future.result()
+            # print(f"Fetched {len(rules):,} lines from {url.split('/')[-1]}")
+            print(f"Fetched {len(rules):,} lines \nfrom {url}")
+
+            converted = []
+            for rule in rules:
+                result = convert_rule(rule)
+                if result and result not in unique_rules:
+                    unique_rules.add(result)
+                    converted.append(result)
+
+            source_data[url] = converted
+            print(f"Converted {len(converted):,} unique domains\n")
+
+    # Restore original URL order (as_completed is non-deterministic)
+    source_data = {url: source_data[url] for url in urls if url in source_data}
 
     print(f"Total unique domains across all sources: {len(unique_rules):,}")
 
@@ -96,8 +117,7 @@ def main():
         "#\n"
     )
 
-    output_file = "hosts.txt"
-    with open(output_file, "w", encoding="utf-8") as file:
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
         file.write(header)
 
         for url, rules in source_data.items():
@@ -106,10 +126,9 @@ def main():
                 file.write(rule + "\n")
             file.write(f"\n# Converted {len(rules):,} rules from this source\n\n")
 
-        # Write total count at the end
         file.write(f"\n# Total unique domains: {len(unique_rules)}\n")
 
-    print(f"Done! Written to: {output_file}")
+    print(f"Done! Written to: {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":

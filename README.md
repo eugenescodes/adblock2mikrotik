@@ -1,154 +1,95 @@
 # adblock2mikrotik
 
-> [!TIP]
-> URL to add in RouterOS: <https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt>
-
 Convert ad-blocking filter lists to MikroTik RouterOS DNS adlist format.
+
+> [!TIP]
+> Ready-to-use URL for RouterOS:
+> `https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt`
 
 ## Overview
 
-A conversion utility designed to transform popular ad-blocking filter lists (such as Hagezi) into a compact, memory-efficient format compatible with MikroTik RouterOS 7.15+ DNS adlist feature.
+Transforms popular ad-blocking filter lists (Hagezi) into a compact format compatible with the MikroTik RouterOS 7.15+ DNS adlist feature.
+Optimized for memory-constrained of low-resource devices like the [RB951Ui-2nD hAP](https://mikrotik.com/product/RB951Ui-2nD) (which has 16 MB storage).
 
-### Source Filter Lists
+### Sources
 
-- Hagezi [Multi PRO mini](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#ledger-multi-pro-mini-recommended-for-browsermobile-adblockers-): --> [link to file on adblock format](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt)
-- Hagezi [Threat Intelligence Feeds - Mini version](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#closed_lock_with_key-threat-intelligence-feeds---mini-version-): --> [link to file on adblock format](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.mini.txt)
-- Hagezi [Gambling - Mini version](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#slot_machine-gambling---mini-version-): --> [link to file on adblock format](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/gambling.mini.txt)
-
-The primary goal is to create a minimal, optimized host file that addresses the limited memory constraints of low-resource devices like the ```hAP series``` (which has 16 MB storage but less than 3 MB free after upgrading to RouterOS 7), for example the [RB951Ui-2nD hAP](https://mikrotik.com/product/RB951Ui-2nD) router
+| List | Description |
+| --- | --- |
+| [Hagezi Multi PRO mini](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#ledger-multi-pro-mini-recommended-for-browsermobile-adblockers-) | General ad/tracker blocking |
+| [Hagezi TIF mini](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#closed_lock_with_key-threat-intelligence-feeds---mini-version-) | Threat intelligence feeds |
+| [Hagezi Gambling mini](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#slot_machine-gambling---mini-version-) | Gambling sites |
 
 ## Features
 
-- Converts ad-blocking filter list syntax to MikroTik DNS adlist format
-- Removes duplicates and optimizes storage space
-- Supports multiple input filter list formats
-- Compatible with RouterOS 7.15 and newer
-- Preserves only domain-based rules
-- Removes comments and unnecessary elements
-
-Supports common ad-blocking filter rules, including:
-
-- Domain rules (`||example.com^`)
-- Basic URL rules
-- Comment lines (automatically removed)
-
-Generates a clean list of domains in MikroTik DNS adlist format:
-
-```text
-0.0.0.0 example.com
-0.0.0.0 ads.example.net
-0.0.0.0 tracking.example.org
-```
+- Converts `||example.com^` rules to MikroTik DNS adlist format (`0.0.0.0 example.com`)
+- Deduplicates entries across all sources
+- Strips comments and unsupported rule types
+- Compatible with RouterOS 7.15+
 
 ## Usage
 
-This tool converts popular ad-blocking filter lists into MikroTik RouterOS DNS adlist format. It is designed for use with MikroTik RouterOS 7.15+.
-
-### Running the tool
-
-This project uses `uv` for dependency management [Development](#development).
-
-You can run the Python script directly.
-Before running, make sure you have the dependencies installed:
-
-**Option 1: With virtual environment (recommended)**
+### Option 1 — uv (recommended)
 
 ```bash
-# Create and activate virtual environment
-uv venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+# Install uv if not already installed (macOS / Linux)
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Install dependencies
-uv sync
-
-# Or install dependencies use pip: 
-uv pip install -r requirements.txt
-
-# Run the script
-python3 convert_to_hosts.py
+# Clone and run
+git clone https://github.com/eugenescodes/adblock2mikrotik
+cd adblock2mikrotik
+uv run convert_to_hosts.py
 ```
 
-**Option 2: Using Docker**
+`uv run` automatically creates a virtual environment and installs dependencies — no manual setup required.
+
+### Option 2 — Docker
 
 ```bash
-# Build the Docker image
-docker build -t convert_to_hosts .
+docker build -t adblock2mikrotik .
 
-# Run the container
-docker run --rm -v $(pwd):/app convert_to_hosts
+# Linux / macOS
+docker run --rm --user $(id -u):$(id -g) -v "$(pwd)":/output adblock2mikrotik
+
+# Windows (PowerShell)
+docker run --rm -v "${PWD}:/output" adblock2mikrotik
 ```
 
-### Result
+> [!NOTE]
+> The `-v` flag mounts your current directory into the container at `/output`.
+> The script writes `hosts.txt` to `/output`, so the file appears directly
+> in your current directory on the host — no manual copying needed.
+>
+> On Linux, `--user $(id -u):$(id -g)` ensures the output file is owned by
+> your current user. Not required on macOS or Windows (Docker Desktop handles this automatically).
 
-After running the script, a `hosts.txt` file will be created in the current directory containing the converted adblocking list in MikroTik DNS adlist format. You can use this file directly or upload it to your MikroTik router.
+After running either option, `hosts.txt` is created in the current directory.
 
-### Integration with MikroTik RouterOS
+## MikroTik RouterOS Integration
 
-You can also use the public URL for the generated list:
-
-```
-https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt
-```
-
-Add this URL to your RouterOS DNS adlist following the instructions in the "Implementing DNS adblocking on MikroTik RouterOS" section.
-
-### Implementing DNS adblocking on MikroTik RouterOS
-
-You must have an active internet connection and basic RouterOS configuration knowledge.
-
-To add a URL-based adlist for DNS adblocking, use the following command in the router terminal:
+### Add adlist via URL
 
 ```routeros
 /ip/dns/adlist add url=https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt ssl-verify=no
 ```
 
+### Optional: enable SSL verification
+
 If you want to use `ssl-verify=yes`, you can download and import [CA certificates](https://curl.se/docs/caextract.html) using the following commands:
 
 ```routeros
 /tool fetch url=https://curl.se/ca/cacert.pem
-```
-
-The resulting output should be:
-
-```routeros
-      status: finished
-  downloaded: 225KiB  
-       total: 225KiB  
-    duration: 1s 
-```
-
-Then run the next command:
-
-```routeros
 /certificate import file-name=cacert.pem passphrase=""
-```
-
-Output should be:
-
-```routeros
-certificates-imported: 149
-     private-keys-imported:   0
-            files-imported:   0
-       decryption-failures:   0
-  keys-with-no-certificate:   0
-```
-
-After that, run the following command:
-
-```routeros
 /ip/dns/adlist add url=https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt ssl-verify=yes
 ```
 
-### Additional Resources
-
-For a comprehensive guide on DNS adblocking and adlist configuration, refer to the official MikroTik documentation:
+See also the official MikroTik documentation:
 
 - [DNS Adlist - MikroTik Documentation](https://help.mikrotik.com/docs/spaces/ROS/pages/37748767/DNS#DNS-Adlist)
 - [Certificates - MikroTik Documentation](https://help.mikrotik.com/docs/spaces/ROS/pages/2555969/Certificates)
 
 ## Development
 
-This project uses [uv](https://docs.astral.sh/uv/) for package management and [Ruff](https://docs.astral.sh/ruff/) for linting and formatting.
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management and [Ruff](https://docs.astral.sh/ruff/) for linting/formatting.
 
 ### Prerequisites
 
@@ -162,60 +103,39 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ### Setup
 
 ```bash
-# Create virtual environment and install dependencies
-uv venv
-
-# Activate virtual environment
-source .venv/bin/activate # On Windows: .venv\Scripts\activate
-
-# Install dependencies (modern method - recommended)
 uv sync
-
-# Legacy method (if needed):
-uv pip install -r requirements.txt
-
-# Install Ruff globally via uv for linting and formatting
-uv tool install ruff
 ```
 
-### Linting and formatting
-
-Ruff replaces both `flake8` (linter) and `black` (formatter) in a single tool [more info about ruff](https://docs.astral.sh/ruff/installation/):
+### Lint and format
 
 ```bash
-# Check for lint errors
-ruff check .
-
-# Fix lint errors automatically
-ruff check . --fix
-
-# Format code
-ruff format .
-
-# Check formatting without applying changes
-ruff format --check .
+uv run ruff check . --fix   # lint + autofix
+uv run ruff format .        # format
 ```
 
-### Running tests
+### Tests
 
 ```bash
-# Run tests directly
-uv run pytest tests/
-
-# Or inside Docker
-docker build -t convert_to_hosts .
-docker run --rm -v $(pwd):/app -e PYTHONPATH=/app --entrypoint pytest convert_to_hosts -v tests/test_convert_to_hosts.py
+uv run pytest -v
 ```
+
+## Contributing
+
+1. Open a [GitHub issue](https://github.com/eugenescodes/adblock2mikrotik/issues) to discuss major changes before starting work.
+2. Fork the repo and create a feature branch: `git checkout -b feature/your-feature`
+3. Make your changes and run tests: `uv run pytest -v`
+4. Commit with a clear message and push to your fork.
+5. Open a Pull Request targeting `main` with a description of what and why.
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+[GNU GPL v3.0](LICENSE)
 
 ## Acknowledgments
 
-- Hagezi communities for maintaining comprehensive filter lists
-- MikroTik for implementing DNS adlist feature in RouterOS 7.15
+- [Hagezi](https://github.com/hagezi/dns-blocklists) for maintaining comprehensive filter lists
+- MikroTik for the DNS adlist feature in RouterOS 7.15+
 
-## Note
+---
 
-This tool is not affiliated with MikroTik
+> This tool is not affiliated with MikroTik.
