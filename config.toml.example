@@ -1,0 +1,10 @@
+# Configuration for converter
+# Copy this file and customize URL as needed
+
+[sources]
+# List of AdBlock filter list URLs to fetch and convert
+urls = [
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.mini.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/gambling.mini.txt",
+]

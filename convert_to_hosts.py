@@ -1,6 +1,7 @@
 import os
 import re
 import time
+import tomllib
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import UTC, datetime
 
@@ -8,13 +9,20 @@ import requests
 
 # Pre-compiled once at module load for performance
 _COMMENT_RE = re.compile(r"#.*$")
-_DOMAIN_RE = re.compile(r"^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
+# RFC-compliant domain validation:
+# - each label: starts/ends with alphanumeric, hyphens allowed in the middle, max 63 chars
+# - rejects double-dots (example..com), leading/trailing hyphens (-ex.com, ex-.com)
+# - TLD: 2+ alpha chars only
+_DOMAIN_RE = re.compile(
+    r"^(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$"
+)
 
 # OUTPUT_DIR is set in Docker to /output (a dedicated writable volume).
 # When running locally (uv or bare Python), OUTPUT_DIR is not set -> writes to CWD.
 _output_dir = os.environ.get("OUTPUT_DIR")
 OUTPUT_FILE = os.path.join(_output_dir, "hosts.txt") if _output_dir else "hosts.txt"
 
+# Default sources (fallback if config.toml is not found)
 SOURCES = [
     # "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
@@ -24,10 +32,56 @@ SOURCES = [
 ]
 
 
+def load_config(config_file: str = "config.toml") -> list[str]:
+    """Load sources from TOML config file.
+
+    Falls back to default sources if config file doesn't exist.
+
+    Args:
+        config_file: Path to config.toml file
+
+    Returns:
+        List of source URLs
+    """
+    if not os.path.exists(config_file):
+        print(f"Note: {config_file} not found, using default sources")
+        return SOURCES
+
+    try:
+        with open(config_file, "rb") as f:
+            config = tomllib.load(f)
+        urls = config.get("sources", {}).get("urls", SOURCES)
+        print(f"Loaded {len(urls)} sources from {config_file}")
+        return urls
+    except Exception as e:
+        print(f"Error loading {config_file}: {e}. Using default sources.")
+        return SOURCES
+
+
 def fetch_rules(url: str) -> tuple[list[str], float]:
-    """Fetch rules from URL and return (rules, elapsed_time_in_seconds)."""
+    """Fetch rules from URL with retry logic and return (rules, elapsed_time_in_seconds).
+
+    Fetches AdBlock rules from a remote URL with exponential backoff retry mechanism.
+    Streams the response to avoid loading large files entirely into memory.
+    Pre-filters empty lines and comment-only lines so callers receive only candidate rules.
+
+    Args:
+        url: The remote URL to fetch rules from.
+
+    Returns:
+        A tuple of (rules, elapsed_time_seconds) where:
+            - rules: List of non-empty, non-comment lines from the response,
+              or empty list if all attempts fail.
+            - elapsed_time_seconds: Total time spent fetching (including retries), as float.
+
+    Note:
+        Attempts up to 3 times with exponential backoff: 2s after 1st failure, 4s after 2nd.
+        Prints diagnostic messages on retry and final failure.
+    """
     fetch_start = time.time()
     # Retry-logic: 3 attempts with exponential backoff: 2s → 4s (no wait after final attempt)
+    # Pre-filters empty lines and comment-only lines (#) before returning,
+    # so callers receive only candidate adblock rules.
     last_exception = None
     for attempt in range(3):
         try:
@@ -35,7 +89,9 @@ def fetch_rules(url: str) -> tuple[list[str], float]:
             with requests.get(url, timeout=(3, 10), stream=True) as response:
                 response.raise_for_status()
                 rules = [
-                    line for line in response.iter_lines(decode_unicode=True) if line
+                    line
+                    for line in response.iter_lines(decode_unicode=True)
+                    if line and not line.lstrip().startswith("#")
                 ]
                 elapsed = time.time() - fetch_start
                 return rules, elapsed
@@ -51,19 +107,62 @@ def fetch_rules(url: str) -> tuple[list[str], float]:
 
 
 def convert_rule(rule: str) -> str | None:
+    """Convert AdBlock-style rule to /etc/hosts format (0.0.0.0 domain).
+
+    Transforms AdBlock/uBlock Origin rules (e.g., "||example.com^") into the hosts file
+    format compatible with MikroTik RouterOS DNS adlist (e.g., "0.0.0.0 example.com").
+
+    Strips comments and whitespace. Only accepts rules with:
+        - "||" prefix (domain anchor)
+        - "^" separator (end of domain marker)
+        - Valid RFC-compliant domain: each label alphanumeric + hyphens (no leading/trailing),
+          max 63 chars per label, min 2-char alpha TLD. Rejects double-dots, underscores, etc.
+
+    Args:
+        rule: Raw AdBlock rule string, may include comments (# comment) or trailing modifiers.
+
+    Returns:
+        "0.0.0.0 domain.com" for valid rules, or None if rule is invalid/empty/unsupported.
+
+    Examples:
+        >>> convert_rule("||example.com^")
+        "0.0.0.0 example.com"
+        >>> convert_rule("||ads.google.com^$third-party")
+        "0.0.0.0 ads.google.com"
+        >>> convert_rule("||invalid_domain^")
+        None
+        >>> convert_rule("# comment")
+        None
+    """
     rule = _COMMENT_RE.sub("", rule).strip()
     if not rule:
         return None
     if rule.startswith("||") and "^" in rule:
         domain = rule[2:].split("^")[0]
         if _DOMAIN_RE.match(domain):
-            return f"0.0.0.0 {domain}"
+            return f"0.0.0.0 {domain.lower()}"
     return None
 
 
 def main() -> None:
+    """Main entry point: orchestrate fetching, converting, and writing DNS adlist.
+
+    Executes the complete pipeline:
+        1. Load sources from config.toml (or use default sources)
+        2. Fetch AdBlock rules from all sources in parallel using ThreadPoolExecutor
+        3. Convert each rule to /etc/hosts format (0.0.0.0 domain.com)
+        4. Deduplicate entries across all sources
+        5. Exit early if no rules were fetched (skips writing hosts.txt)
+        6. Write to OUTPUT_FILE with a descriptive header including:
+           - Timestamp (UTC)
+           - Original source URLs and domain counts
+           - Generation metadata
+
+    Each source's converted rules are grouped in the output file with section comments.
+    Progress is printed to stdout (fetch times, conversion counts, total elapsed time).
+    """
     start_time = time.time()
-    urls = SOURCES
+    urls = load_config("config.toml")
 
     unique_rules: set[str] = set()
     source_data: dict[str, list[str]] = {}
@@ -93,6 +192,10 @@ def main() -> None:
 
     # Restore original URL order (as_completed is non-deterministic)
     source_data = {url: source_data[url] for url in urls if url in source_data}
+
+    if not unique_rules:
+        print("Warning: No valid rules were converted. Skipping writing to file.")
+        return
 
     print(f"Total unique domains across all sources: {len(unique_rules):,}")
 
@@ -125,16 +228,18 @@ def main() -> None:
         "#\n"
     )
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
-        file.write(header)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as output_file:
+        output_file.write(header)
 
         for url, rules in source_data.items():
-            file.write(f"\n# Source: {url}\n\n")
+            output_file.write(f"\n# Source: {url}\n\n")
             for rule in rules:
-                file.write(rule + "\n")
-            file.write(f"\n# Converted {len(rules):,} rules from this source\n\n")
+                output_file.write(rule + "\n")
+            output_file.write(
+                f"\n# Converted {len(rules):,} rules from this source\n\n"
+            )
 
-        file.write(f"\n# Total unique domains: {len(unique_rules)}\n")
+        output_file.write(f"\n# Total unique domains: {len(unique_rules)}\n")
 
     elapsed_time = time.time() - start_time
     print(f"Done! Written to: {OUTPUT_FILE}")
