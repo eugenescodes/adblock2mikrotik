@@ -9,7 +9,7 @@ Convert ad-blocking filter lists to MikroTik RouterOS DNS adlist format.
 ## Overview
 
 Transforms popular ad-blocking filter lists (Hagezi) into a compact format compatible with the MikroTik RouterOS 7.15+ DNS adlist feature.
-Optimized for memory-constrained of low-resource devices like the [RB951Ui-2nD hAP](https://mikrotik.com/product/RB951Ui-2nD) (which has 16 MB storage).
+Optimized for memory-constrained low-resource devices like the [RB951Ui-2nD hAP](https://mikrotik.com/product/RB951Ui-2nD) (which has 16 MB storage).
 
 ### Sources
 
@@ -23,7 +23,8 @@ Optimized for memory-constrained of low-resource devices like the [RB951Ui-2nD h
 
 - Converts `||example.com^` rules to MikroTik DNS adlist format (`0.0.0.0 example.com`)
 - Deduplicates entries across all sources
-- Strips comments and unsupported rule types
+- Validates domains against RFC label rules (rejects double-dots, leading/trailing hyphens)
+- Pre-filters comments and empty lines for efficiency
 - Compatible with RouterOS 7.15+
 
 ## Usage
@@ -86,6 +87,43 @@ See also the official MikroTik documentation:
 
 - [DNS Adlist - MikroTik Documentation](https://help.mikrotik.com/docs/spaces/ROS/pages/37748767/DNS#DNS-Adlist)
 - [Certificates - MikroTik Documentation](https://help.mikrotik.com/docs/spaces/ROS/pages/2555969/Certificates)
+
+## Configuration
+
+By default, the script uses three pre-configured Hagezi filter lists. You can customize which sources are used by creating a `config.toml` file:
+
+### Customize sources
+
+- Copy the example configuration:
+
+```bash
+cp config.toml.example config.toml
+```
+
+- Edit `config.toml` to add or remove sources:
+
+```toml
+[sources]
+urls = [
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.mini.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/gambling.mini.txt",
+]
+```
+
+- Run the converter:
+
+```bash
+uv run convert_to_hosts.py
+```
+
+The script will automatically load sources from `config.toml`. If the file doesn't exist, it falls back to the default sources above.
+
+### Finding additional filter lists
+
+You can use any blocklist in AdBlock format (`||domain.com^` syntax)
+
+For more Hagezi lists, visit the [Hagezi DNS blocklists repository](https://github.com/hagezi/dns-blocklists)
 
 ## Development
 

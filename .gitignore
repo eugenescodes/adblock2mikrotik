@@ -41,6 +41,12 @@ dist/
 build/
 *.egg-info/
 
+# Generated output
+hosts.txt
+ 
+# Local configuration (copy from config.toml.example)
+config.toml
+
 # -----------------------
 # Rust
 # -----------------------
