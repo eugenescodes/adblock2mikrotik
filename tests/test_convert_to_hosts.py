@@ -47,8 +47,9 @@ def test_fetch_rules_success(mock_get):
     mock_get.return_value.__enter__.return_value = mock_response
     mock_get.return_value.__exit__ = MagicMock(return_value=None)
 
-    result = convert_to_hosts.fetch_rules("http://fakeurl")
+    result, elapsed = convert_to_hosts.fetch_rules("http://fakeurl")
     assert result == ["line1", "line2", "line3"]
+    assert isinstance(elapsed, float)
     mock_get.assert_called_once_with("http://fakeurl", timeout=(3, 10), stream=True)
 
 
@@ -57,9 +58,10 @@ def test_fetch_rules_success(mock_get):
 def test_fetch_rules_retries_then_fails(mock_get, mock_sleep, capsys):
     mock_get.side_effect = requests.RequestException("Mocked network error")
 
-    result = convert_to_hosts.fetch_rules("http://fakeurl")
+    result, elapsed = convert_to_hosts.fetch_rules("http://fakeurl")
 
     assert result == []
+    assert isinstance(elapsed, float)
     assert mock_get.call_count == 3  # call 3 times due to retries
 
     # sleep calls: after 1st and 2nd attempts, but not after 3rd
@@ -90,9 +92,10 @@ def test_fetch_rules_succeeds_on_retry(mock_get, mock_sleep):
         ),
     ]
 
-    result = convert_to_hosts.fetch_rules("http://fakeurl")
+    result, elapsed = convert_to_hosts.fetch_rules("http://fakeurl")
 
     assert result == ["a", "b"]
+    assert isinstance(elapsed, float)
     assert mock_get.call_count == 2
     assert mock_sleep.call_count == 1
 
@@ -100,14 +103,17 @@ def test_fetch_rules_succeeds_on_retry(mock_get, mock_sleep):
 @patch("convert_to_hosts.fetch_rules")
 @patch("builtins.open", new_callable=mock_open)
 def test_main(mock_file, mock_fetch_rules):
-    # Mock fetch_rules to return sample rules
-    mock_fetch_rules.return_value = [
-        "||example.com^",
-        "||example.com^",  # Duplicate
-        "||test.com^$third-party",
-        "# comment",
-        "",
-    ]
+    # Mock fetch_rules to return sample rules and elapsed time
+    mock_fetch_rules.return_value = (
+        [
+            "||example.com^",
+            "||example.com^",  # Duplicate
+            "||test.com^$third-party",
+            "# comment",
+            "",
+        ],
+        0.5,  # elapsed time
+    )
 
     convert_to_hosts.main()
 
