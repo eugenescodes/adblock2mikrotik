@@ -57,6 +57,7 @@ def convert_rule(rule: str) -> str | None:
 
 
 def main() -> None:
+    start_time = time.time()
     urls = SOURCES
 
     unique_rules: set[str] = set()
@@ -128,7 +129,9 @@ def main() -> None:
 
         file.write(f"\n# Total unique domains: {len(unique_rules)}\n")
 
+    elapsed_time = time.time() - start_time
     print(f"Done! Written to: {OUTPUT_FILE}")
+    print(f"Elapsed: {elapsed_time:.2f}s")
 
 
 if __name__ == "__main__":
