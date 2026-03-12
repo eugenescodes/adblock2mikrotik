@@ -24,7 +24,9 @@ SOURCES = [
 ]
 
 
-def fetch_rules(url: str) -> list[str]:
+def fetch_rules(url: str) -> tuple[list[str], float]:
+    """Fetch rules from URL and return (rules, elapsed_time_in_seconds)."""
+    fetch_start = time.time()
     # Retry-logic: 3 attempts with exponential backoff: 2s → 4s (no wait after final attempt)
     last_exception = None
     for attempt in range(3):
@@ -32,9 +34,11 @@ def fetch_rules(url: str) -> list[str]:
             # stream=True: avoids loading the entire response into memory at once
             with requests.get(url, timeout=(3, 10), stream=True) as response:
                 response.raise_for_status()
-                return [
+                rules = [
                     line for line in response.iter_lines(decode_unicode=True) if line
                 ]
+                elapsed = time.time() - fetch_start
+                return rules, elapsed
         except requests.RequestException as e:
             last_exception = e
             if attempt < 2:  # don't wait after the last attempt
@@ -42,7 +46,8 @@ def fetch_rules(url: str) -> list[str]:
                 print(f"Attempt {attempt + 1} failed for {url}. Retrying in {wait}s...")
                 time.sleep(wait)
     print(f"Error fetching {url} after 3 attempts: {last_exception}")
-    return []
+    elapsed = time.time() - fetch_start
+    return [], elapsed
 
 
 def convert_rule(rule: str) -> str | None:
@@ -70,9 +75,9 @@ def main() -> None:
 
         for future in as_completed(futures):
             url = futures[future]
-            rules = future.result()
-            # print(f"Fetched {len(rules):,} lines from {url.split('/')[-1]}")
-            print(f"Fetched {len(rules):,} lines \nfrom {url}")
+            rules, fetch_elapsed = future.result()
+            print(f"Fetched {len(rules):,} lines from {url.split('/')[-1]} ({fetch_elapsed:.2f}s)")
+            # print(f"Fetched {len(rules):,} lines from {url} ({fetch_elapsed:.2f}s)")
 
             converted = []
             for rule in rules:
