@@ -35,11 +35,11 @@ def test_convert_rule_invalid():
     assert convert_to_hosts.convert_rule("|example.com^") is None
     # Invalid domain format (no TLD)
     assert convert_to_hosts.convert_rule("||invalid_domain^") is None
-    # Domain with double dot (regex fix for bug #1)
+    # Domain with double dot
     assert convert_to_hosts.convert_rule("||example..com^") is None
-    # Domain with leading dot (regex fix for bug #1)
+    # Domain with leading dot
     assert convert_to_hosts.convert_rule("||.example.com^") is None
-    # Domain with trailing dot (regex fix for bug #1)
+    # Domain with trailing dot
     assert convert_to_hosts.convert_rule("||example.com.^") is None
 
 
@@ -114,7 +114,7 @@ def test_fetch_rules_succeeds_on_retry(mock_get, mock_sleep):
 def test_fetch_rules_filters_comments(mock_get):
     """Test that fetch_rules pre-filters empty lines and comment-only lines.
 
-    Verifies (bug fix #3): comments and empty strings are removed in fetch_rules
+    Verifies: comments and empty strings are removed in fetch_rules
     itself, before reaching convert_rule, so callers receive only candidate rules.
     """
     mock_response = MagicMock()
@@ -186,7 +186,7 @@ def test_main(mock_file, mock_fetch_rules):
 def test_main_empty_rules_skips_file_write(mock_file, mock_fetch_rules, capsys):
     """Test that main() skips writing to file when no valid rules are converted.
 
-    Verifies (bug fix #2):
+    Verifies:
         - File is NOT opened if unique_rules set is empty
         - Warning message is printed
         - Function returns early without writing file
