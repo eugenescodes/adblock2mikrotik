@@ -76,7 +76,9 @@ def main() -> None:
         for future in as_completed(futures):
             url = futures[future]
             rules, fetch_elapsed = future.result()
-            print(f"Fetched {len(rules):,} lines from {url.split('/')[-1]} ({fetch_elapsed:.2f}s)")
+            print(
+                f"Fetched {len(rules):,} lines from {url.split('/')[-1]} ({fetch_elapsed:.2f}s)"
+            )
             # print(f"Fetched {len(rules):,} lines from {url} ({fetch_elapsed:.2f}s)")
 
             converted = []
