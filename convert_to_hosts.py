@@ -8,13 +8,14 @@ from datetime import UTC, datetime
 import requests
 
 # Pre-compiled once at module load for performance
-_COMMENT_RE = re.compile(r"#.*$")
-# RFC-compliant domain validation:
-# - each label: starts/ends with alphanumeric, hyphens allowed in the middle, max 63 chars
-# - rejects double-dots (example..com), leading/trailing hyphens (-ex.com, ex-.com)
-# - TLD: 2+ alpha chars only
+_COMMENT_RE = re.compile(r"\s*#.*$")
+# Domain validation (RFC 1123 ASCII subset):
+# - labels: [a-zA-Z0-9], hyphens allowed inside, max 63 chars each (no leading/trailing hyphens)
+# - total length: 1–253 chars
+# - TLD: ASCII alpha only, 2–24 chars
+# Note: IDN/punycode TLDs (xn--) are intentionally excluded
 _DOMAIN_RE = re.compile(
-    r"^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$"
+    r"^(?=.{1,253}$)(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,24}$"
 )
 
 # OUTPUT_DIR is set in Docker to /output (a dedicated writable volume).
