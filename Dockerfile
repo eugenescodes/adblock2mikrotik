@@ -6,10 +6,11 @@ ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     UV_PYTHON_DOWNLOADS=never \
     UV_PROJECT_ENVIRONMENT=/usr/local \
-    # UV_COMPILE_BYTECODE=1 \
+    UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy \
     UV_FROZEN=1 \
     UV_NO_DEV=1 \
+    UV_NO_EDITABLE=1 \
     UV_NO_CACHE=1
 
 # Install system dependencies

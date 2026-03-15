@@ -14,7 +14,7 @@ _COMMENT_RE = re.compile(r"#.*$")
 # - rejects double-dots (example..com), leading/trailing hyphens (-ex.com, ex-.com)
 # - TLD: 2+ alpha chars only
 _DOMAIN_RE = re.compile(
-    r"^(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$"
+    r"^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$"
 )
 
 # OUTPUT_DIR is set in Docker to /output (a dedicated writable volume).

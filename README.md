@@ -138,10 +138,12 @@ Install `uv` (replaces `pip` and `venv`) [more info about uv](https://docs.astra
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### Setup
+### Setup (development environment)
+
+Development tools (ruff, pytest) are in the `dev` dependency group and need to be installed separately:
 
 ```bash
-uv sync
+uv sync  # Installs all dependencies including dev tools
 ```
 
 ### Lint and format
@@ -156,6 +158,11 @@ uv run ruff format .        # format
 ```bash
 uv run pytest -v
 ```
+
+> [!NOTE]
+> Development dependencies (ruff, pytest) are **not** included in the Docker image.
+> Use `uv sync` locally to run linting, formatting, and tests.
+> The Docker image only includes production dependencies for running the converter.
 
 ## Contributing
 
