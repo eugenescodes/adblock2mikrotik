@@ -4,11 +4,10 @@ import time
 import tomllib
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import UTC, datetime
+from pathlib import Path
 
 import requests
 
-# Pre-compiled once at module load for performance
-_COMMENT_RE = re.compile(r"\s*#.*$")
 # Domain validation (RFC 1123 ASCII subset):
 # - labels: [a-zA-Z0-9], hyphens allowed inside, max 63 chars each (no leading/trailing hyphens)
 # - total length: 1–253 chars
@@ -29,20 +28,20 @@ SOURCES = [
 ]
 
 
-def _get_output_file() -> str:
+def _get_output_file() -> Path:
     """Resolve output file path from OUTPUT_DIR env var or fall back to CWD.
 
     OUTPUT_DIR is set in Docker to /output (a dedicated writable volume).
     When running locally (uv or bare Python), OUTPUT_DIR is not set -> writes to CWD.
     """
     output_dir = os.environ.get("OUTPUT_DIR")
-    return os.path.join(output_dir, "hosts.txt") if output_dir else "hosts.txt"
+    return Path(output_dir) / "hosts.txt" if output_dir else Path("hosts.txt")
 
 
-def load_config(config_file: str = "config.toml") -> list[str]:
+def load_config(config_file: str | Path = "config.toml") -> list[str]:
     """Load sources from TOML config file.
 
-    Falls back to default sources if config file doesn't exist.
+    Falls back to default sources if config file doesn't exist or is malformed.
 
     Args:
         config_file: Path to config.toml file
@@ -50,12 +49,13 @@ def load_config(config_file: str = "config.toml") -> list[str]:
     Returns:
         List of source URLs
     """
-    if not os.path.exists(config_file):
+    config_path = Path(config_file)
+    if not config_path.exists():
         print(f"Note: {config_file} not found, using default sources")
         return SOURCES
 
     try:
-        with open(config_file, "rb") as f:
+        with config_path.open("rb") as f:
             config = tomllib.load(f)
         urls = config.get("sources", {}).get("urls", SOURCES)
         print(f"Loaded {len(urls)} sources from {config_file}")
@@ -72,46 +72,46 @@ def fetch_rules(url: str) -> tuple[list[str], float]:
     Streams the response to avoid loading large files entirely into memory.
     Pre-filters empty lines and comment-only lines so callers receive only candidate rules.
 
+    A dedicated Session is created per call so each thread has its own connection pool
+    without sharing mutable state across threads (requests.Session is not thread-safe).
+
     Args:
         url: The remote URL to fetch rules from.
 
     Returns:
         A tuple of (rules, elapsed_time_seconds) where:
-            - rules: List of non-empty, non-comment lines from the response,
-              or empty list if all attempts fail.
-            - elapsed_time_seconds: Total time spent fetching (including retries), as float.
+            - rules: List of non-empty, non-comment lines, or [] if all attempts fail.
+            - elapsed_time_seconds: Total time spent fetching (including retries).
 
     Note:
         Attempts up to 3 times with exponential backoff: 2s after 1st failure, 4s after 2nd.
-        Prints diagnostic messages on retry and final failure.
     """
-    fetch_start = time.time()
-    # Retry-logic: 3 attempts with exponential backoff: 2s -> 4s (no wait after final attempt)
-    # Pre-filters empty lines and comment-only lines (#) before returning,
-    # so callers receive only candidate adblock rules.
+    fetch_start = time.monotonic()
     last_exception = None
 
-    for attempt in range(3):
-        try:
-            # stream=True: avoids loading the entire response into memory at once
-            with requests.get(url, timeout=(3, 10), stream=True) as response:
-                response.raise_for_status()
-                rules = [
-                    line
-                    for line in response.iter_lines(decode_unicode=True)
-                    if line and not line.lstrip().startswith("#")
-                ]
-                elapsed = time.time() - fetch_start
-                return rules, elapsed
-        except requests.RequestException as e:
-            last_exception = e
-            if attempt < 2:  # don't wait after the last attempt
-                wait = 2 ** (attempt + 1)  # 2s, then 4s
-                print(f"Attempt {attempt + 1} failed for {url}. Retrying in {wait}s...")
-                time.sleep(wait)
+    with requests.Session() as session:
+        for attempt in range(3):
+            try:
+                with session.get(url, timeout=(3, 10), stream=True) as response:
+                    response.raise_for_status()
+                    rules = [
+                        line
+                        for line in response.iter_lines(decode_unicode=True)
+                        if line and not line.lstrip().startswith("#")
+                    ]
+                    elapsed = time.monotonic() - fetch_start
+                    return rules, elapsed
+            except requests.RequestException as e:
+                last_exception = e
+                if attempt < 2:
+                    wait = 2 ** (attempt + 1)
+                    print(
+                        f"Attempt {attempt + 1} failed for {url}. Retrying in {wait}s..."
+                    )
+                    time.sleep(wait)
 
     print(f"Error fetching {url} after 3 attempts: {last_exception}")
-    elapsed = time.time() - fetch_start
+    elapsed = time.monotonic() - fetch_start
     return [], elapsed
 
 
@@ -143,9 +143,11 @@ def convert_rule(rule: str) -> str | None:
         >>> convert_rule("# comment")
         None
     """
-    rule = _COMMENT_RE.sub("", rule).strip()
+    # Fast split to remove trailing comments
+    rule = rule.split("#", 1)[0].strip()
     if not rule:
         return None
+
     if rule.startswith("||") and "^" in rule:
         domain = rule[2:].split("^")[0]
         if _DOMAIN_RE.match(domain):
@@ -154,7 +156,7 @@ def convert_rule(rule: str) -> str | None:
 
 
 def write_output(
-    output_file: str,
+    output_file: Path,
     source_data: dict[str, list[str]],
     total_count: int,
     urls: list[str],
@@ -168,7 +170,7 @@ def write_output(
 
     Args:
         output_file: Destination file path.
-        source_data: Ordered mapping of URL -> list of converted host lines.
+        source_data: Ordered mapping of URL → list of converted host lines.
         total_count: Total number of unique domains across all sources.
         urls: Original URL list, used to preserve source order in the header.
     """
@@ -200,7 +202,7 @@ def write_output(
         "#\n"
     )
 
-    with open(output_file, "w", encoding="utf-8") as f:
+    with output_file.open("w", encoding="utf-8") as f:
         f.write(header)
 
         for url, rules in source_data.items():
@@ -220,17 +222,16 @@ def main() -> None:
         2. Fetch AdBlock rules from all sources in parallel using ThreadPoolExecutor
         3. Convert each rule to /etc/hosts format (0.0.0.0 domain.com)
         4. Deduplicate entries across all sources
-        5. Exit early if no rules were fetched (skips writing hosts.txt)
+        5. Exit early if no rules were converted (skips writing hosts.txt)
         6. Delegate file writing to write_output()
 
     Progress is printed to stdout (fetch times, conversion counts, total elapsed time).
     """
-    start_time = time.time()
+    start_time = time.monotonic()
     urls = load_config("config.toml")
     output_file = _get_output_file()
 
     unique_rules: set[str] = set()
-    # Populated in as_completed order, reordered to match original URL list below
     source_data: dict[str, list[str]] = {}
 
     print(f"Starting conversion of {len(urls)} source(s)...\n")
@@ -255,7 +256,7 @@ def main() -> None:
             source_data[url] = converted
             print(f"Converted {len(converted):,} unique domains\n")
 
-    # as_completed is non-deterministic — restore original URL order for output
+    # Reorder dictionary to match original URL list order
     source_data = {url: source_data[url] for url in urls if url in source_data}
 
     if not unique_rules:
@@ -266,7 +267,7 @@ def main() -> None:
 
     write_output(output_file, source_data, len(unique_rules), urls)
 
-    elapsed_time = time.time() - start_time
+    elapsed_time = time.monotonic() - start_time
     print(f"Done! Written to: {output_file}")
     print(f"Elapsed: {elapsed_time:.2f}s")
 
