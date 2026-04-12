@@ -18,12 +18,8 @@ _DOMAIN_RE = re.compile(
     r"^(?=.{1,253}$)(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,24}$"
 )
 
-# OUTPUT_DIR is set in Docker to /output (a dedicated writable volume).
-# When running locally (uv or bare Python), OUTPUT_DIR is not set -> writes to CWD.
-_output_dir = os.environ.get("OUTPUT_DIR")
-OUTPUT_FILE = os.path.join(_output_dir, "hosts.txt") if _output_dir else "hosts.txt"
-
 # Default sources (fallback if config.toml is not found)
+# Keep in sync with config.toml.example
 SOURCES = [
     # "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
@@ -31,6 +27,16 @@ SOURCES = [
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/gambling.mini.txt",
     # "https://...",  # add more sources as needed
 ]
+
+
+def _get_output_file() -> str:
+    """Resolve output file path from OUTPUT_DIR env var or fall back to CWD.
+
+    OUTPUT_DIR is set in Docker to /output (a dedicated writable volume).
+    When running locally (uv or bare Python), OUTPUT_DIR is not set -> writes to CWD.
+    """
+    output_dir = os.environ.get("OUTPUT_DIR")
+    return os.path.join(output_dir, "hosts.txt") if output_dir else "hosts.txt"
 
 
 def load_config(config_file: str = "config.toml") -> list[str]:
@@ -54,7 +60,7 @@ def load_config(config_file: str = "config.toml") -> list[str]:
         urls = config.get("sources", {}).get("urls", SOURCES)
         print(f"Loaded {len(urls)} sources from {config_file}")
         return urls
-    except Exception as e:
+    except (tomllib.TOMLDecodeError, KeyError, TypeError) as e:
         print(f"Error loading {config_file}: {e}. Using default sources.")
         return SOURCES
 
@@ -84,6 +90,7 @@ def fetch_rules(url: str) -> tuple[list[str], float]:
     # Pre-filters empty lines and comment-only lines (#) before returning,
     # so callers receive only candidate adblock rules.
     last_exception = None
+
     for attempt in range(3):
         try:
             # stream=True: avoids loading the entire response into memory at once
@@ -102,6 +109,7 @@ def fetch_rules(url: str) -> tuple[list[str], float]:
                 wait = 2 ** (attempt + 1)  # 2s, then 4s
                 print(f"Attempt {attempt + 1} failed for {url}. Retrying in {wait}s...")
                 time.sleep(wait)
+
     print(f"Error fetching {url} after 3 attempts: {last_exception}")
     elapsed = time.time() - fetch_start
     return [], elapsed
@@ -145,62 +153,25 @@ def convert_rule(rule: str) -> str | None:
     return None
 
 
-def main() -> None:
-    """Main entry point: orchestrate fetching, converting, and writing DNS adlist.
+def write_output(
+    output_file: str,
+    source_data: dict[str, list[str]],
+    unique_rules: set[str],
+    urls: list[str],
+) -> None:
+    """Write converted rules to hosts file with header metadata.
 
-    Executes the complete pipeline:
-        1. Load sources from config.toml (or use default sources)
-        2. Fetch AdBlock rules from all sources in parallel using ThreadPoolExecutor
-        3. Convert each rule to /etc/hosts format (0.0.0.0 domain.com)
-        4. Deduplicate entries across all sources
-        5. Exit early if no rules were fetched (skips writing hosts.txt)
-        6. Write to OUTPUT_FILE with a descriptive header including:
-           - Timestamp (UTC)
-           - Original source URLs and domain counts
-           - Generation metadata
+    Produces a hosts-format file with:
+        - A descriptive header (timestamp, source URLs, domain counts)
+        - Per-source sections with section comments
+        - A final total count line
 
-    Each source's converted rules are grouped in the output file with section comments.
-    Progress is printed to stdout (fetch times, conversion counts, total elapsed time).
+    Args:
+        output_file: Destination file path.
+        source_data: Ordered mapping of URL → list of converted host lines.
+        unique_rules: Full set of unique rules (used for total count in header).
+        urls: Original URL list, used to preserve source order in the header.
     """
-    start_time = time.time()
-    urls = load_config("config.toml")
-
-    unique_rules: set[str] = set()
-    source_data: dict[str, list[str]] = {}
-
-    print(f"Starting conversion of {len(urls)} source(s)...\n")
-
-    with ThreadPoolExecutor(max_workers=len(urls)) as executor:
-        futures = {executor.submit(fetch_rules, url): url for url in urls}
-
-        for future in as_completed(futures):
-            url = futures[future]
-            rules, fetch_elapsed = future.result()
-            print(
-                f"Fetched {len(rules):,} lines from {url.split('/')[-1]} ({fetch_elapsed:.2f}s)"
-            )
-            # print(f"Fetched {len(rules):,} lines from {url} ({fetch_elapsed:.2f}s)")
-
-            converted = []
-            for rule in rules:
-                result = convert_rule(rule)
-                if result and result not in unique_rules:
-                    unique_rules.add(result)
-                    converted.append(result)
-
-            source_data[url] = converted
-            print(f"Converted {len(converted):,} unique domains\n")
-
-    # Restore original URL order (as_completed is non-deterministic)
-    source_data = {url: source_data[url] for url in urls if url in source_data}
-
-    if not unique_rules:
-        print("Warning: No valid rules were converted. Skipping writing to file.")
-        return
-
-    print(f"Total unique domains across all sources: {len(unique_rules):,}")
-
-    # Write header with timestamp
     current_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
 
     source_lines = "".join(
@@ -229,21 +200,74 @@ def main() -> None:
         "#\n"
     )
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as output_file:
-        output_file.write(header)
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(header)
 
         for url, rules in source_data.items():
-            output_file.write(f"\n# Source: {url}\n\n")
+            f.write(f"\n# Source: {url}\n\n")
             for rule in rules:
-                output_file.write(rule + "\n")
-            output_file.write(
-                f"\n# Converted {len(rules):,} rules from this source\n\n"
+                f.write(rule + "\n")
+            f.write(f"\n# Converted {len(rules):,} rules from this source\n\n")
+
+        f.write(f"\n# Total unique domains: {len(unique_rules)}\n")
+
+
+def main() -> None:
+    """Main entry point: orchestrate fetching, converting, and writing DNS adlist.
+
+    Executes the complete pipeline:
+        1. Load sources from config.toml (or use default sources)
+        2. Fetch AdBlock rules from all sources in parallel using ThreadPoolExecutor
+        3. Convert each rule to /etc/hosts format (0.0.0.0 domain.com)
+        4. Deduplicate entries across all sources
+        5. Exit early if no rules were fetched (skips writing hosts.txt)
+        6. Delegate file writing to write_output()
+
+    Progress is printed to stdout (fetch times, conversion counts, total elapsed time).
+    """
+    start_time = time.time()
+    urls = load_config("config.toml")
+    output_file = _get_output_file()
+
+    unique_rules: set[str] = set()
+    # Populated in as_completed order, reordered to match original URL list below
+    source_data: dict[str, list[str]] = {}
+
+    print(f"Starting conversion of {len(urls)} source(s)...\n")
+
+    with ThreadPoolExecutor(max_workers=len(urls)) as executor:
+        futures = {executor.submit(fetch_rules, url): url for url in urls}
+
+        for future in as_completed(futures):
+            url = futures[future]
+            rules, fetch_elapsed = future.result()
+            print(
+                f"Fetched {len(rules):,} lines from {url.split('/')[-1]} ({fetch_elapsed:.2f}s)"
             )
 
-        output_file.write(f"\n# Total unique domains: {len(unique_rules)}\n")
+            converted = []
+            for rule in rules:
+                result = convert_rule(rule)
+                if result and result not in unique_rules:
+                    unique_rules.add(result)
+                    converted.append(result)
+
+            source_data[url] = converted
+            print(f"Converted {len(converted):,} unique domains\n")
+
+    # as_completed is non-deterministic — restore original URL order for output
+    source_data = {url: source_data[url] for url in urls if url in source_data}
+
+    if not unique_rules:
+        print("Warning: No valid rules were converted. Skipping writing to file.")
+        return
+
+    print(f"Total unique domains across all sources: {len(unique_rules):,}")
+
+    write_output(output_file, source_data, unique_rules, urls)
 
     elapsed_time = time.time() - start_time
-    print(f"Done! Written to: {OUTPUT_FILE}")
+    print(f"Done! Written to: {output_file}")
     print(f"Elapsed: {elapsed_time:.2f}s")
 
 
