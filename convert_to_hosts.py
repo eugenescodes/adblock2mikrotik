@@ -86,7 +86,7 @@ def fetch_rules(url: str) -> tuple[list[str], float]:
         Prints diagnostic messages on retry and final failure.
     """
     fetch_start = time.time()
-    # Retry-logic: 3 attempts with exponential backoff: 2s → 4s (no wait after final attempt)
+    # Retry-logic: 3 attempts with exponential backoff: 2s -> 4s (no wait after final attempt)
     # Pre-filters empty lines and comment-only lines (#) before returning,
     # so callers receive only candidate adblock rules.
     last_exception = None
@@ -168,7 +168,7 @@ def write_output(
 
     Args:
         output_file: Destination file path.
-        source_data: Ordered mapping of URL → list of converted host lines.
+        source_data: Ordered mapping of URL -> list of converted host lines.
         unique_rules: Full set of unique rules (used for total count in header).
         urls: Original URL list, used to preserve source order in the header.
     """
