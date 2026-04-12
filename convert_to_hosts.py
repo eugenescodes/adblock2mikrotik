@@ -156,7 +156,7 @@ def convert_rule(rule: str) -> str | None:
 def write_output(
     output_file: str,
     source_data: dict[str, list[str]],
-    unique_rules: set[str],
+    total_count: int,
     urls: list[str],
 ) -> None:
     """Write converted rules to hosts file with header metadata.
@@ -169,7 +169,7 @@ def write_output(
     Args:
         output_file: Destination file path.
         source_data: Ordered mapping of URL -> list of converted host lines.
-        unique_rules: Full set of unique rules (used for total count in header).
+        total_count: Total number of unique domains across all sources.
         urls: Original URL list, used to preserve source order in the header.
     """
     current_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
@@ -195,7 +195,7 @@ def write_output(
         "# This filter is generated using the following Hagezi DNS blocklist sources:\n"
         f"{url_lines}"
         "#\n"
-        f"# Total unique domains: {len(unique_rules):,}\n"
+        f"# Total unique domains: {total_count:,}\n"
         f"{source_lines}"
         "#\n"
     )
@@ -209,7 +209,7 @@ def write_output(
                 f.write(rule + "\n")
             f.write(f"\n# Converted {len(rules):,} rules from this source\n\n")
 
-        f.write(f"\n# Total unique domains: {len(unique_rules)}\n")
+        f.write(f"\n# Total unique domains: {total_count:,}\n")
 
 
 def main() -> None:
@@ -264,7 +264,7 @@ def main() -> None:
 
     print(f"Total unique domains across all sources: {len(unique_rules):,}")
 
-    write_output(output_file, source_data, unique_rules, urls)
+    write_output(output_file, source_data, len(unique_rules), urls)
 
     elapsed_time = time.time() - start_time
     print(f"Done! Written to: {output_file}")
