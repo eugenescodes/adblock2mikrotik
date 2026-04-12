@@ -25,6 +25,8 @@ __pycache__/
 *$py.class
 .venv/
 venv/
+tests/
+config.toml
 .pytest_cache/
 .ruff_cache/
 
