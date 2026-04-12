@@ -1,3 +1,4 @@
+import os
 import sys
 from pathlib import Path
 from unittest.mock import MagicMock, mock_open, patch
@@ -166,6 +167,24 @@ def test_load_config_invalid_toml_falls_back_to_defaults(tmp_path, capsys):
 
 
 # ---------------------------------------------------------------------------
+# _get_output_file
+# ---------------------------------------------------------------------------
+
+
+def test_get_output_file_default():
+    """Returns 'hosts.txt' in CWD when OUTPUT_DIR is not set."""
+    with patch.dict(os.environ, {}, clear=False):
+        os.environ.pop("OUTPUT_DIR", None)
+        assert convert_to_hosts._get_output_file() == "hosts.txt"
+
+
+def test_get_output_file_with_env(monkeypatch):
+    """Returns path inside OUTPUT_DIR when env var is set."""
+    monkeypatch.setenv("OUTPUT_DIR", "/output")
+    assert convert_to_hosts._get_output_file() == "/output/hosts.txt"
+
+
+# ---------------------------------------------------------------------------
 # main / write_output
 # ---------------------------------------------------------------------------
 
@@ -197,9 +216,11 @@ def test_main(mock_file, mock_fetch_rules):
 
     assert "Title:" in written_text
     assert "0.0.0.0 example.com" in written_text
-    assert written_text.count("0.0.0.0 example.com") == 1  # deduplicated
+    assert written_text.count("0.0.0.0 example.com") == 1  # deduplicated globally
     assert "0.0.0.0 test.com" in written_text
     assert "# Converted 2 rules from this source" in written_text
+    # sources 2 and 3 return the same raw rules — all already seen -> 0 unique each
+    assert written_text.count("# Converted 0 rules from this source") == 2
 
 
 @patch("convert_to_hosts.fetch_rules")
@@ -239,3 +260,29 @@ def test_write_output_structure(mock_file, mock_fetch_rules):
     assert "Last modified:" in written_text
     assert "# Source:" in written_text
     assert "Total unique domains:" in written_text
+
+
+def test_write_output_direct(tmp_path):
+    """Direct unit test for write_output — verifies structure without going through main()."""
+    output_file = tmp_path / "hosts.txt"
+    urls = ["https://example.com/list.txt"]
+    source_data = {urls[0]: ["0.0.0.0 example.com", "0.0.0.0 test.com"]}
+
+    convert_to_hosts.write_output(str(output_file), source_data, 2, urls)
+
+    content = output_file.read_text()
+
+    # Header
+    assert "Title:" in content
+    assert "Last modified:" in content
+    assert "Total unique domains: 2" in content
+    assert "# - https://example.com/list.txt" in content
+
+    # Section body
+    assert "# Source: https://example.com/list.txt" in content
+    assert "0.0.0.0 example.com" in content
+    assert "0.0.0.0 test.com" in content
+    assert "# Converted 2 rules from this source" in content
+
+    # Footer
+    assert content.strip().endswith("Total unique domains: 2")
