@@ -11,14 +11,11 @@ import convert_to_hosts
 
 def test_convert_rule_valid():
     """Test conversion of valid AdBlock rules to hosts format."""
-    # Valid rule with || and ^
     assert convert_to_hosts.convert_rule("||example.com^") == "0.0.0.0 example.com"
-    # Valid rule with modifiers after ^
     assert (
         convert_to_hosts.convert_rule("||example.com^$third-party")
         == "0.0.0.0 example.com"
     )
-    # Rule with comment and whitespace
     assert (
         convert_to_hosts.convert_rule("||example.com^  # comment")
         == "0.0.0.0 example.com"
@@ -27,32 +24,23 @@ def test_convert_rule_valid():
 
 def test_convert_rule_invalid():
     """Test that invalid/unsupported AdBlock rules return None."""
-    # Empty rule
     assert convert_to_hosts.convert_rule("") is None
-    # Comment only
     assert convert_to_hosts.convert_rule("# some comment") is None
-    # Rule not starting with ||
     assert convert_to_hosts.convert_rule("|example.com^") is None
-    # Invalid domain format (no TLD)
     assert convert_to_hosts.convert_rule("||invalid_domain^") is None
-    # Domain with double dot
     assert convert_to_hosts.convert_rule("||example..com^") is None
-    # Domain with leading dot
     assert convert_to_hosts.convert_rule("||.example.com^") is None
-    # Domain with trailing dot
     assert convert_to_hosts.convert_rule("||example.com.^") is None
 
 
 @patch("convert_to_hosts.requests.get")
 def test_fetch_rules_success(mock_get):
     """Test successful fetch of rules from URL on first attempt."""
-    # Create a mock response that supports the context manager protocol
     mock_response = MagicMock()
     mock_response.status_code = 200
     mock_response.iter_lines.return_value = ["line1", "line2", "line3"]
     mock_response.raise_for_status = MagicMock()
 
-    # Set up the mock to return itself when entering the context manager
     mock_get.return_value.__enter__.return_value = mock_response
     mock_get.return_value.__exit__ = MagicMock(return_value=None)
 
@@ -62,7 +50,7 @@ def test_fetch_rules_success(mock_get):
     mock_get.assert_called_once_with("http://fakeurl", timeout=(3, 10), stream=True)
 
 
-@patch("convert_to_hosts.time.sleep")  # don't need wait really time in tests
+@patch("convert_to_hosts.time.sleep")
 @patch("convert_to_hosts.requests.get")
 def test_fetch_rules_retries_then_fails(mock_get, mock_sleep, capsys):
     """Test fetch retry logic: 3 attempts with exponential backoff, then failure."""
@@ -72,12 +60,11 @@ def test_fetch_rules_retries_then_fails(mock_get, mock_sleep, capsys):
 
     assert result == []
     assert isinstance(elapsed, float)
-    assert mock_get.call_count == 3  # call 3 times due to retries
+    assert mock_get.call_count == 3
 
-    # sleep calls: after 1st and 2nd attempts, but not after 3rd
     assert mock_sleep.call_count == 2
-    mock_sleep.assert_any_call(2)  # backoff after 1st attempt
-    mock_sleep.assert_any_call(4)  # backoff after 2nd attempt
+    mock_sleep.assert_any_call(2)
+    mock_sleep.assert_any_call(4)
 
     captured = capsys.readouterr()
     assert "Attempt 1 failed" in captured.out
@@ -89,12 +76,10 @@ def test_fetch_rules_retries_then_fails(mock_get, mock_sleep, capsys):
 @patch("convert_to_hosts.requests.get")
 def test_fetch_rules_succeeds_on_retry(mock_get, mock_sleep):
     """Test successful fetch after first attempt fails (retry succeeds)."""
-    # Create a proper mock response object
     mock_response = MagicMock()
     mock_response.iter_lines.return_value = ["a", "b"]
     mock_response.raise_for_status = MagicMock()
 
-    # Set up the mock to return itself when entering the context manager
     mock_get.side_effect = [
         requests.RequestException("Temporary error"),
         MagicMock(
@@ -112,11 +97,7 @@ def test_fetch_rules_succeeds_on_retry(mock_get, mock_sleep):
 
 @patch("convert_to_hosts.requests.get")
 def test_fetch_rules_filters_comments(mock_get):
-    """Test that fetch_rules pre-filters empty lines and comment-only lines.
-
-    Verifies: comments and empty strings are removed in fetch_rules
-    itself, before reaching convert_rule, so callers receive only candidate rules.
-    """
+    """Test that fetch_rules pre-filters empty lines and comment-only lines."""
     mock_response = MagicMock()
     mock_response.raise_for_status = MagicMock()
     mock_response.iter_lines.return_value = [
@@ -124,7 +105,7 @@ def test_fetch_rules_filters_comments(mock_get):
         "# Title: some blocklist header",
         "",
         "||test.com^",
-        "  # indented comment",  # leading whitespace before #
+        "  # indented comment",
     ]
     mock_get.return_value.__enter__.return_value = mock_response
     mock_get.return_value.__exit__ = MagicMock(return_value=None)
@@ -136,47 +117,87 @@ def test_fetch_rules_filters_comments(mock_get):
     assert isinstance(elapsed, float)
 
 
+# ---------------------------------------------------------------------------
+# load_config
+# ---------------------------------------------------------------------------
+
+
+def test_load_config_file_not_found(capsys):
+    """Falls back to SOURCES when config file does not exist."""
+    result = convert_to_hosts.load_config("nonexistent_config.toml")
+
+    assert result == convert_to_hosts.SOURCES
+    captured = capsys.readouterr()
+    assert "not found" in captured.out
+
+
+def test_load_config_reads_urls(tmp_path):
+    """Reads URL list from a valid config.toml."""
+    config = tmp_path / "config.toml"
+    config.write_text(
+        '[sources]\nurls = ["https://example.com/list1.txt", "https://example.com/list2.txt"]\n'
+    )
+
+    result = convert_to_hosts.load_config(str(config))
+
+    assert result == ["https://example.com/list1.txt", "https://example.com/list2.txt"]
+
+
+def test_load_config_missing_urls_key_falls_back_to_defaults(tmp_path):
+    """Falls back to SOURCES when [sources] section exists but 'urls' key is absent."""
+    config = tmp_path / "config.toml"
+    config.write_text("[sources]\n# no urls key\n")
+
+    result = convert_to_hosts.load_config(str(config))
+
+    assert result == convert_to_hosts.SOURCES
+
+
+def test_load_config_invalid_toml_falls_back_to_defaults(tmp_path, capsys):
+    """Falls back to SOURCES and prints an error for malformed TOML."""
+    config = tmp_path / "config.toml"
+    config.write_text("this is not valid toml ][[\n")
+
+    result = convert_to_hosts.load_config(str(config))
+
+    assert result == convert_to_hosts.SOURCES
+    captured = capsys.readouterr()
+    assert "Error loading" in captured.out
+
+
+# ---------------------------------------------------------------------------
+# main / write_output
+# ---------------------------------------------------------------------------
+
+
 @patch("convert_to_hosts.fetch_rules")
 @patch("builtins.open", new_callable=mock_open)
 def test_main(mock_file, mock_fetch_rules):
-    """Test main orchestration: fetch, convert, deduplicate, and write to file.
-
-    Verifies:
-        - File is opened in write mode with UTF-8 encoding
-        - Header with metadata is written
-        - Rules are converted and deduplicated (duplicates removed)
-        - Output is written with section comments
-    """
-    # Mock fetch_rules to return sample rules and elapsed time
+    """Test main orchestration: fetch, convert, deduplicate, and write to file."""
     mock_fetch_rules.return_value = (
         [
             "||example.com^",
-            "||example.com^",  # Duplicate
+            "||example.com^",  # duplicate
             "||test.com^$third-party",
             "# comment",
             "",
         ],
-        0.5,  # elapsed time
+        0.5,
     )
 
     convert_to_hosts.main()
 
-    # Check that file was opened for writing
     mock_file.assert_called_once_with("hosts.txt", "w", encoding="utf-8")
 
-    # Get the file handle to check write calls
+    # fetch_rules must be called once per source URL
+    assert mock_fetch_rules.call_count == len(convert_to_hosts.SOURCES)
+
     handle = mock_file()
-
-    # Check that header was written
-    header_written = any(
-        "Title:" in call.args[0] for call in handle.write.call_args_list
-    )
-    assert header_written
-
-    # Check that converted rules were written
     written_text = "".join(call.args[0] for call in handle.write.call_args_list)
+
+    assert "Title:" in written_text
     assert "0.0.0.0 example.com" in written_text
-    assert written_text.count("0.0.0.0 example.com") == 1
+    assert written_text.count("0.0.0.0 example.com") == 1  # deduplicated
     assert "0.0.0.0 test.com" in written_text
     assert "# Converted 2 rules from this source" in written_text
 
@@ -184,14 +205,7 @@ def test_main(mock_file, mock_fetch_rules):
 @patch("convert_to_hosts.fetch_rules")
 @patch("builtins.open", new_callable=mock_open)
 def test_main_empty_rules_skips_file_write(mock_file, mock_fetch_rules, capsys):
-    """Test that main() skips writing to file when no valid rules are converted.
-
-    Verifies:
-        - File is NOT opened if unique_rules set is empty
-        - Warning message is printed
-        - Function returns early without writing file
-    """
-    # Mock fetch_rules to return rules that won't convert to valid domains
+    """Test that main() skips writing to file when no valid rules are converted."""
     mock_fetch_rules.return_value = (
         [
             "# comment only",
@@ -199,15 +213,29 @@ def test_main_empty_rules_skips_file_write(mock_file, mock_fetch_rules, capsys):
             "invalid_rule_without_pipes",
             "|single_pipe^",
         ],
-        0.5,  # elapsed time
+        0.5,
     )
 
     convert_to_hosts.main()
 
-    # File should NOT be opened at all
     mock_file.assert_not_called()
 
-    # Check that warning message was printed
     captured = capsys.readouterr()
     assert "Warning: No valid rules were converted" in captured.out
     assert "Skipping writing to file" in captured.out
+
+
+@patch("convert_to_hosts.fetch_rules")
+@patch("builtins.open", new_callable=mock_open)
+def test_write_output_structure(mock_file, mock_fetch_rules):
+    """Test write_output produces correct file structure with header and sections."""
+    mock_fetch_rules.return_value = (["||example.com^"], 0.1)
+
+    convert_to_hosts.main()
+
+    handle = mock_file()
+    written_text = "".join(call.args[0] for call in handle.write.call_args_list)
+
+    assert "Last modified:" in written_text
+    assert "# Source:" in written_text
+    assert "Total unique domains:" in written_text
