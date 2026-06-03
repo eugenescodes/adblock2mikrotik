@@ -242,7 +242,10 @@ def test_main(mock_file, mock_fetch_rules):
     assert "0.0.0.0 test.com" in written_text
     assert "# Converted 2 rules from this source" in written_text
     # First source converts 2 rules; all subsequent sources return duplicates -> 0 unique each
-    assert written_text.count("# Converted 0 rules from this source") == len(convert_to_hosts.SOURCES) - 1
+    assert (
+        written_text.count("# Converted 0 rules from this source")
+        == len(convert_to_hosts.SOURCES) - 1
+    )
 
 
 @patch("convert_to_hosts.fetch_rules")
