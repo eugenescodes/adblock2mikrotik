@@ -23,7 +23,6 @@ SOURCES = [
     # "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.mini.txt",
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/gambling.mini.txt",
     # "https://...",  # add more sources as needed
 ]
 

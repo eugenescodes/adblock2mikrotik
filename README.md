@@ -17,7 +17,6 @@ Optimized for memory-constrained low-resource devices like the [RB951Ui-2nD hAP]
 | --- | --- |
 | [Hagezi Multi PRO mini](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#ledger-multi-pro-mini-recommended-for-browsermobile-adblockers-) | General ad/tracker blocking |
 | [Hagezi TIF mini](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#closed_lock_with_key-threat-intelligence-feeds---mini-version-) | Threat intelligence feeds |
-| [Hagezi Gambling mini](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#slot_machine-gambling---mini-version-) | Gambling sites |
 
 ## Features
 
@@ -107,7 +106,6 @@ cp config.toml.example config.toml
 urls = [
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.mini.txt",
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/gambling.mini.txt",
 ]
 ```
 
