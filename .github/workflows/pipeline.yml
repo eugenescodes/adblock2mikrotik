@@ -56,10 +56,11 @@ jobs:
           globs: '**/*.md'
         continue-on-error: true
 
-      - name: Run ruff (fix and format)
+      - name: Run ruff (check and format check)
         run: |
           uv run ruff check . --fix
           uv run ruff format .
+          uv run ruff check .
 
       - name: Commit and push formatting fixes
         if: github.event_name == 'push'
