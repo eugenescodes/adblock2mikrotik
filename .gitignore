@@ -42,7 +42,7 @@ build/
 *.egg-info/
 
 # Generated output
-hosts.txt
+# hosts.txt
  
 # Local configuration (copy from config.toml.example)
 config.toml
