@@ -20,7 +20,12 @@ def test_fetch_rules_success(mock_session_cls):
     """Test successful fetch of rules from URL on first attempt."""
     mock_response = MagicMock()
     mock_response.status_code = 200
-    mock_response.iter_lines.return_value = ["||example.com^", "# comment", "  ", "||test.com^"]
+    mock_response.iter_lines.return_value = [
+        "||example.com^",
+        "# comment",
+        "  ",
+        "||test.com^",
+    ]
     mock_response.raise_for_status = MagicMock()
 
     mock_session = MagicMock()
