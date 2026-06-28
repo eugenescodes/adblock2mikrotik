@@ -59,7 +59,7 @@ def load_config(config_file: str | Path = "config.toml") -> list[str]:
         urls = config.get("sources", {}).get("urls", SOURCES)
         print(f"Loaded {len(urls)} sources from {config_file}")
         return urls
-    except (tomllib.TOMLDecodeError, KeyError, TypeError) as e:
+    except tomllib.TOMLDecodeError as e:
         print(f"Error loading {config_file}: {e}. Using default sources.")
         return SOURCES
 
@@ -96,7 +96,7 @@ def fetch_rules(url: str) -> tuple[list[str], float]:
                     rules = [
                         line
                         for line in response.iter_lines(decode_unicode=True)
-                        if line and not line.lstrip().startswith("#")
+                        if line.strip() and not line.lstrip().startswith("#")
                     ]
                     elapsed = time.monotonic() - fetch_start
                     return rules, elapsed
@@ -114,35 +114,29 @@ def fetch_rules(url: str) -> tuple[list[str], float]:
     return [], elapsed
 
 
-def convert_rule(rule: str) -> str | None:
-    """Convert AdBlock-style rule to /etc/hosts format (0.0.0.0 domain).
+def extract_domain(rule: str) -> str | None:
+    """Extract and validate domain from AdBlock-style rule.
 
-    Transforms AdBlock/uBlock Origin rules (e.g., "||example.com^") into the hosts file
-    format compatible with MikroTik RouterOS DNS adlist (e.g., "0.0.0.0 example.com").
-
-    Strips comments and whitespace. Only accepts rules with:
-        - "||" prefix (domain anchor)
-        - "^" separator (end of domain marker)
-        - Valid RFC-compliant domain: each label alphanumeric + hyphens (no leading/trailing),
-          max 63 chars per label, min 2-char alpha TLD. Rejects double-dots, underscores, etc.
+    Transforms AdBlock/uBlock Origin rules (e.g., "||example.com^") into a
+    clean domain string. Strips trailing comments, modifiers ($third-party),
+    and whitespace. Rejects domains that fail RFC 1123 validation.
 
     Args:
-        rule: Raw AdBlock rule string, may include comments (# comment) or trailing modifiers.
+        rule: Raw AdBlock rule string, may include comments or modifiers.
 
     Returns:
-        "0.0.0.0 domain.com" for valid rules, or None if rule is invalid/empty/unsupported.
+        Lowercase domain string (e.g., "example.com") for valid rules,
+        or None if the rule is invalid, empty, or unsupported.
 
     Examples:
-        >>> convert_rule("||example.com^")
-        "0.0.0.0 example.com"
-        >>> convert_rule("||ads.google.com^$third-party")
-        "0.0.0.0 ads.google.com"
-        >>> convert_rule("||invalid_domain^")
-        None
-        >>> convert_rule("# comment")
+        >>> extract_domain("||example.com^")
+        "example.com"
+        >>> extract_domain("||ads.google.com^$third-party")
+        "ads.google.com"
+        >>> extract_domain("||invalid_domain^")
         None
     """
-    # Fast split to remove trailing comments
+
     rule = rule.split("#", 1)[0].strip()
     if not rule:
         return None
@@ -150,7 +144,7 @@ def convert_rule(rule: str) -> str | None:
     if rule.startswith("||") and "^" in rule:
         domain = rule[2:].split("^")[0]
         if _DOMAIN_RE.match(domain):
-            return f"0.0.0.0 {domain.lower()}"
+            return domain.lower()
     return None
 
 
@@ -160,24 +154,24 @@ def write_output(
     total_count: int,
     urls: list[str],
 ) -> None:
-    """Write converted rules to hosts file with header metadata.
+    """Write validated domains to hosts file with header metadata.
 
     Produces a hosts-format file with:
         - A descriptive header (timestamp, source URLs, domain counts)
-        - Per-source sections with section comments
+        - Per-source sections with the "0.0.0.0 " prefix added at write time
         - A final total count line
 
     Args:
         output_file: Destination file path.
-        source_data: Ordered mapping of URL → list of converted host lines.
+        source_data: Ordered mapping of URL → list of validated domain strings.
         total_count: Total number of unique domains across all sources.
         urls: Original URL list, used to preserve source order in the header.
     """
     current_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
 
     source_lines = "".join(
-        f"# - {url.split('/')[-1]} --> {len(rules):,} unique domains\n"
-        for url, rules in source_data.items()
+        f"# - {url.split('/')[-1]} --> {len(domains):,} unique domains\n"
+        for url, domains in source_data.items()
     )
     url_lines = "".join(f"# - {url}\n" for url in urls)
 
@@ -204,37 +198,28 @@ def write_output(
     with output_file.open("w", encoding="utf-8") as f:
         f.write(header)
 
-        for url, rules in source_data.items():
+        for url, domains in source_data.items():
             f.write(f"\n# Source: {url}\n\n")
-            for rule in rules:
-                f.write(rule + "\n")
-            f.write(f"\n# Converted {len(rules):,} rules from this source\n\n")
+            for domain in domains:
+                # prefix is added directly during file writing
+                f.write(f"0.0.0.0 {domain}\n")
+            f.write(f"\n# Converted {len(domains):,} rules from this source\n\n")
 
         f.write(f"\n# Total unique domains: {total_count:,}\n")
 
 
 def main() -> None:
-    """Main entry point: orchestrate fetching, converting, and writing DNS adlist.
-
-    Executes the complete pipeline:
-        1. Load sources from config.toml (or use default sources)
-        2. Fetch AdBlock rules from all sources in parallel using ThreadPoolExecutor
-        3. Convert each rule to /etc/hosts format (0.0.0.0 domain.com)
-        4. Deduplicate entries across all sources
-        5. Exit early if no rules were converted (skips writing hosts.txt)
-        6. Delegate file writing to write_output()
-
-    Progress is printed to stdout (fetch times, conversion counts, total elapsed time).
-    """
     start_time = time.monotonic()
     urls = load_config("config.toml")
     output_file = _get_output_file()
 
-    unique_rules: set[str] = set()
+    unique_domains: set[str] = set()
     source_data: dict[str, list[str]] = {}
+    raw_results: dict[str, list[str]] = {}
 
     print(f"Starting conversion of {len(urls)} source(s)...\n")
 
+    # Stage 1: Asynchronous loading (we maintain a good UX with logging as results come in)
     with ThreadPoolExecutor(max_workers=len(urls)) as executor:
         futures = {executor.submit(fetch_rules, url): url for url in urls}
 
@@ -244,27 +229,32 @@ def main() -> None:
             print(
                 f"Fetched {len(rules):,} lines from {url.split('/')[-1]} ({fetch_elapsed:.2f}s)"
             )
+            raw_results[url] = rules
 
-            converted = []
-            for rule in rules:
-                result = convert_rule(rule)
-                if result and result not in unique_rules:
-                    unique_rules.add(result)
-                    converted.append(result)
+    # Stage 2: Sequential processing and deduplication strictly in order of config (urls)
+    for url in urls:
+        if url not in raw_results:
+            continue
 
-            source_data[url] = converted
-            print(f"Converted {len(converted):,} unique domains\n")
+        converted = []
+        for rule in raw_results[url]:
+            domain = extract_domain(rule)
+            if domain and domain not in unique_domains:
+                unique_domains.add(domain)
+                converted.append(domain)
 
-    # Reorder dictionary to match original URL list order
-    source_data = {url: source_data[url] for url in urls if url in source_data}
+        source_data[url] = converted
 
-    if not unique_rules:
+        filename = url.split("/")[-1]
+        print(f"Converted {len(converted):,} unique domains from {filename}\n")
+
+    if not unique_domains:
         print("Warning: No valid rules were converted. Skipping writing to file.")
         return
 
-    print(f"Total unique domains across all sources: {len(unique_rules):,}")
+    print(f"Total unique domains across all sources: {len(unique_domains):,}")
 
-    write_output(output_file, source_data, len(unique_rules), urls)
+    write_output(output_file, source_data, len(unique_domains), urls)
 
     elapsed_time = time.monotonic() - start_time
     print(f"Done! Written to: {output_file}")
