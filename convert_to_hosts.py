@@ -93,11 +93,16 @@ def fetch_rules(url: str) -> tuple[list[str], float]:
             try:
                 with session.get(url, timeout=(3, 10), stream=True) as response:
                     response.raise_for_status()
-                    rules = [
-                        line
-                        for line in response.iter_lines(decode_unicode=True)
-                        if line.strip() and not line.lstrip().startswith("#")
-                    ]
+                    rules: list[str] = []
+                    for raw_line in response.iter_lines(decode_unicode=False):
+                        line = (
+                            raw_line.decode("utf-8")
+                            if isinstance(raw_line, bytes)
+                            else str(raw_line)
+                        )
+                        if line.strip() and not line.lstrip().startswith("#"):
+                            rules.append(line)
+
                     elapsed = time.monotonic() - fetch_start
                     return rules, elapsed
             except requests.RequestException as e:
