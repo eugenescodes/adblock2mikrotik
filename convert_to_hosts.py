@@ -17,14 +17,12 @@ _DOMAIN_RE = re.compile(
     r"^(?=.{1,253}$)(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,24}$"
 )
 
-# Default sources (fallback if config.toml is not found)
-# Keep in sync with config.toml.example
-SOURCES = [
-    # "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt",
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.mini.txt",
-    # "https://...",  # add more sources as needed
-]
+# Default sources are loaded from config.toml.example (see load_config below)
+# instead of being duplicated as a Python literal here. config.toml.example is
+# the single source of truth — update sources there, and both the "cp config
+# .toml.example config.toml" workflow and the built-in fallback stay in sync
+# automatically.
+_DEFAULT_CONFIG_FILE = Path(__file__).resolve().parent / "config.toml.example"
 
 
 def _get_output_file() -> Path:
@@ -37,31 +35,67 @@ def _get_output_file() -> Path:
     return Path(output_dir) / "hosts.txt" if output_dir else Path("hosts.txt")
 
 
+def _read_source_urls(path: Path) -> list[str] | None:
+    """Read the ``[sources] urls`` list from a TOML file.
+
+    Returns:
+        The list of URLs, or None if the file is missing, is not valid TOML,
+        or has no ``urls`` key under ``[sources]``. None (rather than an
+        exception) lets callers apply their own fallback/error messaging.
+    """
+    if not path.exists():
+        return None
+    try:
+        with path.open("rb") as f:
+            config = tomllib.load(f)
+    except tomllib.TOMLDecodeError:
+        return None
+    return config.get("sources", {}).get("urls")
+
+
 def load_config(config_file: str | Path = "config.toml") -> list[str]:
     """Load sources from TOML config file.
 
-    Falls back to default sources if config file doesn't exist or is malformed.
+    Falls back to the bundled config.toml.example if config_file doesn't
+    exist, is malformed, or has no [sources] urls — config.toml.example is
+    the single source of truth for default sources. If that fallback file is
+    itself unavailable, returns an empty list; main() handles that gracefully
+    by reporting the situation and exiting without writing an output file.
 
     Args:
         config_file: Path to config.toml file
 
     Returns:
-        List of source URLs
+        List of source URLs (possibly empty).
     """
     config_path = Path(config_file)
-    if not config_path.exists():
-        print(f"Note: {config_file} not found, using default sources")
-        return SOURCES
+    urls = _read_source_urls(config_path) if config_path.exists() else None
 
-    try:
-        with config_path.open("rb") as f:
-            config = tomllib.load(f)
-        urls = config.get("sources", {}).get("urls", SOURCES)
+    if urls:
         print(f"Loaded {len(urls)} sources from {config_file}")
         return urls
-    except tomllib.TOMLDecodeError as e:
-        print(f"Error loading {config_file}: {e}. Using default sources.")
-        return SOURCES
+
+    if not config_path.exists():
+        print(
+            f"Note: {config_file} not found, using default sources from {_DEFAULT_CONFIG_FILE.name}"
+        )
+    else:
+        print(
+            f"Note: {config_file} has no usable [sources] urls, "
+            f"using default sources from {_DEFAULT_CONFIG_FILE.name}"
+        )
+
+    default_urls = _read_source_urls(_DEFAULT_CONFIG_FILE)
+    if not default_urls:
+        print(
+            f"Error: default source file {_DEFAULT_CONFIG_FILE} is missing or invalid."
+        )
+        return []
+
+    print(
+        f"Loaded {len(default_urls)} default sources from {_DEFAULT_CONFIG_FILE.name}"
+    )
+    return default_urls
 
 
 def fetch_rules(url: str) -> tuple[list[str], float]:
@@ -166,6 +200,15 @@ def write_output(
         - Per-source sections with the "0.0.0.0 " prefix added at write time
         - A final total count line
 
+    The file is written atomically: content is first written to a hidden
+    temporary file in the same directory as output_file, then moved into
+    place with Path.replace() (an atomic rename on POSIX and Windows). This
+    guarantees that readers of output_file (e.g. RouterOS fetching it over
+    HTTP, or a concurrent process) never observe a partially-written file,
+    even if this process is interrupted mid-write. On failure, the temporary
+    file is removed and the exception is re-raised; output_file is left
+    untouched.
+
     Args:
         output_file: Destination file path.
         source_data: Ordered mapping of URL → list of validated domain strings.
@@ -200,23 +243,35 @@ def write_output(
         "#\n"
     )
 
-    with output_file.open("w", encoding="utf-8") as f:
-        f.write(header)
+    tmp_file = output_file.with_name(f".{output_file.name}.tmp")
 
-        for url, domains in source_data.items():
-            f.write(f"\n# Source: {url}\n\n")
-            for domain in domains:
-                # prefix is added directly during file writing
-                f.write(f"0.0.0.0 {domain}\n")
-            f.write(f"\n# Converted {len(domains):,} rules from this source\n\n")
+    try:
+        with tmp_file.open("w", encoding="utf-8") as f:
+            f.write(header)
 
-        f.write(f"\n# Total unique domains: {total_count:,}\n")
+            for url, domains in source_data.items():
+                f.write(f"\n# Source: {url}\n\n")
+                for domain in domains:
+                    # prefix is added directly during file writing
+                    f.write(f"0.0.0.0 {domain}\n")
+                f.write(f"\n# Converted {len(domains):,} rules from this source\n\n")
+
+            f.write(f"\n# Total unique domains: {total_count:,}\n")
+    except Exception:
+        tmp_file.unlink(missing_ok=True)
+        raise
+
+    tmp_file.replace(output_file)
 
 
 def main() -> None:
     start_time = time.monotonic()
     urls = load_config("config.toml")
     output_file = _get_output_file()
+
+    if not urls:
+        print("Warning: No sources configured. Skipping conversion.")
+        return
 
     unique_domains: set[str] = set()
     source_data: dict[str, list[str]] = {}

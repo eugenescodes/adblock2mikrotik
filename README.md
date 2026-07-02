@@ -24,6 +24,7 @@ Optimized for memory-constrained low-resource devices like the [RB951Ui-2nD hAP]
 - Deduplicates entries across all sources
 - Validates domains against RFC label rules (rejects double-dots, leading/trailing hyphens)
 - Pre-filters comments and empty lines for efficiency
+- Writes `hosts.txt` atomically — a failed or interrupted run never leaves a partial file in place
 - Compatible with RouterOS 7.15+
 
 ## Usage
@@ -89,7 +90,7 @@ See also the official MikroTik documentation:
 
 ## Configuration
 
-By default, the script uses three pre-configured Hagezi filter lists. You can customize which sources are used by creating a `config.toml` file:
+By default, the script uses few pre-configured Hagezi filter lists (see [Sources](#sources) above). These defaults live in `config.toml.example` — the same file you copy to customize your own sources, so there's a single place to look. You can override them by creating a `config.toml` file:
 
 ### Customize sources
 
@@ -115,7 +116,21 @@ urls = [
 uv run convert_to_hosts.py
 ```
 
-The script will automatically load sources from `config.toml`. If the file doesn't exist, it falls back to the default sources above.
+The script loads sources from `config.toml` if it exists next to `convert_to_hosts.py` (or in your current working directory) and is valid. Otherwise it falls back to `config.toml.example`, bundled alongside the script. If neither file provides a usable source list, the script prints a warning and exits without writing `hosts.txt`.
+
+> [!NOTE]
+> `config.toml.example` must stay in the same directory as `convert_to_hosts.py` — it's the built-in fallback, not just documentation.
+
+#### Using a custom `config.toml` with Docker
+
+The image only bundles `config.toml.example`; your own `config.toml` isn't baked in (it's excluded via `.dockerignore`, same as it's gitignored). To use one, mount it into the container at `/app`, alongside the script:
+
+```bash
+docker run --rm --user $(id -u):$(id -g) \
+  -v "$(pwd)":/output \
+  -v "$(pwd)/config.toml":/app/config.toml:ro \
+  adblock2mikrotik
+```
 
 ### Finding additional filter lists
 
