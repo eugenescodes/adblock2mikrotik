@@ -50,7 +50,7 @@ jobs:
         run: uv sync
 
       - name: Lint and fix Markdown
-        uses: DavidAnson/markdownlint-cli2-action@v24.1.0 
+        uses: DavidAnson/markdownlint-cli2-action@v24.2.0 
         with:
           fix: true
           globs: '**/*.md'
