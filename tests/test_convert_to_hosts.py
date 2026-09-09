@@ -1,12 +1,9 @@
 import os
-import sys
 from pathlib import Path
 from unittest.mock import MagicMock, mock_open, patch
 
 import pytest
 import requests
-
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import convert_to_hosts
 
@@ -165,6 +162,16 @@ def test_get_output_file_with_env(monkeypatch):
     """Returns path inside OUTPUT_DIR when env var is set."""
     monkeypatch.setenv("OUTPUT_DIR", "/output")
     assert convert_to_hosts._get_output_file() == Path("/output/hosts.txt")
+
+
+def test_source_name():
+    """source_name returns the last path segment of a URL used in logs/header."""
+    assert convert_to_hosts._source_name("https://example.com/list1.txt") == "list1.txt"
+    assert (
+        convert_to_hosts._source_name("https://example.com/a/b/list2.txt")
+        == "list2.txt"
+    )
+    assert convert_to_hosts._source_name("https://example.com/") == ""
 
 
 # ---------------------------------------------------------------------------

@@ -16,6 +16,9 @@ dev = [
 target-version = "py312"
 line-length = 88  # same default as Black
 
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
 [tool.ruff.lint]
 # E/W — pycodestyle, F — pyflakes, I — isort, UP — pyupgrade
 select = ["E", "W", "F", "I", "UP"]
