@@ -35,6 +35,11 @@ def _get_output_file() -> Path:
     return Path(output_dir) / "hosts.txt" if output_dir else Path("hosts.txt")
 
 
+def _source_name(url: str) -> str:
+    """Return the file name portion of a source URL (for logs/headers)."""
+    return url.rpartition("/")[2]
+
+
 def _read_source_urls(path: Path) -> list[str] | None:
     """Read the ``[sources] urls`` list from a TOML file.
 
@@ -130,7 +135,7 @@ def fetch_rules(url: str) -> tuple[list[str], float]:
                     rules: list[str] = []
                     for raw_line in response.iter_lines(decode_unicode=False):
                         line = (
-                            raw_line.decode("utf-8")
+                            raw_line.decode("utf-8", errors="replace")
                             if isinstance(raw_line, bytes)
                             else str(raw_line)
                         )
@@ -218,7 +223,7 @@ def write_output(
     current_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
 
     source_lines = "".join(
-        f"# - {url.split('/')[-1]} --> {len(domains):,} unique domains\n"
+        f"# - {_source_name(url)} --> {len(domains):,} unique domains\n"
         for url, domains in source_data.items()
     )
     url_lines = "".join(f"# - {url}\n" for url in urls)
@@ -285,17 +290,18 @@ def main() -> None:
 
         for future in as_completed(futures):
             url = futures[future]
-            rules, fetch_elapsed = future.result()
+            try:
+                rules, fetch_elapsed = future.result()
+            except Exception as exc:
+                print(f"Error fetching rules from {url}: {exc}")
+                continue
             print(
-                f"Fetched {len(rules):,} lines from {url.split('/')[-1]} ({fetch_elapsed:.2f}s)"
+                f"Fetched {len(rules):,} lines from {_source_name(url)} ({fetch_elapsed:.2f}s)"
             )
             raw_results[url] = rules
 
     # Stage 2: Sequential processing and deduplication strictly in order of config (urls)
     for url in urls:
-        if url not in raw_results:
-            continue
-
         converted = []
         for rule in raw_results[url]:
             domain = extract_domain(rule)
@@ -304,9 +310,10 @@ def main() -> None:
                 converted.append(domain)
 
         source_data[url] = converted
+        # raw results for this source are no longer needed once converted
+        del raw_results[url]
 
-        filename = url.split("/")[-1]
-        print(f"Converted {len(converted):,} unique domains from {filename}\n")
+        print(f"Converted {len(converted):,} unique domains from {_source_name(url)}\n")
 
     if not unique_domains:
         print("Warning: No valid rules were converted. Skipping writing to file.")
