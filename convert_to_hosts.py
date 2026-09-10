@@ -44,9 +44,10 @@ def _read_source_urls(path: Path) -> list[str] | None:
     """Read the ``[sources] urls`` list from a TOML file.
 
     Returns:
-        The list of URLs, or None if the file is missing, is not valid TOML,
-        or has no ``urls`` key under ``[sources]``. None (rather than an
-        exception) lets callers apply their own fallback/error messaging.
+        The list of URLs (deduplicated, order preserved), or None if the file
+        is missing, is not valid TOML, or has no well-formed ``urls`` list
+        under ``[sources]``. None (rather than an exception) lets callers
+        apply their own fallback/error messaging.
     """
     if not path.exists():
         return None
@@ -55,40 +56,55 @@ def _read_source_urls(path: Path) -> list[str] | None:
             config = tomllib.load(f)
     except tomllib.TOMLDecodeError:
         return None
-    return config.get("sources", {}).get("urls")
+
+    sources = config.get("sources")
+    if not isinstance(sources, dict):
+        return None
+
+    urls = sources.get("urls")
+    if not isinstance(urls, list) or not all(isinstance(url, str) for url in urls):
+        return None
+
+    # Collapse duplicates (order preserved): main() keys fetched results by URL
+    # and consumes each entry exactly once, so a repeated URL would both fetch
+    # twice and raise KeyError during conversion.
+    return list(dict.fromkeys(urls))
 
 
 def load_config(config_file: str | Path = "config.toml") -> list[str]:
     """Load sources from TOML config file.
 
-    Falls back to the bundled config.toml.example if config_file doesn't
-    exist, is malformed, or has no [sources] urls — config.toml.example is
-    the single source of truth for default sources. If that fallback file is
-    itself unavailable, returns an empty list; main() handles that gracefully
-    by reporting the situation and exiting without writing an output file.
+    An explicitly provided config_file that *exists* but is unusable (malformed
+    TOML, no ``[sources] urls`` list, wrong value types, or an empty url list)
+    is a configuration error: the problem is reported and an empty list is
+    returned, so a typo in your own config is never silently replaced by the
+    defaults. Only a *missing* config_file falls back to config.toml.example,
+    the single source of truth for default sources. If that bundled fallback is
+    itself unavailable, that is reported too and an empty list is returned.
 
     Args:
         config_file: Path to config.toml file
 
     Returns:
-        List of source URLs (possibly empty).
+        List of source URLs, or an empty list when the configuration is
+        unusable — main() treats an empty list as fatal.
     """
     config_path = Path(config_file)
-    urls = _read_source_urls(config_path) if config_path.exists() else None
 
-    if urls:
-        print(f"Loaded {len(urls)} sources from {config_file}")
-        return urls
+    if config_path.exists():
+        urls = _read_source_urls(config_path)
+        if urls:
+            print(f"Loaded {len(urls)} sources from {config_file}")
+            return urls
+        print(
+            f"Error: {config_file} has no usable [sources] urls — "
+            "refusing to fall back to defaults."
+        )
+        return []
 
-    if not config_path.exists():
-        print(
-            f"Note: {config_file} not found, using default sources from {_DEFAULT_CONFIG_FILE.name}"
-        )
-    else:
-        print(
-            f"Note: {config_file} has no usable [sources] urls, "
-            f"using default sources from {_DEFAULT_CONFIG_FILE.name}"
-        )
+    print(
+        f"\nNote: {config_file} not found, using default sources from {_DEFAULT_CONFIG_FILE.name}"
+    )
 
     default_urls = _read_source_urls(_DEFAULT_CONFIG_FILE)
     if not default_urls:
@@ -196,7 +212,6 @@ def write_output(
     output_file: Path,
     source_data: dict[str, list[str]],
     total_count: int,
-    urls: list[str],
 ) -> None:
     """Write validated domains to hosts file with header metadata.
 
@@ -217,8 +232,9 @@ def write_output(
     Args:
         output_file: Destination file path.
         source_data: Ordered mapping of URL → list of validated domain strings.
+            Insertion order is the configured source order and drives the
+            order of the header's source list and of the file's sections.
         total_count: Total number of unique domains across all sources.
-        urls: Original URL list, used to preserve source order in the header.
     """
     current_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
 
@@ -226,11 +242,10 @@ def write_output(
         f"# - {_source_name(url)} --> {len(domains):,} unique domains\n"
         for url, domains in source_data.items()
     )
-    url_lines = "".join(f"# - {url}\n" for url in urls)
+    url_lines = "".join(f"# - {url}\n" for url in source_data)
 
     header = (
-        "# Title: Unified DNS blocklist optimized for RouterOS,\n"
-        "# compiled from Hagezi sources\n"
+        "# Title: Unified DNS blocklist optimized for RouterOS\n"
         "#\n"
         "# URL to add in RouterOS:\n"
         "# https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt\n"
@@ -240,7 +255,7 @@ def write_output(
         "#\n"
         f"# Last modified: {current_time}\n"
         "#\n"
-        "# This filter is generated using the following Hagezi DNS blocklist sources:\n"
+        "# This filter is generated from the following DNS blocklist sources:\n"
         f"{url_lines}"
         "#\n"
         f"# Total unique domains: {total_count:,}\n"
@@ -272,17 +287,20 @@ def write_output(
 def main() -> None:
     start_time = time.monotonic()
     urls = load_config("config.toml")
-    output_file = _get_output_file()
 
     if not urls:
-        print("Warning: No sources configured. Skipping conversion.")
-        return
+        # load_config has already reported why the source list is unusable;
+        # fail loudly (non-zero) instead of leaving a stale hosts.txt in place.
+        raise SystemExit(1)
+
+    output_file = _get_output_file()
 
     unique_domains: set[str] = set()
     source_data: dict[str, list[str]] = {}
     raw_results: dict[str, list[str]] = {}
+    failed_sources: list[str] = []
 
-    print(f"Starting conversion of {len(urls)} source(s)...\n")
+    print(f"\nFetching {len(urls)} source(s)...")
 
     # Stage 1: Asynchronous loading (we maintain a good UX with logging as results come in)
     with ThreadPoolExecutor(max_workers=len(urls)) as executor:
@@ -293,14 +311,34 @@ def main() -> None:
             try:
                 rules, fetch_elapsed = future.result()
             except Exception as exc:
-                print(f"Error fetching rules from {url}: {exc}")
-                continue
-            print(
-                f"Fetched {len(rules):,} lines from {_source_name(url)} ({fetch_elapsed:.2f}s)"
-            )
+                print(f"  - {_source_name(url)}: ERROR: {exc}")
+                rules, fetch_elapsed = [], 0.0
+            else:
+                if rules:
+                    print(
+                        f"  - {_source_name(url)}: {len(rules):,} lines ({fetch_elapsed:.2f}s)"
+                    )
+                else:
+                    # fetch_rules returns [] once its retries are exhausted, and an
+                    # upstream filter list is never legitimately empty.
+                    print(f"  - {_source_name(url)}: ERROR: no rules fetched")
+
+            if not rules:
+                failed_sources.append(url)
             raw_results[url] = rules
 
+    # A configured source that could not be fetched means the artifact would be
+    # narrower than what the config promises, so the whole run fails below.
+    if failed_sources:
+        print(
+            f"\nError: {len(failed_sources)} of {len(urls)} source(s) failed to fetch "
+            f"({', '.join(failed_sources)}) — refusing to publish a partial list."
+        )
+        raise SystemExit(1)
+
     # Stage 2: Sequential processing and deduplication strictly in order of config (urls)
+    print("\nConverting and deduplicating...")
+
     for url in urls:
         converted = []
         for rule in raw_results[url]:
@@ -313,19 +351,25 @@ def main() -> None:
         # raw results for this source are no longer needed once converted
         del raw_results[url]
 
-        print(f"Converted {len(converted):,} unique domains from {_source_name(url)}\n")
+        print(f"  - {_source_name(url)}: {len(converted):,} unique domains")
 
     if not unique_domains:
-        print("Warning: No valid rules were converted. Skipping writing to file.")
-        return
+        # Every source answered, but none contained a supported ||domain^ rule:
+        # nothing to write, and exiting 0 would report success while leaving the
+        # previously published hosts.txt in place indefinitely.
+        print(
+            "Error: no valid rules were converted from any source "
+            "(sources empty or in an unsupported format)."
+        )
+        raise SystemExit(1)
 
-    print(f"Total unique domains across all sources: {len(unique_domains):,}")
+    print(f"\nTotal unique domains across all sources: {len(unique_domains):,}")
 
-    write_output(output_file, source_data, len(unique_domains), urls)
+    write_output(output_file, source_data, len(unique_domains))
 
     elapsed_time = time.monotonic() - start_time
     print(f"Done! Written to: {output_file}")
-    print(f"Elapsed: {elapsed_time:.2f}s")
+    print(f"Elapsed: {elapsed_time:.2f}s\n")
 
 
 if __name__ == "__main__":

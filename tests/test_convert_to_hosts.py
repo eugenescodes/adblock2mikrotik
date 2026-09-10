@@ -96,28 +96,77 @@ def test_load_config_reads_urls(tmp_path):
     assert result == ["https://example.com/list1.txt", "https://example.com/list2.txt"]
 
 
-def test_load_config_missing_urls_key_falls_back_to_defaults(default_config, tmp_path):
-    """Falls back to config.toml.example when [sources] exists but 'urls' is absent."""
+def test_load_config_missing_urls_key_is_an_error(default_config, tmp_path, capsys):
+    """A present config.toml without a usable [sources] urls is a config error:
+    it must NOT be silently replaced by the bundled defaults."""
     config = tmp_path / "config.toml"
     config.write_text("[sources]\n# no urls key\n")
 
     result = convert_to_hosts.load_config(config)
 
-    assert result == DEFAULT_URLS
+    assert result == []
+    assert "no usable" in capsys.readouterr().out
 
 
-def test_load_config_invalid_toml_falls_back_to_defaults(
-    default_config, tmp_path, capsys
-):
-    """Falls back to config.toml.example and prints a note for malformed TOML."""
+def test_load_config_invalid_toml_is_an_error(default_config, tmp_path, capsys):
+    """Malformed TOML is a config error, not a reason to use the defaults."""
     config = tmp_path / "config.toml"
     config.write_text("this is not valid toml ][[\n")
 
     result = convert_to_hosts.load_config(config)
 
-    assert result == DEFAULT_URLS
-    captured = capsys.readouterr()
-    assert "no usable" in captured.out
+    assert result == []
+    assert "no usable" in capsys.readouterr().out
+
+
+@pytest.mark.parametrize(
+    "content",
+    [
+        '[sources]\nurls = "https://example.com/list.txt"\n',  # string, not a list
+        "[sources]\nurls = [1, 2]\n",  # list of non-strings
+        "[sources]\nurls = []\n",  # empty list -> nothing to do
+        'sources = "not a table"\n',  # [sources] is not a table at all
+    ],
+    ids=[
+        "urls_is_string",
+        "urls_has_non_strings",
+        "urls_is_empty",
+        "sources_is_not_a_table",
+    ],
+)
+def test_load_config_rejects_malformed_sources(
+    default_config, tmp_path, capsys, content
+):
+    """Structurally wrong [sources] must be rejected, not taken at face value.
+
+    Regression: a bare string (``urls = "https://…"``) used to be returned as-is
+    and then iterated character by character, so main() would "fetch" from
+    "h", "t", "t"… and silently produce a bogus file.
+    """
+    config = tmp_path / "config.toml"
+    config.write_text(content)
+
+    assert convert_to_hosts.load_config(config) == []
+    assert "no usable" in capsys.readouterr().out
+
+
+def test_load_config_deduplicates_urls_preserving_order(default_config, tmp_path):
+    """Duplicate source URLs collapse to a single entry (config order kept).
+
+    Regression: main() keys fetched results by URL and deletes each key as it
+    converts, so a URL listed twice raised KeyError mid-conversion.
+    """
+    config = tmp_path / "config.toml"
+    config.write_text(
+        "[sources]\n"
+        'urls = ["https://example.com/a.txt", "https://example.com/b.txt", '
+        '"https://example.com/a.txt"]\n'
+    )
+
+    assert convert_to_hosts.load_config(config) == [
+        "https://example.com/a.txt",
+        "https://example.com/b.txt",
+    ]
 
 
 @pytest.mark.parametrize(
@@ -265,13 +314,70 @@ def test_main_distinct_unique_domains_per_source(
     assert "# Converted 1 rules from this source" in written_text
 
 
+@pytest.mark.parametrize(
+    "fetch_result",
+    [
+        ([], 0.5),  # fetch_rules returns [] once its retries are exhausted
+        RuntimeError("boom"),  # unexpected exception raised by the worker
+    ],
+    ids=["empty_result", "raised_exception"],
+)
 @patch("convert_to_hosts.fetch_rules")
 @patch("convert_to_hosts.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
-def test_main_empty_rules_skips_file_write(
+def test_main_unfetchable_source_fails_the_run(
+    mock_file, mock_load_config, mock_fetch_rules, capsys, fetch_result
+):
+    """A source that yields nothing must fail the run with a non-zero status —
+    never a KeyError from the conversion loop, never a silent success."""
+    mock_load_config.return_value = ["https://example.com/list.txt"]
+    if isinstance(fetch_result, Exception):
+        mock_fetch_rules.side_effect = fetch_result
+    else:
+        mock_fetch_rules.return_value = fetch_result
+
+    with pytest.raises(SystemExit) as excinfo:
+        convert_to_hosts.main()
+
+    assert excinfo.value.code == 1
+    mock_file.assert_not_called()
+    assert "failed to fetch" in capsys.readouterr().out
+
+
+@patch("convert_to_hosts.fetch_rules")
+@patch("convert_to_hosts.load_config")
+@patch("pathlib.Path.open", new_callable=mock_open)
+def test_main_partial_source_failure_exits_nonzero(
     mock_file, mock_load_config, mock_fetch_rules, capsys
 ):
-    """Test that main() skips writing to file when no valid rules are converted."""
+    """If one of several sources is unavailable, publishing the smaller list
+    would silently narrow the blocklist for every subscriber, so the run must
+    fail and leave the previous hosts.txt in place."""
+    url_ok = "https://example.com/ok.txt"
+    url_bad = "https://example.com/bad.txt"
+    mock_load_config.return_value = [url_ok, url_bad]
+    mock_fetch_rules.side_effect = lambda url: (
+        (["||ads.example.com^"], 0.1) if url == url_ok else ([], 0.1)
+    )
+
+    with pytest.raises(SystemExit) as excinfo:
+        convert_to_hosts.main()
+
+    assert excinfo.value.code == 1
+    mock_file.assert_not_called()
+    captured = capsys.readouterr()
+    assert "1 of 2 source(s) failed to fetch" in captured.out
+    assert url_bad in captured.out
+
+
+@patch("convert_to_hosts.fetch_rules")
+@patch("convert_to_hosts.load_config")
+@patch("pathlib.Path.open", new_callable=mock_open)
+def test_main_no_valid_rules_exits_nonzero(
+    mock_file, mock_load_config, mock_fetch_rules, capsys
+):
+    """Every source answered, but none contained a supported ||domain^ rule:
+    the run must fail instead of exiting 0 with a stale hosts.txt in place."""
     mock_load_config.return_value = ["https://example.com/list.txt"]
     mock_fetch_rules.return_value = (
         [
@@ -283,34 +389,33 @@ def test_main_empty_rules_skips_file_write(
         0.5,
     )
 
-    convert_to_hosts.main()
+    with pytest.raises(SystemExit) as excinfo:
+        convert_to_hosts.main()
 
+    assert excinfo.value.code == 1
     mock_file.assert_not_called()
-
-    captured = capsys.readouterr()
-    assert "Warning: No valid rules were converted" in captured.out
-    assert "Skipping writing to file" in captured.out
+    assert "no valid rules" in capsys.readouterr().out
 
 
 @patch("convert_to_hosts.load_config")
 @patch("convert_to_hosts.fetch_rules")
 @patch("pathlib.Path.open", new_callable=mock_open)
-def test_main_no_sources_skips_conversion(
-    mock_file, mock_fetch_rules, mock_load_config, capsys
+def test_main_no_sources_exits_before_conversion(
+    mock_file, mock_fetch_rules, mock_load_config
 ):
-    """Regression test: if no sources are configured (config.toml AND
-    config.toml.example both unusable), main() must exit gracefully instead of
-    crashing — ThreadPoolExecutor(max_workers=0) raises ValueError otherwise.
+    """Regression test: an unusable source list must abort with a non-zero exit
+    status *before* the thread pool is built — ThreadPoolExecutor(max_workers=0)
+    raises ValueError otherwise, and a silent exit-0 would leave CI green while
+    nothing is ever regenerated.
     """
     mock_load_config.return_value = []
 
-    convert_to_hosts.main()
+    with pytest.raises(SystemExit) as excinfo:
+        convert_to_hosts.main()
 
+    assert excinfo.value.code == 1
     mock_fetch_rules.assert_not_called()
     mock_file.assert_not_called()
-
-    captured = capsys.readouterr()
-    assert "No sources configured" in captured.out
 
 
 # Parameterized tests for extract_domain validation
@@ -348,21 +453,20 @@ def test_extract_domain_invalid(rule):
 def test_write_output_direct(tmp_path):
     """Direct unit test for write_output — verifies structure without going through main()."""
     output_file = tmp_path / "hosts.txt"
-    urls = ["https://example.com/list.txt"]
-    source_data = {urls[0]: ["example.com", "test.com"]}
+    url = "https://example.com/list.txt"
+    source_data = {url: ["example.com", "test.com"]}
 
-    convert_to_hosts.write_output(output_file, source_data, 2, urls)
+    convert_to_hosts.write_output(output_file, source_data, 2)
 
     content = output_file.read_text()
 
     # check Header
     assert "Title:" in content
     assert "Last modified:" in content
-    assert "Total unique domains: 2" in content
     assert "# - https://example.com/list.txt" in content
 
     # check that the 0.0.0.0 prefix is successfully inserted during file writing
-    assert "# Source: https://example.com/list.txt" in content
+    assert f"# Source: {url}" in content
     assert "0.0.0.0 example.com" in content
     assert "0.0.0.0 test.com" in content
     assert "# Converted 2 rules from this source" in content
@@ -374,10 +478,9 @@ def test_write_output_direct(tmp_path):
 def test_write_output_no_leftover_temp_file(tmp_path):
     """After a successful write, the hidden .tmp file must not remain on disk."""
     output_file = tmp_path / "hosts.txt"
-    urls = ["https://example.com/list.txt"]
-    source_data = {urls[0]: ["example.com"]}
+    source_data = {"https://example.com/list.txt": ["example.com"]}
 
-    convert_to_hosts.write_output(output_file, source_data, 1, urls)
+    convert_to_hosts.write_output(output_file, source_data, 1)
 
     assert output_file.exists()
     assert list(tmp_path.glob(".*.tmp")) == []
@@ -388,12 +491,11 @@ def test_write_output_preserves_existing_file_on_failure(tmp_path):
     and the temporary file must be cleaned up (no partial/corrupt file visible)."""
     output_file = tmp_path / "hosts.txt"
     output_file.write_text("previous good content\n")
-    urls = ["https://example.com/list.txt"]
-    source_data = {urls[0]: ["example.com"]}
+    source_data = {"https://example.com/list.txt": ["example.com"]}
 
     with patch("pathlib.Path.open", side_effect=OSError("disk full")):
         with pytest.raises(OSError, match="disk full"):
-            convert_to_hosts.write_output(output_file, source_data, 1, urls)
+            convert_to_hosts.write_output(output_file, source_data, 1)
 
     # Original file untouched, no leftover temp file
     assert output_file.read_text() == "previous good content\n"
