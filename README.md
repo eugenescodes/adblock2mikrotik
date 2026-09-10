@@ -25,6 +25,7 @@ Optimized for memory-constrained low-resource devices like the [RB951Ui-2nD hAP]
 - Validates domains against RFC label rules (rejects double-dots, leading/trailing hyphens)
 - Pre-filters comments and empty lines for efficiency
 - Writes `hosts.txt` atomically — a failed or interrupted run never leaves a partial file in place
+- Exits non-zero, writing nothing, if any configured source can't be fetched or if the result would be empty — a narrow or stale list is never published
 - Compatible with RouterOS 7.15+
 
 ## Usage
@@ -116,7 +117,7 @@ urls = [
 uv run convert_to_hosts.py
 ```
 
-The script loads sources from `config.toml` if it exists next to `convert_to_hosts.py` (or in your current working directory) and is valid. Otherwise it falls back to `config.toml.example`, bundled alongside the script. If neither file provides a usable source list, the script prints a warning and exits without writing `hosts.txt`.
+The script loads sources from `config.toml` in the current working directory. If that file does not exist, it falls back to `config.toml.example`, bundled alongside the script. If `config.toml` exists but has no usable `[sources] urls` — malformed TOML, a value that isn't a list of URL strings, or an empty list — the script reports an error and exits with a non-zero status without writing `hosts.txt`: a typo in your own config is never silently replaced by the defaults. The same applies if the bundled fallback is itself unusable.
 
 > [!NOTE]
 > `config.toml.example` must stay in the same directory as `convert_to_hosts.py` — it's the built-in fallback, not just documentation.
