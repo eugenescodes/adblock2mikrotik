@@ -55,6 +55,9 @@ jobs:
           fix: true
           globs: '**/*.md'
         continue-on-error: true
+      
+      - name: Run mypy
+        run: uv run mypy .
 
       - name: Run ruff (check and format check)
         run: |

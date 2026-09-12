@@ -29,6 +29,7 @@ tests/
 config.toml
 .pytest_cache/
 .ruff_cache/
+.mypy_cache/
 
 # Generated output
 hosts.txt

@@ -61,8 +61,13 @@ docker run --rm -v "${PWD}:/output" adblock2mikrotik
 > The script writes `hosts.txt` to `/output`, so the file appears directly
 > in your current directory on the host — no manual copying needed.
 >
-> On Linux, `--user $(id -u):$(id -g)` ensures the output file is owned by
-> your current user. Not required on macOS or Windows (Docker Desktop handles this automatically).
+> On Linux, the container runs as its own non-root user, which cannot write to
+> your bind-mounted directory unless the UIDs match. `--user $(id -u):$(id -g)`
+> makes the script run as *you*, so `hosts.txt` gets write access and is owned
+> by your current user. Not required on macOS or Windows (Docker Desktop handles this automatically).
+>
+> On SELinux systems (Fedora, RHEL, CentOS), add the `:Z` suffix to the volume
+> so the bind mount is relabeled for the container: `-v "$(pwd)":/output:Z`.
 
 After running either option, `hosts.txt` is created in the current directory.
 
@@ -141,7 +146,7 @@ For more Hagezi lists, visit the [Hagezi DNS blocklists repository](https://gith
 
 ## Development
 
-This project uses [uv](https://docs.astral.sh/uv/) for dependency management and [Ruff](https://docs.astral.sh/ruff/) for linting/formatting.
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management, [Ruff](https://docs.astral.sh/ruff/) for linting/formatting, [mypy](https://mypy-lang.org/) for static type checking, and [pytest](https://docs.pytest.org/) for testing.
 
 ### Prerequisites
 
@@ -154,7 +159,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ### Setup (development environment)
 
-Development tools (ruff, pytest) are in the `dev` dependency group and need to be installed separately:
+Development tools (ruff, mypy, pytest, and the `types-requests` type stubs) are in the `dev` dependency group and need to be installed separately:
 
 ```bash
 uv sync  # Installs all dependencies including dev tools
@@ -167,6 +172,14 @@ uv run ruff check . --fix   # lint + autofix
 uv run ruff format .        # format
 ```
 
+### Type checking
+
+Static type checking is configured in `pyproject.toml` under `[tool.mypy]` with `strict = true`. The converter and the test suite are fully typed:
+
+```bash
+uv run mypy .
+```
+
 ### Tests
 
 ```bash
@@ -174,15 +187,15 @@ uv run pytest -v
 ```
 
 > [!NOTE]
-> Development dependencies (ruff, pytest) are **not** included in the Docker image.
-> Use `uv sync` locally to run linting, formatting, and tests.
+> Development dependencies (ruff, mypy, pytest, and `types-requests`) are **not** included in the Docker image.
+> Use `uv sync` locally to run linting, formatting, type checking, and tests.
 > The Docker image only includes production dependencies for running the converter.
 
 ## Contributing
 
 1. Open a [GitHub issue](https://github.com/eugenescodes/adblock2mikrotik/issues) to discuss major changes before starting work.
 2. Fork the repo and create a feature branch: `git checkout -b feature/your-feature`
-3. Make your changes and run tests: `uv run pytest -v`
+3. Make your changes and run the checks: `uv run ruff check .`, `uv run mypy .`, and `uv run pytest -v`
 4. Commit with a clear message and push to your fork.
 5. Open a Pull Request targeting `main` with a description of what and why.
 
