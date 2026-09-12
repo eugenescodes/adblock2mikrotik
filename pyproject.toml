@@ -10,7 +10,13 @@ dependencies = [
 dev = [
     "ruff>=0.16.6",
     "pytest>=9.1.1",
+    "mypy>=2.3.0",
+    "types-requests>=2.32.0",
 ]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
 
 [tool.ruff]
 target-version = "py312"

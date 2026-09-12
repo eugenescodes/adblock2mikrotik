@@ -1,4 +1,5 @@
 import os
+from collections.abc import Callable
 from pathlib import Path
 from unittest.mock import MagicMock, mock_open, patch
 
@@ -13,7 +14,7 @@ import convert_to_hosts
 
 
 @patch("convert_to_hosts.requests.Session")
-def test_fetch_rules_success(mock_session_cls):
+def test_fetch_rules_success(mock_session_cls: MagicMock) -> None:
     """Test successful fetch of rules from URL on first attempt."""
     mock_response = MagicMock()
     mock_response.status_code = 200
@@ -36,7 +37,11 @@ def test_fetch_rules_success(mock_session_cls):
 
 @patch("convert_to_hosts.time.sleep")
 @patch("convert_to_hosts.requests.Session")
-def test_fetch_rules_retries_then_fails(mock_session_cls, mock_sleep, capsys):
+def test_fetch_rules_retries_then_fails(
+    mock_session_cls: MagicMock,
+    mock_sleep: MagicMock,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     """Test fetch retry logic: 3 attempts with exponential backoff, then failure."""
     mock_session = MagicMock()
     mock_session.get.side_effect = requests.RequestException("Network error")
@@ -60,7 +65,7 @@ def test_fetch_rules_retries_then_fails(mock_session_cls, mock_sleep, capsys):
 
 
 @pytest.fixture
-def default_config(tmp_path, monkeypatch):
+def default_config(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     """Point convert_to_hosts._DEFAULT_CONFIG_FILE at a controlled temp file,
     so fallback tests don't depend on the real config.toml.example content.
     """
@@ -75,7 +80,9 @@ def default_config(tmp_path, monkeypatch):
 DEFAULT_URLS = ["https://default.example/a.txt", "https://default.example/b.txt"]
 
 
-def test_load_config_file_not_found(default_config, capsys):
+def test_load_config_file_not_found(
+    default_config: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
     """Falls back to config.toml.example when config.toml does not exist."""
     result = convert_to_hosts.load_config("nonexistent_config.toml")
 
@@ -84,7 +91,7 @@ def test_load_config_file_not_found(default_config, capsys):
     assert "not found" in captured.out
 
 
-def test_load_config_reads_urls(tmp_path):
+def test_load_config_reads_urls(tmp_path: Path) -> None:
     """Reads URL list from a valid config.toml (no fallback needed)."""
     config = tmp_path / "config.toml"
     config.write_text(
@@ -96,7 +103,9 @@ def test_load_config_reads_urls(tmp_path):
     assert result == ["https://example.com/list1.txt", "https://example.com/list2.txt"]
 
 
-def test_load_config_missing_urls_key_is_an_error(default_config, tmp_path, capsys):
+def test_load_config_missing_urls_key_is_an_error(
+    default_config: Path, tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
     """A present config.toml without a usable [sources] urls is a config error:
     it must NOT be silently replaced by the bundled defaults."""
     config = tmp_path / "config.toml"
@@ -108,7 +117,9 @@ def test_load_config_missing_urls_key_is_an_error(default_config, tmp_path, caps
     assert "no usable" in capsys.readouterr().out
 
 
-def test_load_config_invalid_toml_is_an_error(default_config, tmp_path, capsys):
+def test_load_config_invalid_toml_is_an_error(
+    default_config: Path, tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
     """Malformed TOML is a config error, not a reason to use the defaults."""
     config = tmp_path / "config.toml"
     config.write_text("this is not valid toml ][[\n")
@@ -135,8 +146,11 @@ def test_load_config_invalid_toml_is_an_error(default_config, tmp_path, capsys):
     ],
 )
 def test_load_config_rejects_malformed_sources(
-    default_config, tmp_path, capsys, content
-):
+    default_config: Path,
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+    content: str,
+) -> None:
     """Structurally wrong [sources] must be rejected, not taken at face value.
 
     Regression: a bare string (``urls = "https://…"``) used to be returned as-is
@@ -150,7 +164,9 @@ def test_load_config_rejects_malformed_sources(
     assert "no usable" in capsys.readouterr().out
 
 
-def test_load_config_deduplicates_urls_preserving_order(default_config, tmp_path):
+def test_load_config_deduplicates_urls_preserving_order(
+    default_config: Path, tmp_path: Path
+) -> None:
     """Duplicate source URLs collapse to a single entry (config order kept).
 
     Regression: main() keys fetched results by URL and deletes each key as it
@@ -178,8 +194,11 @@ def test_load_config_deduplicates_urls_preserving_order(default_config, tmp_path
     ids=["default_file_missing", "default_file_has_no_urls"],
 )
 def test_load_config_returns_empty_when_fallback_unavailable(
-    tmp_path, monkeypatch, capsys, make_default_file
-):
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    make_default_file: Callable[[Path], object],
+) -> None:
     """If config.toml is missing AND the bundled config.toml.example is itself
     missing or unusable, load_config must degrade to an empty list (not raise)
     so main() can report a clear error instead of crashing.
@@ -200,20 +219,20 @@ def test_load_config_returns_empty_when_fallback_unavailable(
 # ---------------------------------------------------------------------------
 
 
-def test_get_output_file_default():
+def test_get_output_file_default() -> None:
     """Returns 'hosts.txt' in CWD when OUTPUT_DIR is not set."""
     with patch.dict(os.environ, {}, clear=False):
         os.environ.pop("OUTPUT_DIR", None)
         assert convert_to_hosts._get_output_file() == Path("hosts.txt")
 
 
-def test_get_output_file_with_env(monkeypatch):
+def test_get_output_file_with_env(monkeypatch: pytest.MonkeyPatch) -> None:
     """Returns path inside OUTPUT_DIR when env var is set."""
     monkeypatch.setenv("OUTPUT_DIR", "/output")
     assert convert_to_hosts._get_output_file() == Path("/output/hosts.txt")
 
 
-def test_source_name():
+def test_source_name() -> None:
     """source_name returns the last path segment of a URL used in logs/header."""
     assert convert_to_hosts._source_name("https://example.com/list1.txt") == "list1.txt"
     assert (
@@ -232,7 +251,12 @@ def test_source_name():
 @patch("convert_to_hosts.load_config")
 @patch("pathlib.Path.replace")
 @patch("pathlib.Path.open", new_callable=mock_open)
-def test_main(mock_file, mock_replace, mock_load_config, mock_fetch_rules):
+def test_main(
+    mock_file: MagicMock,
+    mock_replace: MagicMock,
+    mock_load_config: MagicMock,
+    mock_fetch_rules: MagicMock,
+) -> None:
     """Test main orchestration: fetch, convert, deduplicate, and write to file."""
     mock_load_config.return_value = DEFAULT_URLS
     mock_fetch_rules.return_value = (
@@ -277,8 +301,11 @@ def test_main(mock_file, mock_replace, mock_load_config, mock_fetch_rules):
 @patch("pathlib.Path.replace")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_distinct_unique_domains_per_source(
-    mock_file, mock_replace, mock_load_config, mock_fetch_rules
-):
+    mock_file: MagicMock,
+    mock_replace: MagicMock,
+    mock_load_config: MagicMock,
+    mock_fetch_rules: MagicMock,
+) -> None:
     """Each source can contribute genuinely different unique domains — not just
     "first source has everything, the rest are 0", as in test_main.
 
@@ -326,8 +353,12 @@ def test_main_distinct_unique_domains_per_source(
 @patch("convert_to_hosts.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_unfetchable_source_fails_the_run(
-    mock_file, mock_load_config, mock_fetch_rules, capsys, fetch_result
-):
+    mock_file: MagicMock,
+    mock_load_config: MagicMock,
+    mock_fetch_rules: MagicMock,
+    capsys: pytest.CaptureFixture[str],
+    fetch_result: tuple[list[str], float] | Exception,
+) -> None:
     """A source that yields nothing must fail the run with a non-zero status —
     never a KeyError from the conversion loop, never a silent success."""
     mock_load_config.return_value = ["https://example.com/list.txt"]
@@ -348,8 +379,11 @@ def test_main_unfetchable_source_fails_the_run(
 @patch("convert_to_hosts.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_partial_source_failure_exits_nonzero(
-    mock_file, mock_load_config, mock_fetch_rules, capsys
-):
+    mock_file: MagicMock,
+    mock_load_config: MagicMock,
+    mock_fetch_rules: MagicMock,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     """If one of several sources is unavailable, publishing the smaller list
     would silently narrow the blocklist for every subscriber, so the run must
     fail and leave the previous hosts.txt in place."""
@@ -374,8 +408,11 @@ def test_main_partial_source_failure_exits_nonzero(
 @patch("convert_to_hosts.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_no_valid_rules_exits_nonzero(
-    mock_file, mock_load_config, mock_fetch_rules, capsys
-):
+    mock_file: MagicMock,
+    mock_load_config: MagicMock,
+    mock_fetch_rules: MagicMock,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
     """Every source answered, but none contained a supported ||domain^ rule:
     the run must fail instead of exiting 0 with a stale hosts.txt in place."""
     mock_load_config.return_value = ["https://example.com/list.txt"]
@@ -401,8 +438,10 @@ def test_main_no_valid_rules_exits_nonzero(
 @patch("convert_to_hosts.fetch_rules")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_no_sources_exits_before_conversion(
-    mock_file, mock_fetch_rules, mock_load_config
-):
+    mock_file: MagicMock,
+    mock_fetch_rules: MagicMock,
+    mock_load_config: MagicMock,
+) -> None:
     """Regression test: an unusable source list must abort with a non-zero exit
     status *before* the thread pool is built — ThreadPoolExecutor(max_workers=0)
     raises ValueError otherwise, and a silent exit-0 would leave CI green while
@@ -428,7 +467,7 @@ def test_main_no_sources_exits_before_conversion(
         ("||Sub.DomAIN.ExAmPlE.cOm^", "sub.domain.example.com"),
     ],
 )
-def test_extract_domain_valid(rule, expected):
+def test_extract_domain_valid(rule: str, expected: str) -> None:
     """Test extraction of valid domains from AdBlock rules."""
     assert convert_to_hosts.extract_domain(rule) == expected
 
@@ -445,12 +484,12 @@ def test_extract_domain_valid(rule, expected):
         "||example.com.^",
     ],
 )
-def test_extract_domain_invalid(rule):
+def test_extract_domain_invalid(rule: str) -> None:
     """Test that invalid/unsupported Adblock rules return None."""
     assert convert_to_hosts.extract_domain(rule) is None
 
 
-def test_write_output_direct(tmp_path):
+def test_write_output_direct(tmp_path: Path) -> None:
     """Direct unit test for write_output — verifies structure without going through main()."""
     output_file = tmp_path / "hosts.txt"
     url = "https://example.com/list.txt"
@@ -475,7 +514,7 @@ def test_write_output_direct(tmp_path):
     assert content.strip().endswith("Total unique domains: 2")
 
 
-def test_write_output_no_leftover_temp_file(tmp_path):
+def test_write_output_no_leftover_temp_file(tmp_path: Path) -> None:
     """After a successful write, the hidden .tmp file must not remain on disk."""
     output_file = tmp_path / "hosts.txt"
     source_data = {"https://example.com/list.txt": ["example.com"]}
@@ -486,7 +525,7 @@ def test_write_output_no_leftover_temp_file(tmp_path):
     assert list(tmp_path.glob(".*.tmp")) == []
 
 
-def test_write_output_preserves_existing_file_on_failure(tmp_path):
+def test_write_output_preserves_existing_file_on_failure(tmp_path: Path) -> None:
     """If writing fails mid-way, the original output_file must be left untouched
     and the temporary file must be cleaned up (no partial/corrupt file visible)."""
     output_file = tmp_path / "hosts.txt"
