@@ -9,13 +9,13 @@ import requests
 import convert_to_hosts
 
 # ---------------------------------------------------------------------------
-# fetch_rules
+# fetch_domains
 # ---------------------------------------------------------------------------
 
 
 @patch("convert_to_hosts.requests.Session")
-def test_fetch_rules_success(mock_session_cls: MagicMock) -> None:
-    """Test successful fetch of rules from URL on first attempt."""
+def test_fetch_domains_success(mock_session_cls: MagicMock) -> None:
+    """Test successful fetch and in-stream conversion of domains on first attempt."""
     mock_response = MagicMock()
     mock_response.status_code = 200
     mock_response.iter_lines.return_value = [
@@ -30,14 +30,14 @@ def test_fetch_rules_success(mock_session_cls: MagicMock) -> None:
     mock_session.get.return_value.__enter__.return_value = mock_response
     mock_session_cls.return_value.__enter__.return_value = mock_session
 
-    result, elapsed = convert_to_hosts.fetch_rules("http://fakeurl")
-    assert result == ["||example.com^", "||test.com^"]
+    result, elapsed = convert_to_hosts.fetch_domains("http://fakeurl")
+    assert result == ["example.com", "test.com"]
     assert isinstance(elapsed, float)
 
 
 @patch("convert_to_hosts.time.sleep")
 @patch("convert_to_hosts.requests.Session")
-def test_fetch_rules_retries_then_fails(
+def test_fetch_domains_retries_then_fails(
     mock_session_cls: MagicMock,
     mock_sleep: MagicMock,
     capsys: pytest.CaptureFixture[str],
@@ -47,7 +47,7 @@ def test_fetch_rules_retries_then_fails(
     mock_session.get.side_effect = requests.RequestException("Network error")
     mock_session_cls.return_value.__enter__.return_value = mock_session
 
-    result, elapsed = convert_to_hosts.fetch_rules("http://fakeurl")
+    result, elapsed = convert_to_hosts.fetch_domains("http://fakeurl")
 
     assert result == []
     assert mock_session.get.call_count == 3
@@ -247,7 +247,7 @@ def test_source_name() -> None:
 # ---------------------------------------------------------------------------
 
 
-@patch("convert_to_hosts.fetch_rules")
+@patch("convert_to_hosts.fetch_domains")
 @patch("convert_to_hosts.load_config")
 @patch("pathlib.Path.replace")
 @patch("pathlib.Path.open", new_callable=mock_open)
@@ -255,17 +255,15 @@ def test_main(
     mock_file: MagicMock,
     mock_replace: MagicMock,
     mock_load_config: MagicMock,
-    mock_fetch_rules: MagicMock,
+    mock_fetch_domains: MagicMock,
 ) -> None:
     """Test main orchestration: fetch, convert, deduplicate, and write to file."""
     mock_load_config.return_value = DEFAULT_URLS
-    mock_fetch_rules.return_value = (
+    mock_fetch_domains.return_value = (
         [
-            "||example.com^",
-            "||example.com^",  # duplicate
-            "||test.com^$third-party",
-            "# comment",
-            "",
+            "example.com",
+            "example.com",  # duplicate within one source
+            "test.com",
         ],
         0.5,
     )
@@ -278,8 +276,8 @@ def test_main(
     # Verify the temp file was atomically moved into place over the real output file
     mock_replace.assert_called_once_with(convert_to_hosts._get_output_file())
 
-    # fetch_rules must be called once per source URL
-    assert mock_fetch_rules.call_count == len(DEFAULT_URLS)
+    # fetch_domains must be called once per source URL
+    assert mock_fetch_domains.call_count == len(DEFAULT_URLS)
 
     handle = mock_file()
     written_text = "".join(call.args[0] for call in handle.write.call_args_list)
@@ -296,7 +294,7 @@ def test_main(
     )
 
 
-@patch("convert_to_hosts.fetch_rules")
+@patch("convert_to_hosts.fetch_domains")
 @patch("convert_to_hosts.load_config")
 @patch("pathlib.Path.replace")
 @patch("pathlib.Path.open", new_callable=mock_open)
@@ -304,7 +302,7 @@ def test_main_distinct_unique_domains_per_source(
     mock_file: MagicMock,
     mock_replace: MagicMock,
     mock_load_config: MagicMock,
-    mock_fetch_rules: MagicMock,
+    mock_fetch_domains: MagicMock,
 ) -> None:
     """Each source can contribute genuinely different unique domains — not just
     "first source has everything, the rest are 0", as in test_main.
@@ -316,11 +314,11 @@ def test_main_distinct_unique_domains_per_source(
     mock_load_config.return_value = DEFAULT_URLS
     url_a, url_b = DEFAULT_URLS
 
-    rules_by_url = {
-        url_a: ["||alpha.com^", "||shared.com^"],
-        url_b: ["||beta.com^", "||shared.com^"],  # shared.com repeats across sources
+    domains_by_url = {
+        url_a: ["alpha.com", "shared.com"],
+        url_b: ["beta.com", "shared.com"],  # shared.com repeats across sources
     }
-    mock_fetch_rules.side_effect = lambda url: (rules_by_url[url], 0.1)
+    mock_fetch_domains.side_effect = lambda url: (domains_by_url[url], 0.1)
 
     convert_to_hosts.main()
 
@@ -344,18 +342,18 @@ def test_main_distinct_unique_domains_per_source(
 @pytest.mark.parametrize(
     "fetch_result",
     [
-        ([], 0.5),  # fetch_rules returns [] once its retries are exhausted
+        ([], 0.5),  # fetch_domains returns [] once its retries are exhausted
         RuntimeError("boom"),  # unexpected exception raised by the worker
     ],
     ids=["empty_result", "raised_exception"],
 )
-@patch("convert_to_hosts.fetch_rules")
+@patch("convert_to_hosts.fetch_domains")
 @patch("convert_to_hosts.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_unfetchable_source_fails_the_run(
     mock_file: MagicMock,
     mock_load_config: MagicMock,
-    mock_fetch_rules: MagicMock,
+    mock_fetch_domains: MagicMock,
     capsys: pytest.CaptureFixture[str],
     fetch_result: tuple[list[str], float] | Exception,
 ) -> None:
@@ -363,9 +361,9 @@ def test_main_unfetchable_source_fails_the_run(
     never a KeyError from the conversion loop, never a silent success."""
     mock_load_config.return_value = ["https://example.com/list.txt"]
     if isinstance(fetch_result, Exception):
-        mock_fetch_rules.side_effect = fetch_result
+        mock_fetch_domains.side_effect = fetch_result
     else:
-        mock_fetch_rules.return_value = fetch_result
+        mock_fetch_domains.return_value = fetch_result
 
     with pytest.raises(SystemExit) as excinfo:
         convert_to_hosts.main()
@@ -375,13 +373,13 @@ def test_main_unfetchable_source_fails_the_run(
     assert "failed to fetch" in capsys.readouterr().out
 
 
-@patch("convert_to_hosts.fetch_rules")
+@patch("convert_to_hosts.fetch_domains")
 @patch("convert_to_hosts.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_partial_source_failure_exits_nonzero(
     mock_file: MagicMock,
     mock_load_config: MagicMock,
-    mock_fetch_rules: MagicMock,
+    mock_fetch_domains: MagicMock,
     capsys: pytest.CaptureFixture[str],
 ) -> None:
     """If one of several sources is unavailable, publishing the smaller list
@@ -390,8 +388,8 @@ def test_main_partial_source_failure_exits_nonzero(
     url_ok = "https://example.com/ok.txt"
     url_bad = "https://example.com/bad.txt"
     mock_load_config.return_value = [url_ok, url_bad]
-    mock_fetch_rules.side_effect = lambda url: (
-        (["||ads.example.com^"], 0.1) if url == url_ok else ([], 0.1)
+    mock_fetch_domains.side_effect = lambda url: (
+        (["ads.example.com"], 0.1) if url == url_ok else ([], 0.1)
     )
 
     with pytest.raises(SystemExit) as excinfo:
@@ -404,42 +402,35 @@ def test_main_partial_source_failure_exits_nonzero(
     assert url_bad in captured.out
 
 
-@patch("convert_to_hosts.fetch_rules")
+@patch("convert_to_hosts.fetch_domains")
 @patch("convert_to_hosts.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
-def test_main_no_valid_rules_exits_nonzero(
+def test_main_source_without_supported_rules_exits_nonzero(
     mock_file: MagicMock,
     mock_load_config: MagicMock,
-    mock_fetch_rules: MagicMock,
+    mock_fetch_domains: MagicMock,
     capsys: pytest.CaptureFixture[str],
 ) -> None:
-    """Every source answered, but none contained a supported ||domain^ rule:
-    the run must fail instead of exiting 0 with a stale hosts.txt in place."""
+    """Every attempt succeeded, but the source contained no supported ||domain^
+    rule — fetch_domains returns [] and the run must fail instead of exiting 0
+    with a stale hosts.txt in place."""
     mock_load_config.return_value = ["https://example.com/list.txt"]
-    mock_fetch_rules.return_value = (
-        [
-            "# comment only",
-            "",
-            "invalid_rule_without_pipes",
-            "|single_pipe^",
-        ],
-        0.5,
-    )
+    mock_fetch_domains.return_value = ([], 0.5)
 
     with pytest.raises(SystemExit) as excinfo:
         convert_to_hosts.main()
 
     assert excinfo.value.code == 1
     mock_file.assert_not_called()
-    assert "no valid rules" in capsys.readouterr().out
+    assert "no domains fetched" in capsys.readouterr().out
 
 
 @patch("convert_to_hosts.load_config")
-@patch("convert_to_hosts.fetch_rules")
+@patch("convert_to_hosts.fetch_domains")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_no_sources_exits_before_conversion(
     mock_file: MagicMock,
-    mock_fetch_rules: MagicMock,
+    mock_fetch_domains: MagicMock,
     mock_load_config: MagicMock,
 ) -> None:
     """Regression test: an unusable source list must abort with a non-zero exit
@@ -453,7 +444,7 @@ def test_main_no_sources_exits_before_conversion(
         convert_to_hosts.main()
 
     assert excinfo.value.code == 1
-    mock_fetch_rules.assert_not_called()
+    mock_fetch_domains.assert_not_called()
     mock_file.assert_not_called()
 
 
