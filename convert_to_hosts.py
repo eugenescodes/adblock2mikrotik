@@ -119,23 +119,29 @@ def load_config(config_file: str | Path = "config.toml") -> list[str]:
     return default_urls
 
 
-def fetch_rules(url: str) -> tuple[list[str], float]:
-    """Fetch rules from URL with retry logic and return (rules, elapsed_time_in_seconds).
+def fetch_domains(url: str) -> tuple[list[str], float]:
+    """Fetch a remote filter list and return its validated domains.
 
-    Fetches AdBlock rules from a remote URL with exponential backoff retry mechanism.
-    Streams the response to avoid loading large files entirely into memory.
-    Pre-filters empty lines and comment-only lines so callers receive only candidate rules.
+    Fetches an AdBlock/uBlock filter list from a remote URL with an
+    exponential backoff retry mechanism. The response is streamed line by
+    line, and each line is converted to its target representation — a
+    validated domain — while still streaming, so raw rule text is never
+    accumulated in memory; only the much smaller domain strings are kept.
 
-    A dedicated Session is created per call so each thread has its own connection pool
-    without sharing mutable state across threads (requests.Session is not thread-safe).
+    A dedicated Session is created per call so each thread has its own
+    connection pool without sharing mutable state across threads
+    (requests.Session is not thread-safe).
 
     Args:
         url: The remote URL to fetch rules from.
 
     Returns:
-        A tuple of (rules, elapsed_time_seconds) where:
-            - rules: List of non-empty, non-comment lines, or [] if all attempts fail.
-            - elapsed_time_seconds: Total time spent fetching (including retries).
+        A tuple of (domains, elapsed_time_seconds) where:
+            - domains: Validated lowercase domains in document order, or []
+              if all attempts fail (an upstream list is never legitimately
+              empty, so callers treat [] as a fetch failure).
+            - elapsed_time_seconds: Total time spent fetching, including
+              retries and in-flight conversion.
 
     Note:
         Attempts up to 3 times with exponential backoff: 2s after 1st failure, 4s after 2nd.
@@ -148,18 +154,22 @@ def fetch_rules(url: str) -> tuple[list[str], float]:
             try:
                 with session.get(url, timeout=(3, 10), stream=True) as response:
                     response.raise_for_status()
-                    rules: list[str] = []
+                    domains: list[str] = []
                     for raw_line in response.iter_lines(decode_unicode=False):
                         line = (
                             raw_line.decode("utf-8", errors="replace")
                             if isinstance(raw_line, bytes)
                             else str(raw_line)
                         )
-                        if line.strip() and not line.lstrip().startswith("#"):
-                            rules.append(line)
+                        # Convert to the final representation (a validated
+                        # domain) during streaming; raw rule lines are never
+                        # retained.
+                        domain = extract_domain(line)
+                        if domain:
+                            domains.append(domain)
 
                     elapsed = time.monotonic() - fetch_start
-                    return rules, elapsed
+                    return domains, elapsed
             except requests.RequestException as e:
                 last_exception = e
                 if attempt < 2:
@@ -295,37 +305,39 @@ def main() -> None:
 
     output_file = _get_output_file()
 
-    unique_domains: set[str] = set()
-    source_data: dict[str, list[str]] = {}
-    raw_results: dict[str, list[str]] = {}
+    fetched_domains: dict[str, list[str]] = {}
     failed_sources: list[str] = []
 
     print(f"\nFetching {len(urls)} source(s)...")
 
-    # Stage 1: Asynchronous loading (we maintain a good UX with logging as results come in)
+    # Stage 1: Parallel fetching with in-flight conversion. Each worker converts
+    # its raw rule text into validated domains while still streaming, so raw
+    # rule lines are never held in memory — only domain strings are.
     with ThreadPoolExecutor(max_workers=len(urls)) as executor:
-        futures = {executor.submit(fetch_rules, url): url for url in urls}
+        futures = {executor.submit(fetch_domains, url): url for url in urls}
 
         for future in as_completed(futures):
             url = futures[future]
             try:
-                rules, fetch_elapsed = future.result()
+                domains, fetch_elapsed = future.result()
             except Exception as exc:
                 print(f"  - {_source_name(url)}: ERROR: {exc}")
-                rules, fetch_elapsed = [], 0.0
+                domains, fetch_elapsed = [], 0.0
             else:
-                if rules:
+                if domains:
                     print(
-                        f"  - {_source_name(url)}: {len(rules):,} lines ({fetch_elapsed:.2f}s)"
+                        f"  - {_source_name(url)}: {len(domains):,} domains "
+                        f"({fetch_elapsed:.2f}s)"
                     )
                 else:
-                    # fetch_rules returns [] once its retries are exhausted, and an
-                    # upstream filter list is never legitimately empty.
-                    print(f"  - {_source_name(url)}: ERROR: no rules fetched")
+                    # fetch_domains returns [] once its retries are exhausted
+                    # (or the source holds no supported rule), and an upstream
+                    # filter list is never legitimately empty.
+                    print(f"  - {_source_name(url)}: ERROR: no domains fetched")
 
-            if not rules:
+            if not domains:
                 failed_sources.append(url)
-            raw_results[url] = rules
+            fetched_domains[url] = domains
 
     # A configured source that could not be fetched means the artifact would be
     # narrower than what the config promises, so the whole run fails below.
@@ -336,32 +348,29 @@ def main() -> None:
         )
         raise SystemExit(1)
 
-    # Stage 2: Sequential processing and deduplication strictly in order of config (urls)
-    print("\nConverting and deduplicating...")
+    # Stage 2: Deduplication strictly in order of config (urls). The first
+    # source in the config keeps every domain it shares with later sources,
+    # and output sections follow the same deterministic order on every run.
+    print("\nDeduplicating...")
+
+    unique_domains: set[str] = set()
+    source_data: dict[str, list[str]] = {}
 
     for url in urls:
         converted = []
-        for rule in raw_results[url]:
-            domain = extract_domain(rule)
-            if domain and domain not in unique_domains:
+        for domain in fetched_domains[url]:
+            if domain not in unique_domains:
                 unique_domains.add(domain)
                 converted.append(domain)
 
         source_data[url] = converted
-        # raw results for this source are no longer needed once converted
-        del raw_results[url]
+        # fetched domains for this source are no longer needed once deduplicated
+        del fetched_domains[url]
 
         print(f"  - {_source_name(url)}: {len(converted):,} unique domains")
 
-    if not unique_domains:
-        # Every source answered, but none contained a supported ||domain^ rule:
-        # nothing to write, and exiting 0 would report success while leaving the
-        # previously published hosts.txt in place indefinitely.
-        print(
-            "Error: no valid rules were converted from any source "
-            "(sources empty or in an unsupported format)."
-        )
-        raise SystemExit(1)
+    # unique_domains cannot be empty here: the failed_sources guard above
+    # guarantees every configured source yielded at least one validated domain.
 
     print(f"\nTotal unique domains across all sources: {len(unique_domains):,}")
 

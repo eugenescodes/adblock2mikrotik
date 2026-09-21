@@ -23,7 +23,7 @@ Optimized for memory-constrained low-resource devices like the [RB951Ui-2nD hAP]
 - Converts `||example.com^` rules to MikroTik DNS adlist format (`0.0.0.0 example.com`)
 - Deduplicates entries across all sources
 - Validates domains against RFC label rules (rejects double-dots, leading/trailing hyphens)
-- Pre-filters comments and empty lines for efficiency
+- Extracts and validates domains from each rule while streaming the download — raw rule text is never held in memory
 - Writes `hosts.txt` atomically — a failed or interrupted run never leaves a partial file in place
 - Exits non-zero, writing nothing, if any configured source can't be fetched or if the result would be empty — a narrow or stale list is never published
 - Compatible with RouterOS 7.15+
