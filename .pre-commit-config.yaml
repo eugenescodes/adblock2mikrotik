@@ -1,0 +1,86 @@
+# Git hooks run automatically (see README → Development):
+#   - on every `git commit`: fast checks that fix files themselves
+#   - on every `git push`:   mypy + pytest (report only, can't auto-fix)
+# Install once per clone (installs both hooks): uv run pre-commit install
+# Run the commit hooks on the whole repo manually: uv run pre-commit run --all-files
+
+default_install_hook_types: [pre-commit, pre-push]
+# Hooks without an explicit `stages:` run on commit only (not again on push).
+default_stages: [pre-commit]
+
+# hosts.txt is a generated 6 MB artifact committed by CI — never touch it.
+exclude: ^hosts\.txt$
+
+repos:
+  # Generic file hygiene (auto-fixing where possible)
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending  # CRLF → LF (complements .gitattributes)
+        args: [--fix=lf]
+      - id: fix-byte-order-marker  # strip the UTF-8 BOM some Windows editors add
+      - id: check-case-conflict  # README.md vs Readme.md breaks on macOS/Windows
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files  # hosts.txt is excluded above
+      - id: detect-private-key
+
+  # Ruff runs from the project venv, so its version always matches uv.lock
+  # (the same one CI uses) instead of being pinned a second time here.
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check --fix
+        entry: uv run ruff check --fix --exit-non-zero-on-fix
+        language: unsupported
+        types_or: [python, pyi]
+      - id: ruff-format
+        name: ruff format
+        entry: uv run ruff format
+        language: unsupported
+        types_or: [python, pyi]
+      # pyproject.toml edited by hand without `uv lock` → uv.lock is stale and
+      # `uv sync --locked` (CI) / UV_FROZEN (Docker) would fail later.
+      - id: uv-lock-check
+        name: uv lock --check
+        entry: uv lock --check
+        language: unsupported
+        files: ^(pyproject\.toml|uv\.lock)$
+        pass_filenames: false
+
+  # Report-only checks on `git push`: they can't fix anything, so running them
+  # on every commit would just block work-in-progress commits. CI runs them too
+  # (as separate steps — `pre-commit run` in CI only runs the commit stage).
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: uv run mypy .
+        language: unsupported
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
+      - id: pytest
+        name: pytest
+        entry: uv run pytest -q
+        language: unsupported
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
+
+  # Schema validation for GitHub Actions workflows and Dependabot config
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.38.2
+    hooks:
+      - id: check-github-workflows
+      - id: check-dependabot
+
+  # Markdown lint with auto-fix (Node is provisioned by pre-commit itself)
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.23.3
+    hooks:
+      - id: markdownlint-cli2
+        args: [--fix]

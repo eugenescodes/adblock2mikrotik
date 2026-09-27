@@ -43,19 +43,6 @@ build/
 
 # Generated output
 # hosts.txt
- 
+
 # Local configuration (copy from config.toml.example)
 config.toml
-
-# -----------------------
-# Rust
-# -----------------------
-# Build artifacts
-target/
-
-# Cargo backup files
-**/*.rs.bk
-
-# Note: Cargo.lock should be committed for binary projects, 
-# but ignored for library projects. Remove the '#' below if building a library.
-# Cargo.lock

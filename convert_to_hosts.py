@@ -1,3 +1,4 @@
+import logging
 import os
 import re
 import time
@@ -23,6 +24,8 @@ _DOMAIN_RE = re.compile(
 # .toml.example config.toml" workflow and the built-in fallback stay in sync
 # automatically.
 _DEFAULT_CONFIG_FILE = Path(__file__).resolve().parent / "config.toml.example"
+
+logger = logging.getLogger(__name__)
 
 
 def _get_output_file() -> Path:
@@ -94,26 +97,26 @@ def load_config(config_file: str | Path = "config.toml") -> list[str]:
     if config_path.exists():
         urls = _read_source_urls(config_path)
         if urls:
-            print(f"Loaded {len(urls)} sources from {config_file}")
+            logger.info(f"Loaded {len(urls)} sources from {config_file}")
             return urls
-        print(
-            f"Error: {config_file} has no usable [sources] urls — "
+        logger.error(
+            f"{config_file} has no usable [sources] urls — "
             "refusing to fall back to defaults."
         )
         return []
 
-    print(
-        f"\nNote: {config_file} not found, using default sources from {_DEFAULT_CONFIG_FILE.name}"
+    logger.info(
+        f"{config_file} not found, using default sources from {_DEFAULT_CONFIG_FILE.name}"
     )
 
     default_urls = _read_source_urls(_DEFAULT_CONFIG_FILE)
     if not default_urls:
-        print(
-            f"Error: default source file {_DEFAULT_CONFIG_FILE} is missing or invalid."
+        logger.error(
+            f"Default source file {_DEFAULT_CONFIG_FILE} is missing or invalid."
         )
         return []
 
-    print(
+    logger.info(
         f"Loaded {len(default_urls)} default sources from {_DEFAULT_CONFIG_FILE.name}"
     )
     return default_urls
@@ -174,12 +177,12 @@ def fetch_domains(url: str) -> tuple[list[str], float]:
                 last_exception = e
                 if attempt < 2:
                     wait = 2 ** (attempt + 1)
-                    print(
-                        f"Attempt {attempt + 1} failed for {url}. Retrying in {wait}s..."
+                    logger.warning(
+                        f"Attempt {attempt + 1} failed for {url}: {e}. Retrying in {wait}s..."
                     )
                     time.sleep(wait)
 
-    print(f"Error fetching {url} after 3 attempts: {last_exception}")
+    logger.error(f"Error fetching {url} after 3 attempts: {last_exception}")
     elapsed = time.monotonic() - fetch_start
     return [], elapsed
 
@@ -287,11 +290,11 @@ def write_output(
                 f.write(f"\n# Converted {len(domains):,} rules from this source\n\n")
 
             f.write(f"\n# Total unique domains: {total_count:,}\n")
-    except Exception:
-        tmp_file.unlink(missing_ok=True)
-        raise
 
-    tmp_file.replace(output_file)
+        tmp_file.replace(output_file)
+    finally:
+        # No-op after a successful replace(); otherwise drops the partial file.
+        tmp_file.unlink(missing_ok=True)
 
 
 def main() -> None:
@@ -308,42 +311,38 @@ def main() -> None:
     fetched_domains: dict[str, list[str]] = {}
     failed_sources: list[str] = []
 
-    print(f"\nFetching {len(urls)} source(s)...")
+    logger.info(f"Fetching {len(urls)} source(s)...")
 
     # Stage 1: Parallel fetching with in-flight conversion. Each worker converts
     # its raw rule text into validated domains while still streaming, so raw
     # rule lines are never held in memory — only domain strings are.
-    with ThreadPoolExecutor(max_workers=len(urls)) as executor:
+    # fetch_domains handles network errors itself (returning []), so anything
+    # future.result() raises is a bug: it propagates and aborts the run before
+    # hosts.txt is touched.
+    with ThreadPoolExecutor(max_workers=min(len(urls), 3)) as executor:
         futures = {executor.submit(fetch_domains, url): url for url in urls}
 
         for future in as_completed(futures):
             url = futures[future]
-            try:
-                domains, fetch_elapsed = future.result()
-            except Exception as exc:
-                print(f"  - {_source_name(url)}: ERROR: {exc}")
-                domains, fetch_elapsed = [], 0.0
+            domains, fetch_elapsed = future.result()
+            if domains:
+                logger.info(
+                    f"  - {_source_name(url)}: {len(domains):,} domains "
+                    f"({fetch_elapsed:.2f}s)"
+                )
             else:
-                if domains:
-                    print(
-                        f"  - {_source_name(url)}: {len(domains):,} domains "
-                        f"({fetch_elapsed:.2f}s)"
-                    )
-                else:
-                    # fetch_domains returns [] once its retries are exhausted
-                    # (or the source holds no supported rule), and an upstream
-                    # filter list is never legitimately empty.
-                    print(f"  - {_source_name(url)}: ERROR: no domains fetched")
-
-            if not domains:
+                # fetch_domains returns [] once its retries are exhausted
+                # (or the source holds no supported rule), and an upstream
+                # filter list is never legitimately empty.
+                logger.error(f"  - {_source_name(url)}: no domains fetched")
                 failed_sources.append(url)
             fetched_domains[url] = domains
 
     # A configured source that could not be fetched means the artifact would be
     # narrower than what the config promises, so the whole run fails below.
     if failed_sources:
-        print(
-            f"\nError: {len(failed_sources)} of {len(urls)} source(s) failed to fetch "
+        logger.error(
+            f"{len(failed_sources)} of {len(urls)} source(s) failed to fetch "
             f"({', '.join(failed_sources)}) — refusing to publish a partial list."
         )
         raise SystemExit(1)
@@ -351,7 +350,7 @@ def main() -> None:
     # Stage 2: Deduplication strictly in order of config (urls). The first
     # source in the config keeps every domain it shares with later sources,
     # and output sections follow the same deterministic order on every run.
-    print("\nDeduplicating...")
+    logger.info("Deduplicating...")
 
     unique_domains: set[str] = set()
     source_data: dict[str, list[str]] = {}
@@ -367,19 +366,22 @@ def main() -> None:
         # fetched domains for this source are no longer needed once deduplicated
         del fetched_domains[url]
 
-        print(f"  - {_source_name(url)}: {len(converted):,} unique domains")
+        logger.info(f"  - {_source_name(url)}: {len(converted):,} unique domains")
 
     # unique_domains cannot be empty here: the failed_sources guard above
     # guarantees every configured source yielded at least one validated domain.
 
-    print(f"\nTotal unique domains across all sources: {len(unique_domains):,}")
+    logger.info(f"Total unique domains across all sources: {len(unique_domains):,}")
 
     write_output(output_file, source_data, len(unique_domains))
 
     elapsed_time = time.monotonic() - start_time
-    print(f"Done! Written to: {output_file}")
-    print(f"Elapsed: {elapsed_time:.2f}s\n")
+    logger.info(f"Done! Written to: {output_file}")
+    logger.info(f"Elapsed: {elapsed_time:.2f}s")
 
 
 if __name__ == "__main__":
+    logging.basicConfig(
+        level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s"
+    )
     main()
