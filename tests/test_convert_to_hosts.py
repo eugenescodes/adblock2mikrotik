@@ -1,5 +1,5 @@
 import os
-from collections.abc import Callable
+from collections.abc import Callable, Iterator
 from pathlib import Path
 from unittest.mock import MagicMock, mock_open, patch
 
@@ -40,7 +40,7 @@ def test_fetch_domains_success(mock_session_cls: MagicMock) -> None:
 def test_fetch_domains_retries_then_fails(
     mock_session_cls: MagicMock,
     mock_sleep: MagicMock,
-    capsys: pytest.CaptureFixture[str],
+    caplog: pytest.LogCaptureFixture,
 ) -> None:
     """Test fetch retry logic: 3 attempts with exponential backoff, then failure."""
     mock_session = MagicMock()
@@ -55,8 +55,7 @@ def test_fetch_domains_retries_then_fails(
     mock_sleep.assert_any_call(2)
     mock_sleep.assert_any_call(4)
 
-    captured = capsys.readouterr()
-    assert "Error fetching http://fakeurl after 3 attempts" in captured.out
+    assert "Error fetching http://fakeurl after 3 attempts" in caplog.text
 
 
 # ---------------------------------------------------------------------------
@@ -81,14 +80,13 @@ DEFAULT_URLS = ["https://default.example/a.txt", "https://default.example/b.txt"
 
 
 def test_load_config_file_not_found(
-    default_config: Path, capsys: pytest.CaptureFixture[str]
+    default_config: Path, caplog: pytest.LogCaptureFixture
 ) -> None:
     """Falls back to config.toml.example when config.toml does not exist."""
     result = convert_to_hosts.load_config("nonexistent_config.toml")
 
     assert result == DEFAULT_URLS
-    captured = capsys.readouterr()
-    assert "not found" in captured.out
+    assert "not found" in caplog.text
 
 
 def test_load_config_reads_urls(tmp_path: Path) -> None:
@@ -104,7 +102,7 @@ def test_load_config_reads_urls(tmp_path: Path) -> None:
 
 
 def test_load_config_missing_urls_key_is_an_error(
-    default_config: Path, tmp_path: Path, capsys: pytest.CaptureFixture[str]
+    default_config: Path, tmp_path: Path, caplog: pytest.LogCaptureFixture
 ) -> None:
     """A present config.toml without a usable [sources] urls is a config error:
     it must NOT be silently replaced by the bundled defaults."""
@@ -114,11 +112,11 @@ def test_load_config_missing_urls_key_is_an_error(
     result = convert_to_hosts.load_config(config)
 
     assert result == []
-    assert "no usable" in capsys.readouterr().out
+    assert "no usable" in caplog.text
 
 
 def test_load_config_invalid_toml_is_an_error(
-    default_config: Path, tmp_path: Path, capsys: pytest.CaptureFixture[str]
+    default_config: Path, tmp_path: Path, caplog: pytest.LogCaptureFixture
 ) -> None:
     """Malformed TOML is a config error, not a reason to use the defaults."""
     config = tmp_path / "config.toml"
@@ -127,7 +125,7 @@ def test_load_config_invalid_toml_is_an_error(
     result = convert_to_hosts.load_config(config)
 
     assert result == []
-    assert "no usable" in capsys.readouterr().out
+    assert "no usable" in caplog.text
 
 
 @pytest.mark.parametrize(
@@ -148,7 +146,7 @@ def test_load_config_invalid_toml_is_an_error(
 def test_load_config_rejects_malformed_sources(
     default_config: Path,
     tmp_path: Path,
-    capsys: pytest.CaptureFixture[str],
+    caplog: pytest.LogCaptureFixture,
     content: str,
 ) -> None:
     """Structurally wrong [sources] must be rejected, not taken at face value.
@@ -161,7 +159,7 @@ def test_load_config_rejects_malformed_sources(
     config.write_text(content)
 
     assert convert_to_hosts.load_config(config) == []
-    assert "no usable" in capsys.readouterr().out
+    assert "no usable" in caplog.text
 
 
 def test_load_config_deduplicates_urls_preserving_order(
@@ -196,7 +194,7 @@ def test_load_config_deduplicates_urls_preserving_order(
 def test_load_config_returns_empty_when_fallback_unavailable(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
-    capsys: pytest.CaptureFixture[str],
+    caplog: pytest.LogCaptureFixture,
     make_default_file: Callable[[Path], object],
 ) -> None:
     """If config.toml is missing AND the bundled config.toml.example is itself
@@ -210,8 +208,7 @@ def test_load_config_returns_empty_when_fallback_unavailable(
     result = convert_to_hosts.load_config(tmp_path / "nonexistent_config.toml")
 
     assert result == []
-    captured = capsys.readouterr()
-    assert "Error" in captured.out
+    assert any(r.levelname == "ERROR" for r in caplog.records)
 
 
 # ---------------------------------------------------------------------------
@@ -339,14 +336,6 @@ def test_main_distinct_unique_domains_per_source(
     assert "# Converted 1 rules from this source" in written_text
 
 
-@pytest.mark.parametrize(
-    "fetch_result",
-    [
-        ([], 0.5),  # fetch_domains returns [] once its retries are exhausted
-        RuntimeError("boom"),  # unexpected exception raised by the worker
-    ],
-    ids=["empty_result", "raised_exception"],
-)
 @patch("convert_to_hosts.fetch_domains")
 @patch("convert_to_hosts.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
@@ -354,23 +343,38 @@ def test_main_unfetchable_source_fails_the_run(
     mock_file: MagicMock,
     mock_load_config: MagicMock,
     mock_fetch_domains: MagicMock,
-    capsys: pytest.CaptureFixture[str],
-    fetch_result: tuple[list[str], float] | Exception,
+    caplog: pytest.LogCaptureFixture,
 ) -> None:
     """A source that yields nothing must fail the run with a non-zero status —
     never a KeyError from the conversion loop, never a silent success."""
     mock_load_config.return_value = ["https://example.com/list.txt"]
-    if isinstance(fetch_result, Exception):
-        mock_fetch_domains.side_effect = fetch_result
-    else:
-        mock_fetch_domains.return_value = fetch_result
+    mock_fetch_domains.return_value = ([], 0.5)
 
     with pytest.raises(SystemExit) as excinfo:
         convert_to_hosts.main()
 
     assert excinfo.value.code == 1
     mock_file.assert_not_called()
-    assert "failed to fetch" in capsys.readouterr().out
+    assert "failed to fetch" in caplog.text
+
+
+@patch("convert_to_hosts.fetch_domains")
+@patch("convert_to_hosts.load_config")
+@patch("pathlib.Path.open", new_callable=mock_open)
+def test_main_unexpected_worker_error_propagates(
+    mock_file: MagicMock,
+    mock_load_config: MagicMock,
+    mock_fetch_domains: MagicMock,
+) -> None:
+    """fetch_domains handles network errors itself, so any other exception is
+    a bug: it must propagate (non-zero exit) and nothing may be written."""
+    mock_load_config.return_value = ["https://example.com/list.txt"]
+    mock_fetch_domains.side_effect = RuntimeError("boom")
+
+    with pytest.raises(RuntimeError, match="boom"):
+        convert_to_hosts.main()
+
+    mock_file.assert_not_called()
 
 
 @patch("convert_to_hosts.fetch_domains")
@@ -380,7 +384,7 @@ def test_main_partial_source_failure_exits_nonzero(
     mock_file: MagicMock,
     mock_load_config: MagicMock,
     mock_fetch_domains: MagicMock,
-    capsys: pytest.CaptureFixture[str],
+    caplog: pytest.LogCaptureFixture,
 ) -> None:
     """If one of several sources is unavailable, publishing the smaller list
     would silently narrow the blocklist for every subscriber, so the run must
@@ -397,9 +401,8 @@ def test_main_partial_source_failure_exits_nonzero(
 
     assert excinfo.value.code == 1
     mock_file.assert_not_called()
-    captured = capsys.readouterr()
-    assert "1 of 2 source(s) failed to fetch" in captured.out
-    assert url_bad in captured.out
+    assert "1 of 2 source(s) failed to fetch" in caplog.text
+    assert url_bad in caplog.text
 
 
 @patch("convert_to_hosts.fetch_domains")
@@ -409,7 +412,7 @@ def test_main_source_without_supported_rules_exits_nonzero(
     mock_file: MagicMock,
     mock_load_config: MagicMock,
     mock_fetch_domains: MagicMock,
-    capsys: pytest.CaptureFixture[str],
+    caplog: pytest.LogCaptureFixture,
 ) -> None:
     """Every attempt succeeded, but the source contained no supported ||domain^
     rule — fetch_domains returns [] and the run must fail instead of exiting 0
@@ -422,7 +425,7 @@ def test_main_source_without_supported_rules_exits_nonzero(
 
     assert excinfo.value.code == 1
     mock_file.assert_not_called()
-    assert "no domains fetched" in capsys.readouterr().out
+    assert "no domains fetched" in caplog.text
 
 
 @patch("convert_to_hosts.load_config")
@@ -528,5 +531,26 @@ def test_write_output_preserves_existing_file_on_failure(tmp_path: Path) -> None
             convert_to_hosts.write_output(output_file, source_data, 1)
 
     # Original file untouched, no leftover temp file
+    assert output_file.read_text() == "previous good content\n"
+    assert list(tmp_path.glob(".*.tmp")) == []
+
+
+def test_write_output_removes_temp_file_on_mid_write_failure(tmp_path: Path) -> None:
+    """A failure after the temp file was created (mid-write) must remove it and
+    leave the original output_file untouched."""
+
+    class FailingDomains(list[str]):
+        def __iter__(self) -> Iterator[str]:
+            raise OSError("disk full")
+
+    output_file = tmp_path / "hosts.txt"
+    output_file.write_text("previous good content\n")
+    source_data: dict[str, list[str]] = {
+        "https://example.com/list.txt": FailingDomains(["example.com"])
+    }
+
+    with pytest.raises(OSError, match="disk full"):
+        convert_to_hosts.write_output(output_file, source_data, 1)
+
     assert output_file.read_text() == "previous good content\n"
     assert list(tmp_path.glob(".*.tmp")) == []

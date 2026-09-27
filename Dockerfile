@@ -1,49 +1,42 @@
-FROM python:3.12-slim
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+# ─── Stage 1: builder — resolve dependencies into a self-contained venv ───
+FROM python:3.12-slim AS builder
+COPY --from=ghcr.io/astral-sh/uv:0.12.19 /uv /bin/
 
-# Set environment variables
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    UV_PYTHON_DOWNLOADS=never \
-    UV_PROJECT_ENVIRONMENT=/usr/local \
+ENV UV_PYTHON_DOWNLOADS=never \
     UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy \
     UV_FROZEN=1 \
     UV_NO_DEV=1 \
-    UV_NO_EDITABLE=1 \
     UV_NO_CACHE=1
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
-
-# Create non-root user early (before COPY, no extra layer with chown /app)
-RUN useradd --system --no-create-home appuser
-
-# Set the working directory
 WORKDIR /app
 
-# Dependency layers first for better cache reuse
+# Only the lock files are needed to build the venv (package = false in pyproject)
 COPY pyproject.toml uv.lock ./
-
-# Sync the project into a new environment, asserting the lockfile is up to date
 RUN uv sync
 
-# Copy the project files
-COPY . .
+# ─── Stage 2: runtime — no uv, only the venv and the script ───
+FROM python:3.12-slim
 
-# Dedicated output dir owned by appuser — avoids permission conflict with volume mounts
-RUN mkdir /output && chown appuser:appuser /output
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PATH="/app/.venv/bin:$PATH" \
+    OUTPUT_DIR=/output
 
-# Declare the output directory as an environment variable for use in the script
-ENV OUTPUT_DIR=/output
+# Create non-root user and a dedicated output dir it owns — avoids permission
+# conflicts with volume mounts
+RUN useradd --system --no-create-home appuser \
+    && mkdir /output \
+    && chown appuser:appuser /output
 
-# Switch to the non-root user for better security
+WORKDIR /app
+
+COPY --from=builder /app/.venv /app/.venv
+# config.toml.example is the built-in fallback for sources — must sit next to the script
+COPY convert_to_hosts.py config.toml.example ./
+
 USER appuser
 
-# Declare the output directory as a volume to allow users to mount it at runtime
 VOLUME /output
 
-# Set up entrypoint
-ENTRYPOINT ["uv", "run", "convert_to_hosts.py"]
+ENTRYPOINT ["python", "convert_to_hosts.py"]

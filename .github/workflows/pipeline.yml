@@ -1,8 +1,8 @@
 name: Pipeline
 
+# Least privilege by default; only update-hosts needs to push (see below).
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 on:
   push:
@@ -13,30 +13,26 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
-concurrency:
-  group: pipeline-${{ github.ref }}
-  cancel-in-progress: true
+# Concurrency is set per job (not workflow-wide): a push to main must not cancel
+# a running scheduled hosts.txt update, and vice versa.
 
 jobs:
   # ─────────────────────────────────────────────
   # JOB 1: LINT & TEST — push / PR / dispatch
-  # Fast feedback: no Docker, no network calls.
+  # Check-only: nothing is fixed or committed here. Formatting is fixed locally
+  # by the pre-commit hook (see README → Development); CI fails if it wasn't run.
   # ─────────────────────────────────────────────
   lint-and-test:
     if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
+    concurrency:
+      group: lint-and-test-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
 
-      - name: Configure git identity
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: "Set up Python"
+      - name: Set up Python
         uses: actions/setup-python@v7
         with:
           python-version-file: ".python-version"
@@ -47,51 +43,37 @@ jobs:
           enable-cache: true
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --locked
 
-      - name: Lint and fix Markdown
-        uses: DavidAnson/markdownlint-cli2-action@v24.2.0 
+      - name: Cache pre-commit environments
+        uses: actions/cache@v6
         with:
-          fix: true
-          globs: '**/*.md'
-        continue-on-error: true
-      
+          path: ~/.cache/pre-commit
+          key: pre-commit-${{ runner.os }}-${{ hashFiles('.pre-commit-config.yaml') }}
+
+      # Same hooks as the local git hook (ruff check/format, markdownlint, file
+      # hygiene, uv.lock, workflow schemas). Any hook that would modify a file
+      # fails the job and prints the diff, so an unformatted PR goes red.
+      - name: Run pre-commit checks
+        run: uv run pre-commit run --all-files --show-diff-on-failure --color always
+
       - name: Run mypy
         run: uv run mypy .
 
-      - name: Run ruff (check and format check)
-        run: |
-          uv run ruff check . --fix
-          uv run ruff format .
-          uv run ruff check .
-
-      - name: Commit and push formatting fixes
-        if: github.event_name == 'push'
-        run: |
-          export GIT_MERGE_AUTOEDIT=no
-          export GIT_TERMINAL_PROMPT=0
-          BRANCH_NAME="${{ github.head_ref || github.ref_name }}"
-          if [ -n "$(git status --porcelain)" ]; then
-            git add .
-            git commit -m "Auto-fix formatting (Markdown & Ruff)"
-            git pull --rebase --no-edit origin "$BRANCH_NAME"
-            git push origin "HEAD:refs/heads/$BRANCH_NAME"
-          else
-            echo "No formatting changes to commit."
-          fi
-
       - name: Run tests
-        env:
-          PYTHONPATH: ${{ github.workspace }}
         run: uv run pytest -v
 
   # ─────────────────────────────────────────────
-  # JOB 2: DOCKER BUILD CHECK — push to main + dispatch only
-  # Skipped on PRs to save CI minutes.
+  # JOB 2: DOCKER BUILD CHECK — push / PR / dispatch
+  # Also on PRs, so a change that breaks the image (Dockerfile, pyproject.toml,
+  # uv.lock) is caught before merge, not after. Layers are cached (GHA cache).
   # ─────────────────────────────────────────────
   docker-build:
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
+    concurrency:
+      group: docker-build-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -121,14 +103,22 @@ jobs:
   update-hosts:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    # The only job that pushes to the repository.
+    permissions:
+      contents: write
+    # One shared group, never cancelled: an in-flight update always finishes,
+    # and a second trigger waits for it instead of racing on the push.
+    concurrency:
+      group: update-hosts
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: Set up Python 
-        uses: actions/setup-python@v7 
+      - name: Set up Python
+        uses: actions/setup-python@v7
         with:
           python-version-file: ".python-version"
 
@@ -138,7 +128,7 @@ jobs:
           enable-cache: true
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --locked
 
       - name: Run conversion script
         run: uv run convert_to_hosts.py
@@ -148,11 +138,13 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          if [[ -n $(git status --porcelain hosts.txt) ]]; then
+          # The "# Last modified:" header line changes on every run; ignore it so
+          # a commit is made only when the domain list itself changed.
+          if ! git diff --quiet -I '^# Last modified:' -- hosts.txt; then
             git add hosts.txt
             git commit -m "Update hosts.txt via schedule"
             git pull --rebase origin main
             git push origin main
           else
-            echo "No changes to commit."
+            echo "No domain changes (only the timestamp) — nothing to commit."
           fi

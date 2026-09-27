@@ -12,6 +12,7 @@ dev = [
     "pytest>=9.1.1",
     "mypy>=2.3.0",
     "types-requests>=2.32.0",
+    "pre-commit>=4.6.2",
 ]
 
 [tool.mypy]
@@ -24,6 +25,7 @@ line-length = 88  # same default as Black
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
+log_level = "INFO"
 
 [tool.ruff.lint]
 # E/W — pycodestyle, F — pyflakes, I — isort, UP — pyupgrade

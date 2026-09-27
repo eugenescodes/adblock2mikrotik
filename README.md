@@ -146,7 +146,7 @@ For more Hagezi lists, visit the [Hagezi DNS blocklists repository](https://gith
 
 ## Development
 
-This project uses [uv](https://docs.astral.sh/uv/) for dependency management, [Ruff](https://docs.astral.sh/ruff/) for linting/formatting, [mypy](https://mypy-lang.org/) for static type checking, and [pytest](https://docs.pytest.org/) for testing.
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management, [Ruff](https://docs.astral.sh/ruff/) for linting/formatting, [mypy](https://mypy-lang.org/) for static type checking, [pytest](https://docs.pytest.org/) for testing, and [pre-commit](https://pre-commit.com/) to run all of these automatically as git hooks.
 
 ### Prerequisites
 
@@ -157,47 +157,133 @@ Install `uv` (replaces `pip` and `venv`) [more info about uv](https://docs.astra
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### Setup (development environment)
-
-Development tools (ruff, mypy, pytest, and the `types-requests` type stubs) are in the `dev` dependency group and need to be installed separately:
+### One-time setup (after cloning)
 
 ```bash
-uv sync  # Installs all dependencies including dev tools
+uv sync                        # install all dependencies, including dev tools
+uv run pre-commit install      # enable the git hooks for this clone
 ```
 
-### Lint and format
+That's it — from now on the checks run by themselves: on every `git commit` and on every `git push`. There is nothing to remember or run by hand.
+
+> [!NOTE]
+> `pre-commit install` installs **both** hooks (`.git/hooks/pre-commit` and `.git/hooks/pre-push`, as configured by `default_install_hook_types` in `.pre-commit-config.yaml`). It only affects your local clone, so every contributor runs it once in their own clone.
+> The first commit after installing takes a bit longer: pre-commit downloads the Markdown linter (and a Node.js runtime for it if needed) and the schema validator, and caches them for later runs.
+
+### How the checks are organized
+
+Checks run at three points. The rule of thumb: fast checks that **fix files themselves** run on every commit; checks that can **only report** a problem run on push; CI runs everything and is the final gate.
+
+| When | What runs | Fixes automatically? |
+| --- | --- | --- |
+| `git commit` | Formatting, linting, file hygiene (see [below](#on-every-commit)) | Yes, where possible |
+| `git push` | mypy, pytest | No — you fix the reported problem |
+| CI (every push and Pull Request) | All of the above | No — check-only, fails with an explanation |
+
+### On every commit
+
+The hook runs on the staged files:
+
+| Check | What it does |
+| --- | --- |
+| `ruff check --fix` | Lints Python and auto-fixes what it can (import order, outdated syntax, unused imports, …) |
+| `ruff format` | Formats Python code |
+| `markdownlint-cli2 --fix` | Lints and auto-fixes Markdown files |
+| `trailing-whitespace`, `end-of-file-fixer` | Remove trailing spaces, ensure a final newline |
+| `mixed-line-ending` | Converts Windows line endings (CRLF) to LF |
+| `fix-byte-order-marker` | Removes the invisible UTF-8 BOM some Windows editors add at the start of a file |
+| `check-case-conflict` | Blocks file names that differ only in case (`README.md` vs `Readme.md`), which break on macOS/Windows |
+| `check-yaml`, `check-toml`, `check-merge-conflict` | Catch broken config files and leftover merge markers |
+| `check-added-large-files`, `detect-private-key` | Block accidentally committed large files and private keys |
+| `uv lock --check` | Fails if `pyproject.toml` changed but `uv.lock` wasn't updated — run `uv lock` |
+| `check-github-workflows`, `check-dependabot` | Validate `.github/` files against their official schemas |
+
+What happens next:
+
+- **All checks pass** → the commit is created as usual.
+- **A hook fixed something** → the commit is stopped so you can see what changed. The fixes are already in your files — just stage them and commit again:
+
+  ```bash
+  git add -u
+  git commit
+  ```
+
+  (In VS Code: review the changes, then press **Commit** again.)
+- **An error can't be fixed automatically** → the commit is stopped and the output shows the file, line and rule. Fix it by hand, then commit again.
+
+### On every push
+
+Before anything is sent to GitHub, the `pre-push` hook runs:
+
+| Check | What it does |
+| --- | --- |
+| `mypy` | Strict static type checking of the whole project (`[tool.mypy]` in `pyproject.toml`) |
+| `pytest` | Runs the full test suite |
+
+These can't fix anything themselves, so they deliberately don't run on every commit — you can commit work in progress (even with a failing test) as often as you like. They only stop broken code from **leaving your machine**: if either fails, the push is cancelled and the output shows what's wrong. Fix it, commit, and push again.
+
+### What CI checks
+
+CI runs the same commit hooks (`uv run pre-commit run --all-files`) in check-only mode, then mypy and pytest as separate steps. It never modifies or commits code. If a hook would change a file — for example, in a Pull Request made without the hooks installed — the job fails and its log shows the exact diff. To fix it, run `uv run pre-commit run --all-files` locally, commit the changes and push again.
+
+### Line endings and encoding
+
+The repository stores every text file with LF line endings, on every OS. This is enforced in two layers:
+
+- **`.gitattributes`** (`* text=auto eol=lf`) — git itself normalizes line endings on commit and checkout. This works for everyone, even without the hooks installed.
+- **pre-commit hooks** — `mixed-line-ending` and `fix-byte-order-marker` fix files before they are committed.
+
+All files must be UTF-8. There is no separate check for that: Ruff, mypy, markdownlint and the TOML/YAML parsers already fail on anything else.
+
+> [!TIP]
+> **Windows:** no special git setup is needed — `.gitattributes` takes precedence over your `core.autocrlf` setting. Just make sure your editor saves files as UTF-8 (without BOM); if it doesn't, the hook fixes it.
+
+### Running checks manually
+
+The hooks cover all of this, but you can run any check yourself:
 
 ```bash
+uv run pre-commit run --all-files                         # all commit checks on the whole repository
+uv run pre-commit run --all-files --hook-stage pre-push   # the push checks (mypy + pytest)
+
 uv run ruff check . --fix   # lint + autofix
 uv run ruff format .        # format
+uv run mypy .               # type checking
+uv run pytest -v            # tests
 ```
 
-### Type checking
+### Skipping the hooks
 
-Static type checking is configured in `pyproject.toml` under `[tool.mypy]` with `strict = true`. The converter and the test suite are fully typed:
+In an emergency, skip them for a single command:
 
 ```bash
-uv run mypy .
+git commit --no-verify   # skip the commit hooks
+git push --no-verify     # skip the push hooks
 ```
 
-### Tests
+CI still runs every check, so skipped problems will show up there.
+
+### Updating hook versions
+
+The Ruff, mypy and pytest hooks run through `uv run`, so they always use the versions pinned in `uv.lock` (updated by Dependabot). The other hooks are pinned by `rev:` in `.pre-commit-config.yaml`, which Dependabot does not update — refresh them from time to time:
 
 ```bash
-uv run pytest -v
+uv run pre-commit autoupdate
+uv run pre-commit run --all-files   # make sure everything still passes
 ```
 
 > [!NOTE]
-> Development dependencies (ruff, mypy, pytest, and `types-requests`) are **not** included in the Docker image.
-> Use `uv sync` locally to run linting, formatting, type checking, and tests.
+> Development dependencies (ruff, mypy, pytest, pre-commit, and `types-requests`) are **not** included in the Docker image.
 > The Docker image only includes production dependencies for running the converter.
 
 ## Contributing
 
 1. Open a [GitHub issue](https://github.com/eugenescodes/adblock2mikrotik/issues) to discuss major changes before starting work.
 2. Fork the repo and create a feature branch: `git checkout -b feature/your-feature`
-3. Make your changes and run the checks: `uv run ruff check .`, `uv run mypy .`, and `uv run pytest -v`
-4. Commit with a clear message and push to your fork.
-5. Open a Pull Request targeting `main` with a description of what and why.
+3. Do the [one-time setup](#one-time-setup-after-cloning) — `uv sync` and `uv run pre-commit install`. Formatting is then fixed on every commit, and mypy and the tests run on every push.
+4. Make your changes and commit with a clear message.
+5. Push to your fork and open a Pull Request targeting `main` with a description of what and why.
+6. CI runs all checks on the Pull Request. If it fails, the job log explains what to fix.
 
 ## License
 

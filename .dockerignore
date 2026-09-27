@@ -26,26 +26,12 @@ __pycache__/
 .venv/
 venv/
 tests/
-config.toml
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
 
 # Generated output
 hosts.txt
- 
+
 # Local configuration (copy from config.toml.example)
 config.toml
-
-# -----------------------
-# Rust
-# -----------------------
-# Avoid copying local build targets, let Docker compile it
-target/
-
-# Cargo backup files
-**/*.rs.bk
-
-# Note: Cargo.lock should be committed for binary projects, 
-# but ignored for library projects. Remove the '#' below if building a library.
-# Cargo.lock
