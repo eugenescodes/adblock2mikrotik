@@ -1,3 +1,4 @@
+import argparse
 import logging
 import os
 import re
@@ -5,9 +6,13 @@ import time
 import tomllib
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import UTC, datetime
+from importlib.resources import files
+from importlib.resources.abc import Traversable
 from pathlib import Path
 
 import requests
+
+from adblock2mikrotik import __version__
 
 # Domain validation (RFC 1123 ASCII subset):
 # - labels: [a-zA-Z0-9], hyphens allowed inside, max 63 chars each (no leading/trailing hyphens)
@@ -22,8 +27,9 @@ _DOMAIN_RE = re.compile(
 # instead of being duplicated as a Python literal here. config.toml.example is
 # the single source of truth — update sources there, and both the "cp config
 # .toml.example config.toml" workflow and the built-in fallback stay in sync
-# automatically.
-_DEFAULT_CONFIG_FILE = Path(__file__).resolve().parent / "config.toml.example"
+# automatically. It ships inside the package and is read via importlib.resources,
+# so it is found wherever the package is installed (venv, Docker, uvx).
+_DEFAULT_CONFIG_FILE: Traversable = files("adblock2mikrotik") / "config.toml.example"
 
 logger = logging.getLogger(__name__)
 
@@ -43,7 +49,7 @@ def _source_name(url: str) -> str:
     return url.rpartition("/")[2]
 
 
-def _read_source_urls(path: Path) -> list[str] | None:
+def _read_source_urls(path: Traversable) -> list[str] | None:
     """Read the ``[sources] urls`` list from a TOML file.
 
     Returns:
@@ -52,7 +58,7 @@ def _read_source_urls(path: Path) -> list[str] | None:
         under ``[sources]``. None (rather than an exception) lets callers
         apply their own fallback/error messaging.
     """
-    if not path.exists():
+    if not path.is_file():
         return None
     try:
         with path.open("rb") as f:
@@ -74,7 +80,9 @@ def _read_source_urls(path: Path) -> list[str] | None:
     return list(dict.fromkeys(urls))
 
 
-def load_config(config_file: str | Path = "config.toml") -> list[str]:
+def load_config(
+    config_file: str | Path = "config.toml", *, required: bool = False
+) -> list[str]:
     """Load sources from TOML config file.
 
     An explicitly provided config_file that *exists* but is unusable (malformed
@@ -87,12 +95,18 @@ def load_config(config_file: str | Path = "config.toml") -> list[str]:
 
     Args:
         config_file: Path to config.toml file
+        required: The file was named explicitly (``--config``), so a missing
+            file is an error too, instead of a reason to use the defaults.
 
     Returns:
         List of source URLs, or an empty list when the configuration is
         unusable — main() treats an empty list as fatal.
     """
     config_path = Path(config_file)
+
+    if required and not config_path.exists():
+        logger.error(f"Config file {config_file} not found.")
+        return []
 
     if config_path.exists():
         urls = _read_source_urls(config_path)
@@ -297,16 +311,80 @@ def write_output(
         tmp_file.unlink(missing_ok=True)
 
 
-def main() -> None:
+def _build_parser() -> argparse.ArgumentParser:
+    """Command-line interface of the ``adblock2mikrotik`` command."""
+    parser = argparse.ArgumentParser(
+        prog="adblock2mikrotik",
+        description=(
+            "Convert AdBlock-style filter lists (||domain^) into a hosts file "
+            "for the MikroTik RouterOS DNS adlist."
+        ),
+        epilog=(
+            "Without --config, sources are read from ./config.toml if it exists, "
+            "otherwise the bundled default sources are used. Without --output, "
+            "hosts.txt is written to $OUTPUT_DIR if set, otherwise to the "
+            "current directory."
+        ),
+    )
+    parser.add_argument(
+        "-V",
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
+    )
+    parser.add_argument(
+        "-c",
+        "--config",
+        type=Path,
+        metavar="FILE",
+        help="TOML file with the [sources] urls list (must exist)",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        type=Path,
+        metavar="FILE",
+        help="where to write the hosts file",
+    )
+    parser.add_argument(
+        "-n",
+        "--dry-run",
+        action="store_true",
+        help="fetch, validate and deduplicate as usual, but don't write the hosts file",
+    )
+    parser.add_argument(
+        "-q",
+        "--quiet",
+        action="store_true",
+        help="only log warnings and errors",
+    )
+    return parser
+
+
+def main(argv: list[str] | None = None) -> None:
+    """Entry point of the ``adblock2mikrotik`` command.
+
+    Args:
+        argv: Command-line arguments without the program name; None means
+            ``sys.argv[1:]``.
+    """
+    args = _build_parser().parse_args(argv)
+    logging.basicConfig(
+        level=logging.WARNING if args.quiet else logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+    )
     start_time = time.monotonic()
-    urls = load_config("config.toml")
+    if args.config is not None:
+        urls = load_config(args.config, required=True)
+    else:
+        urls = load_config("config.toml")
 
     if not urls:
         # load_config has already reported why the source list is unusable;
         # fail loudly (non-zero) instead of leaving a stale hosts.txt in place.
         raise SystemExit(1)
 
-    output_file = _get_output_file()
+    output_file: Path = args.output or _get_output_file()
 
     fetched_domains: dict[str, list[str]] = {}
     failed_sources: list[str] = []
@@ -373,15 +451,11 @@ def main() -> None:
 
     logger.info(f"Total unique domains across all sources: {len(unique_domains):,}")
 
-    write_output(output_file, source_data, len(unique_domains))
-
     elapsed_time = time.monotonic() - start_time
-    logger.info(f"Done! Written to: {output_file}")
+    if args.dry_run:
+        logger.info(f"Dry run: {output_file} was not written.")
+    else:
+        write_output(output_file, source_data, len(unique_domains))
+        elapsed_time = time.monotonic() - start_time
+        logger.info(f"Done! Written to: {output_file}")
     logger.info(f"Elapsed: {elapsed_time:.2f}s")
-
-
-if __name__ == "__main__":
-    logging.basicConfig(
-        level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s"
-    )
-    main()

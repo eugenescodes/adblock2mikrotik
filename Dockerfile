@@ -1,4 +1,4 @@
-# ─── Stage 1: builder — resolve dependencies into a self-contained venv ───
+# ─── Stage 1: builder — install the package into a self-contained venv ───
 FROM python:3.12-slim AS builder
 COPY --from=ghcr.io/astral-sh/uv:0.12.19 /uv /bin/
 
@@ -11,11 +11,17 @@ ENV UV_PYTHON_DOWNLOADS=never \
 
 WORKDIR /app
 
-# Only the lock files are needed to build the venv (package = false in pyproject)
+# Dependencies first, in their own layer: rebuilt only when the lock changes
 COPY pyproject.toml uv.lock ./
-RUN uv sync
+RUN uv sync --no-install-project
 
-# ─── Stage 2: runtime — no uv, only the venv and the script ───
+# Then the package itself — non-editable, so the venv holds a real copy of the
+# code and config.toml.example and doesn't need /app/src at runtime
+COPY README.md ./
+COPY src ./src
+RUN uv sync --no-editable
+
+# ─── Stage 2: runtime — no uv, no sources, only the venv ───
 FROM python:3.12-slim
 
 ENV PYTHONUNBUFFERED=1 \
@@ -29,14 +35,14 @@ RUN useradd --system --no-create-home appuser \
     && mkdir /output \
     && chown appuser:appuser /output
 
-WORKDIR /app
-
 COPY --from=builder /app/.venv /app/.venv
-# config.toml.example is the built-in fallback for sources — must sit next to the script
-COPY convert_to_hosts.py config.toml.example ./
+
+# Working directory is where an optional config.toml is looked up
+# (mount it at /app/config.toml — see README)
+WORKDIR /app
 
 USER appuser
 
 VOLUME /output
 
-ENTRYPOINT ["python", "convert_to_hosts.py"]
+ENTRYPOINT ["adblock2mikrotik"]

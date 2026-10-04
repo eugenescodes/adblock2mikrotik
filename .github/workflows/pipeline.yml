@@ -91,11 +91,13 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Verify image — imports only, no network
+      # No network: checks the installed package imports and that the bundled
+      # default config (package data) made it into the image and is valid.
+      - name: Verify image — package and bundled config, no network
         run: |
           docker run --rm --network none \
             --entrypoint python adblock2mikrotik:ci-test \
-            -c "import convert_to_hosts; print('Image OK')"
+            -c "from adblock2mikrotik import converter as c; assert c._read_source_urls(c._DEFAULT_CONFIG_FILE); print('Image OK')"
 
   # ─────────────────────────────────────────────
   # JOB 3: UPDATE HOSTS — schedule + dispatch
@@ -131,7 +133,7 @@ jobs:
         run: uv sync --locked
 
       - name: Run conversion script
-        run: uv run convert_to_hosts.py
+        run: uv run adblock2mikrotik
 
       - name: Commit and push hosts.txt
         run: |
