@@ -6,14 +6,14 @@ from unittest.mock import MagicMock, mock_open, patch
 import pytest
 import requests
 
-import convert_to_hosts
+from adblock2mikrotik import __version__, converter
 
 # ---------------------------------------------------------------------------
 # fetch_domains
 # ---------------------------------------------------------------------------
 
 
-@patch("convert_to_hosts.requests.Session")
+@patch("adblock2mikrotik.converter.requests.Session")
 def test_fetch_domains_success(mock_session_cls: MagicMock) -> None:
     """Test successful fetch and in-stream conversion of domains on first attempt."""
     mock_response = MagicMock()
@@ -30,13 +30,13 @@ def test_fetch_domains_success(mock_session_cls: MagicMock) -> None:
     mock_session.get.return_value.__enter__.return_value = mock_response
     mock_session_cls.return_value.__enter__.return_value = mock_session
 
-    result, elapsed = convert_to_hosts.fetch_domains("http://fakeurl")
+    result, elapsed = converter.fetch_domains("http://fakeurl")
     assert result == ["example.com", "test.com"]
     assert isinstance(elapsed, float)
 
 
-@patch("convert_to_hosts.time.sleep")
-@patch("convert_to_hosts.requests.Session")
+@patch("adblock2mikrotik.converter.time.sleep")
+@patch("adblock2mikrotik.converter.requests.Session")
 def test_fetch_domains_retries_then_fails(
     mock_session_cls: MagicMock,
     mock_sleep: MagicMock,
@@ -47,7 +47,7 @@ def test_fetch_domains_retries_then_fails(
     mock_session.get.side_effect = requests.RequestException("Network error")
     mock_session_cls.return_value.__enter__.return_value = mock_session
 
-    result, elapsed = convert_to_hosts.fetch_domains("http://fakeurl")
+    result, elapsed = converter.fetch_domains("http://fakeurl")
 
     assert result == []
     assert mock_session.get.call_count == 3
@@ -65,14 +65,14 @@ def test_fetch_domains_retries_then_fails(
 
 @pytest.fixture
 def default_config(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
-    """Point convert_to_hosts._DEFAULT_CONFIG_FILE at a controlled temp file,
+    """Point converter._DEFAULT_CONFIG_FILE at a controlled temp file,
     so fallback tests don't depend on the real config.toml.example content.
     """
     default_file = tmp_path / "config.toml.example"
     default_file.write_text(
         '[sources]\nurls = ["https://default.example/a.txt", "https://default.example/b.txt"]\n'
     )
-    monkeypatch.setattr(convert_to_hosts, "_DEFAULT_CONFIG_FILE", default_file)
+    monkeypatch.setattr(converter, "_DEFAULT_CONFIG_FILE", default_file)
     return default_file
 
 
@@ -83,7 +83,7 @@ def test_load_config_file_not_found(
     default_config: Path, caplog: pytest.LogCaptureFixture
 ) -> None:
     """Falls back to config.toml.example when config.toml does not exist."""
-    result = convert_to_hosts.load_config("nonexistent_config.toml")
+    result = converter.load_config("nonexistent_config.toml")
 
     assert result == DEFAULT_URLS
     assert "not found" in caplog.text
@@ -96,7 +96,7 @@ def test_load_config_reads_urls(tmp_path: Path) -> None:
         '[sources]\nurls = ["https://example.com/list1.txt", "https://example.com/list2.txt"]\n'
     )
 
-    result = convert_to_hosts.load_config(config)
+    result = converter.load_config(config)
 
     assert result == ["https://example.com/list1.txt", "https://example.com/list2.txt"]
 
@@ -109,7 +109,7 @@ def test_load_config_missing_urls_key_is_an_error(
     config = tmp_path / "config.toml"
     config.write_text("[sources]\n# no urls key\n")
 
-    result = convert_to_hosts.load_config(config)
+    result = converter.load_config(config)
 
     assert result == []
     assert "no usable" in caplog.text
@@ -122,7 +122,7 @@ def test_load_config_invalid_toml_is_an_error(
     config = tmp_path / "config.toml"
     config.write_text("this is not valid toml ][[\n")
 
-    result = convert_to_hosts.load_config(config)
+    result = converter.load_config(config)
 
     assert result == []
     assert "no usable" in caplog.text
@@ -158,7 +158,7 @@ def test_load_config_rejects_malformed_sources(
     config = tmp_path / "config.toml"
     config.write_text(content)
 
-    assert convert_to_hosts.load_config(config) == []
+    assert converter.load_config(config) == []
     assert "no usable" in caplog.text
 
 
@@ -177,7 +177,7 @@ def test_load_config_deduplicates_urls_preserving_order(
         '"https://example.com/a.txt"]\n'
     )
 
-    assert convert_to_hosts.load_config(config) == [
+    assert converter.load_config(config) == [
         "https://example.com/a.txt",
         "https://example.com/b.txt",
     ]
@@ -203,12 +203,22 @@ def test_load_config_returns_empty_when_fallback_unavailable(
     """
     default_file = tmp_path / "config.toml.example"
     make_default_file(default_file)
-    monkeypatch.setattr(convert_to_hosts, "_DEFAULT_CONFIG_FILE", default_file)
+    monkeypatch.setattr(converter, "_DEFAULT_CONFIG_FILE", default_file)
 
-    result = convert_to_hosts.load_config(tmp_path / "nonexistent_config.toml")
+    result = converter.load_config(tmp_path / "nonexistent_config.toml")
 
     assert result == []
     assert any(r.levelname == "ERROR" for r in caplog.records)
+
+
+def test_bundled_default_config_is_valid() -> None:
+    """The real config.toml.example must ship inside the installed package and
+    hold a usable source list — otherwise the fallback breaks for everyone who
+    runs without their own config.toml (CI, Docker, uvx)."""
+    urls = converter._read_source_urls(converter._DEFAULT_CONFIG_FILE)
+
+    assert urls
+    assert all(url.startswith("https://") for url in urls)
 
 
 # ---------------------------------------------------------------------------
@@ -220,23 +230,20 @@ def test_get_output_file_default() -> None:
     """Returns 'hosts.txt' in CWD when OUTPUT_DIR is not set."""
     with patch.dict(os.environ, {}, clear=False):
         os.environ.pop("OUTPUT_DIR", None)
-        assert convert_to_hosts._get_output_file() == Path("hosts.txt")
+        assert converter._get_output_file() == Path("hosts.txt")
 
 
 def test_get_output_file_with_env(monkeypatch: pytest.MonkeyPatch) -> None:
     """Returns path inside OUTPUT_DIR when env var is set."""
     monkeypatch.setenv("OUTPUT_DIR", "/output")
-    assert convert_to_hosts._get_output_file() == Path("/output/hosts.txt")
+    assert converter._get_output_file() == Path("/output/hosts.txt")
 
 
 def test_source_name() -> None:
     """source_name returns the last path segment of a URL used in logs/header."""
-    assert convert_to_hosts._source_name("https://example.com/list1.txt") == "list1.txt"
-    assert (
-        convert_to_hosts._source_name("https://example.com/a/b/list2.txt")
-        == "list2.txt"
-    )
-    assert convert_to_hosts._source_name("https://example.com/") == ""
+    assert converter._source_name("https://example.com/list1.txt") == "list1.txt"
+    assert converter._source_name("https://example.com/a/b/list2.txt") == "list2.txt"
+    assert converter._source_name("https://example.com/") == ""
 
 
 # ---------------------------------------------------------------------------
@@ -244,8 +251,8 @@ def test_source_name() -> None:
 # ---------------------------------------------------------------------------
 
 
-@patch("convert_to_hosts.fetch_domains")
-@patch("convert_to_hosts.load_config")
+@patch("adblock2mikrotik.converter.fetch_domains")
+@patch("adblock2mikrotik.converter.load_config")
 @patch("pathlib.Path.replace")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main(
@@ -265,13 +272,13 @@ def test_main(
         0.5,
     )
 
-    convert_to_hosts.main()
+    converter.main([])
 
     # Verify that the file was opened for writing via pathlib (the temp file)
     mock_file.assert_called_once_with("w", encoding="utf-8")
 
     # Verify the temp file was atomically moved into place over the real output file
-    mock_replace.assert_called_once_with(convert_to_hosts._get_output_file())
+    mock_replace.assert_called_once_with(converter._get_output_file())
 
     # fetch_domains must be called once per source URL
     assert mock_fetch_domains.call_count == len(DEFAULT_URLS)
@@ -291,8 +298,8 @@ def test_main(
     )
 
 
-@patch("convert_to_hosts.fetch_domains")
-@patch("convert_to_hosts.load_config")
+@patch("adblock2mikrotik.converter.fetch_domains")
+@patch("adblock2mikrotik.converter.load_config")
 @patch("pathlib.Path.replace")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_distinct_unique_domains_per_source(
@@ -317,7 +324,7 @@ def test_main_distinct_unique_domains_per_source(
     }
     mock_fetch_domains.side_effect = lambda url: (domains_by_url[url], 0.1)
 
-    convert_to_hosts.main()
+    converter.main([])
 
     handle = mock_file()
     written_text = "".join(call.args[0] for call in handle.write.call_args_list)
@@ -336,8 +343,8 @@ def test_main_distinct_unique_domains_per_source(
     assert "# Converted 1 rules from this source" in written_text
 
 
-@patch("convert_to_hosts.fetch_domains")
-@patch("convert_to_hosts.load_config")
+@patch("adblock2mikrotik.converter.fetch_domains")
+@patch("adblock2mikrotik.converter.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_unfetchable_source_fails_the_run(
     mock_file: MagicMock,
@@ -351,15 +358,15 @@ def test_main_unfetchable_source_fails_the_run(
     mock_fetch_domains.return_value = ([], 0.5)
 
     with pytest.raises(SystemExit) as excinfo:
-        convert_to_hosts.main()
+        converter.main([])
 
     assert excinfo.value.code == 1
     mock_file.assert_not_called()
     assert "failed to fetch" in caplog.text
 
 
-@patch("convert_to_hosts.fetch_domains")
-@patch("convert_to_hosts.load_config")
+@patch("adblock2mikrotik.converter.fetch_domains")
+@patch("adblock2mikrotik.converter.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_unexpected_worker_error_propagates(
     mock_file: MagicMock,
@@ -372,13 +379,13 @@ def test_main_unexpected_worker_error_propagates(
     mock_fetch_domains.side_effect = RuntimeError("boom")
 
     with pytest.raises(RuntimeError, match="boom"):
-        convert_to_hosts.main()
+        converter.main([])
 
     mock_file.assert_not_called()
 
 
-@patch("convert_to_hosts.fetch_domains")
-@patch("convert_to_hosts.load_config")
+@patch("adblock2mikrotik.converter.fetch_domains")
+@patch("adblock2mikrotik.converter.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_partial_source_failure_exits_nonzero(
     mock_file: MagicMock,
@@ -397,7 +404,7 @@ def test_main_partial_source_failure_exits_nonzero(
     )
 
     with pytest.raises(SystemExit) as excinfo:
-        convert_to_hosts.main()
+        converter.main([])
 
     assert excinfo.value.code == 1
     mock_file.assert_not_called()
@@ -405,8 +412,8 @@ def test_main_partial_source_failure_exits_nonzero(
     assert url_bad in caplog.text
 
 
-@patch("convert_to_hosts.fetch_domains")
-@patch("convert_to_hosts.load_config")
+@patch("adblock2mikrotik.converter.fetch_domains")
+@patch("adblock2mikrotik.converter.load_config")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_source_without_supported_rules_exits_nonzero(
     mock_file: MagicMock,
@@ -421,15 +428,15 @@ def test_main_source_without_supported_rules_exits_nonzero(
     mock_fetch_domains.return_value = ([], 0.5)
 
     with pytest.raises(SystemExit) as excinfo:
-        convert_to_hosts.main()
+        converter.main([])
 
     assert excinfo.value.code == 1
     mock_file.assert_not_called()
     assert "no domains fetched" in caplog.text
 
 
-@patch("convert_to_hosts.load_config")
-@patch("convert_to_hosts.fetch_domains")
+@patch("adblock2mikrotik.converter.load_config")
+@patch("adblock2mikrotik.converter.fetch_domains")
 @patch("pathlib.Path.open", new_callable=mock_open)
 def test_main_no_sources_exits_before_conversion(
     mock_file: MagicMock,
@@ -444,7 +451,7 @@ def test_main_no_sources_exits_before_conversion(
     mock_load_config.return_value = []
 
     with pytest.raises(SystemExit) as excinfo:
-        convert_to_hosts.main()
+        converter.main([])
 
     assert excinfo.value.code == 1
     mock_fetch_domains.assert_not_called()
@@ -463,7 +470,7 @@ def test_main_no_sources_exits_before_conversion(
 )
 def test_extract_domain_valid(rule: str, expected: str) -> None:
     """Test extraction of valid domains from AdBlock rules."""
-    assert convert_to_hosts.extract_domain(rule) == expected
+    assert converter.extract_domain(rule) == expected
 
 
 @pytest.mark.parametrize(
@@ -480,7 +487,7 @@ def test_extract_domain_valid(rule: str, expected: str) -> None:
 )
 def test_extract_domain_invalid(rule: str) -> None:
     """Test that invalid/unsupported Adblock rules return None."""
-    assert convert_to_hosts.extract_domain(rule) is None
+    assert converter.extract_domain(rule) is None
 
 
 def test_write_output_direct(tmp_path: Path) -> None:
@@ -489,7 +496,7 @@ def test_write_output_direct(tmp_path: Path) -> None:
     url = "https://example.com/list.txt"
     source_data = {url: ["example.com", "test.com"]}
 
-    convert_to_hosts.write_output(output_file, source_data, 2)
+    converter.write_output(output_file, source_data, 2)
 
     content = output_file.read_text()
 
@@ -513,7 +520,7 @@ def test_write_output_no_leftover_temp_file(tmp_path: Path) -> None:
     output_file = tmp_path / "hosts.txt"
     source_data = {"https://example.com/list.txt": ["example.com"]}
 
-    convert_to_hosts.write_output(output_file, source_data, 1)
+    converter.write_output(output_file, source_data, 1)
 
     assert output_file.exists()
     assert list(tmp_path.glob(".*.tmp")) == []
@@ -528,7 +535,7 @@ def test_write_output_preserves_existing_file_on_failure(tmp_path: Path) -> None
 
     with patch("pathlib.Path.open", side_effect=OSError("disk full")):
         with pytest.raises(OSError, match="disk full"):
-            convert_to_hosts.write_output(output_file, source_data, 1)
+            converter.write_output(output_file, source_data, 1)
 
     # Original file untouched, no leftover temp file
     assert output_file.read_text() == "previous good content\n"
@@ -550,7 +557,127 @@ def test_write_output_removes_temp_file_on_mid_write_failure(tmp_path: Path) -> 
     }
 
     with pytest.raises(OSError, match="disk full"):
-        convert_to_hosts.write_output(output_file, source_data, 1)
+        converter.write_output(output_file, source_data, 1)
 
     assert output_file.read_text() == "previous good content\n"
     assert list(tmp_path.glob(".*.tmp")) == []
+
+
+# ---------------------------------------------------------------------------
+# Command-line interface
+# ---------------------------------------------------------------------------
+
+
+@patch("adblock2mikrotik.converter.fetch_domains")
+def test_cli_version_exits_without_running(
+    mock_fetch_domains: MagicMock, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """--version prints the package version and never starts a conversion."""
+    with pytest.raises(SystemExit) as excinfo:
+        converter.main(["--version"])
+
+    assert excinfo.value.code == 0
+    assert capsys.readouterr().out.strip() == f"adblock2mikrotik {__version__}"
+    mock_fetch_domains.assert_not_called()
+
+
+@patch("adblock2mikrotik.converter.fetch_domains")
+def test_cli_help_exits_without_running(
+    mock_fetch_domains: MagicMock, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """Regression: --help used to be ignored and ran (and overwrote hosts.txt)."""
+    with pytest.raises(SystemExit) as excinfo:
+        converter.main(["--help"])
+
+    assert excinfo.value.code == 0
+    assert "--config" in capsys.readouterr().out
+    mock_fetch_domains.assert_not_called()
+
+
+@patch("adblock2mikrotik.converter.fetch_domains")
+def test_cli_unknown_argument_is_rejected(mock_fetch_domains: MagicMock) -> None:
+    """Unknown arguments are a usage error (exit 2), not silently ignored."""
+    with pytest.raises(SystemExit) as excinfo:
+        converter.main(["--no-such-option"])
+
+    assert excinfo.value.code == 2
+    mock_fetch_domains.assert_not_called()
+
+
+@patch("adblock2mikrotik.converter.fetch_domains")
+def test_cli_missing_explicit_config_is_an_error(
+    mock_fetch_domains: MagicMock,
+    tmp_path: Path,
+    default_config: Path,
+    caplog: pytest.LogCaptureFixture,
+) -> None:
+    """A --config file that doesn't exist must fail the run — falling back to
+    the defaults would silently publish sources the user didn't ask for."""
+    with pytest.raises(SystemExit) as excinfo:
+        converter.main(["--config", str(tmp_path / "missing.toml")])
+
+    assert excinfo.value.code == 1
+    assert "not found" in caplog.text
+    mock_fetch_domains.assert_not_called()
+
+
+@patch("adblock2mikrotik.converter.fetch_domains")
+def test_cli_config_and_output_options(
+    mock_fetch_domains: MagicMock,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """--config selects the sources and --output the destination, taking
+    precedence over ./config.toml and $OUTPUT_DIR."""
+    monkeypatch.setenv("OUTPUT_DIR", str(tmp_path / "ignored"))
+    config = tmp_path / "custom.toml"
+    config.write_text('[sources]\nurls = ["https://example.com/custom.txt"]\n')
+    output = tmp_path / "out" / "blocklist.txt"
+    output.parent.mkdir()
+    mock_fetch_domains.return_value = (["ads.example.com"], 0.1)
+
+    converter.main(["-c", str(config), "-o", str(output), "-q"])
+
+    mock_fetch_domains.assert_called_once_with("https://example.com/custom.txt")
+    content = output.read_text()
+    assert "# Source: https://example.com/custom.txt" in content
+    assert "0.0.0.0 ads.example.com" in content
+    assert not (tmp_path / "ignored").exists()
+
+
+@patch("adblock2mikrotik.converter.fetch_domains")
+def test_cli_dry_run_does_not_write(
+    mock_fetch_domains: MagicMock,
+    tmp_path: Path,
+    caplog: pytest.LogCaptureFixture,
+) -> None:
+    """--dry-run does the whole conversion but leaves the output untouched."""
+    config = tmp_path / "config.toml"
+    config.write_text('[sources]\nurls = ["https://example.com/list.txt"]\n')
+    output = tmp_path / "hosts.txt"
+    output.write_text("previous good content\n")
+    mock_fetch_domains.return_value = (["ads.example.com"], 0.1)
+
+    converter.main(["--dry-run", "-c", str(config), "-o", str(output)])
+
+    mock_fetch_domains.assert_called_once()
+    assert output.read_text() == "previous good content\n"
+    assert list(tmp_path.glob(".*.tmp")) == []
+    assert "Total unique domains across all sources: 1" in caplog.text
+    assert "Dry run" in caplog.text
+
+
+@patch("adblock2mikrotik.converter.fetch_domains")
+def test_cli_dry_run_still_fails_on_unfetchable_source(
+    mock_fetch_domains: MagicMock, tmp_path: Path
+) -> None:
+    """A dry run reports the same failures (exit 1) as a real run, so it can be
+    used to validate a config before switching to it."""
+    config = tmp_path / "config.toml"
+    config.write_text('[sources]\nurls = ["https://example.com/list.txt"]\n')
+    mock_fetch_domains.return_value = ([], 0.1)
+
+    with pytest.raises(SystemExit) as excinfo:
+        converter.main(["--dry-run", "-c", str(config)])
+
+    assert excinfo.value.code == 1
