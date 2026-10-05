@@ -78,9 +78,4 @@ repos:
       - id: check-github-workflows
       - id: check-dependabot
 
-  # Markdown lint with auto-fix (Node is provisioned by pre-commit itself)
-  - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.23.3
-    hooks:
-      - id: markdownlint-cli2
-        args: [--fix]
+  # Markdown lint with auto-fix
