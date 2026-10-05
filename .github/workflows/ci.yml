@@ -1,0 +1,86 @@
+name: CI
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  # Check-only: nothing is fixed or committed here. Formatting is fixed locally
+  # by the pre-commit hook (see README → Development); CI fails if it wasn't run.
+  lint-and-test:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: lint-and-test-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --locked
+
+      - name: Cache pre-commit environments
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-${{ runner.os }}-${{ hashFiles('.pre-commit-config.yaml') }}
+
+      # Same hooks as the local git hook (ruff check/format, markdownlint, file
+      # hygiene, uv.lock, workflow schemas). Any hook that would modify a file
+      # fails the job and prints the diff, so an unformatted PR goes red.
+      - name: Run pre-commit checks
+        run: uv run pre-commit run --all-files --show-diff-on-failure --color always
+
+      - name: Run mypy
+        run: uv run mypy .
+
+      - name: Run tests
+        run: uv run pytest -v
+
+  # Also runs on PRs, so a change that breaks the image is caught before merge.
+  # Docker layers are cached using the GitHub Actions cache.
+  docker-build:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: docker-build-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Build Docker Image with GHA Cache
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: false
+          load: true
+          tags: adblock2mikrotik:ci-test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # No network: checks the installed package imports and that the bundled
+      # default config (package data) made it into the image and is valid.
+      - name: Verify image — package and bundled config, no network
+        run: |
+          docker run --rm --network none \
+            --entrypoint python adblock2mikrotik:ci-test \
+            -c "from adblock2mikrotik import converter as c; assert c._read_source_urls(c._DEFAULT_CONFIG_FILE); print('Image OK')"

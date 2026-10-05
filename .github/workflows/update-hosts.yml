@@ -1,0 +1,58 @@
+name: Update hosts
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-hosts:
+    runs-on: ubuntu-latest
+    # Only this job can push generated hosts.txt updates.
+    permissions:
+      contents: write
+    # An in-flight update always finishes; a second trigger waits instead of
+    # racing on the push.
+    concurrency:
+      group: update-hosts
+      cancel-in-progress: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --locked
+
+      - name: Run conversion script
+        run: uv run adblock2mikrotik
+
+      - name: Commit and push hosts.txt
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # The "# Last modified:" header line changes on every run; ignore it so
+          # a commit is made only when the domain list itself changed.
+          if ! git diff --quiet -I '^# Last modified:' -- hosts.txt; then
+            git add hosts.txt
+            git commit -m "Update hosts.txt via schedule"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "No domain changes (only the timestamp) — nothing to commit."
+          fi
