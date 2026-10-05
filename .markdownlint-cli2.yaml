@@ -1,4 +1,0 @@
-# Shared by the pre-commit hook and the markdownlint step in CI.
-config:
-  # Long lines are fine in Markdown (links, tables, prose) — same as ruff's E501 ignore
-  MD013: false
