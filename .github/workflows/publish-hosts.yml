@@ -64,7 +64,7 @@ jobs:
       - name: Deploy to GitHub Pages
         if: steps.change.outputs.changed == 'true'
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       - name: Skip deployment when the list is unchanged
         if: steps.change.outputs.changed == 'false'
