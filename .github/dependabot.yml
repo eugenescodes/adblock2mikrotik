@@ -18,6 +18,3 @@ updates:
     directory: /
     schedule:
       interval: weekly
-    # At most one open Docker update PR at a time (python base image, uv image);
-    # the next one is opened after it's merged or closed. 0 would disable them.
-    open-pull-requests-limit: 1
