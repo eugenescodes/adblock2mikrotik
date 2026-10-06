@@ -275,7 +275,7 @@ def write_output(
         "# Title: Unified DNS blocklist optimized for RouterOS\n"
         "#\n"
         "# URL to add in RouterOS:\n"
-        "# https://raw.githubusercontent.com/eugenescodes/adblock2mikrotik/refs/heads/main/hosts.txt\n"
+        "# https://eugenescodes.github.io/adblock2mikrotik/hosts.txt\n"
         "#\n"
         "# Homepage: https://github.com/eugenescodes/adblock2mikrotik\n"
         "# License: https://github.com/eugenescodes/adblock2mikrotik/blob/main/LICENSE\n"
