@@ -158,9 +158,9 @@ uv run adblock2mikrotik --dry-run -c new.toml && mv new.toml config.toml
 ### Add adlist via URL
 
 ```routeros
-/ip/dns/adlist add
-url=https://eugenescodes.github.io/adblock2mikrotik/hosts.txt
-ssl-verify=no
+/ip/dns/adlist add \
+    url=https://eugenescodes.github.io/adblock2mikrotik/hosts.txt \
+    ssl-verify=no
 ```
 
 ### Optional: enable SSL verification
@@ -170,10 +170,13 @@ If you want to use `ssl-verify=yes`, you can download and import
 commands:
 
 ```routeros
-/tool fetch url=https://curl.se/ca/cacert.pem /certificate import
-file-name=cacert.pem passphrase="" /ip/dns/adlist add
-url=https://eugenescodes.github.io/adblock2mikrotik/hosts.txt
-ssl-verify=yes
+/tool fetch url=https://curl.se/ca/cacert.pem
+
+/certificate import file-name=cacert.pem passphrase=""
+
+/ip/dns/adlist add \
+    url=https://eugenescodes.github.io/adblock2mikrotik/hosts.txt \
+    ssl-verify=yes
 ```
 
 See also the official MikroTik documentation:
