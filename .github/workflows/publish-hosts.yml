@@ -2,20 +2,21 @@ name: Publish hosts to GitHub Pages
 
 permissions:
   contents: read
+  actions: read
 
 on:
   workflow_run:
     workflows: ["Update hosts"]
     types: [completed]
     branches: [main]
-  workflow_dispatch:
 
 jobs:
   publish:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      actions: read
       pages: write
       id-token: write
     concurrency:
@@ -25,40 +26,46 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
+      - name: Download generated list
+        uses: actions/download-artifact@v4
         with:
-          ref: main
+          name: hosts-publish-${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          run-id: ${{ github.event.workflow_run.id }}
+          path: artifact
 
-      - name: Set up Python
-        uses: actions/setup-python@v7
-        with:
-          python-version-file: ".python-version"
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
-        with:
-          enable-cache: true
-
-      - name: Install dependencies
-        run: uv sync --locked
-
-      - name: Generate hosts.txt
-        run: uv run adblock2mikrotik
+      - name: Check whether the list changed
+        id: change
+        run: |
+          value="$(cat artifact/publish-changed.txt)"
+          if [[ "$value" != "true" && "$value" != "false" ]]; then
+            echo "Invalid change marker: $value" >&2
+            exit 1
+          fi
+          echo "changed=$value" >> "$GITHUB_OUTPUT"
 
       - name: Prepare Pages artifact
+        if: steps.change.outputs.changed == 'true'
         run: |
           mkdir -p _site
-          cp hosts.txt _site/hosts.txt
+          cp artifact/hosts.txt _site/hosts.txt
 
       - name: Configure GitHub Pages
+        if: steps.change.outputs.changed == 'true'
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
+        if: steps.change.outputs.changed == 'true'
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 
       - name: Deploy to GitHub Pages
+        if: steps.change.outputs.changed == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Skip deployment when the list is unchanged
+        if: steps.change.outputs.changed == 'false'
+        run: echo "The blocklist has not changed; keeping the current Pages deployment."

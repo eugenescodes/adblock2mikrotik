@@ -8,7 +8,7 @@ default_install_hook_types: [pre-commit, pre-push]
 # Hooks without an explicit `stages:` run on commit only (not again on push).
 default_stages: [pre-commit]
 
-# hosts.txt is a generated 6 MB artifact committed by CI — never touch it.
+# Ignore generated output in case a local run leaves it in the repository root.
 exclude: ^hosts\.txt$
 
 repos:
