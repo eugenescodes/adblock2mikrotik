@@ -53,7 +53,7 @@ jobs:
 
       - name: Configure GitHub Pages
         if: steps.change.outputs.changed == 'true'
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Upload Pages artifact
         if: steps.change.outputs.changed == 'true'
