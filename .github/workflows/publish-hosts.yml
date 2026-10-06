@@ -27,7 +27,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download generated list
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: hosts-publish-${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
