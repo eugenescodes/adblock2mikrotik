@@ -5,25 +5,19 @@ permissions:
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
   update-hosts:
     runs-on: ubuntu-latest
-    # Only this job can push generated hosts.txt updates.
-    permissions:
-      contents: write
-    # An in-flight update always finishes; a second trigger waits instead of
-    # racing on the push.
+    # Avoid concurrent runs comparing and publishing against the same Pages version.
     concurrency:
       group: update-hosts
       cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -38,21 +32,58 @@ jobs:
       - name: Install dependencies
         run: uv sync --locked
 
-      - name: Run conversion script
+      - name: Generate hosts.txt
         run: uv run adblock2mikrotik
 
-      - name: Commit and push hosts.txt
+      - name: Compare with published list
+        id: compare
+        shell: bash
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          set -euo pipefail
 
-          # The "# Last modified:" header line changes on every run; ignore it so
-          # a commit is made only when the domain list itself changed.
-          if ! git diff --quiet -I '^# Last modified:' -- hosts.txt; then
-            git add hosts.txt
-            git commit -m "Update hosts.txt via schedule"
-            git pull --rebase origin main
-            git push origin main
+          published_file="$RUNNER_TEMP/published-hosts.txt"
+          published_url="https://eugenescodes.github.io/adblock2mikrotik/hosts.txt?run=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          status="$(curl --silent --show-error --location \
+            --retry 3 \
+            --output "$published_file" \
+            --write-out '%{http_code}' \
+            "$published_url")"
+
+          if [[ "$status" == "404" ]]; then
+            echo "Published list not found; this will be the initial deployment."
+            changed=true
+          elif [[ "$status" != "200" ]]; then
+            echo "Unexpected HTTP status while checking published list: $status" >&2
+            exit 1
           else
-            echo "No domain changes (only the timestamp) — nothing to commit."
+            set +e
+            diff -u \
+              <(sed '/^# Last modified:/d' hosts.txt) \
+              <(sed '/^# Last modified:/d' "$published_file") \
+              > "$RUNNER_TEMP/hosts.diff"
+            diff_status=$?
+            set -e
+
+            case "$diff_status" in
+              0) changed=false ;;
+              1) changed=true ;;
+              *)
+                cat "$RUNNER_TEMP/hosts.diff" >&2
+                echo "Failed to compare generated and published hosts lists." >&2
+                exit "$diff_status"
+                ;;
+            esac
           fi
+
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          echo "$changed" > publish-changed.txt
+
+      - name: Upload generated list for Pages workflow
+        uses: actions/upload-artifact@v4
+        with:
+          name: hosts-publish-${{ github.run_id }}
+          path: |
+            hosts.txt
+            publish-changed.txt
+          if-no-files-found: error
+          retention-days: 1
