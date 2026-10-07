@@ -6,11 +6,11 @@ import time
 import tomllib
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import UTC, datetime
+from http.client import HTTPException
 from importlib.resources import files
 from importlib.resources.abc import Traversable
 from pathlib import Path
-
-import requests
+from urllib.request import urlopen
 
 from adblock2mikrotik import __version__
 
@@ -145,10 +145,6 @@ def fetch_domains(url: str) -> tuple[list[str], float]:
     validated domain — while still streaming, so raw rule text is never
     accumulated in memory; only the much smaller domain strings are kept.
 
-    A dedicated Session is created per call so each thread has its own
-    connection pool without sharing mutable state across threads
-    (requests.Session is not thread-safe).
-
     Args:
         url: The remote URL to fetch rules from.
 
@@ -164,37 +160,27 @@ def fetch_domains(url: str) -> tuple[list[str], float]:
         Attempts up to 3 times with exponential backoff: 2s after 1st failure, 4s after 2nd.
     """
     fetch_start = time.monotonic()
-    last_exception = None
+    last_exception: Exception | None = None
 
-    with requests.Session() as session:
-        for attempt in range(3):
-            try:
-                with session.get(url, timeout=(3, 10), stream=True) as response:
-                    response.raise_for_status()
-                    domains: list[str] = []
-                    for raw_line in response.iter_lines(decode_unicode=False):
-                        line = (
-                            raw_line.decode("utf-8", errors="replace")
-                            if isinstance(raw_line, bytes)
-                            else str(raw_line)
-                        )
-                        # Convert to the final representation (a validated
-                        # domain) during streaming; raw rule lines are never
-                        # retained.
-                        domain = extract_domain(line)
-                        if domain:
-                            domains.append(domain)
+    for attempt in range(3):
+        try:
+            with urlopen(url, timeout=10) as response:
+                domains: list[str] = []
+                for raw_line in response:
+                    domain = extract_domain(raw_line.decode("utf-8", errors="replace"))
+                    if domain:
+                        domains.append(domain)
 
-                    elapsed = time.monotonic() - fetch_start
-                    return domains, elapsed
-            except requests.RequestException as e:
-                last_exception = e
-                if attempt < 2:
-                    wait = 2 ** (attempt + 1)
-                    logger.warning(
-                        f"Attempt {attempt + 1} failed for {url}: {e}. Retrying in {wait}s..."
-                    )
-                    time.sleep(wait)
+                elapsed = time.monotonic() - fetch_start
+                return domains, elapsed
+        except (OSError, HTTPException) as e:
+            last_exception = e
+            if attempt < 2:
+                wait = 2 ** (attempt + 1)
+                logger.warning(
+                    f"Attempt {attempt + 1} failed for {url}: {e}. Retrying in {wait}s..."
+                )
+                time.sleep(wait)
 
     logger.error(f"Error fetching {url} after 3 attempts: {last_exception}")
     elapsed = time.monotonic() - fetch_start
@@ -451,11 +437,10 @@ def main(argv: list[str] | None = None) -> None:
 
     logger.info(f"Total unique domains across all sources: {len(unique_domains):,}")
 
-    elapsed_time = time.monotonic() - start_time
     if args.dry_run:
         logger.info(f"Dry run: {output_file} was not written.")
     else:
         write_output(output_file, source_data, len(unique_domains))
-        elapsed_time = time.monotonic() - start_time
         logger.info(f"Done! Written to: {output_file}")
+    elapsed_time = time.monotonic() - start_time
     logger.info(f"Elapsed: {elapsed_time:.2f}s")

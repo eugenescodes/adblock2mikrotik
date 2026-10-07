@@ -450,9 +450,8 @@ uv run pre-commit run --all-files   # make sure everything still passes
 ```
 
 > [!NOTE]
-> Development dependencies (ruff, mypy, pytest, pre-commit, and
-> `types-requests`) are **not** included in the Docker image. The Docker image
-> only includes production dependencies for running the converter.
+> Development dependencies (ruff, mypy, pytest, and pre-commit) are **not**
+> included in the Docker image, which contains only production dependencies.
 
 ## Contributing
 

@@ -2,9 +2,9 @@ import os
 from collections.abc import Callable, Iterator
 from pathlib import Path
 from unittest.mock import MagicMock, mock_open, patch
+from urllib.error import URLError
 
 import pytest
-import requests
 
 from adblock2mikrotik import __version__, converter
 
@@ -13,44 +13,35 @@ from adblock2mikrotik import __version__, converter
 # ---------------------------------------------------------------------------
 
 
-@patch("adblock2mikrotik.converter.requests.Session")
-def test_fetch_domains_success(mock_session_cls: MagicMock) -> None:
+@patch("adblock2mikrotik.converter.urlopen")
+def test_fetch_domains_success(mock_urlopen: MagicMock) -> None:
     """Test successful fetch and in-stream conversion of domains on first attempt."""
     mock_response = MagicMock()
-    mock_response.status_code = 200
-    mock_response.iter_lines.return_value = [
-        "||example.com^",
-        "# comment",
-        "  ",
-        "||test.com^",
-    ]
-    mock_response.raise_for_status = MagicMock()
-
-    mock_session = MagicMock()
-    mock_session.get.return_value.__enter__.return_value = mock_response
-    mock_session_cls.return_value.__enter__.return_value = mock_session
+    mock_response.__iter__.return_value = iter(
+        [b"||example.com^", b"# comment", b"  ", b"||test.com^"]
+    )
+    mock_urlopen.return_value.__enter__.return_value = mock_response
 
     result, elapsed = converter.fetch_domains("http://fakeurl")
     assert result == ["example.com", "test.com"]
     assert isinstance(elapsed, float)
+    mock_urlopen.assert_called_once_with("http://fakeurl", timeout=10)
 
 
 @patch("adblock2mikrotik.converter.time.sleep")
-@patch("adblock2mikrotik.converter.requests.Session")
+@patch("adblock2mikrotik.converter.urlopen")
 def test_fetch_domains_retries_then_fails(
-    mock_session_cls: MagicMock,
+    mock_urlopen: MagicMock,
     mock_sleep: MagicMock,
     caplog: pytest.LogCaptureFixture,
 ) -> None:
     """Test fetch retry logic: 3 attempts with exponential backoff, then failure."""
-    mock_session = MagicMock()
-    mock_session.get.side_effect = requests.RequestException("Network error")
-    mock_session_cls.return_value.__enter__.return_value = mock_session
+    mock_urlopen.side_effect = URLError("Network error")
 
     result, elapsed = converter.fetch_domains("http://fakeurl")
 
     assert result == []
-    assert mock_session.get.call_count == 3
+    assert mock_urlopen.call_count == 3
     assert mock_sleep.call_count == 2
     mock_sleep.assert_any_call(2)
     mock_sleep.assert_any_call(4)
@@ -363,6 +354,7 @@ def test_main_unfetchable_source_fails_the_run(
     assert excinfo.value.code == 1
     mock_file.assert_not_called()
     assert "failed to fetch" in caplog.text
+    assert "no domains fetched" in caplog.text
 
 
 @patch("adblock2mikrotik.converter.fetch_domains")
@@ -410,29 +402,6 @@ def test_main_partial_source_failure_exits_nonzero(
     mock_file.assert_not_called()
     assert "1 of 2 source(s) failed to fetch" in caplog.text
     assert url_bad in caplog.text
-
-
-@patch("adblock2mikrotik.converter.fetch_domains")
-@patch("adblock2mikrotik.converter.load_config")
-@patch("pathlib.Path.open", new_callable=mock_open)
-def test_main_source_without_supported_rules_exits_nonzero(
-    mock_file: MagicMock,
-    mock_load_config: MagicMock,
-    mock_fetch_domains: MagicMock,
-    caplog: pytest.LogCaptureFixture,
-) -> None:
-    """Every attempt succeeded, but the source contained no supported ||domain^
-    rule — fetch_domains returns [] and the run must fail instead of exiting 0
-    with a stale hosts.txt in place."""
-    mock_load_config.return_value = ["https://example.com/list.txt"]
-    mock_fetch_domains.return_value = ([], 0.5)
-
-    with pytest.raises(SystemExit) as excinfo:
-        converter.main([])
-
-    assert excinfo.value.code == 1
-    mock_file.assert_not_called()
-    assert "no domains fetched" in caplog.text
 
 
 @patch("adblock2mikrotik.converter.load_config")

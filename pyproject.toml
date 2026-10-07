@@ -4,9 +4,6 @@ version = "0.1.0"
 description = "Convert AdBlock filter lists to MikroTik RouterOS DNS adlist format"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "requests>=2.34.2",
-]
 
 [project.scripts]
 adblock2mikrotik = "adblock2mikrotik.converter:main"
@@ -20,17 +17,12 @@ dev = [
     "ruff>=0.16.10",
     "pytest>=9.1.1",
     "mypy>=2.4.0",
-    "types-requests>=2.33.0",
     "pre-commit>=4.6.2",
 ]
 
 [tool.mypy]
 python_version = "3.12"
 strict = true
-
-[tool.ruff]
-target-version = "py312"
-line-length = 88  # same default as Black
 
 [tool.pytest.ini_options]
 log_level = "INFO"
@@ -39,11 +31,3 @@ log_level = "INFO"
 # E/W — pycodestyle, F — pyflakes, I — isort, UP — pyupgrade
 select = ["E", "W", "F", "I", "UP"]
 ignore = ["E501"] # Ignore line length errors
-
-# Allow unused variables when underscore-prefixed.
-dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-
-[tool.ruff.format]
-# Use double quotes and Black-compatible style
-quote-style = "double"
-indent-style = "space"
