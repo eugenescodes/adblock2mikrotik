@@ -357,7 +357,8 @@ The hook runs on the staged files:
 What happens next:
 
 - **All checks pass** → the commit is created as usual.
-- **A hook fixed something** → the commit is stopped so you can see what changed. The fixes are already in your files — just stage them and commit again: <!-- rumdl-disable-line line-length -->
+- **A hook fixed something** → the commit is stopped so you can see what changed.
+  The fixes are already in your files — just stage them and commit again:
 
   ```bash
   git add -u
@@ -412,7 +413,8 @@ enforced in two layers:
 All files must be UTF-8. There is no separate check for that: Ruff, mypy,
 markdownlint and the TOML/YAML parsers already fail on anything else.
 
-> [!TIP] **Windows:** no special git setup is needed — `.gitattributes` takes
+> [!TIP]
+> **Windows:** no special git setup is needed — `.gitattributes` takes
 > precedence over your `core.autocrlf` setting. Just make sure your editor saves
 > files as UTF-8 (without BOM); if it doesn't, the hook fixes it.
 
