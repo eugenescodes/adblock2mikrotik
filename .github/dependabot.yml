@@ -9,6 +9,14 @@ updates:
     cooldown:
       default-days: 7
 
+  # Configuration for pre-commit hooks
+  - package-ecosystem: pre-commit
+    directory: /
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 7
+
   # Configuration for Python dependencies managed by uv
   - package-ecosystem: uv
     directory: /

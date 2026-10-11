@@ -24,10 +24,25 @@ dev = [
 python_version = "3.12"
 strict = true
 
-[tool.pytest.ini_options]
+[tool.pytest]
+addopts = ["-ra", "-q"]
+testpaths = ["tests"]
 log_level = "INFO"
 
+[tool.ruff]
+target-version = "py312"
+line-length = 79
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
 [tool.ruff.lint]
-# E/W — pycodestyle, F — pyflakes, I — isort, UP — pyupgrade
-select = ["E", "W", "F", "I", "UP"]
-ignore = ["E501"] # Ignore line length errors
+select = ["E", "W", "F", "I", "UP", "B", "C4", "SIM", "RET", "RUF", "S", "N", "ANN", "PT", "PTH", "PERF"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
+
+[tool.ruff.lint.pycodestyle]
+max-doc-length = 72

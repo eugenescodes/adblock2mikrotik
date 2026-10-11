@@ -5,7 +5,6 @@
 # Run the commit hooks on the whole repo manually: uv run pre-commit run --all-files
 
 default_install_hook_types: [pre-commit, pre-push]
-# Hooks without an explicit `stages:` run on commit only (not again on push).
 default_stages: [pre-commit]
 
 # Ignore generated output in case a local run leaves it in the repository root.
@@ -20,56 +19,60 @@ repos:
       - id: end-of-file-fixer
       - id: mixed-line-ending  # CRLF → LF (complements .gitattributes)
         args: [--fix=lf]
-      - id: fix-byte-order-marker  # strip the UTF-8 BOM some Windows editors add
-      - id: check-case-conflict  # README.md vs Readme.md breaks on macOS/Windows
+      - id: fix-byte-order-marker
+      - id: check-case-conflict
       - id: check-yaml
       - id: check-toml
       - id: check-merge-conflict
       - id: check-added-large-files  # hosts.txt is excluded above
       - id: detect-private-key
+      - id: check-symlinks
+      - id: debug-statements
 
-  # Ruff runs from the project venv, so its version always matches uv.lock
+  # Ruff runs from the project env, so its version always matches uv.lock
   # (the same one CI uses) instead of being pinned a second time here.
   - repo: local
     hooks:
       - id: ruff-check
         name: ruff check --fix
         entry: uv run ruff check --fix --exit-non-zero-on-fix
-        language: unsupported
+        language: system
         types_or: [python, pyi]
+
       - id: ruff-format
         name: ruff format
         entry: uv run ruff format
-        language: unsupported
+        language: system
         types_or: [python, pyi]
+
       # pyproject.toml edited by hand without `uv lock` → uv.lock is stale and
       # `uv sync --locked` (CI) / UV_FROZEN (Docker) would fail later.
       - id: uv-lock-check
         name: uv lock --check
         entry: uv lock --check
-        language: unsupported
+        language: system
         files: ^(pyproject\.toml|uv\.lock)$
         pass_filenames: false
 
   # Report-only checks on `git push`: they can't fix anything, so running them
-  # on every commit would just block work-in-progress commits. CI runs them too
-  # (as separate steps — `pre-commit run` in CI only runs the commit stage).
+  # on every commit would just block work-in-progress commits. CI runs them too.
   - repo: local
     hooks:
       - id: mypy
         name: mypy
         entry: uv run mypy .
-        language: unsupported
+        language: system
         pass_filenames: false
         always_run: true
-        stages: [pre-push]
+        stages: [pre-commit, pre-push]
+
       - id: pytest
         name: pytest
         entry: uv run pytest -q
-        language: unsupported
+        language: system
         pass_filenames: false
         always_run: true
-        stages: [pre-push]
+        stages: [pre-commit, pre-push]
 
   # Schema validation for GitHub Actions workflows and Dependabot config
   - repo: https://github.com/python-jsonschema/check-jsonschema

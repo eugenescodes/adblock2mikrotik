@@ -8,13 +8,14 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
+concurrency:
+  # Avoid concurrent runs comparing and publishing against the same Pages version.
+  group: update-hosts
+  cancel-in-progress: false
+
 jobs:
   update-hosts:
     runs-on: ubuntu-latest
-    # Avoid concurrent runs comparing and publishing against the same Pages version.
-    concurrency:
-      group: update-hosts
-      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

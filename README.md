@@ -29,12 +29,14 @@ storage).
 
 ## Features
 
-- Converts `||example.com^` rules to MikroTik DNS adlist format (`0.0.0.0 example.com`)
-- Deduplicates entries across all sources, in the order the sources are configured
-- Validates domains against RFC label rules (rejects
-  double-dots, leading/trailing hyphens)
-- Extracts and validates domains from each rule while streaming the download — raw
-  rule text is never held in memory
+- Converts `||example.com^` rules to MikroTik DNS adlist format
+  (`0.0.0.0 example.com`)
+- Deduplicates entries across all sources, in the order the sources are
+  configured
+- Validates ASCII domain names and label lengths; rejects malformed labels
+  and IDN/punycode TLDs
+- Extracts and validates domains from each rule while streaming the download —
+  raw rule text is never held in memory
 - Writes `hosts.txt` atomically — a failed or interrupted run never leaves a
   partial file in place
 - Exits non-zero, writing nothing, if any configured source can't be fetched or
@@ -236,10 +238,11 @@ unusable.
 
 > [!NOTE]
 > `config.toml.example` must stay inside the package directory
-> (`src/adblock2mikrotik/`) — it's the built-in fallback, not just documentation.
-> It is shipped as package data and read via `importlib.resources`, so it is found
-> wherever the package is installed (virtual environment, Docker image, `uvx`).
-> A test checks that it is present and valid.
+> (`src/adblock2mikrotik/`) — it's the built-in fallback, not just
+> documentation. It is shipped as package data and read via
+> `importlib.resources`, so it is found wherever the package is installed
+> (virtual environment, Docker image, `uvx`). A test checks that it is present
+> and valid.
 
 #### Using a custom `config.toml` with Docker
 
@@ -264,7 +267,8 @@ domain rules are converted; everything else in a list — comments, cosmetic
 filters (`##`), exception rules (`@@||…`), regular expressions and wildcards —
 is skipped. A source that contains no supported rules at all fails the run.
 
-For more Hagezi lists, visit the [Hagezi DNS blocklists repository](https://github.com/hagezi/dns-blocklists).
+For more Hagezi lists, visit the
+[Hagezi DNS blocklists repository](https://github.com/hagezi/dns-blocklists).
 
 ## Development
 
@@ -277,7 +281,9 @@ hooks.
 
 ### Project structure
 
-The project uses the [`src` layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/) and is built with `uv_build`:
+The project uses the
+[`src` layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)
+and is built with `uv_build`:
 
 ```text
 src/adblock2mikrotik/
@@ -299,7 +305,8 @@ from there.
 
 ### Prerequisites
 
-Install `uv` (replaces `pip` and `venv`) [more info about uv](https://docs.astral.sh/uv/getting-started/installation/):
+Install `uv` (replaces `pip` and `venv`)
+[more info about uv](https://docs.astral.sh/uv/getting-started/installation/):
 
 ```bash
 # macOS / Linux
@@ -326,39 +333,42 @@ on every `git push`. There is nothing to remember or run by hand.
 
 ### How the checks are organized
 
-Checks run at three points. The rule of thumb: fast checks that
-**fix files themselves** run on every commit; checks that can **only report** a
-problem run on push; CI runs everything and is the final gate.
+Checks run at three points. Formatting and lint hooks can fix files on commit;
+`mypy` and `pytest` report problems on both commit and push. CI runs the checks
+across the repository and builds the Docker image.
 
 | When | What runs | Fixes automatically? |
 | --- | --- | --- |
-| `git commit` | Formatting, linting, file hygiene (see [below](#on-every-commit)) | Yes, where possible |
+| `git commit` | Formatting, linting, file hygiene, mypy, pytest | Yes, where possible |
 | `git push` | mypy, pytest | No — you fix the reported problem |
-| CI (every push and Pull Request) | All of the above | No — check-only, fails with an explanation |
+| CI (push to `main`, Pull Request to `main`, or manual) | Repository checks and Docker build | Fix-capable hooks may modify the runner checkout; CI does not commit changes |
 
 ### On every commit
 
-The hook runs on the staged files:
+File-specific hooks run on staged files. `mypy` and `pytest` run against the
+whole project on every commit.
 
 | Check | What it does |
 | --- | --- |
 | `ruff check --fix` | Lints Python and auto-fixes what it can (import order, outdated syntax, unused imports, …) |
 | `ruff format` | Formats Python code |
-| `markdownlint-cli2 --fix` | Lints and auto-fixes Markdown files |
+| `rumdl --fix` | Lints and auto-fixes Markdown files |
 | `trailing-whitespace`, `end-of-file-fixer` | Remove trailing spaces, ensure a final newline |
 | `mixed-line-ending` | Converts Windows line endings (CRLF) to LF |
 | `fix-byte-order-marker` | Removes the invisible UTF-8 BOM some Windows editors add at the start of a file |
 | `check-case-conflict` | Blocks file names that differ only in case (`README.md` vs `Readme.md`), which break on macOS/Windows |
 | `check-yaml`, `check-toml`, `check-merge-conflict` | Catch broken config files and leftover merge markers |
 | `check-added-large-files`, `detect-private-key` | Block accidentally committed large files and private keys |
+| `check-symlinks`, `debug-statements` | Catch broken symlinks and leftover Python debugger statements |
 | `uv lock --check` | Fails if `pyproject.toml` changed but `uv.lock` wasn't updated — run `uv lock` |
 | `check-github-workflows`, `check-dependabot` | Validate `.github/` files against their official schemas |
 
 What happens next:
 
 - **All checks pass** → the commit is created as usual.
-- **A hook fixed something** → the commit is stopped so you can see what changed.
-  The fixes are already in your files — just stage them and commit again:
+- **A hook fixed something** → the commit is stopped so you can see what
+  changed. The fixes are already in your files — just stage them and commit
+  again:
 
   ```bash
   git add -u
@@ -378,11 +388,9 @@ Before anything is sent to GitHub, the `pre-push` hook runs:
 | `mypy` | Strict static type checking of the whole project (`[tool.mypy]` in `pyproject.toml`) |
 | `pytest` | Runs the full test suite |
 
-These can't fix anything themselves, so they deliberately don't run on every
-commit — you can commit work in progress (even with a failing test) as often as
-you like. They only stop broken code from **leaving your machine**: if either
-fails, the push is cancelled and the output shows what's wrong. Fix it, commit,
-and push again.
+These checks cannot fix problems. They are configured to run on both
+`pre-commit` and `pre-push`, so a failing check blocks either operation. Fix the
+reported issue, then commit and push again.
 
 ### GitHub Actions workflows
 
@@ -390,13 +398,13 @@ The repository uses these workflows:
 
 | Workflow | Runs on | What it does |
 | --- | --- | --- |
-| [`ci.yml`](.github/workflows/ci.yml) | push, Pull Request, manual | Runs the commit hooks in check-only mode, mypy, pytest, and a Docker build |
+| [`ci.yml`](.github/workflows/ci.yml) | push to `main`, Pull Request to `main`, manual | Runs pre-commit hooks, mypy, pytest, and a Docker build |
 | [`update-hosts.yml`](.github/workflows/update-hosts.yml) | every hour, manual | Generates and compares `hosts.txt`, then calls the publishing workflow |
 | [`publish-hosts.yml`](.github/workflows/publish-hosts.yml) | called by `update-hosts.yml` | Reusable workflow that deploys to GitHub Pages only if the domain list changed |
 
-The CI workflow does not modify or commit code. If a hook would change a file —
-for example, in a Pull Request made without the hooks installed — the job fails
-and its log shows the exact diff. To fix it, run
+The CI workflow does not commit changes. Auto-fixing hooks may modify files in
+the runner checkout; if that happens, the job fails and shows the diff. To fix
+it, run
 `uv run pre-commit run --all-files` locally, commit the changes and push again.
 
 ### Line endings and encoding
@@ -410,8 +418,8 @@ enforced in two layers:
 - **pre-commit hooks** — `mixed-line-ending` and
   `fix-byte-order-marker` fix files before they are committed.
 
-All files must be UTF-8. There is no separate check for that: Ruff, mypy,
-markdownlint and the TOML/YAML parsers already fail on anything else.
+Save text files as UTF-8. The hooks remove a UTF-8 byte-order mark, but there is
+no repository-wide check that validates the encoding of every file.
 
 > [!TIP]
 > **Windows:** no special git setup is needed — `.gitattributes` takes
@@ -423,7 +431,7 @@ markdownlint and the TOML/YAML parsers already fail on anything else.
 The hooks cover all of this, but you can run any check yourself:
 
 ```bash
-uv run pre-commit run --all-files  # all repo commit checks
+uv run pre-commit run --all-files  # all pre-commit-stage checks
 uv run pre-commit run --all-files --hook-stage pre-push  # push checks
 
 uv run ruff check . --fix   # lint + autofix
@@ -461,11 +469,14 @@ uv run pre-commit run --all-files   # make sure everything still passes
 
 ## Contributing
 
-1. Open a [GitHub issue](https://github.com/eugenescodes/adblock2mikrotik/issues) to discuss major changes before starting work.
-2. Fork the repo and create a feature branch: `git checkout -b feature/your-feature`
+1. Open a
+   [GitHub issue](https://github.com/eugenescodes/adblock2mikrotik/issues) to
+   discuss major changes before starting work.
+2. Fork the repo and create a feature branch:
+   `git checkout -b feature/your-feature`
 3. Do the [one-time setup](#one-time-setup-after-cloning) — `uv sync` and
-   `uv run pre-commit install`. Formatting is then fixed on every commit, and
-   `mypy` and the tests run on every push.
+   `uv run pre-commit install`. Formatting is fixed on commit, while `mypy`
+   and the tests run on both commit and push.
 4. Make your changes and commit with a clear message.
 5. Push to your fork and open a Pull Request targeting `main` with a
    description of what and why.
@@ -478,7 +489,8 @@ uv run pre-commit run --all-files   # make sure everything still passes
 
 ## Acknowledgments
 
-- [Hagezi](https://github.com/hagezi/dns-blocklists) for maintaining comprehensive filter lists
+- [Hagezi](https://github.com/hagezi/dns-blocklists) for maintaining
+  comprehensive filter lists
 - MikroTik for the DNS adlist feature in RouterOS 7.15+
 
 ---

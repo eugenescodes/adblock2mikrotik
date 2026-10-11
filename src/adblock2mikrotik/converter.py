@@ -2,6 +2,7 @@ import argparse
 import logging
 import os
 import re
+import tempfile
 import time
 import tomllib
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -10,53 +11,45 @@ from http.client import HTTPException
 from importlib.resources import files
 from importlib.resources.abc import Traversable
 from pathlib import Path
+from urllib.parse import urlsplit
 from urllib.request import urlopen
 
 from adblock2mikrotik import __version__
 
 # Domain validation (RFC 1123 ASCII subset):
-# - labels: [a-zA-Z0-9], hyphens allowed inside, max 63 chars each (no leading/trailing hyphens)
-# - total length: 1–253 chars
-# - TLD: ASCII alpha only, 2–24 chars
+# - Labels: ASCII letters/digits; hyphens only inside, max 63 chars.
+# - total length: 1-253 chars
+# - TLD: ASCII letters only, 2-24 chars
 # Note: IDN/punycode TLDs (xn--) are intentionally excluded
 _DOMAIN_RE = re.compile(
     r"^(?=.{1,253}$)(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,24}$"
 )
 
-# Default sources are loaded from config.toml.example (see load_config below)
-# instead of being duplicated as a Python literal here. config.toml.example is
-# the single source of truth — update sources there, and both the "cp config
-# .toml.example config.toml" workflow and the built-in fallback stay in sync
-# automatically. It ships inside the package and is read via importlib.resources,
-# so it is found wherever the package is installed (venv, Docker, uvx).
-_DEFAULT_CONFIG_FILE: Traversable = files("adblock2mikrotik") / "config.toml.example"
+# The packaged config is the single source of truth for default URLs.
+# importlib.resources finds it in local, Docker, and uvx installs.
+_DEFAULT_CONFIG_FILE: Traversable = (
+    files("adblock2mikrotik") / "config.toml.example"
+)
 
 logger = logging.getLogger(__name__)
 
 
 def _get_output_file() -> Path:
-    """Resolve output file path from OUTPUT_DIR env var or fall back to CWD.
-
-    OUTPUT_DIR is set in Docker to /output (a dedicated writable volume).
-    When running locally (uv or bare Python), OUTPUT_DIR is not set -> writes to CWD.
-    """
+    """Get output path from OUTPUT_DIR or the current directory."""
     output_dir = os.environ.get("OUTPUT_DIR")
     return Path(output_dir) / "hosts.txt" if output_dir else Path("hosts.txt")
 
 
 def _source_name(url: str) -> str:
-    """Return the file name portion of a source URL (for logs/headers)."""
+    """Return the URL's final path segment for logs and headers."""
     return url.rpartition("/")[2]
 
 
 def _read_source_urls(path: Traversable) -> list[str] | None:
-    """Read the ``[sources] urls`` list from a TOML file.
+    """Read unique source URLs from TOML, preserving configured order.
 
-    Returns:
-        The list of URLs (deduplicated, order preserved), or None if the file
-        is missing, is not valid TOML, or has no well-formed ``urls`` list
-        under ``[sources]``. None (rather than an exception) lets callers
-        apply their own fallback/error messaging.
+    Return None if the file is missing, invalid, or lacks a valid
+    ``[sources] urls`` list.
     """
     if not path.is_file():
         return None
@@ -71,36 +64,29 @@ def _read_source_urls(path: Traversable) -> list[str] | None:
         return None
 
     urls = sources.get("urls")
-    if not isinstance(urls, list) or not all(isinstance(url, str) for url in urls):
+    if not isinstance(urls, list) or not all(
+        isinstance(url, str) for url in urls
+    ):
         return None
 
-    # Collapse duplicates (order preserved): main() keys fetched results by URL
-    # and consumes each entry exactly once, so a repeated URL would both fetch
-    # twice and raise KeyError during conversion.
+    # Avoid duplicate fetches; main() consumes each URL's result once.
     return list(dict.fromkeys(urls))
 
 
 def load_config(
     config_file: str | Path = "config.toml", *, required: bool = False
 ) -> list[str]:
-    """Load sources from TOML config file.
+    """Load URLs from a config file or the packaged defaults.
 
-    An explicitly provided config_file that *exists* but is unusable (malformed
-    TOML, no ``[sources] urls`` list, wrong value types, or an empty url list)
-    is a configuration error: the problem is reported and an empty list is
-    returned, so a typo in your own config is never silently replaced by the
-    defaults. Only a *missing* config_file falls back to config.toml.example,
-    the single source of truth for default sources. If that bundled fallback is
-    itself unavailable, that is reported too and an empty list is returned.
+    Invalid existing files return an empty list instead of silently
+    falling back. A missing file falls back unless ``required`` is true.
 
     Args:
-        config_file: Path to config.toml file
-        required: The file was named explicitly (``--config``), so a missing
-            file is an error too, instead of a reason to use the defaults.
+        config_file: TOML file to read.
+        required: Treat a missing file as an error.
 
     Returns:
-        List of source URLs, or an empty list when the configuration is
-        unusable — main() treats an empty list as fatal.
+        Source URLs, or an empty list if the configuration is unusable.
     """
     config_path = Path(config_file)
 
@@ -120,54 +106,53 @@ def load_config(
         return []
 
     logger.info(
-        f"{config_file} not found, using default sources from {_DEFAULT_CONFIG_FILE.name}"
+        f"{config_file} not found, using default sources "
+        f"from {_DEFAULT_CONFIG_FILE.name}"
     )
 
     default_urls = _read_source_urls(_DEFAULT_CONFIG_FILE)
     if not default_urls:
         logger.error(
-            f"Default source file {_DEFAULT_CONFIG_FILE} is missing or invalid."
+            f"Default source file {_DEFAULT_CONFIG_FILE} "
+            "is missing or invalid."
         )
         return []
 
     logger.info(
-        f"Loaded {len(default_urls)} default sources from {_DEFAULT_CONFIG_FILE.name}"
+        f"Loaded {len(default_urls)} default sources "
+        f"from {_DEFAULT_CONFIG_FILE.name}"
     )
     return default_urls
 
 
 def fetch_domains(url: str) -> tuple[list[str], float]:
-    """Fetch a remote filter list and return its validated domains.
+    """Fetch a filter list and return domains with elapsed time.
 
-    Fetches an AdBlock/uBlock filter list from a remote URL with an
-    exponential backoff retry mechanism. The response is streamed line by
-    line, and each line is converted to its target representation — a
-    validated domain — while still streaming, so raw rule text is never
-    accumulated in memory; only the much smaller domain strings are kept.
+    Streams HTTP(S) sources and retries transient failures with backoff.
+    Unsupported URL schemes return no domains.
 
     Args:
-        url: The remote URL to fetch rules from.
+        url: HTTP(S) source URL.
 
     Returns:
-        A tuple of (domains, elapsed_time_seconds) where:
-            - domains: Validated lowercase domains in document order, or []
-              if all attempts fail (an upstream list is never legitimately
-              empty, so callers treat [] as a fetch failure).
-            - elapsed_time_seconds: Total time spent fetching, including
-              retries and in-flight conversion.
-
-    Note:
-        Attempts up to 3 times with exponential backoff: 2s after 1st failure, 4s after 2nd.
+        Validated domains and elapsed time, or an empty list on failure.
     """
     fetch_start = time.monotonic()
+    if urlsplit(url).scheme.lower() not in {"http", "https"}:
+        logger.error("Unsupported URL scheme for source: %s", url)
+        return [], time.monotonic() - fetch_start
+
     last_exception: Exception | None = None
 
     for attempt in range(3):
         try:
-            with urlopen(url, timeout=10) as response:
+            # The source scheme was restricted to HTTP(S) above.
+            with urlopen(url, timeout=10) as response:  # noqa: S310
                 domains: list[str] = []
                 for raw_line in response:
-                    domain = extract_domain(raw_line.decode("utf-8", errors="replace"))
+                    domain = extract_domain(
+                        raw_line.decode("utf-8", errors="replace")
+                    )
                     if domain:
                         domains.append(domain)
 
@@ -178,7 +163,8 @@ def fetch_domains(url: str) -> tuple[list[str], float]:
             if attempt < 2:
                 wait = 2 ** (attempt + 1)
                 logger.warning(
-                    f"Attempt {attempt + 1} failed for {url}: {e}. Retrying in {wait}s..."
+                    f"Attempt {attempt + 1} failed for {url}: {e}. "
+                    f"Retrying in {wait}s..."
                 )
                 time.sleep(wait)
 
@@ -188,26 +174,10 @@ def fetch_domains(url: str) -> tuple[list[str], float]:
 
 
 def extract_domain(rule: str) -> str | None:
-    """Extract and validate domain from AdBlock-style rule.
+    """Extract and validate a domain from an AdBlock rule.
 
-    Transforms AdBlock/uBlock Origin rules (e.g., "||example.com^") into a
-    clean domain string. Strips trailing comments, modifiers ($third-party),
-    and whitespace. Rejects domains that fail RFC 1123 validation.
-
-    Args:
-        rule: Raw AdBlock rule string, may include comments or modifiers.
-
-    Returns:
-        Lowercase domain string (e.g., "example.com") for valid rules,
-        or None if the rule is invalid, empty, or unsupported.
-
-    Examples:
-        >>> extract_domain("||example.com^")
-        "example.com"
-        >>> extract_domain("||ads.google.com^$third-party")
-        "ads.google.com"
-        >>> extract_domain("||invalid_domain^")
-        None
+    Return a lowercase domain, or None for invalid rules. Comments,
+    modifiers, and surrounding whitespace are stripped.
     """
 
     rule = rule.split("#", 1)[0].strip()
@@ -226,28 +196,12 @@ def write_output(
     source_data: dict[str, list[str]],
     total_count: int,
 ) -> None:
-    """Write validated domains to hosts file with header metadata.
-
-    Produces a hosts-format file with:
-        - A descriptive header (timestamp, source URLs, domain counts)
-        - Per-source sections with the "0.0.0.0 " prefix added at write time
-        - A final total count line
-
-    The file is written atomically: content is first written to a hidden
-    temporary file in the same directory as output_file, then moved into
-    place with Path.replace() (an atomic rename on POSIX and Windows). This
-    guarantees that readers of output_file (e.g. RouterOS fetching it over
-    HTTP, or a concurrent process) never observe a partially-written file,
-    even if this process is interrupted mid-write. On failure, the temporary
-    file is removed and the exception is re-raised; output_file is left
-    untouched.
+    """Write a hosts file with source metadata using atomic replacement.
 
     Args:
-        output_file: Destination file path.
-        source_data: Ordered mapping of URL → list of validated domain strings.
-            Insertion order is the configured source order and drives the
-            order of the header's source list and of the file's sections.
-        total_count: Total number of unique domains across all sources.
+        output_file: Destination path.
+        source_data: Ordered mapping of source URLs to unique domains.
+        total_count: Number of unique domains across all sources.
     """
     current_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
 
@@ -268,7 +222,8 @@ def write_output(
         "#\n"
         f"# Last modified: {current_time}\n"
         "#\n"
-        "# This filter is generated from the following DNS blocklist sources:\n"
+        "# This filter is generated from the following DNS "
+        "blocklist sources:\n"
         f"{url_lines}"
         "#\n"
         f"# Total unique domains: {total_count:,}\n"
@@ -276,10 +231,17 @@ def write_output(
         "#\n"
     )
 
-    tmp_file = output_file.with_name(f".{output_file.name}.tmp")
-
+    tmp_path: Path | None = None
     try:
-        with tmp_file.open("w", encoding="utf-8") as f:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=output_file.parent,
+            prefix=f".{output_file.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as f:
+            tmp_path = Path(f.name)
             f.write(header)
 
             for url, domains in source_data.items():
@@ -287,14 +249,17 @@ def write_output(
                 for domain in domains:
                     # prefix is added directly during file writing
                     f.write(f"0.0.0.0 {domain}\n")
-                f.write(f"\n# Converted {len(domains):,} rules from this source\n\n")
+                f.write(
+                    f"\n# Converted {len(domains):,} rules "
+                    "from this source\n\n"
+                )
 
             f.write(f"\n# Total unique domains: {total_count:,}\n")
 
-        tmp_file.replace(output_file)
+        tmp_path.replace(output_file)
     finally:
-        # No-op after a successful replace(); otherwise drops the partial file.
-        tmp_file.unlink(missing_ok=True)
+        if tmp_path is not None:
+            tmp_path.unlink(missing_ok=True)
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -306,8 +271,10 @@ def _build_parser() -> argparse.ArgumentParser:
             "for the MikroTik RouterOS DNS adlist."
         ),
         epilog=(
-            "Without --config, sources are read from ./config.toml if it exists, "
-            "otherwise the bundled default sources are used. Without --output, "
+            "Without --config, sources are read from ./config.toml "
+            "if it exists, "
+            "otherwise the bundled default sources are used. "
+            "Without --output, "
             "hosts.txt is written to $OUTPUT_DIR if set, otherwise to the "
             "current directory."
         ),
@@ -336,7 +303,10 @@ def _build_parser() -> argparse.ArgumentParser:
         "-n",
         "--dry-run",
         action="store_true",
-        help="fetch, validate and deduplicate as usual, but don't write the hosts file",
+        help=(
+            "fetch, validate and deduplicate as usual, but don't "
+            "write the hosts file"
+        ),
     )
     parser.add_argument(
         "-q",
@@ -348,11 +318,12 @@ def _build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Entry point of the ``adblock2mikrotik`` command.
+    """
+    Entry point of the ``adblock2mikrotik`` command.
 
     Args:
-        argv: Command-line arguments without the program name; None means
-            ``sys.argv[1:]``.
+        argv:Command-line arguments without the program name; None means
+             ``sys.argv[1:]``.
     """
     args = _build_parser().parse_args(argv)
     logging.basicConfig(
@@ -366,8 +337,10 @@ def main(argv: list[str] | None = None) -> None:
         urls = load_config("config.toml")
 
     if not urls:
-        # load_config has already reported why the source list is unusable;
-        # fail loudly (non-zero) instead of leaving a stale hosts.txt in place.
+        # load_config has already reported why the source list
+        # is unusable;
+        # fail loudly (non-zero) instead of leaving a stale
+        # hosts.txt in place.
         raise SystemExit(1)
 
     output_file: Path = args.output or _get_output_file()
@@ -377,11 +350,15 @@ def main(argv: list[str] | None = None) -> None:
 
     logger.info(f"Fetching {len(urls)} source(s)...")
 
-    # Stage 1: Parallel fetching with in-flight conversion. Each worker converts
-    # its raw rule text into validated domains while still streaming, so raw
+    # Stage 1: Parallel fetching with in-flight conversion. Each worker
+    # converts
+    # its raw rule text into validated domains while still
+    # streaming, so raw
     # rule lines are never held in memory — only domain strings are.
-    # fetch_domains handles network errors itself (returning []), so anything
-    # future.result() raises is a bug: it propagates and aborts the run before
+    # fetch_domains handles network errors itself (returning []),
+    # so anything
+    # future.result() raises is a bug: it propagates and aborts
+    # the run before
     # hosts.txt is touched.
     with ThreadPoolExecutor(max_workers=min(len(urls), 3)) as executor:
         futures = {executor.submit(fetch_domains, url): url for url in urls}
@@ -395,25 +372,33 @@ def main(argv: list[str] | None = None) -> None:
                     f"({fetch_elapsed:.2f}s)"
                 )
             else:
-                # fetch_domains returns [] once its retries are exhausted
-                # (or the source holds no supported rule), and an upstream
+                # fetch_domains returns [] once its
+                # retries are exhausted
+                # (or the source holds no supported
+                # rule), and an upstream
                 # filter list is never legitimately empty.
                 logger.error(f"  - {_source_name(url)}: no domains fetched")
                 failed_sources.append(url)
             fetched_domains[url] = domains
 
-    # A configured source that could not be fetched means the artifact would be
-    # narrower than what the config promises, so the whole run fails below.
+    # A configured source that could not be fetched means the
+    # artifact would be
+    # narrower than what the config promises, so the whole run
+    # fails below.
     if failed_sources:
         logger.error(
             f"{len(failed_sources)} of {len(urls)} source(s) failed to fetch "
-            f"({', '.join(failed_sources)}) — refusing to publish a partial list."
+            f"({', '.join(failed_sources)}) — "
+            "refusing to publish a partial list."
         )
         raise SystemExit(1)
 
-    # Stage 2: Deduplication strictly in order of config (urls). The first
-    # source in the config keeps every domain it shares with later sources,
-    # and output sections follow the same deterministic order on every run.
+    # Stage 2: Deduplication strictly in order of config (urls).
+    # The first
+    # source in the config keeps every domain it shares with later
+    # sources,
+    # and output sections follow the same deterministic order on
+    # every run.
     logger.info("Deduplicating...")
 
     unique_domains: set[str] = set()
@@ -427,15 +412,22 @@ def main(argv: list[str] | None = None) -> None:
                 converted.append(domain)
 
         source_data[url] = converted
-        # fetched domains for this source are no longer needed once deduplicated
+        # fetched domains for this source are no longer needed once
+        # deduplicated
         del fetched_domains[url]
 
-        logger.info(f"  - {_source_name(url)}: {len(converted):,} unique domains")
+        logger.info(
+            f"  - {_source_name(url)}: {len(converted):,} unique domains"
+        )
 
-    # unique_domains cannot be empty here: the failed_sources guard above
-    # guarantees every configured source yielded at least one validated domain.
+    # unique_domains cannot be empty here: the failed_sources
+    # guard above
+    # guarantees every configured source yielded at least one
+    # validated domain.
 
-    logger.info(f"Total unique domains across all sources: {len(unique_domains):,}")
+    logger.info(
+        f"Total unique domains across all sources: {len(unique_domains):,}"
+    )
 
     if args.dry_run:
         logger.info(f"Dry run: {output_file} was not written.")

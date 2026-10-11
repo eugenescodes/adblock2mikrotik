@@ -1,4 +1,4 @@
-"""Convert AdBlock-style filter lists to a MikroTik RouterOS DNS adlist."""
+"""Convert AdBlock filters to a MikroTik RouterOS DNS adlist."""
 
 from importlib.metadata import version
 

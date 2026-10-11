@@ -43,7 +43,7 @@ jobs:
           path: ~/.cache/pre-commit
           key: pre-commit-${{ runner.os }}-${{ hashFiles('.pre-commit-config.yaml') }}
 
-      # Same hooks as the local git hook (ruff check/format, markdownlint, file
+      # Same hooks as the local git hook (ruff check/format, rumdl for markdown lint, file
       # hygiene, uv.lock, workflow schemas). Any hook that would modify a file
       # fails the job and prints the diff, so an unformatted PR goes red.
       - name: Run pre-commit checks
