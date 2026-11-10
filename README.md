@@ -109,11 +109,11 @@ docker run --rm -v "${PWD}:/output" adblock2mikrotik
 > The converter writes `hosts.txt` to `/output`, so the file appears directly
 > in your current directory on the host — no manual copying needed.
 >
-> On Linux, the container runs as its own non-root user, which cannot write to
-> your bind-mounted directory unless the UIDs match. `--user $(id -u):$(id -g)`
-> makes the converter run as *you*, so `hosts.txt` gets write access and is
-> owned by your current user. Not required on macOS or Windows (Docker Desktop
-> handles this automatically).
+> On Linux, the image runs as the non-root user `appuser` (UID/GID `999`).
+> This user may not be able to write to your bind-mounted directory. Use
+> `--user $(id -u):$(id -g)` to run the converter as *you*, so `hosts.txt` is
+> writable and owned by your current user. Not required on macOS or Windows
+> (Docker Desktop handles this automatically).
 >
 > On SELinux systems (Fedora, RHEL, CentOS), add the `:Z` suffix to the volume
 > so the bind mount is relabeled for the container: `-v "$(pwd)":/output:Z`.

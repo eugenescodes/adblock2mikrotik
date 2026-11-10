@@ -81,10 +81,23 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # No network: checks the installed package imports and that the bundled
-      # default config (package data) made it into the image and is valid.
-      - name: Verify image — package and bundled config, no network
+      # No network: verify the default user, writable output dir, CLI, package,
+      # and bundled default config in the built image.
+      - name: Smoke test Docker image
         run: |
+          docker run --rm --network none adblock2mikrotik:ci-test --help
           docker run --rm --network none \
             --entrypoint python adblock2mikrotik:ci-test \
-            -c "from adblock2mikrotik import converter as c; assert c._read_source_urls(c._DEFAULT_CONFIG_FILE); print('Image OK')"
+            -c "import os; from adblock2mikrotik import converter as c; assert os.getuid() != 0, 'container must not run as root'; assert os.access('/output', os.W_OK), '/output must be writable'; assert c._read_source_urls(c._DEFAULT_CONFIG_FILE), 'bundled config must be valid'; print(f'Image OK (uid={os.getuid()})')"
+
+      # Report CRITICAL/HIGH OS and Python package CVEs without failing the
+      # build on findings; this gives us a baseline before enabling a gate.
+      - name: Scan image for vulnerabilities (report only)
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: adblock2mikrotik:ci-test
+          format: table
+          exit-code: "0"
+          ignore-unfixed: true
+          vuln-type: os,library
+          severity: CRITICAL,HIGH
