@@ -1,6 +1,6 @@
 # ─── Stage 1: builder ───
 # Build the application in a separate image so the runtime image needs no uv.
-FROM python:3.15-slim@sha256:65a65fc7b30b06cb6df4930fd4650697cb23f4c2698ab81fc87e4b031bc36928 AS builder
+FROM python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b AS builder
 COPY --from=ghcr.io/astral-sh/uv:0.13.7@sha256:96f40d3904aad8d0bd010539001d36c8e2188b981e1334471a90c4a1d93bb490 /uv /uvx /bin/
 
 # Use the Python provided by this image instead of downloading a managed one.
@@ -26,7 +26,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 # ─── Stage 2: runtime ───
 # Use the same Python version and Debian release as the builder: the venv
 # refers to the interpreter at the same system path in both images.
-FROM python:3.15-slim@sha256:65a65fc7b30b06cb6df4930fd4650697cb23f4c2698ab81fc87e4b031bc36928
+FROM python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
 
 # Keep logs visible and avoid writing bytecode into the container filesystem.
 ENV PYTHONUNBUFFERED=1 \
