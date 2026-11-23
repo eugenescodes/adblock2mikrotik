@@ -52,6 +52,7 @@ jobs:
         if: steps.change.outputs.changed == 'true'
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: _site
 
       # Allow the Actions artifact API time to make github-pages visible after
@@ -66,6 +67,8 @@ jobs:
         id: deployment
         continue-on-error: true
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Retry GitHub Pages deployment
         if: steps.change.outputs.changed == 'true' && steps.deployment.outcome == 'failure'
@@ -76,6 +79,8 @@ jobs:
         if: steps.change.outputs.changed == 'true' && steps.deployment.outcome == 'failure'
         id: retry-deploy
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Skip deployment when the list is unchanged
         if: steps.change.outputs.changed == 'false'
