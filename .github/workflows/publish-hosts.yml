@@ -53,10 +53,28 @@ jobs:
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: _site
+      
+      # Allow the Actions artifact API time to make github-pages visible after
+      # upload-pages-artifact completes. This prevents transient 404 metadata
+      # responses from failing deployments immediately.
+      - name: Wait for Pages artifact
+        if: steps.change.outputs.changed == 'true'
+        run: sleep 15
 
       - name: Deploy to GitHub Pages
         if: steps.change.outputs.changed == 'true'
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+
+      - name: Retry GitHub Pages deployment
+        if: steps.change.outputs.changed == 'true' && steps.deployment.outcome == 'failure'
+        id: retry-deployment
+        run: sleep 15
+
+      - name: Deploy to GitHub Pages after retry
+        if: steps.change.outputs.changed == 'true' && steps.deployment.outcome == 'failure'
+        id: retry-deploy
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
 
       - name: Skip deployment when the list is unchanged
