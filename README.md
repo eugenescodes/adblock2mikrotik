@@ -366,6 +366,7 @@ whole project on every commit.
 What happens next:
 
 - **All checks pass** → the commit is created as usual.
+
 - **A hook fixed something** → the commit is stopped so you can see what
   changed. The fixes are already in your files — just stage them and commit
   again:
@@ -376,6 +377,7 @@ What happens next:
   ```
 
   (In VS Code: review the changes, then press **Commit** again.)
+
 - **An error can't be fixed automatically** → the commit is stopped and the
   output shows the file, line and rule. Fix it by hand, then commit again.
 
